@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { ServicesOffered } from "../components/pages/homePage/servicesOffered/ServicesOffered";
 import { SplashScreen } from "../components/pages/homePage/splashScreen/SplashScreen";
+import { SubscribeToNewsletter } from "../components/pages/homePage/subscribeToNewsletter/SubscribeToNewsletter";
 import { TeamBackground } from "../components/pages/homePage/teamBackground/TeamBackground";
 import { TheLab } from "../components/pages/homePage/theLab/TheLab";
 import styles from "../styles/Home.module.css";
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
         <ServicesOffered />
         <TeamBackground />
         <TheLab />
+        <SubscribeToNewsletter />
       </main>
     </div>
   );
