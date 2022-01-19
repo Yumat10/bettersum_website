@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ServicesOffered } from "../components/pages/homePage/servicesOffered/ServicesOffered";
 import { SplashScreen } from "../components/pages/homePage/splashScreen/SplashScreen";
 import { TeamBackground } from "../components/pages/homePage/teamBackground/TeamBackground";
+import { TheLab } from "../components/pages/homePage/theLab/TheLab";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
         <SplashScreen />
         <ServicesOffered />
         <TeamBackground />
+        <TheLab />
       </main>
     </div>
   );
