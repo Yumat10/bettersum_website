@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { ServicesOffered } from "../components/pages/homePage/servicesOffered/ServicesOffered";
 import { SplashScreen } from "../components/pages/homePage/splashScreen/SplashScreen";
+import { TeamBackground } from "../components/pages/homePage/teamBackground/TeamBackground";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
       <main>
         <SplashScreen />
         <ServicesOffered />
+        <TeamBackground />
       </main>
     </div>
   );
