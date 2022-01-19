@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { ServicesOffered } from "../components/pages/homePage/servicesOffered/ServicesOffered";
 import { SplashScreen } from "../components/pages/homePage/splashScreen/SplashScreen";
 import styles from "../styles/Home.module.css";
 
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <SplashScreen />
+        <ServicesOffered />
       </main>
     </div>
   );

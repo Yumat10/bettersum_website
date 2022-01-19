@@ -26,6 +26,7 @@ export const PageLinks = (): JSX.Element => {
     { name: "agile team", path: teamPath },
     { name: "futurists", path: teamPath },
   ];
+
   return (
     <div className={styles.container}>
       {routes.map(({ name, path }) => (

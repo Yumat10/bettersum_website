@@ -1,5 +1,5 @@
 import { BetterSumColors } from "../../../../types/BetterSumColors";
-import { Subheading } from "../../../shared/navbars/SubHeading";
+import { Subheading } from "../../../shared/navbars/Subheading";
 import { PageLinks } from "./PageLinks";
 import { ReadMoreArrow } from "./ReadMoreArrow";
 import styles from "./SplashScreen.module.css";

@@ -12,7 +12,6 @@ export const Subheading = ({
   sectionNumber,
   color,
 }: Props): JSX.Element => {
-  console.log(color);
   return (
     <div>
       <p style={{ color }}>
