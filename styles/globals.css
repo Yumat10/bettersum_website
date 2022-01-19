@@ -1,3 +1,9 @@
+:root {
+  --bettersum-beige: #f9f7f3;
+  --bettersum-blue: #4690ff;
+  --bettersum-black: #000000;
+}
+
 html,
 body {
   padding: 0;

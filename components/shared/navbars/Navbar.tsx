@@ -1,12 +1,8 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FunctionComponent, MouseEventHandler } from "react";
+import { Route } from "../../../types/Route";
 import { GradientOutlineButton } from "../buttons/GradientOutlineButton";
-
-type Route = {
-  name: string;
-  path: string;
-};
 
 export const Navbar = (): JSX.Element => {
   const router = useRouter();

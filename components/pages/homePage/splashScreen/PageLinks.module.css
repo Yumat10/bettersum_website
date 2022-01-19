@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.container .plus:nth-child(1) {
+  display: none;
+}
