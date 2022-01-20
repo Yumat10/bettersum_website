@@ -10,7 +10,6 @@ export const PageLinks = (): JSX.Element => {
   const strategyPath: string = "/services?type=strategey";
   const designPath: string = "/services?type=design";
   const developmentPath: string = "/services?type=development";
-  const teamPath: string = "/team";
 
   const routes: Route[] = [
     { name: "saas development", path: developmentPath },
@@ -23,8 +22,6 @@ export const PageLinks = (): JSX.Element => {
     { name: "branding", path: designPath },
     { name: "idea to mvp", path: developmentPath },
     { name: "technical audit", path: developmentPath },
-    { name: "agile team", path: teamPath },
-    { name: "futurists", path: teamPath },
   ];
 
   return (
