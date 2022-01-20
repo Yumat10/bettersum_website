@@ -3,7 +3,7 @@ import styles from "./Subheading.module.css";
 
 type Props = {
   title: string;
-  sectionNumber: number;
+  sectionNumber?: number;
   color: BetterSumColors;
 };
 
@@ -15,7 +15,8 @@ export const Subheading = ({
   return (
     <div>
       <p style={{ color }}>
-        {sectionNumber} — {title}
+        {sectionNumber && `${sectionNumber} — `}
+        {title}
       </p>
     </div>
   );
