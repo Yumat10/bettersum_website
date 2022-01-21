@@ -10,6 +10,7 @@ import {
   ServicePageContextProvider,
 } from "../contexts/servicePageContext";
 import { ServiceDetails } from "../types/ServiceDetails";
+import { ContactForm } from "../components/shared/forms/ContactForm";
 
 const Services: NextPage = () => {
   const StrategyOverview = (
@@ -187,6 +188,7 @@ const Services: NextPage = () => {
                 services={developmentServices}
               />
             </div>
+            <ContactForm />
           </div>
         </main>
       </div>
