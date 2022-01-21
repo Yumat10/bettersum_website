@@ -1,4 +1,5 @@
 import { FunctionComponent, MouseEventHandler } from "react";
+import styles from "./GradientOutlineButton.module.css";
 
 type Props = {
   text: string;
@@ -10,8 +11,10 @@ export const GradientOutlineButton = ({
   onClick,
 }: Props): JSX.Element => {
   return (
-    <div>
-      <button onClick={onClick}>{text}</button>
-    </div>
+    <button onClick={onClick} className={styles["container"]}>
+      <div className={styles["gradient-one"]} />
+      <div className={styles["gradient-two"]} />
+      <div className={styles["button"]}>{text}</div>
+    </button>
   );
 };

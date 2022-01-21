@@ -1,0 +1,34 @@
+.container {
+  all: unset;
+  position: relative;
+}
+
+.button {
+  position: relative;
+  background-color: var(--bettersum-beige);
+  color: var(--bettersum-off-black);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 0px;
+  width: 140px;
+  text-align: center;
+}
+
+.gradient-one {
+  position: absolute;
+  background: linear-gradient(180deg, #d538fc 0%, rgba(252, 186, 56, 0.1) 100%);
+  height: 40px;
+  width: 140px;
+  top: -2px;
+  left: -2px;
+}
+
+.gradient-two {
+  position: absolute;
+  background: linear-gradient(180deg, #38fcb5 0%, #610bef 100%);
+  transform: rotate(-180deg);
+  height: 40px;
+  width: 140px;
+  top: 3px;
+  right: -4px;
+}

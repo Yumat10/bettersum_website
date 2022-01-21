@@ -1,0 +1,48 @@
+.container {
+  background-color: var(--bettersum-black);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 45px 0px 30px 0px;
+  border-bottom: 1px solid var(--bettersum-beige);
+}
+
+.inner-container {
+  width: clamp(300px, 90%, 1200px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 30px;
+}
+
+.logo-text {
+  color: var(--bettersum-beige);
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.bolded-logo-text {
+  font-weight: 500;
+}
+
+.routes-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 67px;
+  color: var(--bettersum-beige);
+}
+
+.route {
+  box-sizing: border-box;
+  height: 2px;
+  width: 110px;
+  margin-top: 7.5px;
+  border-top: 1px solid var(--bettersum-beige);
+}

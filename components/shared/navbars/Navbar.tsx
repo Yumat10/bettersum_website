@@ -3,6 +3,9 @@ import { useRouter } from "next/router";
 import { FunctionComponent, MouseEventHandler } from "react";
 import { Route } from "../../../types/Route";
 import { GradientOutlineButton } from "../buttons/GradientOutlineButton";
+import Image from "next/image";
+import styles from "./Navbar.module.css";
+import fontStyles from "../../../styles/fontStyles.module.css";
 
 export const Navbar = (): JSX.Element => {
   const router = useRouter();
@@ -17,6 +20,10 @@ export const Navbar = (): JSX.Element => {
       path: "/team",
     },
     {
+      name: "lab",
+      path: "/#lab",
+    },
+    {
       name: "content",
       path: "/content",
     },
@@ -26,16 +33,41 @@ export const Navbar = (): JSX.Element => {
     router.push("/contact");
 
   return (
-    <div>
-      <Link href="/" key="/">
-        <a referrerPolicy="strict-origin-when-cross-origin">home</a>
-      </Link>
-      {routes.map(({ name, path }) => (
-        <Link href={path} key={path}>
-          <a referrerPolicy="strict-origin-when-cross-origin">{name}</a>
-        </Link>
-      ))}
-      <GradientOutlineButton text="Contact us" onClick={navigateToContactUs} />
+    <div className={styles["container"]}>
+      <div className={styles["inner-container"]}>
+        <div className={styles["brand"]}>
+          <Image
+            src="/brandLogos/betterSumSmallMarkBeige.svg"
+            alt="BetterSum"
+            height={30}
+            width={20}
+            onClick={() => router.push("/")}
+          />
+          <div className={styles["logo-text"]}>
+            <p>Atlanta Based.</p>
+            <br />
+            <p className={styles["bolded-logo-text"]}>Human Cented.</p>
+          </div>
+        </div>
+        <div className={styles["routes-container"]}>
+          {routes.map(({ name, path }) => (
+            <div key={path} className={styles["route"]}>
+              <Link href={path}>
+                <a
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  className={fontStyles["body-copy"]}
+                >
+                  {name}
+                </a>
+              </Link>{" "}
+            </div>
+          ))}
+          <GradientOutlineButton
+            text="Contact us"
+            onClick={navigateToContactUs}
+          />
+        </div>
+      </div>
     </div>
   );
 };
