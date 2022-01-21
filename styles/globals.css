@@ -22,13 +22,19 @@ a {
   box-sizing: border-box;
 }
 
-.focus-header {
+.intro-header {
+  font-size: 12.5rem;
+  font-weight: 600;
+  line-height: 5rem;
+}
+
+.title-header {
   font-size: 3rem;
   font-weight: 600;
   line-height: 3.5rem;
 }
 
-.subtitle-header {
+.category-header {
   font-size: 2.25rem;
   font-weight: 600;
   line-height: 2.5rem;
@@ -40,7 +46,7 @@ a {
   line-height: 2.125rem;
 }
 
-.flair-copy {
+.falir-copy {
   font-size: 1.125rem;
   font-weight: 300;
   line-height: 1.5625rem;
