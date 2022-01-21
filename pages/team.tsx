@@ -1,8 +1,39 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { TeamMemberColumn } from "../components/pages/teamPage/TeamMemberColumn";
+import { Subheading } from "../components/shared/navbars/Subheading";
+import { BetterSumColors } from "../types/BetterSumColors";
+
+export interface TeamMemberIntro {
+  fullName: string;
+  title: string;
+  bio: string;
+  profileImage: string;
+}
 
 const Team: NextPage = () => {
+  const teamMembers: TeamMemberIntro[] = [
+    {
+      fullName: "Richard Lee",
+      title: "Product Manager",
+      bio: "Here is where we will put a super brief summary of who we are and what we do.",
+      profileImage: "/teamPhotos/profileImage/richard.svg",
+    },
+    {
+      fullName: "William King",
+      title: "Designer & Strategist",
+      bio: "Here is where we will put a super brief summary of who we are and what we do.",
+      profileImage: "/teamPhotos/profileImage/william.svg",
+    },
+    {
+      fullName: "Yuma Tanaka",
+      title: "Developer",
+      bio: "Here is where we will put a super brief summary of who we are and what we do.",
+      profileImage: "/teamPhotos/profileImage/yuma.svg",
+    },
+  ];
+
   return (
     <div>
       <Head>
@@ -11,7 +42,19 @@ const Team: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Team Page</h1>
+        <div style={{ backgroundColor: "gray" }}>
+          <Subheading
+            title="Team"
+            sectionNumber={3}
+            color={BetterSumColors.Beige}
+          />
+          <h1>Meet the team behind the curtain.</h1>
+          <div>
+            {teamMembers.map((teamMemberInfo, index) => (
+              <TeamMemberColumn key={index} {...teamMemberInfo} />
+            ))}
+          </div>
+        </div>
       </main>
     </div>
   );
