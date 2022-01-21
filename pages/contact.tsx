@@ -1,8 +1,15 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
+import { useRouter } from "next/router";
+import { ContactForm } from "../components/shared/forms/ContactForm";
 
 const Contact: NextPage = () => {
+  const router = useRouter();
+
+  const backHandler = () => {
+    router.back();
+  };
+
   return (
     <div>
       <Head>
@@ -11,7 +18,10 @@ const Contact: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Contact Page</h1>
+        <div>
+          <button onClick={backHandler}>Back</button>
+          <ContactForm />
+        </div>
       </main>
     </div>
   );

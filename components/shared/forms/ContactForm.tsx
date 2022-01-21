@@ -11,7 +11,7 @@ const ContactInfoSchema = yup.object({
   lastName: yup.string().required(),
   company: yup.string().required(),
   email: yup.string().required().email(),
-  message: yup.string().required().min(0),
+  message: yup.string().required(),
 });
 
 type ContactInfo = yup.InferType<typeof ContactInfoSchema>;
