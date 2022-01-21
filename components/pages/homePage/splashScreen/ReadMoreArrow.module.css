@@ -1,0 +1,11 @@
+.container {
+  position: absolute;
+  bottom: 5vh;
+  display: flex;
+  flex-direction: row;
+  column-gap: 40px;
+}
+
+.see-more-text {
+  color: var(--bettersum-beige);
+}

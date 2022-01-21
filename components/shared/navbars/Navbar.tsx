@@ -46,7 +46,7 @@ export const Navbar = (): JSX.Element => {
           <div className={styles["logo-text"]}>
             <p>Atlanta Based.</p>
             <br />
-            <p className={styles["bolded-logo-text"]}>Human Cented.</p>
+            <p className={styles["bolded-logo-text"]}>Human Centered.</p>
           </div>
         </div>
         <div className={styles["routes-container"]}>
@@ -55,7 +55,7 @@ export const Navbar = (): JSX.Element => {
               <Link href={path}>
                 <a
                   referrerPolicy="strict-origin-when-cross-origin"
-                  className={fontStyles["body-copy"]}
+                  className={fontStyles["flair-copy"]}
                 >
                   {name}
                 </a>

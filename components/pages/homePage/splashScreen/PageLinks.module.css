@@ -1,7 +1,16 @@
 .container {
   display: flex;
   flex-direction: row;
+  column-gap: 10px;
+  flex-flow: wrap;
+  color: var(--bettersum-beige);
+  opacity: 0.3;
+  width: clamp(250px, 90%, 1000px);
 }
+
+/* .link:nth-child(n) {
+  flex-basis: 25%;
+} */
 
 .container .plus:nth-child(1) {
   display: none;

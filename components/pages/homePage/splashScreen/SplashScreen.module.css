@@ -1,3 +1,22 @@
-/* .container {
+.container {
   background-color: var(--bettersum-black);
-} */
+}
+
+.inner-container {
+  position: relative;
+  width: var(--width-clamp);
+  margin: 0px auto;
+  padding: 15vh 0px 0px 0px;
+  height: calc(100vh - 100px);
+}
+
+.brand-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 55px 0px 40px 0px;
+}
+
+.subheader {
+  color: var(--bettersum-beige);
+}

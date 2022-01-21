@@ -9,7 +9,7 @@ export const ServiceColumn = ({
   includePlus,
 }: ServiceDetails): JSX.Element => {
   return (
-    <div>
+    <div id="services-offered">
       <h2>{title}</h2>
       <p>{description}</p>
       {includePlus && (

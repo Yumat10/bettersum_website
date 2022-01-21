@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { Fragment } from "react";
 import { Route } from "../../../../types/Route";
 import styles from "./PageLinks.module.css";
+import fontStyles from "../../../../styles/fontStyles.module.css";
 
 export const PageLinks = (): JSX.Element => {
   const router = useRouter();
@@ -28,9 +29,17 @@ export const PageLinks = (): JSX.Element => {
     <div className={styles.container}>
       {routes.map(({ name, path }) => (
         <Fragment key={name}>
-          <p className={styles.plus}> +</p>
+          <p className={`${styles.plus} ${fontStyles["category-header"]}`}>
+            {" "}
+            +
+          </p>
           <Link href={path}>
-            <a referrerPolicy="strict-origin-when-cross-origin">{name}</a>
+            <a
+              referrerPolicy="strict-origin-when-cross-origin"
+              className={`${fontStyles["category-header"]} ${styles["link"]}`}
+            >
+              {name}
+            </a>
           </Link>
         </Fragment>
       ))}
