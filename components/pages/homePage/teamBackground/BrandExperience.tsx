@@ -10,17 +10,27 @@ type Icon = {
 
 export const BrandExperience = (): JSX.Element => {
   const icons: Icon[] = [
-    { name: "Lilly", path: "/lilly.svg", width: 65, height: 35 },
-    { name: "Honeywell", path: "/honeywell.svg", width: 115, height: 22 },
+    {
+      name: "Lilly",
+      path: "/brandExperienceLogos/lilly.svg",
+      width: 65,
+      height: 35,
+    },
+    {
+      name: "Honeywell",
+      path: "/brandExperienceLogos/honeywell.svg",
+      width: 115,
+      height: 22,
+    },
     {
       name: "Chamberlain Group",
-      path: "/chamberlainGroup.svg",
+      path: "/brandExperienceLogos/chamberlainGroup.svg",
       width: 140,
       height: 30,
     },
     {
       name: "NothHighland",
-      path: "/northHighland.svg",
+      path: "/brandExperienceLogos/northHighland.svg",
       width: 140,
       height: 75,
     },

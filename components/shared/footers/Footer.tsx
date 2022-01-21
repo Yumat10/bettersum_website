@@ -62,15 +62,30 @@ export const Footer = (): JSX.Element => {
             <h2>Bettersum</h2>
           </div>
           <div>
-            <Image src="/snapchat.svg" alt="snapchat" width={34} height={34} />
             <Image
-              src="/instagram.svg"
+              src="/socialMediaLogos/snapchat.svg"
+              alt="snapchat"
+              width={34}
+              height={34}
+            />
+            <Image
+              src="/socialMediaLogos/instagram.svg"
               alt="instagram"
               width={34}
               height={34}
             />
-            <Image src="/tiktok.svg" alt="tiktok" width={30} height={34} />
-            <Image src="/facebook.svg" alt="facebook" width={34} height={34} />
+            <Image
+              src="/socialMediaLogos/tiktok.svg"
+              alt="tiktok"
+              width={30}
+              height={34}
+            />
+            <Image
+              src="/socialMediaLogos/facebook.svg"
+              alt="facebook"
+              width={34}
+              height={34}
+            />
           </div>
         </div>
         <div>
