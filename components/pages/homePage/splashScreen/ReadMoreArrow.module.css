@@ -6,6 +6,10 @@
   column-gap: 40px;
 }
 
+.container:hover {
+  cursor: pointer;
+}
+
 .see-more-text {
   color: var(--bettersum-beige);
 }
