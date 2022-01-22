@@ -35,13 +35,12 @@ export const Navbar = (): JSX.Element => {
   return (
     <div className={styles["container"]}>
       <div className={styles["inner-container"]}>
-        <div className={styles["brand"]}>
+        <div className={styles["brand"]} onClick={() => router.push("/")}>
           <Image
             src="/brandLogos/betterSumSmallMarkBeige.svg"
             alt="BetterSum"
             height={30}
             width={20}
-            onClick={() => router.push("/")}
           />
           <div className={styles["logo-text"]}>
             <p>Atlanta Based.</p>

@@ -25,6 +25,10 @@
   column-gap: 30px;
 }
 
+.brand:hover {
+  cursor: pointer;
+}
+
 .logo-text {
   color: var(--bettersum-beige);
   font-size: 12px;

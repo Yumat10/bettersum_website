@@ -4,6 +4,8 @@ import Image from "next/image";
 import { TeamMemberColumn } from "../components/pages/teamPage/TeamMemberColumn";
 import { Subheading } from "../components/shared/navbars/Subheading";
 import { BetterSumColors } from "../types/BetterSumColors";
+import styles from "styles/Team.module.css";
+import fontStyles from "styles/fontStyles.module.css";
 
 export interface TeamMemberIntro {
   fullName: string;
@@ -42,17 +44,23 @@ const Team: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div style={{ backgroundColor: "gray" }}>
-          <Subheading
-            title="Team"
-            sectionNumber={3}
-            color={BetterSumColors.Beige}
-          />
-          <h1>Meet the team behind the curtain.</h1>
-          <div>
-            {teamMembers.map((teamMemberInfo, index) => (
-              <TeamMemberColumn key={index} {...teamMemberInfo} />
-            ))}
+        <div className={styles["container"]}>
+          <div className={styles["inner-container"]}>
+            <Subheading
+              title="Team"
+              sectionNumber={3}
+              color={BetterSumColors.Beige}
+            />
+            <h1
+              className={`${fontStyles["title-header"]} ${styles["title-text"]}`}
+            >
+              Meet the team behind the curtain.
+            </h1>
+            <div className={styles["team-members-container"]}>
+              {teamMembers.map((teamMemberInfo, index) => (
+                <TeamMemberColumn key={index} {...teamMemberInfo} />
+              ))}
+            </div>
           </div>
         </div>
       </main>

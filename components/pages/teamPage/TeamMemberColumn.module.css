@@ -1,0 +1,24 @@
+.container {
+  /* margin: 0px -0.5px; */
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 425px;
+  margin: 0px 0px 30px 0px;
+}
+
+.text-container {
+  padding: 0px 20px;
+  width: inherit;
+}
+
+.title-text {
+  margin: 5px 0px 0px 0px;
+}
+
+.bio-text {
+  display: block;
+  margin: 25px 0px 0px 0px;
+}

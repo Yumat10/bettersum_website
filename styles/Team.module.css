@@ -1,0 +1,20 @@
+.container {
+  background-color: var(--bettersum-black);
+  color: var(--bettersum-beige);
+  padding: 70px 0px 200px 0px;
+}
+
+.inner-container {
+  width: var(--width-clamp);
+  margin: 0px auto;
+}
+
+.title-text {
+  max-width: 540px;
+  margin: 0px 0px 95px 0px;
+}
+
+.team-members-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
