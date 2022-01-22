@@ -1,0 +1,25 @@
+.container {
+  background-color: var(--bettersum-beige);
+}
+
+.container-inner {
+  display: flex;
+  flex-direction: row;
+  column-gap: 100px;
+  width: var(--width-clamp);
+  margin: 0px auto;
+  padding: 130px 0px 100px 0px;
+}
+
+.header-container {
+  position: relative;
+  max-width: 435px;
+}
+
+.header-text {
+  margin: 0px 0px 45px 0px;
+}
+
+.lab-projects-container {
+  flex-grow: 1;
+}

@@ -2,6 +2,7 @@ import { BetterSumColors } from "../../../../types/BetterSumColors";
 import { Subheading } from "../../../shared/navbars/Subheading";
 import { LabProject } from "./LabProject";
 import styles from "./TheLab.module.css";
+import fontStyles from "styles/fontStyles.module.css";
 
 export interface LabProjectDetails {
   index: number;
@@ -22,16 +23,29 @@ export const TheLab = (): JSX.Element => {
   ];
 
   return (
-    <div>
-      <Subheading title="Lab" sectionNumber={4} color={BetterSumColors.Black} />
-      <div>
-        <h2>The Lab is where we feature products we have made in-house.</h2>
-        <p>Check back for regular updates.</p>
-      </div>
-      <div>
-        {labProjects.map((project) => (
-          <LabProject key={project.index} {...project} />
-        ))}
+    <div className={styles["container"]}>
+      <div className={styles["container-inner"]}>
+        <div className={styles["header-container"]}>
+          <Subheading
+            title="Lab"
+            sectionNumber={4}
+            color={BetterSumColors.Black}
+            topOffset="50px"
+          />
+          <h2
+            className={`${fontStyles["title-header"]} ${styles["header-text"]}`}
+          >
+            The Lab is where we feature products we have made in-house.
+          </h2>
+          <p className={fontStyles["body-copy"]}>
+            Check back for regular updates.
+          </p>
+        </div>
+        <div className={styles["lab-projects-container"]}>
+          {labProjects.map((project) => (
+            <LabProject key={project.index} {...project} />
+          ))}
+        </div>
       </div>
     </div>
   );

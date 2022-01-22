@@ -14,7 +14,12 @@ export const ReadMoreArrow = (): JSX.Element => {
         })
       }
     >
-      <Image src="/arrows/downArrow.svg" alt="down" height={24} width={24} />
+      <Image
+        src="/arrows/downArrowBeige.svg"
+        alt="down"
+        height={24}
+        width={24}
+      />
       <p className={`${fontStyles["flair-copy"]} ${styles["see-more-text"]}`}>
         See how it all adds up
       </p>

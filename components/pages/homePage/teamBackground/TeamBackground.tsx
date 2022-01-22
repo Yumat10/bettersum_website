@@ -37,7 +37,7 @@ export const TeamBackground = (): JSX.Element => {
                   Meet the team
                 </a>
                 <Image
-                  src="/arrows/rightArrow.svg"
+                  src="/arrows/rightArrowBeige.svg"
                   alt="left"
                   height={24}
                   width={24}
