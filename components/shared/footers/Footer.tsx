@@ -10,11 +10,11 @@ export const Footer = (): JSX.Element => {
     [
       {
         name: "Intro",
-        path: "/#intro",
+        path: "/?section=intro",
       },
       {
         name: "Services",
-        path: "/#services",
+        path: "/?section=services",
       },
       {
         name: "Content",
@@ -41,7 +41,7 @@ export const Footer = (): JSX.Element => {
         path: "/services?type=development",
       },
       {
-        name: "UX Audits",
+        name: "Design Audits",
         path: "/services?type=design",
       },
     ],

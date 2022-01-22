@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import {
   createContext,
   Dispatch,
@@ -5,7 +6,9 @@ import {
   ReactNode,
   useState,
   useContext,
+  useEffect,
 } from "react";
+import { smoothScrollDown } from "util/functions/smoothScrollDown";
 
 export enum ServiceOptions {
   strategy = "strategy",
@@ -28,7 +31,35 @@ export const ServicePageContextProvider = ({
 }: {
   children: ReactNode;
 }) => {
+  const router = useRouter();
+  const { type: queryType } = router.query;
+
   const [openTab, setOpenTab] = useState<ServiceOptions>(ServiceOptions.none);
+
+  useEffect(() => {
+    if (queryType) {
+      switch (queryType) {
+        case ServiceOptions.strategy:
+          setOpenTab(ServiceOptions.strategy);
+          break;
+        case ServiceOptions.design:
+          setOpenTab(ServiceOptions.design);
+          break;
+        case ServiceOptions.development:
+          setOpenTab(ServiceOptions.development);
+          break;
+        default:
+          setOpenTab(ServiceOptions.none);
+      }
+    }
+  }, [queryType]);
+
+  useEffect(() => {
+    if (openTab) {
+      const id = `service-section-${openTab}`;
+      smoothScrollDown({ elementId: id, offset: -90 });
+    }
+  }, [openTab]);
 
   return (
     <ServicePageContext.Provider

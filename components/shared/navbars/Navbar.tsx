@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { FunctionComponent, MouseEventHandler } from "react";
+import { FunctionComponent, MouseEventHandler, useEffect } from "react";
 import { Route } from "../../../types/Route";
 import { GradientOutlineButton } from "../buttons/GradientOutlineButton";
 import Image from "next/image";
@@ -21,7 +21,7 @@ export const Navbar = (): JSX.Element => {
     },
     {
       name: "lab",
-      path: "/#lab",
+      path: "/?section=lab",
     },
     {
       name: "content",
@@ -58,7 +58,7 @@ export const Navbar = (): JSX.Element => {
                 >
                   {name}
                 </a>
-              </Link>{" "}
+              </Link>
             </div>
           ))}
           <GradientOutlineButton

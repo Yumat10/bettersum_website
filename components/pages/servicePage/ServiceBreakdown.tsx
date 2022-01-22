@@ -16,7 +16,7 @@ export const ServiceBreakdown = ({
         </p>
         <ul className={styles["list"]}>
           {offerings.map((offering, index) => (
-            <li key={index} className={fontStyles["body-container"]}>
+            <li key={index} className={fontStyles["body-copy"]}>
               {offering}
             </li>
           ))}

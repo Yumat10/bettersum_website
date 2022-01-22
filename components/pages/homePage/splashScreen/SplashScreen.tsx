@@ -8,7 +8,7 @@ import fontStyles from "../../../../styles/fontStyles.module.css";
 
 export const SplashScreen = (): JSX.Element => {
   return (
-    <div className={styles.container}>
+    <div id="home-page-intro-section" className={styles.container}>
       <div className={styles["inner-container"]}>
         <Subheading
           title="intro"

@@ -51,7 +51,7 @@ export const ServiceSection = ({
   );
 
   return (
-    <div className={styles["container"]}>
+    <div id={`service-section-${type}`} className={styles["container"]}>
       <div className={styles["overview-container"]}>
         <p
           className={`${fontStyles["flair-copy"]} ${styles["service-number"]}`}

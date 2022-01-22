@@ -23,7 +23,7 @@ export const TheLab = (): JSX.Element => {
   ];
 
   return (
-    <div className={styles["container"]}>
+    <div id="home-page-lab-section" className={styles["container"]}>
       <div className={styles["container-inner"]}>
         <div className={styles["header-container"]}>
           <Subheading

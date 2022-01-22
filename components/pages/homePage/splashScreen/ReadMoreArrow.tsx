@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { smoothScrollDown } from "@/util/functions/smoothScrollDown";
+import { smoothScrollDown } from "util/functions/smoothScrollDown";
 import styles from "./ReadMoreArrow.module.css";
 import fontStyles from "@/styles/fontStyles.module.css";
 
@@ -9,7 +9,7 @@ export const ReadMoreArrow = (): JSX.Element => {
       className={styles["container"]}
       onClick={() =>
         smoothScrollDown({
-          elementId: "services-offered",
+          elementId: "home-page-services-section",
           offset: -110,
         })
       }

@@ -82,7 +82,7 @@ export const ServicesOffered = (): JSX.Element => {
     },
   ];
   return (
-    <div id="services-offered" className={styles["container"]}>
+    <div id="home-page-services-section" className={styles["container"]}>
       <div className={styles["inner-container"]}>
         <Subheading
           title="services"
