@@ -8,6 +8,10 @@
   cursor: pointer;
 }
 
+.category {
+  margin: 30px 0px 0px 0px;
+}
+
 .descriptions {
   display: block;
   margin-top: 50px;

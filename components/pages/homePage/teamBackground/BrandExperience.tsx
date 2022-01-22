@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./BrandExperience.module.css";
+import fontStyles from "styles/fontStyles.module.css";
 
 type Icon = {
   name: string;
@@ -36,16 +37,18 @@ export const BrandExperience = (): JSX.Element => {
     },
     {
       name: "Wahoo",
-      path: "/wahoo.svg",
+      path: "/brandExperienceLogos/wahoo.svg",
       width: 115,
       height: 45,
     },
   ];
 
   return (
-    <div>
-      <h3>Some of the brands we have collaborated with</h3>
-      <div style={{ background: "black" }}>
+    <div className={styles["container"]}>
+      <h3 className={fontStyles["category-header"]}>
+        Some of the brands we have collaborated with
+      </h3>
+      <div className={styles["icons-container"]}>
         {icons.map(({ name, path, width, height }) => (
           <Image
             key={path}

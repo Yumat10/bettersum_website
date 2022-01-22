@@ -1,0 +1,33 @@
+.container {
+  background-color: var(--bettersum-black);
+  padding: 160px 0px 175px 0px;
+}
+
+.inner-container {
+  position: relative;
+  width: var(--width-clamp);
+  margin: 0px auto;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 55px;
+}
+
+.text-container {
+  max-width: 250px;
+  color: var(--bettersum-beige);
+}
+
+.meet-team-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 10px;
+  margin: 30px 0px 0px 0px;
+}
+
+.meet-team-container:hover {
+  cursor: pointer;
+}

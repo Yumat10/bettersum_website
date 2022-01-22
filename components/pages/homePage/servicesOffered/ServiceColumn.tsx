@@ -35,7 +35,9 @@ export const ServiceColumn = ({
         width={icon.width}
         className={styles["icon"]}
       />
-      <h2 className={fontStyles["category-header"]}>{title}</h2>
+      <h2 className={`${fontStyles["category-header"]} ${styles["category"]}`}>
+        {title}
+      </h2>
       <p className={`${fontStyles["body-copy"]} ${styles["descriptions"]}`}>
         {description}
       </p>

@@ -1,0 +1,13 @@
+.container {
+  margin: 165px 0px 0px 0px;
+  color: var(--bettersum-beige);
+  text-align: center;
+}
+
+.icons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 65px 0px 0px 0px;
+}
