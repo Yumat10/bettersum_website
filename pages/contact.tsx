@@ -2,6 +2,9 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { ContactForm } from "../components/shared/forms/ContactForm";
+import styles from "styles/Contact.module.css";
+import fontStyles from "styles/fontStyles.module.css";
+import Image from "next/image";
 
 const Contact: NextPage = () => {
   const router = useRouter();
@@ -19,7 +22,19 @@ const Contact: NextPage = () => {
       </Head>
       <main>
         <div>
-          <button onClick={backHandler}>Back</button>
+          <div className={styles["container"]}>
+            <div className={styles["inner-container"]}>
+              <button onClick={backHandler} className={styles["button"]}>
+                <Image
+                  src="/arrows/leftArrowBeige.svg"
+                  alt="Go"
+                  width={24}
+                  height={24}
+                />
+                <p className={fontStyles["flair-copy"]}>Back</p>
+              </button>
+            </div>
+          </div>
           <ContactForm />
         </div>
       </main>

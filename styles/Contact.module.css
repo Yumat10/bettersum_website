@@ -1,0 +1,22 @@
+.container {
+  background-color: var(--bettersum-black);
+  color: var(--bettersum-beige);
+  padding: 65px 0px 0px 0px;
+}
+
+.inner-container {
+  width: var(--width-clamp);
+  margin: 0px auto calc(-150px + 30px) auto;
+}
+
+.button {
+  all: unset;
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  margin: 0px 0px 0px -40px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
