@@ -1,0 +1,35 @@
+.container {
+  background-color: var(--bettersum-black);
+  color: var(--bettersum-beige);
+  padding: 50px 0px 100px 0px;
+}
+
+.inner-container {
+  width: var(--width-clamp);
+  margin: 0px auto;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.social-media-icons-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 40px;
+  margin: 115px 0px 0px 0px;
+}
+
+.footer-links-containers {
+  display: flex;
+  flex-direction: row;
+  column-gap: 120px;
+}
+
+.footer-text {
+  margin: 90px 0px 0px 0px;
+  text-align: center;
+}
