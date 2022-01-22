@@ -1,0 +1,78 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0px 40px 0px;
+  border-bottom: 1px solid var(--bettersum-black);
+}
+
+.overview-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  column-gap: 45px;
+}
+
+.text-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.service-number {
+}
+
+.title-container {
+  width: 250px;
+}
+
+.title-text {
+  width: fit-content;
+}
+
+.overview {
+  /* margin: 0px 0px 0px 65px; */
+  max-width: 515px;
+}
+
+.plus-container {
+  all: unset;
+  display: flex;
+  align-items: flex-start;
+}
+
+.plus-container:hover {
+  cursor: pointer;
+}
+
+.service-breakdowns-container {
+  /* width: 100%; */
+  margin: 20px 0px 110px 0px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 75px;
+}
+
+.contact-button {
+  all: unset;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 15px;
+  padding: 0px 45px;
+  box-sizing: border-box;
+  height: 60px;
+  width: 100%;
+  background-color: var(--bettersum-blue);
+  color: var(--bettersum-beige);
+}
+
+.contact-button:hover {
+  cursor: pointer;
+}

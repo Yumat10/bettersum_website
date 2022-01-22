@@ -1,3 +1,21 @@
 .container {
-  background-color: var(--bettersum-black);
+}
+
+.details-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 75px;
+  margin: 20px 0px 0px 0px;
+}
+
+.description {
+  max-width: 540px;
+}
+
+.list {
+  all: unset;
+}
+
+.list li:not(:first-child) {
+  margin: 5px 0px 0px 0px;
 }

@@ -4,13 +4,14 @@ import Image from "next/image";
 import { ServiceSection } from "../components/pages/servicePage/ServiceSection";
 import { Subheading } from "../components/shared/navbars/Subheading";
 import { BetterSumColors } from "../types/BetterSumColors";
-import styles from "../styles/Services.module.css";
 import {
   ServiceOptions,
   ServicePageContextProvider,
 } from "../contexts/servicePageContext";
 import { ServiceDetails } from "../types/ServiceDetails";
 import { ContactForm } from "../components/shared/forms/ContactForm";
+import styles from "../styles/Services.module.css";
+import fontStyles from "styles/fontStyles.module.css";
 
 const Services: NextPage = () => {
   const StrategyOverview = (
@@ -160,34 +161,44 @@ const Services: NextPage = () => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main>
-          <div>
-            <Subheading title="All Services" color={BetterSumColors.OffBlack} />
-            <h1>
-              Integrated capabilities across strategy, design and development.
-            </h1>
-            <div>
-              <ServiceSection
-                index={1}
-                type={ServiceOptions.strategy}
-                title="Strategy"
-                overview={StrategyOverview}
-                services={strategyServices}
+          <div className={styles["container"]}>
+            <div className={styles["inner-container"]}>
+              <Subheading
+                title="All Services"
+                color={BetterSumColors.OffBlack}
+                topOffset="40px"
               />
-              <ServiceSection
-                index={2}
-                type={ServiceOptions.design}
-                title="Holistic Design"
-                overview={DesignOverview}
-                services={designServices}
-              />
-              <ServiceSection
-                index={3}
-                type={ServiceOptions.development}
-                title="Development"
-                overview={DevelopmentOverview}
-                services={developmentServices}
-              />
+              <h1
+                className={`${fontStyles["category-header"]} ${styles["title-text"]}`}
+              >
+                Integrated capabilities across strategy, design and development.
+              </h1>
+              <div className={styles["services-container"]}>
+                <ServiceSection
+                  index={1}
+                  type={ServiceOptions.strategy}
+                  title="Strategy"
+                  overview={StrategyOverview}
+                  services={strategyServices}
+                />
+                <ServiceSection
+                  index={2}
+                  type={ServiceOptions.design}
+                  title="Holistic Design"
+                  overview={DesignOverview}
+                  services={designServices}
+                />
+                <ServiceSection
+                  index={3}
+                  type={ServiceOptions.development}
+                  title="Development"
+                  overview={DevelopmentOverview}
+                  services={developmentServices}
+                />
+              </div>
             </div>
+          </div>
+          <div id="services-contact-form">
             <ContactForm />
           </div>
         </main>

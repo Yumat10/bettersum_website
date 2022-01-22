@@ -1,0 +1,50 @@
+.container {
+  background-color: var(--bettersum-black);
+  padding: 150px 0px 200px 0px;
+}
+
+.inner-container {
+  width: var(--width-clamp);
+  margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  column-gap: 80px;
+}
+
+.text-container {
+  color: var(--bettersum-beige);
+  max-width: 475px;
+}
+
+.email-link {
+  display: block;
+  margin: 30px 0px 0px 0px;
+}
+
+.form-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.submit-button {
+  all: unset;
+  background-color: var(--bettersum-blue);
+  color: var(--bettersum-beige);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 15px;
+  padding: 0px 45px;
+  height: 60px;
+  margin: 32px 0px 0px 0px;
+}
+
+.submit-button:hover {
+  cursor: pointer;
+}
+
+.submit-button:disabled {
+  opacity: 0.5;
+}

@@ -3,6 +3,8 @@
   --bettersum-blue: #4690ff;
   --bettersum-black: #000000;
   --bettersum-off-black: #14142b;
+  --error-color: #eb5757;
+
   --width-clamp: clamp(300px, 90%, 1200px);
 }
 

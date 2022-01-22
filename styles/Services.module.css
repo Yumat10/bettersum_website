@@ -1,3 +1,23 @@
+.container {
+  background-color: var(--bettersum-beige);
+  padding: 75px 0px 210px 0px;
+}
+
+.inner-container {
+  position: relative;
+  width: var(--width-clamp);
+  margin: 0px auto;
+}
+
+.title-text {
+  max-width: 600px;
+}
+
+.services-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .highlighted-text {
   color: var(--bettersum-blue);
 }

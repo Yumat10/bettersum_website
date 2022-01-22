@@ -3,8 +3,8 @@ import { useState } from "react";
 import * as yup from "yup";
 import { UnderlineInputField } from "../inputFields/UnderlineInputField";
 import styles from "./ContactForm.module.css";
-
-// TODO: Delay validation, Add other contact fields, Add error message in input field
+import fontStyles from "styles/fontStyles.module.css";
+import Image from "next/image";
 
 const ContactInfoSchema = yup.object({
   firstName: yup.string().required(),
@@ -44,7 +44,7 @@ export const ContactForm = (): JSX.Element => {
       validationSchema={ContactInfoSchema}
     >
       {(props) => (
-        <div>
+        <div className={styles["form-container"]}>
           <UnderlineInputField
             id="firstName"
             label="First Name"
@@ -100,8 +100,15 @@ export const ContactForm = (): JSX.Element => {
             disabled={!props.isValid}
             type="submit"
             onClick={() => props.handleSubmit()}
+            className={styles["submit-button"]}
           >
-            Get In Touch
+            <p className={fontStyles["body-copy"]}>Get In Touch</p>
+            <Image
+              src="/arrows/rightArrowBeige.svg"
+              alt="Submit"
+              height={24}
+              width={24}
+            />
           </button>
         </div>
       )}
@@ -109,14 +116,21 @@ export const ContactForm = (): JSX.Element => {
   );
 
   return (
-    <div>
-      <div>
-        <h2>
-          We collaborate with ambitious brands and people. Let&#39;s build.
-        </h2>
-        <p>biz@bettersum.com</p>
+    <div className={styles["container"]}>
+      <div className={styles["inner-container"]}>
+        <div className={styles["text-container"]}>
+          <h2 className={fontStyles["title-header"]}>
+            We collaborate with ambitious brands and people. Let&#39;s build.
+          </h2>
+          <a
+            href="mailto:biz@bettersum.com"
+            className={`${fontStyles["flair-copy"]} ${styles["email-link"]}`}
+          >
+            <u>biz@bettersum.com</u>
+          </a>
+        </div>
+        {ContactFormik}
       </div>
-      <div>{ContactFormik}</div>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { ServiceDetails } from "../../../types/ServiceDetails";
 import styles from "./ServiceBreakdown.module.css";
+import fontStyles from "styles/fontStyles.module.css";
 
 export const ServiceBreakdown = ({
   name,
@@ -7,17 +8,19 @@ export const ServiceBreakdown = ({
   offerings,
 }: ServiceDetails): JSX.Element => {
   return (
-    <div>
-      <div>
-        <h2>{name}</h2>
-        <p>{description}</p>
-      </div>
-      <div>
-        <ul>
+    <div className={styles["container"]}>
+      <h2 className={fontStyles["category-header"]}>{name}</h2>
+      <div className={styles["details-container"]}>
+        <p className={`${fontStyles["body-copy"]} ${styles["description"]}`}>
+          {description}
+        </p>
+        <ul className={styles["list"]}>
           {offerings.map((offering, index) => (
-            <li key={index}>{offering}</li>
+            <li key={index} className={fontStyles["body-container"]}>
+              {offering}
+            </li>
           ))}
-        </ul>
+        </ul>{" "}
       </div>
     </div>
   );
