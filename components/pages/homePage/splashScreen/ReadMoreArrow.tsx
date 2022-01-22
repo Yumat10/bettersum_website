@@ -10,7 +10,7 @@ export const ReadMoreArrow = (): JSX.Element => {
       onClick={() =>
         smoothScrollDown({
           elementId: "services-offered",
-          offset: -130,
+          offset: -110,
         })
       }
     >

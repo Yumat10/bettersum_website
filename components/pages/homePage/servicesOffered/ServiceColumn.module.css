@@ -1,0 +1,22 @@
+.container {
+  position: relative;
+  height: 605px;
+  padding: 0px 50px;
+}
+
+.container:hover {
+  cursor: pointer;
+}
+
+.descriptions {
+  display: block;
+  margin-top: 50px;
+}
+
+.plus {
+  position: absolute;
+  top: 155px;
+  right: -12.5px;
+  height: 25px;
+  width: 25px;
+}
