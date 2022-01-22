@@ -15,7 +15,7 @@ const initialValues: SubscribeInfo = {
 
 export const SubscribeToNewsletterForm = (): JSX.Element => {
   return (
-    <div>
+    <div className={styles["container"]}>
       <Formik
         initialValues={initialValues}
         onSubmit={(values, actions) => {
@@ -26,20 +26,23 @@ export const SubscribeToNewsletterForm = (): JSX.Element => {
       >
         {(props) => (
           <>
-            <UnderlineInputField
-              id="email"
-              disabled={false}
-              label="Email"
-              value={props.values.email}
-              setValue={props.handleChange("email")}
-              errors={props.errors.email}
-              touched={props.touched.email}
-              onBlur={props.handleBlur}
-            />
+            <div className={styles["input-container"]}>
+              <UnderlineInputField
+                id="email"
+                disabled={false}
+                label="Email"
+                value={props.values.email}
+                setValue={props.handleChange("email")}
+                errors={props.errors.email}
+                touched={props.touched.email}
+                onBlur={props.handleBlur}
+              />
+            </div>
             <button
               disabled={!props.isValid}
               type="submit"
               onClick={() => props.handleSubmit()}
+              className={styles["button"]}
             >
               Sign Up
             </button>

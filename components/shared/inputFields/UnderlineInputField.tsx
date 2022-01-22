@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import styles from "./UnderlineInputField.module.css";
+import fontStyles from "styles/fontStyles.module.css";
 
 enum InputTypes {
   text = "text",
@@ -32,16 +33,28 @@ export const UnderlineInputField = <T extends string | number>({
 }: InputFieldProps<T>): JSX.Element => {
   return (
     <div>
-      <label htmlFor={id}>{label}</label>
-      <input
-        type={type}
-        id={id}
-        disabled={disabled}
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        onBlur={onBlur}
-      />
-      {touched && errors && <p>{errors}</p>}
+      <div className={styles["container"]}>
+        <input
+          type={type}
+          id={id}
+          disabled={disabled}
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          onBlur={onBlur}
+          className={styles["input"]}
+        />
+        <label
+          htmlFor={id}
+          className={`${fontStyles["flair-copy"]} ${styles["label"]}`}
+        >
+          {label}
+        </label>
+      </div>
+      {touched && errors && (
+        <p className={`${fontStyles["flair-copy"]} ${styles["errors"]}`}>
+          {errors}
+        </p>
+      )}
     </div>
   );
 };

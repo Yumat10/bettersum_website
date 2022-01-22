@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 23px;
+}
+
+.input-container {
+  flex-grow: 1;
+}
+
+.button {
+  all: unset;
+  background-color: var(--bettersum-blue);
+  height: 72px;
+  padding: 0px 1.5em;
+}
+
+.button:hover {
+  cursor: pointer;
+}
