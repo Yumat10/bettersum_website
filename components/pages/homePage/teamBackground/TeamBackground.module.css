@@ -4,12 +4,12 @@
 }
 
 .inner-container {
-  position: relative;
-  width: var(--width-clamp);
-  margin: 0px auto;
 }
 
 .flex-container {
+  position: relative;
+  width: var(--width-clamp);
+  margin: 0px auto;
   display: flex;
   flex-direction: row;
   column-gap: 55px;

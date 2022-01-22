@@ -10,13 +10,13 @@ export const TeamBackground = (): JSX.Element => {
   return (
     <div className={styles["container"]}>
       <div className={styles["inner-container"]}>
-        <Subheading
-          title="team"
-          sectionNumber={3}
-          color={BetterSumColors.Beige}
-          topOffset="30px"
-        />
         <div className={styles["flex-container"]}>
+          <Subheading
+            title="team"
+            sectionNumber={3}
+            color={BetterSumColors.Beige}
+            topOffset="30px"
+          />
           <Image
             src="/teamPhotos/actionPhotos/aroundTable.svg"
             alt="Team"

@@ -9,5 +9,6 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 65px 0px 0px 0px;
+  width: clamp(300px, 90%, 1140px);
+  margin: 65px auto 0px auto;
 }
