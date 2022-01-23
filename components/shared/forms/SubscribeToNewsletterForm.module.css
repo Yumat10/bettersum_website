@@ -12,9 +12,22 @@
   all: unset;
   background-color: var(--bettersum-blue);
   height: 72px;
-  padding: 0px 1.5em;
+  padding: 0px 24px;
+  box-sizing: border-box;
 }
 
 .button:hover {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+  .button {
+    height: 64px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .button {
+    padding: 0px 17px;
+  }
 }
