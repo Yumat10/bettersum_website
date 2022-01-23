@@ -23,3 +23,18 @@
 .lab-projects-container {
   flex-grow: 1;
 }
+
+@media only screen and (max-width: 1200px) {
+  .container-inner {
+    flex-direction: column;
+    padding: 65px 0px 110px 0px;
+  }
+
+  .header-container {
+    max-width: 100%;
+  }
+
+  .subheader-text {
+    display: none;
+  }
+}

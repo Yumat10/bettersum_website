@@ -42,10 +42,8 @@
   }
 
   .title-header {
-    margin: 0px;
-    font-size: 3rem;
-    font-weight: 600;
-    line-height: 3.5rem;
+    font-size: 1.5rem;
+    line-height: 2.125rem;
   }
 
   .category-header {

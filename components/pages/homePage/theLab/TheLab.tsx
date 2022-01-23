@@ -37,7 +37,9 @@ export const TheLab = (): JSX.Element => {
           >
             The Lab is where we feature products we have made in-house.
           </h2>
-          <p className={fontStyles["body-copy"]}>
+          <p
+            className={`${fontStyles["body-copy"]} ${styles["subheader-text"]}`}
+          >
             Check back for regular updates.
           </p>
         </div>

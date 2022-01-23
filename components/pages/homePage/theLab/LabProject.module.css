@@ -23,3 +23,9 @@
 .description {
   max-width: 400px;
 }
+
+@media only screen and (max-width: 650px) {
+  .number {
+    display: none;
+  }
+}

@@ -19,7 +19,9 @@ export const LabProject = ({
       referrerPolicy="strict-origin-when-cross-origin"
       className={styles["container"]}
     >
-      <p className={fontStyles["flair-copy"]}>{index}</p>
+      <p className={`${fontStyles["flair-copy"]} ${styles["number"]}`}>
+        {index}
+      </p>
       <div className={styles["text-container"]}>
         <div className={styles["header"]}>
           <h2 className={fontStyles["category-header"]}>{name}</h2>
