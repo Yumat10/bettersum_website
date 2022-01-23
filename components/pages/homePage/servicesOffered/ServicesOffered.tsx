@@ -14,7 +14,6 @@ export type ServiceDetails = {
   title: string;
   description: JSX.Element;
   path: string;
-  padding: string;
   includePlus?: boolean;
 };
 
@@ -30,8 +29,8 @@ export const ServicesOffered = (): JSX.Element => {
       description: (
         <span>
           Our work begins at the inception of an idea. We solve problems,
-          challenge values, and develop strategies to articulate a better point
-          of view that helps your business{" "}
+          challenge values, and develop strategies to articulate a <b>better</b>{" "}
+          point of view that helps your business{" "}
           <span className={styles["highlighted-text"]}>
             navigate the future
           </span>
@@ -39,7 +38,6 @@ export const ServicesOffered = (): JSX.Element => {
         </span>
       ),
       path: "/services?type=strategy",
-      padding: "65px 50px 0px 0px",
     },
     {
       icon: {
@@ -53,11 +51,10 @@ export const ServicesOffered = (): JSX.Element => {
           We design digital products, brands, and services by building{" "}
           <span className={styles["highlighted-text"]}>with empathy</span>. We
           believe that a thoughtful user experience is what makes the difference
-          between a great solution and a better solution.
+          between a great solution and a <b>better</b> solution.
         </span>
       ),
       path: "/services?type=design",
-      padding: "65px 50px 0px 50px",
     },
     {
       icon: {
@@ -68,8 +65,8 @@ export const ServicesOffered = (): JSX.Element => {
       title: "Development",
       description: (
         <span>
-          We help transform great visions into better products. We expand your
-          ideas into{" "}
+          We help transform great visions into <b>better</b> products. We expand
+          your ideas into{" "}
           <span className={styles["highlighted-text"]}>
             fully functioning products,
           </span>{" "}
@@ -78,7 +75,6 @@ export const ServicesOffered = (): JSX.Element => {
         </span>
       ),
       path: "/services?type=development",
-      padding: "65px 0px 0px 50px",
     },
   ];
   return (

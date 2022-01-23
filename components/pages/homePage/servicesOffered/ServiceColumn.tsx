@@ -10,42 +10,43 @@ export const ServiceColumn = ({
   title,
   description,
   includePlus,
-  padding,
   path,
 }: ServiceDetails): JSX.Element => {
   const router = useRouter();
 
   useEffect(() => {
     router.prefetch(path);
-  }, []);
+  }, [router, path]);
 
   return (
     <div
-      className={styles["container"]}
-      style={{
-        padding,
-        borderRight: includePlus ? "1px solid var(--bettersum-black)" : "",
-      }}
+      className={`${styles["container"]} ${
+        includePlus ? styles["divider"] : ""
+      }`}
       onClick={() => router.push(path)}
     >
-      <Image
-        src={icon.url}
-        alt={`${title} Icon`}
-        height={icon.height}
-        width={icon.width}
-        className={styles["icon"]}
-      />
-      <h2 className={`${fontStyles["category-header"]} ${styles["category"]}`}>
-        {title}
-      </h2>
-      <p className={`${fontStyles["body-copy"]} ${styles["descriptions"]}`}>
-        {description}
-      </p>
-      {includePlus && (
-        <div className={styles["plus"]}>
-          <Image src="/plus.svg" alt="+" objectFit="cover" layout="fill" />
-        </div>
-      )}
+      <div className={styles["inner-container"]}>
+        <Image
+          src={icon.url}
+          alt={`${title} Icon`}
+          height={icon.height}
+          width={icon.width}
+          className={styles["icon"]}
+        />
+        <h2
+          className={`${fontStyles["category-header"]} ${styles["category"]}`}
+        >
+          {title}
+        </h2>
+        <p className={`${fontStyles["body-copy"]} ${styles["descriptions"]}`}>
+          {description}
+        </p>
+        {includePlus && (
+          <div className={styles["plus"]}>
+            <Image src="/plus.svg" alt="+" objectFit="cover" layout="fill" />
+          </div>
+        )}
+      </div>
     </div>
   );
 };
