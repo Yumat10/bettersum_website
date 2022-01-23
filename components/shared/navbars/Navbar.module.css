@@ -53,3 +53,50 @@
   margin-top: 7.5px;
   border-top: 1px solid var(--bettersum-beige);
 }
+
+.hamburger-menu-container {
+  display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .hamburger-menu-container {
+    display: block;
+  }
+
+  .routes-container {
+    display: none;
+  }
+
+  .routes-container {
+    display: none;
+  }
+
+  .hamburger-routes-container {
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 55px;
+    padding: 50px 0px 0px 0px;
+    text-align: center;
+    background-color: var(--bettersum-black);
+    height: 100vh;
+  }
+
+  .hamburger-icon:hover {
+    cursor: pointer;
+  }
+
+  .route {
+    all: unset;
+    color: var(--bettersum-beige);
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .logo-text {
+    display: none;
+  }
+}

@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { FunctionComponent, MouseEventHandler, useEffect } from "react";
+import {
+  FunctionComponent,
+  MouseEventHandler,
+  useEffect,
+  useState,
+} from "react";
 import { Route } from "../../../types/Route";
 import { GradientOutlineButton } from "../buttons/GradientOutlineButton";
 import Image from "next/image";
@@ -9,6 +14,21 @@ import fontStyles from "../../../styles/fontStyles.module.css";
 
 export const Navbar = (): JSX.Element => {
   const router = useRouter();
+
+  const [openHamburgerMenu, setOpenHamburgerMenu] = useState(false);
+
+  useEffect(() => {
+    if (openHamburgerMenu) {
+      document.body.style.overflow = "hidden";
+      const id: string = "hamburger-menu";
+      const hamburgerMenu = document.getElementById(id);
+      if (hamburgerMenu) {
+        hamburgerMenu.style.overflow = "auto";
+      }
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [openHamburgerMenu]);
 
   const routes: Route[] = [
     {
@@ -39,6 +59,7 @@ export const Navbar = (): JSX.Element => {
           <Image
             src="/brandLogos/betterSumSmallMarkBeige.svg"
             alt="BetterSum"
+            layout="fixed"
             height={30}
             width={20}
           />
@@ -65,6 +86,43 @@ export const Navbar = (): JSX.Element => {
             text="Contact us"
             onClick={navigateToContactUs}
           />
+        </div>
+        {/* Hamburger menu for mobile */}
+        <div className={styles["hamburger-menu-container"]}>
+          <Image
+            src={openHamburgerMenu ? "/closeX.svg" : "/hamburgerMenuIcon.svg"}
+            alt="Menu"
+            height={25}
+            width={25}
+            onClick={() => setOpenHamburgerMenu(!openHamburgerMenu)}
+            className={styles["hamburger-icon"]}
+          />
+          {openHamburgerMenu && (
+            <div
+              id="hamburger-menu"
+              className={styles["hamburger-routes-container"]}
+              onClick={() => setOpenHamburgerMenu(false)}
+            >
+              {/* Additional "Intro" option for hamburger menu */}
+              <div className={styles["route"]}>
+                <Link href={"/?section=intro"}>
+                  <a className={fontStyles["category-header"]}>intro</a>
+                </Link>
+              </div>
+              {routes.map(({ name, path }) => (
+                <div key={path} className={styles["route"]}>
+                  <Link href={path}>
+                    <a
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      className={fontStyles["category-header"]}
+                    >
+                      {name}
+                    </a>
+                  </Link>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -43,7 +43,7 @@ export const ServicesOffered = (): JSX.Element => {
     },
     {
       icon: {
-        url: "/serviceIcons/developmentIcon.svg",
+        url: "/serviceIcons/designIcon.svg",
         height: 45,
         width: 45,
       },
