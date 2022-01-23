@@ -17,12 +17,14 @@ export const TeamBackground = (): JSX.Element => {
             color={BetterSumColors.Beige}
             topOffset="30px"
           />
-          <Image
-            src="/teamPhotos/actionPhotos/aroundTable.svg"
-            alt="Team"
-            width={730}
-            height={550}
-          />
+          <div className={styles["team-image"]}>
+            <Image
+              src="/teamPhotos/actionPhotos/aroundTable.svg"
+              alt="Team"
+              objectFit="cover"
+              layout="fill"
+            />
+          </div>
           <div className={styles["text-container"]}>
             <h3 className={fontStyles["category-header"]}>
               We are investigators, designers, quick-fire ideators, educators,
