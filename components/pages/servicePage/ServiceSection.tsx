@@ -50,45 +50,58 @@ export const ServiceSection = ({
     </div>
   );
 
+  const plusButton = (
+    <button
+      onClick={() => setOpenTab(type)}
+      className={styles["plus-container"]}
+      style={{ visibility: openTab === type ? "hidden" : "visible" }}
+    >
+      <Image src="/actionsPlus.svg" alt="See More" height={24} width={24} />
+    </button>
+  );
+
+  const titleText = (
+    <div className={styles["title-container"]}>
+      <h2
+        className={`${fontStyles["category-header"]} ${styles["title-text"]}`}
+        style={{
+          borderTop: openTab === type ? "4px solid var(--bettersum-black)" : "",
+        }}
+      >
+        {title}
+      </h2>
+    </div>
+  );
+
+  const overviewText = (
+    <div
+      className={`${fontStyles["body-copy"]} ${styles["overview"]}`}
+      style={{ visibility: openTab === type ? "hidden" : "visible" }}
+    >
+      {overview}
+    </div>
+  );
+
   return (
     <div id={`service-section-${type}`} className={styles["container"]}>
-      <div className={styles["overview-container"]}>
+      <div className={styles["inner-container"]}>
         <p
           className={`${fontStyles["flair-copy"]} ${styles["service-number"]}`}
         >
           {index}
         </p>
         <div className={styles["text-container"]}>
-          <div className={styles["title-container"]}>
-            <h2
-              className={`${fontStyles["category-header"]} ${styles["title-text"]}`}
-              style={{
-                borderTop:
-                  openTab === type ? "4px solid var(--bettersum-black)" : "",
-              }}
-            >
-              {title}
-            </h2>
-          </div>
-          <div
-            className={`${fontStyles["body-copy"]} ${styles["overview"]}`}
-            style={{ visibility: openTab === type ? "hidden" : "visible" }}
-          >
-            {overview}
-          </div>
-          <button
-            onClick={() => setOpenTab(type)}
-            className={styles["plus-container"]}
-            style={{ visibility: openTab === type ? "hidden" : "visible" }}
-          >
-            <Image
-              src="/actionsPlus.svg"
-              alt="See More"
-              height={24}
-              width={24}
-            />
-          </button>
-
+          {titleText}
+          {overviewText}
+          {plusButton}
+          {openTab === type && ServiceBreakdowns}
+        </div>
+        <div className={styles["mobile-text-container"]}>
+          {titleText}
+          {plusButton}
+          <span style={{ display: openTab === type ? "none" : "" }}>
+            {overviewText}
+          </span>
           {openTab === type && ServiceBreakdowns}
         </div>
       </div>

@@ -21,43 +21,14 @@
 
 .body-copy {
   margin: 0px;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 2.125rem;
 }
 
 .flair-copy {
   margin: 0px;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 1.5625rem;
-}
-
-@media only screen and (max-width: 1200px) {
-  .intro-header {
-    margin: 0px;
-    font-size: 12.5rem;
-    font-weight: 600;
-    line-height: 5rem;
-  }
-
-  .title-header {
-    font-size: 1.5rem;
-    line-height: 2.125rem;
-  }
-
-  .category-header {
-    font-size: 1.5rem;
-    line-height: 1.65rem;
-  }
-
-  .body-copy {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-
-  .flair-copy {
-    font-size: 1rem;
-    line-height: 1.5625rem;
-  }
 }

@@ -67,6 +67,7 @@
     justify-content: space-between;
     width: var(--width-clamp);
     padding: 0px 0px 40px 0px;
+    column-gap: 30px;
   }
 
   .social-media-icons-container {

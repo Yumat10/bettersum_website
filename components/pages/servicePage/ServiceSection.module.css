@@ -6,14 +6,15 @@
   border-bottom: 1px solid var(--bettersum-black);
 }
 
-.overview-container {
+.inner-container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   column-gap: 45px;
 }
 
-.text-container {
+.text-container,
+.mobile-text-container {
   flex-grow: 1;
   display: flex;
   flex-direction: row;
@@ -21,7 +22,8 @@
   flex-wrap: wrap;
 }
 
-.service-number {
+.mobile-text-container {
+  display: none;
 }
 
 .title-container {
@@ -75,4 +77,28 @@
 
 .contact-button:hover {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+  .inner-container {
+    column-gap: 25px;
+  }
+
+  .text-container {
+    display: none;
+  }
+
+  .mobile-text-container {
+    display: flex;
+    row-gap: 20px;
+  }
+
+  .overview {
+    width: 80%;
+    max-width: unset;
+  }
+
+  .service-breakdowns-container {
+    margin: 30px 0px 110px 0px;
+  }
 }

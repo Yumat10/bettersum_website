@@ -42,6 +42,13 @@ export const UnderlineInputField = <T extends string | number>({
           onChange={(e) => setValue(e.target.value)}
           onBlur={onBlur}
           className={styles["input"]}
+          style={{
+            borderBottomColor:
+              touched && errors
+                ? "var(--error-color)"
+                : "var(--bettersum-blue)",
+            borderWidth: touched && errors ? "6px" : "",
+          }}
         />
         <label
           htmlFor={id}

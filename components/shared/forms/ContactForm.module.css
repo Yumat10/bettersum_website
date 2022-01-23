@@ -36,7 +36,7 @@
   flex-direction: row;
   align-items: center;
   column-gap: 15px;
-  padding: 0px 45px;
+  padding: 0px 1.25em;
   height: 60px;
   margin: 32px 0px 0px 0px;
 }
@@ -47,4 +47,14 @@
 
 .submit-button:disabled {
   opacity: 0.5;
+}
+
+@media only screen and (max-width: 1200px) {
+  .inner-container {
+    flex-direction: column;
+    row-gap: 50px;
+  }
+  .text-container {
+    max-width: unset;
+  }
 }

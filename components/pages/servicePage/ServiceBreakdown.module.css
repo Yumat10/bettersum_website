@@ -19,3 +19,23 @@
 .list li:not(:first-child) {
   margin: 5px 0px 0px 0px;
 }
+
+@media only screen and (max-width: 1200px) {
+  .description {
+    max-width: 500px;
+  }
+
+  .list {
+    min-width: fit-content;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .description {
+    max-width: 285px;
+  }
+
+  .details-container {
+    column-gap: 50px;
+  }
+}
