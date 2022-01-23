@@ -121,6 +121,10 @@ export const Navbar = (): JSX.Element => {
                   </Link>
                 </div>
               ))}
+              <GradientOutlineButton
+                text="Contact us"
+                onClick={navigateToContactUs}
+              />
             </div>
           )}
         </div>
