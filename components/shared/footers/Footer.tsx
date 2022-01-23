@@ -57,30 +57,38 @@ export const Footer = (): JSX.Element => {
 
   const SocialMediaIcons = (
     <div className={styles["social-media-icons-container"]}>
-      <Image
-        src="/socialMediaLogos/snapchat.svg"
-        alt="snapchat"
-        width={34}
-        height={34}
-      />
-      <Image
-        src="/socialMediaLogos/instagram.svg"
-        alt="instagram"
-        width={34}
-        height={34}
-      />
-      <Image
-        src="/socialMediaLogos/tiktok.svg"
-        alt="tiktok"
-        width={30}
-        height={34}
-      />
-      <Image
-        src="/socialMediaLogos/facebook.svg"
-        alt="facebook"
-        width={34}
-        height={34}
-      />
+      <div className={styles["social-media-logo"]}>
+        <Image
+          src="/socialMediaLogos/snapchat.svg"
+          alt="snapchat"
+          objectFit="contain"
+          layout="fill"
+        />
+      </div>
+      <div className={styles["social-media-logo"]}>
+        <Image
+          src="/socialMediaLogos/instagram.svg"
+          alt="instagram"
+          objectFit="contain"
+          layout="fill"
+        />
+      </div>
+      <div className={styles["social-media-logo"]}>
+        <Image
+          src="/socialMediaLogos/tiktok.svg"
+          alt="tiktok"
+          objectFit="contain"
+          layout="fill"
+        />
+      </div>
+      <div className={styles["social-media-logo"]}>
+        <Image
+          src="/socialMediaLogos/facebook.svg"
+          alt="facebook"
+          objectFit="contain"
+          layout="fill"
+        />
+      </div>
     </div>
   );
 
@@ -88,16 +96,18 @@ export const Footer = (): JSX.Element => {
     <div className={styles["container"]}>
       <div className={styles["inner-container"]}>
         <div className={styles["footer-info"]}>
-          <div>
-            <Image
-              src="/brandLogos/betterSumLogoBeige.svg"
-              alt="BetterSum"
-              height={40}
-              width={210}
-            />
+          <div className={styles["main-info"]}>
+            <div className={styles["brand-logo"]}>
+              <Image
+                src="/brandLogos/betterSumLogoBeige.svg"
+                alt="BetterSum"
+                objectFit="contain"
+                layout="fill"
+              />
+            </div>
             {SocialMediaIcons}
           </div>
-
+          <hr className={styles["divider"]} />
           <div className={styles["footer-links-containers"]}>
             <FooterLinksColumn header="Home" linksArray={footerLinks[0]} />
             <FooterLinksColumn header="Services" linksArray={footerLinks[1]} />
