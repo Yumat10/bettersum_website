@@ -2,6 +2,7 @@ import { Formik } from "formik";
 import { UnderlineInputField } from "../inputFields/UnderlineInputField";
 import * as yup from "yup";
 import styles from "./SubscribeToNewsletterForm.module.css";
+import fontStyles from "styles/fontStyles.module.css";
 
 const SubscribeInfoSchema = yup.object({
   email: yup.string().required().email(),
@@ -44,7 +45,7 @@ export const SubscribeToNewsletterForm = (): JSX.Element => {
               onClick={() => props.handleSubmit()}
               className={styles["button"]}
             >
-              Sign Up
+              <p className={fontStyles["body-copy"]}>Sign Up</p>
             </button>
           </>
         )}
