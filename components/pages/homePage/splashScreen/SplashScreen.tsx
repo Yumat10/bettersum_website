@@ -21,9 +21,8 @@ export const SplashScreen = (): JSX.Element => {
           <Image
             src="/brandLogos/betterSumLogoBeige.svg"
             alt="BetterSum"
-            objectFit="cover"
-            height={180}
-            width={1000}
+            objectFit="contain"
+            layout="fill"
             className={styles["brand-logo"]}
           />
         </div>

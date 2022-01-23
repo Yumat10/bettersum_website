@@ -11,12 +11,28 @@
 }
 
 .brand-logo {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  position: relative;
+  width: 1000px;
+  height: calc(1000px / 5);
   margin: 55px 0px 40px 0px;
 }
 
 .subheader {
   color: var(--bettersum-beige);
+}
+
+@media only screen and (max-width: 1200px) {
+  .brand-logo {
+    width: 550px;
+    height: calc(550px / 5);
+    margin: 25px 0px 20px 0px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .brand-logo {
+    width: 330px;
+    height: calc(330px / 5);
+    /* margin: 25px 0px 20px 0px; */
+  }
 }

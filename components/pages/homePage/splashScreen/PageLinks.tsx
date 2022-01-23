@@ -19,6 +19,7 @@ export const PageLinks = (): JSX.Element => {
     { name: "ux strategy", path: strategyPath },
     { name: "strategy stewardship", path: strategyPath },
     { name: "ux audits", path: designPath },
+    { name: "ux design", path: designPath },
     { name: "design systems", path: designPath },
     { name: "branding", path: designPath },
     { name: "idea to mvp", path: developmentPath },
