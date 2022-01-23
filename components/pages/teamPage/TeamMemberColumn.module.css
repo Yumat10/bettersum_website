@@ -1,5 +1,5 @@
-.container {
-  /* margin: 0px -0.5px; */
+.mobile-container {
+  display: none;
 }
 
 .image-container {
@@ -21,4 +21,60 @@
 .bio-text {
   display: block;
   margin: 25px 0px 0px 0px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    column-gap: 25px;
+  }
+
+  .image-container {
+    height: 285px;
+    width: 265px;
+  }
+
+  .text-container {
+    padding: 10px 0px 0px 0px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .container {
+    display: none;
+  }
+
+  .mobile-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 15px;
+    padding: 40px 0px 40px 0px;
+  }
+
+  /* Note there is the desktop container above as the "first child" */
+  .mobile-container:nth-child(2) {
+    padding-top: 0px;
+  }
+
+  .mobile-container:last-child {
+    padding-bottom: 0px;
+  }
+
+  .mobile-container:not(:last-child) {
+    border-bottom: 1px solid var(--bettersum-beige);
+  }
+
+  .image-container {
+    height: auto;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin: 0px;
+  }
+
+  .bio-text {
+    grid-column: span 2;
+    margin: 25px 0px 0px 0px;
+  }
 }

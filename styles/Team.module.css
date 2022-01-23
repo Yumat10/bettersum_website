@@ -18,3 +18,13 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+
+@media only screen and (max-width: 1200px) {
+  .title-text {
+    margin: 0px 0px 75px 0px;
+  }
+
+  .team-members-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
