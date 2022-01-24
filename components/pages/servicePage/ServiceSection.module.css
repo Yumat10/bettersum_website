@@ -7,8 +7,8 @@
 }
 
 .container:first-child {
-  padding-top: 0px;
-  margin-top: 75px;
+  padding-top: 50px;
+  margin-top: 25px;
 }
 
 .inner-container {
