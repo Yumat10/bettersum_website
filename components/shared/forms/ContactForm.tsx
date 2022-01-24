@@ -5,6 +5,7 @@ import { UnderlineInputField } from "../inputFields/UnderlineInputField";
 import styles from "./ContactForm.module.css";
 import fontStyles from "styles/fontStyles.module.css";
 import Image from "next/image";
+import { UnderlineAutoResizeTextarea } from "../inputFields/UnderlineAutoResizeTextarea";
 
 const ContactInfoSchema = yup.object({
   firstName: yup.string().required(),
@@ -85,8 +86,7 @@ export const ContactForm = (): JSX.Element => {
             onBlur={props.handleBlur("email")}
             touched={props.touched.email}
           />
-
-          <UnderlineInputField
+          <UnderlineAutoResizeTextarea
             id="message"
             label="Message"
             value={props.values.message}

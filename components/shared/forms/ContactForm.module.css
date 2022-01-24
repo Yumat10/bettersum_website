@@ -29,7 +29,7 @@
 }
 
 .submit-button {
-  all: unset;
+  /* all: unset; */
   background-color: var(--bettersum-blue);
   color: var(--bettersum-beige);
   display: flex;

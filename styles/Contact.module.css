@@ -13,10 +13,23 @@
   all: unset;
   display: flex;
   flex-direction: row;
+  align-items: center;
   column-gap: 10px;
-  margin: 0px 0px 0px -40px;
+  margin: 0px 0px 0px -35px;
 }
 
 .button:hover {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+  .button {
+    margin: 0px 0px 0px -35px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .button {
+    margin: 0px;
+  }
 }
