@@ -90,7 +90,11 @@ export const Navbar = (): JSX.Element => {
         {/* Hamburger menu for mobile */}
         <div className={styles["hamburger-menu-container"]}>
           <Image
-            src={openHamburgerMenu ? "/closeX.svg" : "/hamburgerMenuIcon.svg"}
+            src={
+              openHamburgerMenu
+                ? "/xIcons/closeBeige.svg"
+                : "/hamburgerMenuIcon.svg"
+            }
             alt="Menu"
             height={25}
             width={25}

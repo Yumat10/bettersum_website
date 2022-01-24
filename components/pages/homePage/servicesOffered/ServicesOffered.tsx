@@ -29,8 +29,8 @@ export const ServicesOffered = (): JSX.Element => {
       description: (
         <span>
           Our work begins at the inception of an idea. We solve problems,
-          challenge values, and develop strategies to articulate a <b>better</b>{" "}
-          point of view that helps your business{" "}
+          challenge values, and develop strategies to articulate a point of view
+          that helps your business{" "}
           <span className={styles["highlighted-text"]}>
             navigate the future
           </span>
@@ -48,10 +48,11 @@ export const ServicesOffered = (): JSX.Element => {
       title: "Holistic Design",
       description: (
         <span>
-          We design digital products, brands, and services by building{" "}
+          We design digital products, brands, and services by building with
+          empathy{" "}
           <span className={styles["highlighted-text"]}>with empathy</span>. We
-          believe that a thoughtful user experience is what makes the difference
-          between a great solution and a <b>better</b> solution.
+          believe that thoughtfully considering user experience is what makes a
+          difference when designing for real people.
         </span>
       ),
       path: "/services?type=design",
@@ -65,13 +66,13 @@ export const ServicesOffered = (): JSX.Element => {
       title: "Development",
       description: (
         <span>
-          We help transform great visions into <b>better</b> products. We expand
-          your ideas into{" "}
+          We help transform great visions into concrete results. We expand your
+          ideas into{" "}
           <span className={styles["highlighted-text"]}>
-            fully functioning products,
+            fully functioning products
           </span>{" "}
-          that quickly obtain user feedback for focusing on developing the next
-          steps for your business.
+          and work to obtain prompt user feedback that provides invaluable
+          material for developing your business.
         </span>
       ),
       path: "/services?type=development",

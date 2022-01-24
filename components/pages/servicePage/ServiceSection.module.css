@@ -6,11 +6,25 @@
   border-bottom: 1px solid var(--bettersum-black);
 }
 
+.container:first-child {
+  padding-top: 0px;
+  margin-top: 75px;
+}
+
 .inner-container {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   column-gap: 45px;
+}
+
+.close-button {
+  all: unset;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
 
 .text-container,
@@ -27,7 +41,7 @@
 }
 
 .title-container {
-  width: 250px;
+  width: 275px;
 }
 
 .title-text {
@@ -36,7 +50,7 @@
 
 .overview {
   /* margin: 0px 0px 0px 65px; */
-  max-width: 515px;
+  max-width: 520px;
 }
 
 .plus-container {
@@ -51,7 +65,7 @@
 
 .service-breakdowns-container {
   /* width: 100%; */
-  margin: 20px 0px 110px 0px;
+  margin: 65px 0px 110px 0px;
   display: flex;
   flex-direction: column;
   row-gap: 75px;

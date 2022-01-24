@@ -33,16 +33,16 @@ export const Footer = (): JSX.Element => {
         path: "/services",
       },
       {
-        name: "Workshops",
+        name: "Strategy",
         path: "/services?type=strategy",
       },
       {
-        name: "Ideas to MVP",
-        path: "/services?type=development",
+        name: "Holistic Design",
+        path: "/services?type=design",
       },
       {
-        name: "Design Audits",
-        path: "/services?type=design",
+        name: "Development",
+        path: "/services?type=development",
       },
     ],
 

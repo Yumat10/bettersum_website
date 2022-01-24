@@ -125,8 +125,8 @@ const Services: NextPage = () => {
       description:
         "Technology audits are a great way to have perspective on your company's product, and gain insight into ways to both improve current infrastructure and future approaches.",
       offerings: [
-        "Evaluate against best practices",
-        "Highlight themes",
+        "Vision and mission",
+        "Infrustructure",
         "Recommend next steps",
       ],
     },
@@ -135,20 +135,16 @@ const Services: NextPage = () => {
       description:
         "We believe that ideas are only worth the degree to which they can be realized. Our goal is to help business’ take the first step by transforming their ideas into  functioning prototypes.",
       offerings: [
-        "Evaluate against best practices",
-        "Highlight themes",
-        "Recommend next steps",
+        "Problem definition",
+        "Product development",
+        "Iteration Recommendations",
       ],
     },
     {
       name: "SaaS Development",
       description:
         "We develop software that has simple and intuitive experiences without sacrificing the efficiency of traditional Saas products. Our team will help you develop the right tool that end users will be excited to use.",
-      offerings: [
-        "Vission & mission",
-        "Competitive landscape analysis",
-        "Values & positioning",
-      ],
+      offerings: ["Software development", "Analytics integrations"],
     },
   ];
 
