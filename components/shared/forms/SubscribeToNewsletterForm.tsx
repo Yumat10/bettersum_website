@@ -3,6 +3,7 @@ import { UnderlineInputField } from "../inputFields/UnderlineInputField";
 import * as yup from "yup";
 import styles from "./SubscribeToNewsletterForm.module.css";
 import fontStyles from "styles/fontStyles.module.css";
+import axios, { AxiosError, AxiosResponse } from "axios";
 
 const SubscribeInfoSchema = yup.object({
   email: yup.string().required().email(),
@@ -19,9 +20,21 @@ export const SubscribeToNewsletterForm = (): JSX.Element => {
     <div className={styles["container"]}>
       <Formik
         initialValues={initialValues}
-        onSubmit={(values, actions) => {
-          console.log(values);
-          // actions.resetForm()
+        onSubmit={async (values, actions) => {
+          try {
+            await axios.post("/api/email/subscribeToNewsletter", {
+              email: values.email,
+            });
+            actions.resetForm();
+          } catch (err) {
+            console.log(err);
+
+            if (axios.isAxiosError(err)) {
+              actions.setErrors({
+                email: err.response?.data?.error,
+              });
+            }
+          }
         }}
         validationSchema={SubscribeInfoSchema}
       >
