@@ -14,12 +14,12 @@ export enum ServiceOptions {
   strategy = "strategy",
   design = "design",
   development = "development",
-  none = "",
 }
 
 interface ServicePageContextInterface {
-  openTab: ServiceOptions;
-  setOpenTab: Dispatch<SetStateAction<ServiceOptions>>;
+  openTabs: Map<ServiceOptions, boolean>;
+  setOpenTabs: Dispatch<SetStateAction<Map<ServiceOptions, boolean>>>;
+  toggleOpenTab: (type: ServiceOptions) => void;
 }
 
 const ServicePageContext = createContext<
@@ -34,38 +34,44 @@ export const ServicePageContextProvider = ({
   const router = useRouter();
   const { type: queryType } = router.query;
 
-  const [openTab, setOpenTab] = useState<ServiceOptions>(ServiceOptions.none);
+  const [openTabs, setOpenTabs] = useState<Map<ServiceOptions, boolean>>(
+    new Map([
+      [ServiceOptions.strategy, false],
+      [ServiceOptions.design, false],
+      [ServiceOptions.development, false],
+    ])
+  );
+
+  const toggleOpenTab = (type: ServiceOptions): void => {
+    let newOpenTabs = new Map(openTabs);
+    const currOpenTabValue = openTabs.get(type);
+    newOpenTabs.set(type, !currOpenTabValue);
+    setOpenTabs(newOpenTabs);
+    // If opening the tab, scroll to it
+    if (!currOpenTabValue) {
+      const id = `service-section-${type}`;
+      smoothScrollDown({ elementId: id, offset: -90 });
+    }
+  };
 
   useEffect(() => {
     if (queryType) {
       switch (queryType) {
         case ServiceOptions.strategy:
-          setOpenTab(ServiceOptions.strategy);
-          break;
         case ServiceOptions.design:
-          setOpenTab(ServiceOptions.design);
-          break;
         case ServiceOptions.development:
-          setOpenTab(ServiceOptions.development);
+          toggleOpenTab(queryType);
           break;
-        default:
-          setOpenTab(ServiceOptions.none);
       }
     }
   }, [queryType]);
 
-  useEffect(() => {
-    if (openTab) {
-      const id = `service-section-${openTab}`;
-      smoothScrollDown({ elementId: id, offset: -90 });
-    }
-  }, [openTab]);
-
   return (
     <ServicePageContext.Provider
       value={{
-        openTab,
-        setOpenTab,
+        openTabs,
+        setOpenTabs,
+        toggleOpenTab,
       }}
     >
       {children}

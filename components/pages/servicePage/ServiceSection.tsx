@@ -24,7 +24,7 @@ export const ServiceSection = ({
   overview,
   services,
 }: ServiceOverview): JSX.Element => {
-  const { openTab, setOpenTab } = useServicePageContext();
+  const { openTabs, setOpenTabs, toggleOpenTab } = useServicePageContext();
 
   const scrollDownHandler = () => {
     smoothScrollDown({
@@ -52,11 +52,19 @@ export const ServiceSection = ({
 
   const plusButton = (
     <button
-      onClick={() => setOpenTab(type)}
       className={styles["plus-container"]}
-      style={{ visibility: openTab === type ? "hidden" : "visible" }}
+      onClick={() => toggleOpenTab(type)}
     >
-      <Image src="/actionsPlus.svg" alt="See More" height={24} width={24} />
+      {openTabs.get(type) ? (
+        <Image
+          src="/xIcons/closeBlack.svg"
+          alt="close"
+          width={35}
+          height={35}
+        />
+      ) : (
+        <Image src="/actionsPlus.svg" alt="See More" height={24} width={24} />
+      )}
     </button>
   );
 
@@ -65,7 +73,9 @@ export const ServiceSection = ({
       <h2
         className={`${fontStyles["category-header"]} ${styles["title-text"]}`}
         style={{
-          borderTop: openTab === type ? "4px solid var(--bettersum-black)" : "",
+          borderTop: openTabs.get(type)
+            ? "4px solid var(--bettersum-black)"
+            : "",
         }}
       >
         {title}
@@ -76,7 +86,10 @@ export const ServiceSection = ({
   const overviewText = (
     <div
       className={`${fontStyles["body-copy"]} ${styles["overview"]}`}
-      style={{ visibility: openTab === type ? "hidden" : "visible" }}
+      style={{
+        visibility: openTabs.get(type) ? "hidden" : "visible",
+        height: openTabs.get(type) ? 0 : "",
+      }}
     >
       {overview}
     </div>
@@ -94,15 +107,15 @@ export const ServiceSection = ({
           {titleText}
           {overviewText}
           {plusButton}
-          {openTab === type && ServiceBreakdowns}
+          {openTabs.get(type) && ServiceBreakdowns}
         </div>
         <div className={styles["mobile-text-container"]}>
           {titleText}
           {plusButton}
-          <span style={{ display: openTab === type ? "none" : "" }}>
+          <span style={{ display: openTabs.get(type) ? "none" : "" }}>
             {overviewText}
           </span>
-          {openTab === type && ServiceBreakdowns}
+          {openTabs.get(type) && ServiceBreakdowns}
         </div>
       </div>
     </div>

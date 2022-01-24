@@ -24,7 +24,7 @@
 }
 
 .category {
-  margin: 30px 0px 0px 0px;
+  margin: 5px 0px 0px 0px;
 }
 
 .descriptions {
@@ -34,7 +34,7 @@
 
 .plus {
   position: absolute;
-  top: 155px;
+  top: 130px;
   right: -12.5px;
   height: 25px;
   width: 25px;
