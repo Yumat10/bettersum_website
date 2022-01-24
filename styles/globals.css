@@ -2,6 +2,10 @@
   --bettersum-beige: #f9f7f3;
   --bettersum-blue: #4690ff;
   --bettersum-black: #000000;
+  --bettersum-off-black: #14142b;
+  --error-color: #eb5757;
+
+  --width-clamp: clamp(300px, 90%, 1200px);
 }
 
 html,
@@ -12,35 +16,29 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+@media only screen and (max-width: 1200px) {
+  html,
+  body {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  html,
+  body {
+    font-size: 11.5px;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
+p {
+  all: unset;
+}
+
 * {
   box-sizing: border-box;
-}
-
-.focus-header {
-  font-size: 3rem;
-  font-weight: 600;
-  line-height: 3.5rem;
-}
-
-.subtitle-header {
-  font-size: 2.25rem;
-  font-weight: 600;
-  line-height: 2.5rem;
-}
-
-.body-copy {
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 2.125rem;
-}
-
-.flair-copy {
-  font-size: 1.125rem;
-  font-weight: 300;
-  line-height: 1.5625rem;
 }

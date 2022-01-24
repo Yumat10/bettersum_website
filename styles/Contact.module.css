@@ -1,0 +1,35 @@
+.container {
+  background-color: var(--bettersum-black);
+  color: var(--bettersum-beige);
+  padding: 65px 0px 0px 0px;
+}
+
+.inner-container {
+  width: var(--width-clamp);
+  margin: 0px auto calc(-150px + 30px) auto;
+}
+
+.button {
+  all: unset;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 10px;
+  margin: 0px 0px 0px -35px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+  .button {
+    margin: 0px 0px 0px -35px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .button {
+    margin: 0px;
+  }
+}
