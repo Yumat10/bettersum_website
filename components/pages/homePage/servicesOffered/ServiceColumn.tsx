@@ -4,6 +4,19 @@ import styles from "./ServiceColumn.module.css";
 import fontStyles from "@/styles/fontStyles.module.css";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hover: {
+    backgroundColor: "var(--bettersum-blue)",
+  },
+};
+
+const bodyTextVariants = {
+  hover: {
+    color: "#FFF",
+  },
+};
 
 export const ServiceColumn = ({
   icon,
@@ -19,10 +32,12 @@ export const ServiceColumn = ({
   }, [router, path]);
 
   return (
-    <div
+    <motion.div
       className={`${styles["container"]} ${
         includePlus ? styles["divider"] : ""
       }`}
+      variants={containerVariants}
+      whileHover="hover"
       onClick={() => router.push(path)}
     >
       <div className={styles["inner-container"]}>
@@ -33,20 +48,24 @@ export const ServiceColumn = ({
           width={icon.width}
           className={styles["icon"]}
         />
-        <h2
+        <motion.h2
+          variants={bodyTextVariants}
           className={`${fontStyles["category-header"]} ${styles["category"]}`}
         >
           {title}
-        </h2>
-        <p className={`${fontStyles["body-copy"]} ${styles["descriptions"]}`}>
+        </motion.h2>
+        <motion.p
+          variants={bodyTextVariants}
+          className={`${fontStyles["body-copy"]} ${styles["descriptions"]}`}
+        >
           {description}
-        </p>
+        </motion.p>
         {includePlus && (
           <div className={styles["plus"]}>
             <Image src="/plus.svg" alt="+" objectFit="cover" layout="fill" />
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };

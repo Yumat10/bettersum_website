@@ -1,5 +1,6 @@
 .container {
   position: absolute;
-  left: -100px;
+  /* left: -100px; */
   transform: rotate(270deg);
+  z-index: 10;
 }

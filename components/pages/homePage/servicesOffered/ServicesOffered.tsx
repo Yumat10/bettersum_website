@@ -1,3 +1,4 @@
+import { motion, Variants } from "framer-motion";
 import { BetterSumColors } from "../../../../types/BetterSumColors";
 import { Subheading } from "../../../shared/navbars/Subheading";
 import { ServiceColumn } from "./ServiceColumn";
@@ -17,6 +18,12 @@ export type ServiceDetails = {
   includePlus?: boolean;
 };
 
+const highlightTextVariants: Variants = {
+  hover: {
+    color: "var(--bettersum-black)",
+  },
+};
+
 export const ServicesOffered = (): JSX.Element => {
   const services: ServiceDetails[] = [
     {
@@ -31,10 +38,12 @@ export const ServicesOffered = (): JSX.Element => {
           Our work begins at the inception of an idea. We solve problems,
           challenge values, and develop strategies to articulate a point of view
           that helps your business{" "}
-          <span className={styles["highlighted-text"]}>
-            navigate the future
-          </span>
-          .
+          <motion.span
+            variants={highlightTextVariants}
+            className={styles["highlighted-text"]}
+          >
+            navigate the future.
+          </motion.span>
         </span>
       ),
       path: "/services?type=strategy",
@@ -50,9 +59,14 @@ export const ServicesOffered = (): JSX.Element => {
         <span>
           We design digital products, brands, and services by building with
           empathy{" "}
-          <span className={styles["highlighted-text"]}>with empathy</span>. We
-          believe that thoughtfully considering user experience is what makes a
-          difference when designing for real people.
+          <motion.span
+            variants={highlightTextVariants}
+            className={styles["highlighted-text"]}
+          >
+            with empathy.
+          </motion.span>{" "}
+          We believe that thoughtfully considering user experience is what makes
+          a difference when designing for real people.
         </span>
       ),
       path: "/services?type=design",
@@ -68,9 +82,12 @@ export const ServicesOffered = (): JSX.Element => {
         <span>
           We help transform great visions into concrete results. We expand your
           ideas into{" "}
-          <span className={styles["highlighted-text"]}>
+          <motion.span
+            variants={highlightTextVariants}
+            className={styles["highlighted-text"]}
+          >
             fully functioning products
-          </span>{" "}
+          </motion.span>{" "}
           and work to obtain prompt user feedback that provides invaluable
           material for developing your business.
         </span>
@@ -86,8 +103,12 @@ export const ServicesOffered = (): JSX.Element => {
           sectionNumber={2}
           color={BetterSumColors.Black}
           topOffset="130px"
+          leftOffset="-50px"
         />
-        <div className={styles["service-container"]}>
+        <div
+          className={styles["service-container"]}
+          style={{ gridTemplateColumns: "" }}
+        >
           {services.map((serviceItem, index) => (
             <ServiceColumn
               key={serviceItem.title}
