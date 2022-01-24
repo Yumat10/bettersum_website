@@ -6,6 +6,8 @@ import styles from "./ContactForm.module.css";
 import fontStyles from "styles/fontStyles.module.css";
 import Image from "next/image";
 import { UnderlineAutoResizeTextarea } from "../inputFields/UnderlineAutoResizeTextarea";
+import axios from "axios";
+import { SendEmailData } from "types/SendEmailData";
 
 const ContactInfoSchema = yup.object({
   firstName: yup.string().required(),
@@ -25,22 +27,44 @@ const initialValues: ContactInfo = {
   message: "",
 };
 
-export const ContactForm = (): JSX.Element => {
-  //   const [contactInfo, setContactInfo] = useState<ContactInfo>(initialValues);
+type ContactEmailFields = {
+  emailAddress: string;
+  firstName: string;
+  lastName: string;
+  company: string;
+  message: string;
+};
 
-  //   const contactInfoChangeHandler = (
-  //     newValue: string,
-  //     fieldName: "firstName" | "lastName" | "company" | "email" | "message"
-  //   ) => {
-  //     setContactInfo({ ...contactInfo, [fieldName]: newValue });
-  //   };
+export const ContactForm = (): JSX.Element => {
+  const [loading, setLoading] = useState(false);
+
+  const sendContactTeamEmail = async (
+    contactEmailFields: ContactEmailFields
+  ) => {
+    const sendEmailProps: SendEmailData = {
+      emailAddress: contactEmailFields.emailAddress,
+      template: "contactTeam",
+      templateData: { ...contactEmailFields },
+    };
+    await axios.post("/api/email/sendEmail", sendEmailProps);
+  };
 
   const ContactFormik = (
     <Formik
       initialValues={initialValues}
-      onSubmit={(values, actions) => {
-        console.log(values);
-        // actions.resetForm()
+      onSubmit={async (values, actions) => {
+        setLoading(true);
+        try {
+          await sendContactTeamEmail({
+            ...values,
+            emailAddress: values.email,
+            message: values.message.replaceAll("\n", "<br>"),
+          });
+          actions.resetForm();
+        } catch (error) {
+          console.log(error);
+        }
+        setLoading(false);
       }}
       validationSchema={ContactInfoSchema}
     >
@@ -51,7 +75,7 @@ export const ContactForm = (): JSX.Element => {
             label="First Name"
             value={props.values.firstName}
             setValue={props.handleChange("firstName")}
-            disabled={false}
+            disabled={loading}
             errors={props.errors.firstName}
             touched={props.touched.firstName}
             onBlur={props.handleBlur}
@@ -61,7 +85,7 @@ export const ContactForm = (): JSX.Element => {
             label="Last Name"
             value={props.values.lastName}
             setValue={props.handleChange("lastName")}
-            disabled={false}
+            disabled={loading}
             errors={props.errors.lastName}
             onBlur={props.handleBlur}
             touched={props.touched.lastName}
@@ -71,7 +95,7 @@ export const ContactForm = (): JSX.Element => {
             label="Company"
             value={props.values.company}
             setValue={props.handleChange("company")}
-            disabled={false}
+            disabled={loading}
             errors={props.errors.company}
             onBlur={props.handleBlur("company")}
             touched={props.touched.company}
@@ -81,7 +105,7 @@ export const ContactForm = (): JSX.Element => {
             label="Email"
             value={props.values.email}
             setValue={props.handleChange("email")}
-            disabled={false}
+            disabled={loading}
             errors={props.errors.email}
             onBlur={props.handleBlur("email")}
             touched={props.touched.email}
@@ -91,13 +115,13 @@ export const ContactForm = (): JSX.Element => {
             label="Message"
             value={props.values.message}
             setValue={props.handleChange("message")}
-            disabled={false}
+            disabled={loading}
             errors={props.errors.message}
             onBlur={props.handleBlur("message")}
             touched={props.touched.message}
           />
           <button
-            disabled={!props.isValid}
+            disabled={!props.isValid || loading}
             type="submit"
             onClick={() => props.handleSubmit()}
             className={styles["submit-button"]}
