@@ -1,11 +1,31 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { smoothScrollDown } from "util/functions/smoothScrollDown";
 import { ServicesOffered } from "../components/pages/homePage/servicesOffered/ServicesOffered";
 import { SplashScreen } from "../components/pages/homePage/splashScreen/SplashScreen";
+import { SubscribeToNewsletter } from "../components/pages/homePage/subscribeToNewsletter/SubscribeToNewsletter";
+import { TeamBackground } from "../components/pages/homePage/teamBackground/TeamBackground";
+import { TheLab } from "../components/pages/homePage/theLab/TheLab";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
+  const router = useRouter();
+
+  const { section: querySection } = router.query;
+
+  useEffect(() => {
+    if (querySection) {
+      const id = `home-page-${querySection}-section`;
+      smoothScrollDown({
+        elementId: id,
+        offset: -110,
+      });
+    }
+  }, [querySection]);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -16,6 +36,9 @@ const Home: NextPage = () => {
       <main>
         <SplashScreen />
         <ServicesOffered />
+        <TeamBackground />
+        <TheLab />
+        <SubscribeToNewsletter />
       </main>
     </div>
   );

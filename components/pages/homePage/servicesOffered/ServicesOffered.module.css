@@ -1,3 +1,30 @@
+.container {
+  background-color: var(--bettersum-beige);
+}
+
+.inner-container {
+  position: relative;
+  width: var(--width-clamp);
+  margin: 0px auto;
+}
+
 .highlighted-text {
   color: var(--bettersum-blue);
+}
+
+.service-container {
+  display: grid;
+  grid-template-columns: calc(100% / 3 - 25px) calc(100% / 3 + 50px) calc(
+      100% / 3 - 25px
+    );
+}
+
+@media only screen and (max-width: 1200px) {
+  .inner-container {
+    width: 100%;
+  }
+
+  .service-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

@@ -1,0 +1,24 @@
+.container {
+  margin: 165px 0px 0px 0px;
+  color: var(--bettersum-beige);
+  text-align: center;
+}
+
+.icons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: clamp(300px, 90%, 1140px);
+  margin: 65px auto 0px auto;
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    margin: 110px 0px 0px 0px;
+  }
+
+  .icons-container {
+    column-gap: 35px;
+  }
+}
