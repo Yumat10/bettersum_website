@@ -48,7 +48,7 @@ export const sendEmail = ({
 
 const sendEmailFunc = async (
   req: NextApiRequest,
-  res: NextApiResponse<void | { errors: string }>
+  res: NextApiResponse<void | { error: string }>
 ) => {
   console.log("---sendEmail---");
 
@@ -63,9 +63,9 @@ const sendEmailFunc = async (
     await sendEmail({ ...req.body });
     return res.status(200).json();
   } catch (err) {
-    const errors = `${err}`;
+    const error = JSON.stringify(err);
     console.log(err);
-    return res.status(500).json({ errors });
+    return res.status(500).json({ error });
   }
 };
 
