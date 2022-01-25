@@ -10,15 +10,15 @@ const containerVariants: Variants = {
 
 const gradientOneVariants: Variants = {
   hover: {
-    x: -5,
-    y: -5,
+    marginLeft: -5,
+    marginTop: -5,
   },
 };
 
 const gradientTwoVariants: Variants = {
   hover: {
-    x: 5,
-    y: 5,
+    marginRight: -5,
+    marginTop: 5,
   },
 };
 

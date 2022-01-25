@@ -34,7 +34,6 @@
 .gradient-two {
   position: absolute;
   background: linear-gradient(180deg, #38fcb5 0%, #610bef 100%);
-  transform: rotate(-180deg);
   height: 40px;
   width: 140px;
   top: 3px;
