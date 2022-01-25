@@ -20,7 +20,7 @@ export const ServiceBreakdown = ({
               {offering}
             </li>
           ))}
-        </ul>{" "}
+        </ul>
       </div>
     </div>
   );
