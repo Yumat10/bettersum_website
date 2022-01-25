@@ -21,7 +21,7 @@ const Home: NextPage = () => {
       const id = `home-page-${querySection}-section`;
       smoothScrollDown({
         elementId: id,
-        offset: -110,
+        offset: 0,
       });
     }
   }, [querySection]);

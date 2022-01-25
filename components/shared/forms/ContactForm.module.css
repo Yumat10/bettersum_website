@@ -29,7 +29,8 @@
 }
 
 .submit-button {
-  /* all: unset; */
+  all: unset;
+  cursor: pointer;
   background-color: var(--bettersum-blue);
   color: var(--bettersum-beige);
   display: flex;
@@ -41,12 +42,12 @@
   margin: 32px 0px 0px 0px;
 }
 
-.submit-button:hover {
-  cursor: pointer;
-}
-
 .submit-button:disabled {
   opacity: 0.5;
+}
+
+.arrow-container {
+  flex-grow: 1;
 }
 
 @media only screen and (max-width: 1200px) {

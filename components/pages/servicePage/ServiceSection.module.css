@@ -2,13 +2,13 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 50px 0px 40px 0px;
+  padding: 50px 0px 50px 0px;
   border-bottom: 1px solid var(--bettersum-black);
 }
 
 .container:first-child {
-  padding-top: 0px;
-  margin-top: 75px;
+  padding-top: 50px;
+  margin-top: 25px;
 }
 
 .inner-container {
@@ -41,11 +41,25 @@
 }
 
 .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 275px;
+}
+
+.see-services {
+  visibility: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 15px;
+  color: var(--bettersum-beige);
 }
 
 .title-text {
   width: fit-content;
+  border-top: none;
 }
 
 .overview {

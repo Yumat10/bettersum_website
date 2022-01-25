@@ -4,17 +4,23 @@ import styles from "./ServiceColumn.module.css";
 import fontStyles from "@/styles/fontStyles.module.css";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
-const containerVariants = {
+const containerVariants: Variants = {
   hover: {
     backgroundColor: "var(--bettersum-blue)",
   },
 };
 
-const bodyTextVariants = {
+const bodyTextVariants: Variants = {
   hover: {
     color: "#FFF",
+  },
+};
+
+const seeAllServicesVariants: Variants = {
+  hover: {
+    visibility: "visible",
   },
 };
 
@@ -60,6 +66,18 @@ export const ServiceColumn = ({
         >
           {description}
         </motion.p>
+        <motion.div
+          variants={seeAllServicesVariants}
+          className={styles["see-all-services-container"]}
+        >
+          <p className={fontStyles["body-copy"]}>All Services</p>
+          <Image
+            src="/arrows/rightArrowBeige.svg"
+            alt=""
+            height={24}
+            width={24}
+          />
+        </motion.div>
         {includePlus && (
           <div className={styles["plus"]}>
             <Image src="/plus.svg" alt="+" objectFit="cover" layout="fill" />

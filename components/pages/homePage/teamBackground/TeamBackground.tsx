@@ -5,6 +5,13 @@ import Link from "next/link";
 import { BrandExperience } from "./BrandExperience";
 import fontStyles from "styles/fontStyles.module.css";
 import styles from "./TeamBackground.module.css";
+import { motion, Variants } from "framer-motion";
+
+const arrowVariants: Variants = {
+  hover: {
+    x: 15,
+  },
+};
 
 export const TeamBackground = (): JSX.Element => {
   return (
@@ -31,20 +38,25 @@ export const TeamBackground = (): JSX.Element => {
               breakdancers, and workshop enthusiasts.
             </h3>
             <Link href="/team" passHref>
-              <div className={styles["meet-team-container"]}>
+              <motion.div
+                whileHover="hover"
+                className={styles["meet-team-container"]}
+              >
                 <a
                   referrerPolicy="strict-origin-when-cross-origin"
                   className={fontStyles["flair-copy"]}
                 >
                   Meet the team
                 </a>
-                <Image
-                  src="/arrows/rightArrowBeige.svg"
-                  alt="left"
-                  height={24}
-                  width={24}
-                />
-              </div>
+                <motion.div variants={arrowVariants}>
+                  <Image
+                    src="/arrows/rightArrowBeige.svg"
+                    alt="left"
+                    height={24}
+                    width={24}
+                  />
+                </motion.div>
+              </motion.div>
             </Link>
           </div>
         </div>

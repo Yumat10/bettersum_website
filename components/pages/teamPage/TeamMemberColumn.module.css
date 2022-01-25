@@ -23,6 +23,11 @@
   margin: 25px 0px 0px 0px;
 }
 
+.sketch {
+  position: absolute;
+  opacity: 0;
+}
+
 @media only screen and (max-width: 1200px) {
   .container {
     display: flex;

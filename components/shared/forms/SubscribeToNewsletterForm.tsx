@@ -4,6 +4,13 @@ import * as yup from "yup";
 import styles from "./SubscribeToNewsletterForm.module.css";
 import fontStyles from "styles/fontStyles.module.css";
 import axios, { AxiosError, AxiosResponse } from "axios";
+import { motion, Variants } from "framer-motion";
+
+const submitButtonVariants: Variants = {
+  hover: {
+    scale: 1.05,
+  },
+};
 
 const SubscribeInfoSchema = yup.object({
   email: yup.string().required().email(),
@@ -52,14 +59,16 @@ export const SubscribeToNewsletterForm = (): JSX.Element => {
                 onBlur={props.handleBlur}
               />
             </div>
-            <button
+            <motion.button
               disabled={!props.isValid}
               type="submit"
+              variants={submitButtonVariants}
+              whileHover="hover"
               onClick={() => props.handleSubmit()}
               className={styles["button"]}
             >
               <p className={fontStyles["body-copy"]}>Sign Up</p>
-            </button>
+            </motion.button>
           </>
         )}
       </Formik>

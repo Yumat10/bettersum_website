@@ -11,6 +11,14 @@ import { GradientOutlineButton } from "../buttons/GradientOutlineButton";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
 import fontStyles from "../../../styles/fontStyles.module.css";
+import { motion, Variants } from "framer-motion";
+
+const routeVariants: Variants = {
+  hover: {
+    borderTopWidth: "3px",
+    y: "-3px",
+  },
+};
 
 export const Navbar = (): JSX.Element => {
   const router = useRouter();
@@ -71,7 +79,12 @@ export const Navbar = (): JSX.Element => {
         </div>
         <div className={styles["routes-container"]}>
           {routes.map(({ name, path }) => (
-            <div key={path} className={styles["route"]}>
+            <motion.div
+              variants={routeVariants}
+              whileHover="hover"
+              key={path}
+              className={styles["route"]}
+            >
               <Link href={path}>
                 <a
                   referrerPolicy="strict-origin-when-cross-origin"
@@ -80,7 +93,7 @@ export const Navbar = (): JSX.Element => {
                   {name}
                 </a>
               </Link>
-            </div>
+            </motion.div>
           ))}
           <GradientOutlineButton
             text="Contact us"

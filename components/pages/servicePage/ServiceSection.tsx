@@ -8,6 +8,38 @@ import Image from "next/image";
 import { smoothScrollDown } from "util/functions/smoothScrollDown";
 import styles from "./ServiceSection.module.css";
 import fontStyles from "styles/fontStyles.module.css";
+import { motion, Variants } from "framer-motion";
+
+const containerVariants: Variants = {
+  hover: {
+    backgroundColor: "var(--bettersum-blue)",
+    cursor: "pointer",
+  },
+};
+
+const indexVariants: Variants = {
+  hover: {
+    x: -30,
+  },
+};
+
+const plusVariants: Variants = {
+  hover: {
+    visibility: "hidden",
+  },
+};
+
+const textVariants: Variants = {
+  hover: {
+    color: "var(--bettersum-beige)",
+  },
+};
+
+const seeServicesVariants: Variants = {
+  hover: {
+    visibility: "visible",
+  },
+};
 
 type ServiceOverview = {
   index: number;
@@ -29,7 +61,7 @@ export const ServiceSection = ({
   const scrollDownHandler = () => {
     smoothScrollDown({
       elementId: "services-contact-form",
-      offset: -110,
+      offset: 0,
     });
   };
 
@@ -51,9 +83,10 @@ export const ServiceSection = ({
   );
 
   const plusButton = (
-    <button
+    <motion.button
+      variants={plusVariants}
       className={styles["plus-container"]}
-      onClick={() => toggleOpenTab(type)}
+      onClick={() => toggleOpenTab(type, !openTabs.get(type))}
     >
       {openTabs.get(type) ? (
         <Image
@@ -65,12 +98,13 @@ export const ServiceSection = ({
       ) : (
         <Image src="/actionsPlus.svg" alt="See More" height={24} width={24} />
       )}
-    </button>
+    </motion.button>
   );
 
   const titleText = (
     <div className={styles["title-container"]}>
-      <h2
+      <motion.h2
+        variants={textVariants}
         className={`${fontStyles["category-header"]} ${styles["title-text"]}`}
         style={{
           borderTop: openTabs.get(type)
@@ -79,12 +113,20 @@ export const ServiceSection = ({
         }}
       >
         {title}
-      </h2>
+      </motion.h2>
+      <motion.div
+        variants={seeServicesVariants}
+        className={styles["see-services"]}
+      >
+        <Image src="/arrows/downArrowBeige.svg" alt="" height={24} width={24} />
+        <p className={fontStyles["flair-copy"]}>See services</p>
+      </motion.div>
     </div>
   );
 
   const overviewText = (
-    <div
+    <motion.div
+      variants={textVariants}
       className={`${fontStyles["body-copy"]} ${styles["overview"]}`}
       style={{
         visibility: openTabs.get(type) ? "hidden" : "visible",
@@ -92,17 +134,24 @@ export const ServiceSection = ({
       }}
     >
       {overview}
-    </div>
+    </motion.div>
   );
 
   return (
-    <div id={`service-section-${type}`} className={styles["container"]}>
+    <motion.div
+      id={`service-section-${type}`}
+      variants={containerVariants}
+      whileHover={openTabs.get(type) ? "initial" : "hover"}
+      className={styles["container"]}
+      onClick={() => !openTabs.get(type) && toggleOpenTab(type, true)}
+    >
       <div className={styles["inner-container"]}>
-        <p
+        <motion.p
+          variants={indexVariants}
           className={`${fontStyles["flair-copy"]} ${styles["service-number"]}`}
         >
           {index}
-        </p>
+        </motion.p>
         <div className={styles["text-container"]}>
           {titleText}
           {overviewText}
@@ -118,6 +167,6 @@ export const ServiceSection = ({
           {openTabs.get(type) && ServiceBreakdowns}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

@@ -12,6 +12,11 @@ export interface TeamMemberIntro {
   title: string;
   bio: string;
   profileImage: string;
+  sketch: {
+    src: string;
+    top: string;
+    left: string;
+  };
 }
 
 const Team: NextPage = () => {
@@ -21,18 +26,33 @@ const Team: NextPage = () => {
       title: "Product Manager",
       bio: "Here is where we will put a super brief summary of who we are and what we do.",
       profileImage: "/teamPhotos/profileImage/richard.svg",
+      sketch: {
+        src: "/sketches/hashSketch.svg",
+        top: "10%",
+        left: "10%",
+      },
     },
     {
       fullName: "William King",
       title: "Designer & Strategist",
       bio: "Here is where we will put a super brief summary of who we are and what we do.",
       profileImage: "/teamPhotos/profileImage/william.svg",
+      sketch: {
+        src: "/sketches/skullSketch.svg",
+        top: "70%",
+        left: "60%",
+      },
     },
     {
       fullName: "Yuma Tanaka",
       title: "Developer",
       bio: "Here is where we will put a super brief summary of who we are and what we do.",
       profileImage: "/teamPhotos/profileImage/yuma.svg",
+      sketch: {
+        src: "/sketches/zapSketch.svg",
+        top: "10%",
+        left: "20%",
+      },
     },
   ];
 
