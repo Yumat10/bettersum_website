@@ -2,10 +2,6 @@ import { Dispatch, SetStateAction } from "react";
 import styles from "./UnderlineInputField.module.css";
 import fontStyles from "styles/fontStyles.module.css";
 
-enum InputTypes {
-  text = "text",
-}
-
 interface InputFieldProps<T extends string | number> {
   type?: "text" | "number";
   id: string;

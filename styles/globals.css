@@ -35,6 +35,7 @@ body {
   margin: 0;
   font-family: Campton, sans-serif;
   white-space: pre-line;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 1200px) {

@@ -19,7 +19,7 @@ export enum ServiceOptions {
 interface ServicePageContextInterface {
   openTabs: Map<ServiceOptions, boolean>;
   setOpenTabs: Dispatch<SetStateAction<Map<ServiceOptions, boolean>>>;
-  toggleOpenTab: (type: ServiceOptions) => void;
+  toggleOpenTab: (type: ServiceOptions, status: boolean) => void;
 }
 
 const ServicePageContext = createContext<
@@ -42,15 +42,15 @@ export const ServicePageContextProvider = ({
     ])
   );
 
-  const toggleOpenTab = (type: ServiceOptions): void => {
+  const toggleOpenTab = (type: ServiceOptions, status: boolean): void => {
     let newOpenTabs = new Map(openTabs);
     const currOpenTabValue = openTabs.get(type);
-    newOpenTabs.set(type, !currOpenTabValue);
+    newOpenTabs.set(type, status);
     setOpenTabs(newOpenTabs);
     // If opening the tab, scroll to it
     if (!currOpenTabValue) {
       const id = `service-section-${type}`;
-      smoothScrollDown({ elementId: id, offset: -90 });
+      smoothScrollDown({ elementId: id, offset: 0 });
     }
   };
 
@@ -60,7 +60,7 @@ export const ServicePageContextProvider = ({
         case ServiceOptions.strategy:
         case ServiceOptions.design:
         case ServiceOptions.development:
-          toggleOpenTab(queryType);
+          toggleOpenTab(queryType, true);
           break;
       }
     }

@@ -12,6 +12,13 @@ import { ServiceDetails } from "../types/ServiceDetails";
 import { ContactForm } from "../components/shared/forms/ContactForm";
 import styles from "../styles/Services.module.css";
 import fontStyles from "styles/fontStyles.module.css";
+import { motion, Variants } from "framer-motion";
+
+const highlightedTextVariants: Variants = {
+  hover: {
+    color: "var(--bettersum-black)",
+  },
+};
 
 const Services: NextPage = () => {
   const StrategyOverview = (
@@ -19,7 +26,13 @@ const Services: NextPage = () => {
       Our work begins at the inception of an idea. We solve problems, challenge
       values, and develop strategies to articulate a <b>better</b> point of view
       that helps your business{" "}
-      <span className={styles["highlighted-text"]}>navigate the future</span>.
+      <motion.span
+        variants={highlightedTextVariants}
+        className={styles["highlighted-text"]}
+      >
+        navigate the future
+      </motion.span>
+      .
     </p>
   );
   const strategyServices: ServiceDetails[] = [
@@ -64,9 +77,14 @@ const Services: NextPage = () => {
   const DesignOverview = (
     <p>
       We design digital products, brands, and services by building{" "}
-      <span className={styles["highlighted-text"]}>with empathy</span>. We
-      believe that a thoughtful user experience is what makes the difference
-      between a great solution and a <b>better</b> solution.
+      <motion.span
+        variants={highlightedTextVariants}
+        className={styles["highlighted-text"]}
+      >
+        with empathy
+      </motion.span>
+      . We believe that a thoughtful user experience is what makes the
+      difference between a great solution and a <b>better</b> solution.
     </p>
   );
   const designServices: ServiceDetails[] = [
@@ -112,9 +130,12 @@ const Services: NextPage = () => {
     <p>
       We help transform great visions into <b>better</b> products. We expand
       your ideas into{" "}
-      <span className={styles["highlighted-text"]}>
+      <motion.span
+        variants={highlightedTextVariants}
+        className={styles["highlighted-text"]}
+      >
         fully functioning products,
-      </span>{" "}
+      </motion.span>{" "}
       that quickly obtain user feedback for focusing on developing the next
       steps for your business.
     </p>

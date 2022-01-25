@@ -4,6 +4,14 @@ import { Fragment } from "react";
 import { Route } from "../../../../types/Route";
 import styles from "./PageLinks.module.css";
 import fontStyles from "../../../../styles/fontStyles.module.css";
+import { motion, Variants } from "framer-motion";
+
+const pageLinkVariants: Variants = {
+  hover: {
+    color: "var(--bettersum-blue)",
+    opacity: 1,
+  },
+};
 
 export const PageLinks = (): JSX.Element => {
   const router = useRouter();
@@ -30,17 +38,19 @@ export const PageLinks = (): JSX.Element => {
     <div className={styles.container}>
       {routes.map(({ name, path }) => (
         <Fragment key={name}>
-          <p className={`${styles.plus} ${fontStyles["category-header"]}`}>
+          <p className={`${styles["plus"]} ${fontStyles["category-header"]}`}>
             {" "}
             +
           </p>
-          <Link href={path}>
-            <a
+          <Link href={path} passHref>
+            <motion.a
               referrerPolicy="strict-origin-when-cross-origin"
+              variants={pageLinkVariants}
+              whileHover="hover"
               className={`${fontStyles["category-header"]} ${styles["link"]}`}
             >
               {name}
-            </a>
+            </motion.a>
           </Link>
         </Fragment>
       ))}

@@ -2,10 +2,18 @@ import Image from "next/image";
 import { smoothScrollDown } from "util/functions/smoothScrollDown";
 import styles from "./ReadMoreArrow.module.css";
 import fontStyles from "@/styles/fontStyles.module.css";
+import { motion, Variants } from "framer-motion";
+
+const arrowVariants: Variants = {
+  hover: {
+    y: 5,
+  },
+};
 
 export const ReadMoreArrow = (): JSX.Element => {
   return (
-    <div
+    <motion.div
+      whileHover="hover"
       className={styles["container"]}
       onClick={() =>
         smoothScrollDown({
@@ -14,15 +22,17 @@ export const ReadMoreArrow = (): JSX.Element => {
         })
       }
     >
-      <Image
-        src="/arrows/downArrowBeige.svg"
-        alt="down"
-        height={24}
-        width={24}
-      />
+      <motion.div variants={arrowVariants}>
+        <Image
+          src="/arrows/downArrowBeige.svg"
+          alt="down"
+          height={24}
+          width={24}
+        />
+      </motion.div>
       <p className={`${fontStyles["flair-copy"]} ${styles["see-more-text"]}`}>
         See how it all adds up
       </p>
-    </div>
+    </motion.div>
   );
 };

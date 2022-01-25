@@ -8,6 +8,17 @@ import Image from "next/image";
 import { UnderlineAutoResizeTextarea } from "../inputFields/UnderlineAutoResizeTextarea";
 import axios from "axios";
 import { SendEmailData } from "types/SendEmailData";
+import { motion, Variants } from "framer-motion";
+
+const arrowVariants: Variants = {
+  hover: {
+    x: "90%",
+    transition: {
+      type: "tween",
+      duration: 1,
+    },
+  },
+};
 
 const ContactInfoSchema = yup.object({
   firstName: yup.string().required(),
@@ -120,20 +131,27 @@ export const ContactForm = (): JSX.Element => {
             onBlur={props.handleBlur("message")}
             touched={props.touched.message}
           />
-          <button
+          <motion.button
+            initial="initial"
+            whileHover="hover"
             disabled={!props.isValid || loading}
             type="submit"
             onClick={() => props.handleSubmit()}
             className={styles["submit-button"]}
           >
             <p className={fontStyles["body-copy"]}>Get In Touch</p>
-            <Image
-              src="/arrows/rightArrowBeige.svg"
-              alt="Submit"
-              height={24}
-              width={24}
-            />
-          </button>
+            <motion.div
+              variants={arrowVariants}
+              className={styles["arrow-container"]}
+            >
+              <Image
+                src="/arrows/rightArrowBeige.svg"
+                alt="Submit"
+                height={24}
+                width={24}
+              />
+            </motion.div>
+          </motion.button>
         </div>
       )}
     </Formik>

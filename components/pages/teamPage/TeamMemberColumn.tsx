@@ -2,22 +2,37 @@ import { TeamMemberIntro } from "../../../pages/team";
 import Image from "next/image";
 import styles from "./TeamMemberColumn.module.css";
 import fontStyles from "styles/fontStyles.module.css";
+import { motion, Variants } from "framer-motion";
+
+const sketchVariants: Variants = {
+  hover: {
+    opacity: 1,
+  },
+};
 
 export const TeamMemberColumn = ({
   fullName,
   title,
   bio,
   profileImage,
+  sketch,
 }: TeamMemberIntro): JSX.Element => {
   const profileImageComponent = (
-    <div className={styles["image-container"]}>
+    <motion.div whileHover="hover" className={styles["image-container"]}>
       <Image
         src={profileImage}
         alt={`${fullName} Profile Image`}
         objectFit="cover"
         layout="fill"
       />
-    </div>
+      <motion.div
+        variants={sketchVariants}
+        className={styles["sketch"]}
+        style={{ top: sketch.top, left: sketch.left }}
+      >
+        <Image src={sketch.src} alt="" width={90} height={90} />
+      </motion.div>
+    </motion.div>
   );
 
   const nameComponent = (

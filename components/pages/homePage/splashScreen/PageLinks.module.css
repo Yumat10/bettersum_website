@@ -4,8 +4,16 @@
   column-gap: 10px;
   flex-flow: wrap;
   color: var(--bettersum-beige);
-  opacity: 0.3;
   width: clamp(300px, 95%, 1000px);
+}
+
+.link {
+  cursor: pointer;
+}
+
+.link,
+.plus {
+  opacity: 0.3;
 }
 
 /* .link:nth-child(n) {
