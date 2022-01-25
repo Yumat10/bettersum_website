@@ -47,7 +47,9 @@ type ContactEmailFields = {
 };
 
 export const ContactForm = (): JSX.Element => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  // temporary state of success
+  const [emailSuccessful, setEmailSuccessful] = useState<boolean>(false);
 
   const sendContactTeamEmail = async (
     contactEmailFields: ContactEmailFields
@@ -71,6 +73,8 @@ export const ContactForm = (): JSX.Element => {
             emailAddress: values.email,
             message: values.message.replaceAll("\n", "<br>"),
           });
+          setEmailSuccessful(true);
+          setInterval(() => setEmailSuccessful(false), 5000);
           actions.resetForm();
         } catch (error) {
           console.log(error);
@@ -139,13 +143,38 @@ export const ContactForm = (): JSX.Element => {
             onClick={() => props.handleSubmit()}
             className={styles["submit-button"]}
           >
-            <p className={fontStyles["body-copy"]}>Get In Touch</p>
+            <p className={fontStyles["body-copy"]}>
+              {loading
+                ? "Sending..."
+                : emailSuccessful
+                ? "Message Sent"
+                : "Get In Touch"}
+            </p>
             <motion.div
               variants={arrowVariants}
               className={styles["arrow-container"]}
+              style={{
+                display: emailSuccessful ? "none" : "block",
+              }}
             >
               <Image
-                src="/arrows/rightArrowBeige.svg"
+                src={"/arrows/rightArrowBeige.svg"}
+                alt="Submit"
+                height={24}
+                width={24}
+              />
+            </motion.div>
+            <motion.div
+              animate={{
+                x: "90%",
+              }}
+              className={styles["arrow-container"]}
+              style={{
+                display: emailSuccessful ? "block" : "none",
+              }}
+            >
+              <Image
+                src={"/checkBeige.svg"}
                 alt="Submit"
                 height={24}
                 width={24}
