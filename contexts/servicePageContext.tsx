@@ -55,14 +55,11 @@ export const ServicePageContextProvider = ({
   };
 
   useEffect(() => {
-    if (queryType) {
-      switch (queryType) {
-        case ServiceOptions.strategy:
-        case ServiceOptions.design:
-        case ServiceOptions.development:
-          toggleOpenTab(queryType, true);
-          break;
-      }
+    if (
+      queryType &&
+      Object.values(ServiceOptions).includes(queryType as ServiceOptions)
+    ) {
+      toggleOpenTab(queryType as ServiceOptions, true);
     }
   }, [queryType]);
 

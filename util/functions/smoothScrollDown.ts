@@ -10,14 +10,6 @@ export const smoothScrollDown = ({
   const element = document.getElementById(elementId);
   if (element) {
     const y = element.getBoundingClientRect().top + window.pageYOffset + offset;
-    console.log(
-      "y...",
-      y,
-      element.getBoundingClientRect().top,
-      window.pageYOffset,
-      offset,
-      elementId
-    );
     window.scrollTo({ top: y, behavior: "smooth" });
   }
 };

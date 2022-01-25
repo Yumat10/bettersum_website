@@ -65,7 +65,7 @@ export const ServiceSection = ({
     });
   };
 
-  const ServiceBreakdowns = (
+  const ServiceBreakdowns = openTabs.get(type) && (
     <div className={styles["service-breakdowns-container"]}>
       {services.map((serviceDetail, index) => (
         <ServiceBreakdown key={index} {...serviceDetail} />
@@ -156,7 +156,7 @@ export const ServiceSection = ({
           {titleText}
           {overviewText}
           {plusButton}
-          {openTabs.get(type) && ServiceBreakdowns}
+          {ServiceBreakdowns}
         </div>
         <div className={styles["mobile-text-container"]}>
           {titleText}
@@ -164,7 +164,7 @@ export const ServiceSection = ({
           <span style={{ display: openTabs.get(type) ? "none" : "" }}>
             {overviewText}
           </span>
-          {openTabs.get(type) && ServiceBreakdowns}
+          {ServiceBreakdowns}
         </div>
       </div>
     </motion.div>

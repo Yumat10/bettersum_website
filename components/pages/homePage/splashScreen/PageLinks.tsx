@@ -16,7 +16,7 @@ const pageLinkVariants: Variants = {
 export const PageLinks = (): JSX.Element => {
   const router = useRouter();
 
-  const strategyPath: string = "/services?type=strategey";
+  const strategyPath: string = "/services?type=strategy";
   const designPath: string = "/services?type=design";
   const developmentPath: string = "/services?type=development";
 
