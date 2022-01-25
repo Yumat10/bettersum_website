@@ -10,14 +10,14 @@ export const SplashScreen = (): JSX.Element => {
   return (
     <div id="home-page-intro-section" className={styles.container}>
       <div className={styles["inner-container"]}>
-        <Subheading
-          title="intro"
-          sectionNumber={1}
-          color={BetterSumColors.Beige}
-          topOffset="345px"
-        />
         <PageLinks />
         <div className={styles["brand-logo"]}>
+          <Subheading
+            title="intro"
+            sectionNumber={1}
+            color={BetterSumColors.Beige}
+            topOffset="3rem"
+          />
           <Image
             src="/brandLogos/betterSumLogoBeige.svg"
             alt="BetterSum"

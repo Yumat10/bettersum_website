@@ -8,13 +8,14 @@
   margin: 0px auto;
   padding: 15vh 0px 0px 0px;
   height: calc(100vh - 100px);
+  min-height: 600px;
 }
 
 .brand-logo {
   position: relative;
   width: 1000px;
   height: calc(1000px / 5);
-  margin: 55px 0px 40px 0px;
+  margin: 55px 0px 20px 0px;
 }
 
 .subheader {

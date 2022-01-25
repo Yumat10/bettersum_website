@@ -4,7 +4,7 @@
   column-gap: 10px;
   flex-flow: wrap;
   color: var(--bettersum-beige);
-  width: clamp(300px, 95%, 1000px);
+  width: clamp(300px, 95%, 1075px);
 }
 
 .link {
