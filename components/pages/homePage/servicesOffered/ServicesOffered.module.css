@@ -4,7 +4,7 @@
 
 .inner-container {
   position: relative;
-  width: clamp(300px, 90%, 1300px);
+  /* width: clamp(300px, 90%, 1300px); */
   margin: 0px auto;
 }
 
@@ -15,9 +15,7 @@
 .service-container {
   display: grid;
   /* grid-template-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3); */
-  grid-template-columns: calc(100% / 3 - 25px) calc(100% / 3 + 50px) calc(
-      100% / 3 - 25px
-    );
+  grid-template-columns: calc((100% - 400px) / 2) 400px calc((100% - 400px) / 2);
 }
 
 @media only screen and (max-width: 1200px) {
