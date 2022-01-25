@@ -41,6 +41,15 @@ const seeServicesVariants: Variants = {
   },
 };
 
+const arrowVariants: Variants = {
+  hover: {
+    y: 10,
+    transition: {
+      delay: 0.1,
+    },
+  },
+};
+
 type ServiceOverview = {
   index: number;
   type: ServiceOptions;
@@ -61,11 +70,11 @@ export const ServiceSection = ({
   const scrollDownHandler = () => {
     smoothScrollDown({
       elementId: "services-contact-form",
-      offset: 0,
+      offset: -110,
     });
   };
 
-  const ServiceBreakdowns = (
+  const ServiceBreakdowns = openTabs.get(type) && (
     <div className={styles["service-breakdowns-container"]}>
       {services.map((serviceDetail, index) => (
         <ServiceBreakdown key={index} {...serviceDetail} />
@@ -118,7 +127,14 @@ export const ServiceSection = ({
         variants={seeServicesVariants}
         className={styles["see-services"]}
       >
-        <Image src="/arrows/downArrowBeige.svg" alt="" height={24} width={24} />
+        <motion.div variants={arrowVariants}>
+          <Image
+            src="/arrows/downArrowBeige.svg"
+            alt=""
+            height={24}
+            width={24}
+          />
+        </motion.div>
         <p className={fontStyles["flair-copy"]}>See services</p>
       </motion.div>
     </div>
@@ -156,7 +172,7 @@ export const ServiceSection = ({
           {titleText}
           {overviewText}
           {plusButton}
-          {openTabs.get(type) && ServiceBreakdowns}
+          {ServiceBreakdowns}
         </div>
         <div className={styles["mobile-text-container"]}>
           {titleText}
@@ -164,7 +180,7 @@ export const ServiceSection = ({
           <span style={{ display: openTabs.get(type) ? "none" : "" }}>
             {overviewText}
           </span>
-          {openTabs.get(type) && ServiceBreakdowns}
+          {ServiceBreakdowns}
         </div>
       </div>
     </motion.div>

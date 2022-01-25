@@ -50,19 +50,16 @@ export const ServicePageContextProvider = ({
     // If opening the tab, scroll to it
     if (!currOpenTabValue) {
       const id = `service-section-${type}`;
-      smoothScrollDown({ elementId: id, offset: 0 });
+      smoothScrollDown({ elementId: id, offset: -110 });
     }
   };
 
   useEffect(() => {
-    if (queryType) {
-      switch (queryType) {
-        case ServiceOptions.strategy:
-        case ServiceOptions.design:
-        case ServiceOptions.development:
-          toggleOpenTab(queryType, true);
-          break;
-      }
+    if (
+      queryType &&
+      Object.values(ServiceOptions).includes(queryType as ServiceOptions)
+    ) {
+      toggleOpenTab(queryType as ServiceOptions, true);
     }
   }, [queryType]);
 

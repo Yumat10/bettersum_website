@@ -16,7 +16,7 @@ const pageLinkVariants: Variants = {
 export const PageLinks = (): JSX.Element => {
   const router = useRouter();
 
-  const strategyPath: string = "/services?type=strategey";
+  const strategyPath: string = "/services?type=strategy";
   const designPath: string = "/services?type=design";
   const developmentPath: string = "/services?type=development";
 
@@ -38,10 +38,6 @@ export const PageLinks = (): JSX.Element => {
     <div className={styles.container}>
       {routes.map(({ name, path }) => (
         <Fragment key={name}>
-          <p className={`${styles["plus"]} ${fontStyles["category-header"]}`}>
-            {" "}
-            +
-          </p>
           <Link href={path} passHref>
             <motion.a
               referrerPolicy="strict-origin-when-cross-origin"
@@ -52,6 +48,11 @@ export const PageLinks = (): JSX.Element => {
               {name}
             </motion.a>
           </Link>
+          <p className={`${styles["plus"]} ${fontStyles["category-header"]}`}>
+            {" "}
+            +
+          </p>
+          <div className={styles["break"]} />
         </Fragment>
       ))}
     </div>

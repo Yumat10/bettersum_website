@@ -25,13 +25,13 @@ export const TeamMemberColumn = ({
         objectFit="cover"
         layout="fill"
       />
-      <motion.div
+      {/* <motion.div
         variants={sketchVariants}
         className={styles["sketch"]}
         style={{ top: sketch.top, left: sketch.left }}
       >
         <Image src={sketch.src} alt="" width={90} height={90} />
-      </motion.div>
+      </motion.div> */}
     </motion.div>
   );
 

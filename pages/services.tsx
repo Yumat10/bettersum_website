@@ -24,8 +24,8 @@ const Services: NextPage = () => {
   const StrategyOverview = (
     <p>
       Our work begins at the inception of an idea. We solve problems, challenge
-      values, and develop strategies to articulate a <b>better</b> point of view
-      that helps your business{" "}
+      values, and develop strategies to articulate a point of view that helps
+      your business{" "}
       <motion.span
         variants={highlightedTextVariants}
         className={styles["highlighted-text"]}
@@ -83,8 +83,8 @@ const Services: NextPage = () => {
       >
         with empathy
       </motion.span>
-      . We believe that a thoughtful user experience is what makes the
-      difference between a great solution and a <b>better</b> solution.
+      . We believe that thoughtfully considering user experience is what makes a
+      difference when designing for real people.
     </p>
   );
   const designServices: ServiceDetails[] = [
@@ -128,16 +128,16 @@ const Services: NextPage = () => {
 
   const DevelopmentOverview = (
     <p>
-      We help transform great visions into <b>better</b> products. We expand
-      your ideas into{" "}
+      We help transform great visions into concrete results. We expand your
+      ideas into{" "}
       <motion.span
         variants={highlightedTextVariants}
         className={styles["highlighted-text"]}
       >
-        fully functioning products,
+        fully functioning MVPs
       </motion.span>{" "}
-      that quickly obtain user feedback for focusing on developing the next
-      steps for your business.
+      and work to obtain prompt user feedback that provides invaluable material
+      for developing your business.
     </p>
   );
   const developmentServices: ServiceDetails[] = [
@@ -200,7 +200,7 @@ const Services: NextPage = () => {
               <Subheading
                 title="All Services"
                 color={BetterSumColors.OffBlack}
-                topOffset="40px"
+                topOffset="30px"
               />
               <h1
                 className={`${fontStyles["category-header"]} ${styles["title-text"]}`}

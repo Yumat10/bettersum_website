@@ -147,7 +147,7 @@ export const ContactForm = (): JSX.Element => {
               {loading
                 ? "Sending..."
                 : emailSuccessful
-                ? "Message Sent"
+                ? "Submitted :)"
                 : "Get In Touch"}
             </p>
             <motion.div
@@ -159,22 +159,6 @@ export const ContactForm = (): JSX.Element => {
             >
               <Image
                 src={"/arrows/rightArrowBeige.svg"}
-                alt="Submit"
-                height={24}
-                width={24}
-              />
-            </motion.div>
-            <motion.div
-              animate={{
-                x: "90%",
-              }}
-              className={styles["arrow-container"]}
-              style={{
-                display: emailSuccessful ? "block" : "none",
-              }}
-            >
-              <Image
-                src={"/checkBeige.svg"}
                 alt="Submit"
                 height={24}
                 width={24}

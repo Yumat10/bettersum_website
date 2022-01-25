@@ -24,6 +24,15 @@ const seeAllServicesVariants: Variants = {
   },
 };
 
+const arrowVariants: Variants = {
+  hover: {
+    x: 30,
+    transition: {
+      delay: 0.1,
+    },
+  },
+};
+
 export const ServiceColumn = ({
   icon,
   title,
@@ -71,12 +80,14 @@ export const ServiceColumn = ({
           className={styles["see-all-services-container"]}
         >
           <p className={fontStyles["body-copy"]}>All Services</p>
-          <Image
-            src="/arrows/rightArrowBeige.svg"
-            alt=""
-            height={24}
-            width={24}
-          />
+          <motion.div variants={arrowVariants}>
+            <Image
+              src="/arrows/rightArrowBeige.svg"
+              alt=""
+              height={24}
+              width={24}
+            />
+          </motion.div>
         </motion.div>
         {includePlus && (
           <div className={styles["plus"]}>
