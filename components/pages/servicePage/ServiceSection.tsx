@@ -41,6 +41,15 @@ const seeServicesVariants: Variants = {
   },
 };
 
+const arrowVariants: Variants = {
+  hover: {
+    y: 10,
+    transition: {
+      delay: 0.1,
+    },
+  },
+};
+
 type ServiceOverview = {
   index: number;
   type: ServiceOptions;
@@ -118,7 +127,14 @@ export const ServiceSection = ({
         variants={seeServicesVariants}
         className={styles["see-services"]}
       >
-        <Image src="/arrows/downArrowBeige.svg" alt="" height={24} width={24} />
+        <motion.div variants={arrowVariants}>
+          <Image
+            src="/arrows/downArrowBeige.svg"
+            alt=""
+            height={24}
+            width={24}
+          />
+        </motion.div>
         <p className={fontStyles["flair-copy"]}>See services</p>
       </motion.div>
     </div>
