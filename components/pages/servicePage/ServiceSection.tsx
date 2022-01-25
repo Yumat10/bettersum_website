@@ -61,7 +61,7 @@ export const ServiceSection = ({
   const scrollDownHandler = () => {
     smoothScrollDown({
       elementId: "services-contact-form",
-      offset: 0,
+      offset: -110,
     });
   };
 

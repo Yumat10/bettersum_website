@@ -200,7 +200,7 @@ const Services: NextPage = () => {
               <Subheading
                 title="All Services"
                 color={BetterSumColors.OffBlack}
-                topOffset="40px"
+                topOffset="30px"
               />
               <h1
                 className={`${fontStyles["category-header"]} ${styles["title-text"]}`}

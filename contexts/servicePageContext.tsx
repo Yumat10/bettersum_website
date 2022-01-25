@@ -50,7 +50,7 @@ export const ServicePageContextProvider = ({
     // If opening the tab, scroll to it
     if (!currOpenTabValue) {
       const id = `service-section-${type}`;
-      smoothScrollDown({ elementId: id, offset: 0 });
+      smoothScrollDown({ elementId: id, offset: -110 });
     }
   };
 
