@@ -9,6 +9,7 @@
 
 .link {
   cursor: pointer;
+  width: fit-content;
 }
 
 .link,
@@ -20,7 +21,11 @@
   flex-basis: 25%;
 } */
 
-.container .plus:nth-child(1) {
+.container .plus:nth-last-child(2) {
+  display: none;
+}
+
+.break {
   display: none;
 }
 
@@ -33,5 +38,10 @@
 @media only screen and (max-width: 650px) {
   .container {
     width: 330px;
+  }
+
+  .break {
+    flex-basis: 100%;
+    display: block;
   }
 }
