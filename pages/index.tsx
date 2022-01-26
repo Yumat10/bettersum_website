@@ -31,21 +31,21 @@ const Home: NextPage = () => {
       <Head>
         <title>BetterSum</title>
         <meta property="og:url" content="https://www.bettersum.com" />
-        {/* <meta property="og:type" content="website" />
-        <meta property="fb:app_id" content="553417342511194" />
-        <meta property="og:title" content="Rangr" />
-        <meta name="twitter:card" content="summary_large_image" /> */}
+        <meta property="og:type" content="website" />
+        {/* <meta property="fb:app_id" content="553417342511194" /> */}
+        <meta property="og:title" content="BetterSum" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="og:description"
           content="A holisitc integrative digital studio."
         />
-        {/*<meta
+        <meta
           property="og:image"
-          content="https://rangr.org/RangrPreview.png"
+          content="https://bettersum.com/RangrPreview.png"
         />
         <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="1500" />
-        <meta property="og:image:height" content="1500" /> */}
+        <meta property="og:image:width" content="4096" />
+        <meta property="og:image:height" content="2141" />
       </Head>
       <main>
         <SplashScreen />
