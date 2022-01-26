@@ -97,26 +97,26 @@ export const ServicesOffered = (): JSX.Element => {
   ];
   return (
     <div id="home-page-services-section" className={styles["container"]}>
-      <div className={styles["inner-container"]}>
+      <div className={styles["subheading-container"]}>
         <Subheading
           title="services"
           sectionNumber={2}
           color={BetterSumColors.Black}
           topOffset="130px"
-          leftOffset="-50px"
+          leftOffset="-115px"
         />
-        <div
-          className={styles["service-container"]}
-          style={{ gridTemplateColumns: "" }}
-        >
-          {services.map((serviceItem, index) => (
-            <ServiceColumn
-              key={serviceItem.title}
-              {...serviceItem}
-              includePlus={index < services.length - 1}
-            />
-          ))}
-        </div>
+      </div>
+      <div
+        className={styles["service-container"]}
+        style={{ gridTemplateColumns: "" }}
+      >
+        {services.map((serviceItem, index) => (
+          <ServiceColumn
+            key={serviceItem.title}
+            {...serviceItem}
+            includePlus={index < services.length - 1}
+          />
+        ))}
       </div>
     </div>
   );
