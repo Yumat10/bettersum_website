@@ -22,7 +22,7 @@
 }
 
 .text-container {
-  width: 250px;
+  width: 350px;
   color: var(--bettersum-beige);
 }
 
@@ -57,5 +57,9 @@
 @media only screen and (max-width: 650px) {
   .team-image {
     height: 245px;
+  }
+
+  .container {
+    padding: 80px 0px 80px 0px;
   }
 }

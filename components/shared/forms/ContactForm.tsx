@@ -68,11 +68,11 @@ export const ContactForm = (): JSX.Element => {
       onSubmit={async (values, actions) => {
         setLoading(true);
         try {
-          await sendContactTeamEmail({
-            ...values,
-            emailAddress: values.email,
-            message: values.message.replaceAll("\n", "<br>"),
-          });
+          // await sendContactTeamEmail({
+          //   ...values,
+          //   emailAddress: values.email,
+          //   message: values.message.replaceAll("\n", "<br>"),
+          // });
           setEmailSuccessful(true);
           setInterval(() => setEmailSuccessful(false), 5000);
           actions.resetForm();
@@ -81,7 +81,7 @@ export const ContactForm = (): JSX.Element => {
         }
         setLoading(false);
       }}
-      validationSchema={ContactInfoSchema}
+      // validationSchema={ContactInfoSchema}
     >
       {(props) => (
         <div className={styles["form-container"]}>
@@ -147,7 +147,7 @@ export const ContactForm = (): JSX.Element => {
               {loading
                 ? "Sending..."
                 : emailSuccessful
-                ? "Submitted :)"
+                ? "Submitted! 🎉"
                 : "Get In Touch"}
             </p>
             <motion.div

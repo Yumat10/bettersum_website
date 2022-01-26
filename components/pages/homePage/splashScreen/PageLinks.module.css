@@ -38,10 +38,15 @@
 @media only screen and (max-width: 650px) {
   .container {
     width: 330px;
+    row-gap: 2px;
   }
 
   .break {
     flex-basis: 100%;
+    display: block;
+  }
+
+  .container .plus:nth-last-child(2) {
     display: block;
   }
 }

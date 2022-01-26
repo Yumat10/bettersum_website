@@ -1,6 +1,7 @@
 .container {
   background-color: var(--bettersum-black);
   padding: 150px 0px 200px 0px;
+  overflow-x: hidden;
 }
 
 .inner-container {
