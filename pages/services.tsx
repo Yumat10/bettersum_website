@@ -103,7 +103,7 @@ const Services: NextPage = () => {
       description:
         "Building a design system allows our clients to have and share a more consistent design language that promotes effective in-house interaction. Our goal is to support in creating and shaping that system as early as possible.",
       offerings: [
-        "Vission & mission",
+        "Vision & mission",
         "Competitive landscape analysis",
         "Values & positioning",
       ],

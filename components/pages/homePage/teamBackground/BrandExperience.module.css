@@ -22,3 +22,19 @@
     column-gap: 35px;
   }
 }
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    padding: 0px 20px;
+  }
+
+  .icons-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
+  }
+
+  .icons:last-child {
+    display: none;
+  }
+}

@@ -33,7 +33,7 @@ export const TeamBackground = (): JSX.Element => {
             />
           </div>
           <div className={styles["text-container"]}>
-            <h3 className={fontStyles["category-header"]}>
+            <h3 className={fontStyles["title-header"]}>
               We are investigators, designers, quick-fire ideators, educators,
               breakdancers, and workshop enthusiasts.
             </h3>

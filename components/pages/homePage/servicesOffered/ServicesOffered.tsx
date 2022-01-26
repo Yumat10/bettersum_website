@@ -57,8 +57,7 @@ export const ServicesOffered = (): JSX.Element => {
       title: "Holistic Design",
       description: (
         <span>
-          We design digital products, brands, and services by building with
-          empathy{" "}
+          We design digital products, brands, and services by building{" "}
           <motion.span
             variants={highlightTextVariants}
             className={styles["highlighted-text"]}

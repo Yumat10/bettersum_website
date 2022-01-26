@@ -50,13 +50,9 @@ export const BrandExperience = (): JSX.Element => {
       </h3>
       <div className={styles["icons-container"]}>
         {icons.map(({ name, path, width, height }) => (
-          <Image
-            key={path}
-            alt={name}
-            src={path}
-            width={width}
-            height={height}
-          />
+          <div key={path} className={styles["icons"]}>
+            <Image alt={name} src={path} width={width} height={height} />
+          </div>
         ))}
       </div>
     </div>

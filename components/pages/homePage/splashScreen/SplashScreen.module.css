@@ -31,6 +31,10 @@
 }
 
 @media only screen and (max-width: 650px) {
+  .inner-container {
+    padding-top: 5vh;
+  }
+
   .brand-logo {
     width: 330px;
     height: calc(330px / 5);

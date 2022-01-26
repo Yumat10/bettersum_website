@@ -75,20 +75,25 @@ export const ServiceSection = ({
   };
 
   const ServiceBreakdowns = openTabs.get(type) && (
-    <div className={styles["service-breakdowns-container"]}>
+    <motion.div
+      whileHover="hover"
+      className={styles["service-breakdowns-container"]}
+    >
       {services.map((serviceDetail, index) => (
         <ServiceBreakdown key={index} {...serviceDetail} />
       ))}
       <button onClick={scrollDownHandler} className={styles["contact-button"]}>
         <p className={styles["body-copy"]}>Get in Touch</p>
-        <Image
-          src="/arrows/downArrowBeige.svg"
-          alt="Now"
-          height={24}
-          width={24}
-        />
+        <motion.div variants={arrowVariants}>
+          <Image
+            src="/arrows/downArrowBeige.svg"
+            alt="Now"
+            height={24}
+            width={24}
+          />
+        </motion.div>
       </button>
-    </div>
+    </motion.div>
   );
 
   const plusButton = (
