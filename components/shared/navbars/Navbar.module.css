@@ -96,10 +96,15 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 650px) {
   .container {
     height: 80px;
   }
+
+  .hamburger-routes-container {
+    top: 70px;
+  }
+
   .logo-text {
     display: none;
   }
