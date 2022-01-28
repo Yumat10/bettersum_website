@@ -3,6 +3,13 @@ import { Route } from "../../../types/Route";
 import { FooterLinksColumn } from "./FooterLinksColumn";
 import styles from "./Footer.module.css";
 import fontStyles from "styles/fontStyles.module.css";
+import { motion, Variants } from "framer-motion";
+
+const humanCenteredVariants: Variants = {
+  hover: {
+    color: "var(--bettersum-blue)",
+  },
+};
 
 export const Footer = (): JSX.Element => {
   const footerLinks: Route[][] = [
@@ -116,7 +123,13 @@ export const Footer = (): JSX.Element => {
         </div>
         <div className={`${fontStyles["flair-copy"]} ${styles["footer-text"]}`}>
           Atlanta Based.{" "}
-          <span className={fontStyles["body-copy"]}>Human Centered.</span>
+          <motion.span
+            variants={humanCenteredVariants}
+            whileHover="hover"
+            className={fontStyles["body-copy"]}
+          >
+            Human Centered.
+          </motion.span>
         </div>
       </div>
     </div>

@@ -26,7 +26,7 @@ export const TeamBackground = (): JSX.Element => {
           />
           <div className={styles["team-image"]}>
             <Image
-              src="/teamPhotos/actionPhotos/aroundTable.svg"
+              src="/teamPhotos/actionPhotos/aroundTable.gif"
               alt="Team"
               objectFit="cover"
               layout="fill"

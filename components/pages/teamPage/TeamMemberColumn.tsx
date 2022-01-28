@@ -4,12 +4,6 @@ import styles from "./TeamMemberColumn.module.css";
 import fontStyles from "styles/fontStyles.module.css";
 import { motion, Variants } from "framer-motion";
 
-const sketchVariants: Variants = {
-  hover: {
-    opacity: 1,
-  },
-};
-
 export const TeamMemberColumn = ({
   fullName,
   title,
@@ -18,21 +12,13 @@ export const TeamMemberColumn = ({
   sketch,
 }: TeamMemberIntro): JSX.Element => {
   const profileImageComponent = (
-    <motion.div whileHover="hover" className={styles["image-container"]}>
-      <Image
-        src={profileImage}
-        alt={`${fullName} Profile Image`}
-        objectFit="cover"
-        layout="fill"
-      />
-      {/* <motion.div
-        variants={sketchVariants}
-        className={styles["sketch"]}
-        style={{ top: sketch.top, left: sketch.left }}
-      >
-        <Image src={sketch.src} alt="" width={90} height={90} />
-      </motion.div> */}
-    </motion.div>
+    <motion.img
+      src={profileImage}
+      alt={`${fullName} Profile Image`}
+      className={styles["image-container"]}
+      // objectFit="cover"
+      // layout="fill"
+    />
   );
 
   const nameComponent = (
