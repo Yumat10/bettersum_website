@@ -3,6 +3,7 @@ import { smoothScrollDown } from "util/functions/smoothScrollDown";
 import styles from "./ReadMoreArrow.module.css";
 import fontStyles from "@/styles/fontStyles.module.css";
 import { motion, Variants } from "framer-motion";
+import { enterFromBottomVariants } from "animations/homePageAnimations";
 
 const arrowVariants: Variants = {
   hover: {
@@ -13,6 +14,9 @@ const arrowVariants: Variants = {
 export const ReadMoreArrow = (): JSX.Element => {
   return (
     <motion.div
+      variants={enterFromBottomVariants}
+      initial="hidden"
+      animate="visible"
       whileHover="hover"
       className={styles["container"]}
       onClick={() =>

@@ -12,6 +12,36 @@ import Image from "next/image";
 import styles from "./Navbar.module.css";
 import fontStyles from "../../../styles/fontStyles.module.css";
 import { motion, Variants } from "framer-motion";
+import {
+  homePageAnimationDuration,
+  homePageLoadDuration,
+} from "animations/homePageAnimations";
+
+const containerVariants: Variants = {
+  hidden: {
+    borderColor: "var(--bettersum-black)",
+  },
+  visible: {
+    borderColor: "var(--bettersum-beige)",
+    transition: {
+      delay: homePageLoadDuration + homePageAnimationDuration,
+      duration: homePageAnimationDuration,
+    },
+  },
+};
+
+const innerContainerVariants: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: homePageLoadDuration,
+      duration: 0.5,
+    },
+  },
+};
 
 const routeVariants: Variants = {
   hover: {
@@ -61,8 +91,16 @@ export const Navbar = (): JSX.Element => {
     router.push("/contact");
 
   return (
-    <div className={styles["container"]}>
-      <div className={styles["inner-container"]}>
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className={styles["container"]}
+    >
+      <motion.div
+        variants={innerContainerVariants}
+        className={styles["inner-container"]}
+      >
         <div className={styles["brand"]} onClick={() => router.push("/")}>
           <Image
             src="/brandLogos/betterSumSmallMarkBeige.svg"
@@ -145,7 +183,7 @@ export const Navbar = (): JSX.Element => {
             </div>
           )}
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };

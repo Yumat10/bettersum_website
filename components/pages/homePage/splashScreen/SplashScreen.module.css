@@ -22,11 +22,35 @@
   color: var(--bettersum-beige);
 }
 
+.loading-bar-container {
+  display: inline-block;
+  width: 100%;
+  height: 15px;
+  background-color: #323131;
+  margin: 0px 0px 10px 0px;
+}
+
+.loading-bar-inner-container {
+  width: 100%;
+  height: 15px;
+  background-color: var(--bettersum-beige);
+  opacity: 1;
+}
+
 @media only screen and (max-width: 1200px) {
   .brand-logo {
     width: 550px;
     height: calc(550px / 5);
     margin: 25px 0px 20px 0px;
+  }
+
+  .loading-bar-container,
+  .loading-bar-inner-container {
+    height: 10px;
+  }
+
+  .loading-bar-container {
+    margin: 0px 0px 200px 0px;
   }
 }
 
@@ -39,5 +63,10 @@
     width: 330px;
     height: calc(330px / 5);
     /* margin: 25px 0px 20px 0px; */
+  }
+
+  .loading-bar-container,
+  .loading-bar-inner-container {
+    height: 5px;
   }
 }

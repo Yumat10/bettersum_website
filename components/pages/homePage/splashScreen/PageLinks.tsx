@@ -5,6 +5,7 @@ import { Route } from "../../../../types/Route";
 import styles from "./PageLinks.module.css";
 import fontStyles from "../../../../styles/fontStyles.module.css";
 import { motion, Variants } from "framer-motion";
+import { enterFromTopContainer } from "animations/homePageAnimations";
 
 const pageLinkVariants: Variants = {
   hover: {
@@ -35,7 +36,12 @@ export const PageLinks = (): JSX.Element => {
   ];
 
   return (
-    <div className={styles.container}>
+    <motion.div
+      variants={enterFromTopContainer}
+      initial="hidden"
+      animate="visible"
+      className={styles.container}
+    >
       {routes.map(({ name, path }) => (
         <Fragment key={name}>
           <Link href={path} passHref>
@@ -55,6 +61,6 @@ export const PageLinks = (): JSX.Element => {
           <div className={styles["break"]} />
         </Fragment>
       ))}
-    </div>
+    </motion.div>
   );
 };
