@@ -82,7 +82,11 @@ export const ServiceSection = ({
       {services.map((serviceDetail, index) => (
         <ServiceBreakdown key={index} {...serviceDetail} />
       ))}
-      <button onClick={scrollDownHandler} className={styles["contact-button"]}>
+      <motion.button
+        whileHover="hover"
+        onClick={scrollDownHandler}
+        className={styles["contact-button"]}
+      >
         <p className={styles["body-copy"]}>Get in Touch</p>
         <motion.div variants={arrowVariants}>
           <Image
@@ -92,7 +96,7 @@ export const ServiceSection = ({
             width={24}
           />
         </motion.div>
-      </button>
+      </motion.button>
     </motion.div>
   );
 
