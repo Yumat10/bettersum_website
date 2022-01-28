@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { BrandExperience } from "./BrandExperience";
 import fontStyles from "styles/fontStyles.module.css";
-import styles from "./TeamBackground.module.css";
 import { motion, Variants } from "framer-motion";
+import aroundTableGIF from "public/teamPhotos/actionPhotos/aroundTable.gif";
+import styles from "./TeamBackground.module.css";
 
 const arrowVariants: Variants = {
   hover: {
@@ -27,7 +28,7 @@ export const TeamBackground = (): JSX.Element => {
           <div className={styles["team-image"]}>
             <Image
               priority
-              src="/teamPhotos/actionPhotos/aroundTable.gif"
+              src={aroundTableGIF}
               alt="Team"
               objectFit="cover"
               layout="fill"
