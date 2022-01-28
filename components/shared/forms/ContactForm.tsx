@@ -178,10 +178,10 @@ export const ContactForm = (): JSX.Element => {
             We collaborate with ambitious brands and people. Let&#39;s build.
           </h2>
           <a
-            href="mailto:biz@bettersum.com"
+            href="mailto:team@bettersum.com"
             className={`${fontStyles["flair-copy"]} ${styles["email-link"]}`}
           >
-            <u>biz@bettersum.com</u>
+            <u>team@bettersum.com</u>
           </a>
         </div>
         {ContactFormik}
