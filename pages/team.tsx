@@ -24,8 +24,8 @@ const Team: NextPage = () => {
     {
       fullName: "Richard Lee",
       title: "Product Manager",
-      bio: "Here is where we will put a super brief summary of who we are and what we do.",
-      profileImage: "/teamPhotos/profileImage/richard.svg",
+      bio: "Richard is an engineer trained in modern design to solve real problems for real people.",
+      profileImage: "/teamPhotos/profileImage/richard.png",
       sketch: {
         src: "/sketches/hashSketch.svg",
         top: "10%",
@@ -35,8 +35,8 @@ const Team: NextPage = () => {
     {
       fullName: "William King",
       title: "Designer & Strategist",
-      bio: "Here is where we will put a super brief summary of who we are and what we do.",
-      profileImage: "/teamPhotos/profileImage/william.svg",
+      bio: "William is an end-to-end problem solver with 7 years of experience designing with startups and fortune 500 companies. He champions the end-user and believes that empathy will save the world, one product at a time.",
+      profileImage: "/teamPhotos/profileImage/william.png",
       sketch: {
         src: "/sketches/skullSketch.svg",
         top: "70%",
@@ -46,8 +46,8 @@ const Team: NextPage = () => {
     {
       fullName: "Yuma Tanaka",
       title: "Developer",
-      bio: "Here is where we will put a super brief summary of who we are and what we do.",
-      profileImage: "/teamPhotos/profileImage/yuma.svg",
+      bio: 'Yuma is a developer equipped with design thinking. He loves tinkering with new technologies and believes in "forever learning".',
+      profileImage: "/teamPhotos/profileImage/yuma.png",
       sketch: {
         src: "/sketches/zapSketch.svg",
         top: "10%",
