@@ -50,6 +50,12 @@ const routeVariants: Variants = {
   },
 };
 
+const humanCenteredVariants: Variants = {
+  hover: {
+    color: "var(--bettersum-blue)",
+  },
+};
+
 export const Navbar = (): JSX.Element => {
   const router = useRouter();
 
@@ -112,7 +118,13 @@ export const Navbar = (): JSX.Element => {
           <div className={styles["logo-text"]}>
             <p>Atlanta Based.</p>
             <br />
-            <p className={styles["bolded-logo-text"]}>Human Centered.</p>
+            <motion.div
+              variants={humanCenteredVariants}
+              whileHover="hover"
+              className={styles["bolded-logo-text"]}
+            >
+              Human Centered.
+            </motion.div>
           </div>
         </div>
         <div className={styles["routes-container"]}>
