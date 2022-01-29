@@ -1,7 +1,7 @@
 import { Variants } from "framer-motion";
 
-export const homePageLoadDuration = 1.5;
-export const homePageAnimationDuration = 0.75;
+export const homePageLoadDuration: number = 1.5;
+export const homePageAnimationDuration: number = 0.75;
 
 export const enterFromTopContainer: Variants = {
   hidden: {

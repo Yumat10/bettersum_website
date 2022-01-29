@@ -93,7 +93,7 @@ export const Navbar = (): JSX.Element => {
   return (
     <motion.div
       variants={containerVariants}
-      initial="hidden"
+      initial={router.route === "/" ? "hidden" : undefined}
       animate="visible"
       className={styles["container"]}
     >
