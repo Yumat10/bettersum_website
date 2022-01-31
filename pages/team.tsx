@@ -23,8 +23,8 @@ const Team: NextPage = () => {
   const teamMembers: TeamMemberIntro[] = [
     {
       fullName: "Richard Lee",
-      title: "Product Manager",
-      bio: "Richard is an engineer trained in modern design to solve real problems for real people.",
+      title: "Founding Partner /\n Product Strategist",
+      bio: "Richard is a multidisciplinary engineer and designer that bridges the technical and ideological gap to solve problems with an empathetic lens. He has led profitable startups, built cross-disciplinary teams for private companies and educational organizations, and operated nonprofit design organizations for the city of Atlanta.",
       profileImage: "/teamPhotos/profileImage/richard.png",
       sketch: {
         src: "/sketches/hashSketch.svg",
@@ -34,8 +34,8 @@ const Team: NextPage = () => {
     },
     {
       fullName: "William King",
-      title: "Designer & Strategist",
-      bio: "William is an end-to-end problem solver with 7 years of experience designing with startups and fortune 500 companies. He champions the end-user and believes that empathy will save the world, one product at a time.",
+      title: "Founding Partner /\n Designer & Strategist",
+      bio: "William is an end-to-end designer with over 7 years of experience, working for startups, Fortune 500 companies, and everything in between. He is an enthusiastic proponent of user-centered design, believing that products designed with empathy and foresight can dramatically shape a better future.",
       profileImage: "/teamPhotos/profileImage/william.png",
       sketch: {
         src: "/sketches/skullSketch.svg",
@@ -45,8 +45,8 @@ const Team: NextPage = () => {
     },
     {
       fullName: "Yuma Tanaka",
-      title: "Developer",
-      bio: 'Yuma is a developer equipped with design thinking. He loves tinkering with new technologies and believes in "forever learning".',
+      title: "Founding Partner /\n Software Engineer",
+      bio: "Yuma is a software engineer with a strong technical background in web development. He has built product in startups from zero to production grade fullstack applications with paying users. He believes in the power of codeveloping solutions with end-users to craft a solution that truly meets their need.",
       profileImage: "/teamPhotos/profileImage/yuma.png",
       sketch: {
         src: "/sketches/zapSketch.svg",

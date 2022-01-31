@@ -35,7 +35,7 @@ export const ReadMoreArrow = (): JSX.Element => {
         />
       </motion.div>
       <p className={`${fontStyles["flair-copy"]} ${styles["see-more-text"]}`}>
-        See how it all adds up
+        How it all adds up
       </p>
     </motion.div>
   );

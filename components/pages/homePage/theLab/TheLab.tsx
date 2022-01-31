@@ -17,7 +17,7 @@ export const TheLab = (): JSX.Element => {
       index: 1,
       name: "Rangr",
       description:
-        "Gig-economy platform that helps manage and create beautiful online storefront experiences for freelancers and their customers.",
+        "Gig-economy platform that helps manage and create polished online storefront experiences for freelancers and their customers.",
       link: "https://www.rangr.org",
     },
   ];

@@ -39,9 +39,9 @@ const Services: NextPage = () => {
     {
       name: "Workshops",
       description:
-        "Workshops accelerate the process of co-discovering problems with products that match it with the best possible solutions with tangible next steps.",
+        "Workshops accelerate the process of discovering problems and solving them. They provide opportunities to test-drive ideas, challenge assumptions, and arrive at tangible next steps. We will guide your stakeholders through these processes of ideation.",
       offerings: [
-        "Facilitation of multi-day sessions",
+        "Facilitation of multi-day workshops",
         "Ideation sessions",
         "Prototyping sessions",
       ],
@@ -49,19 +49,19 @@ const Services: NextPage = () => {
     {
       name: "Brand Strategy",
       description:
-        "Building a strong brand means having a clear mission, communicating it well, and meeting customers where they are.",
+        "Building a strong brand means having a clear mission, communicating it well, and meeting customers where they are. We will help craft a unified approach for your brand that delivers clear messaging to your targeted demographic.",
       offerings: [
-        "Vission & mission",
+        "Brainstorming vision & mission",
         "Competitive landscape analysis",
-        "Values & positioning",
+        "Aligning values & positioning",
       ],
     },
     {
       name: "UX Strategy",
       description:
-        "UX is the foundation for every solution, because developing a plan to understand your audience’s wants and needs is the true test of a brand and experience.",
+        "You can’t build a successful user base without first understanding user experience. This is why UX is the foundation of everything we do. We will collaborate with your business to develop clear end-to-end user journeys for your digital products.",
       offerings: [
-        "Wireframes and user flows",
+        "Wireframes and user journeys",
         "Site optimization",
         "Persona development",
       ],
@@ -69,7 +69,7 @@ const Services: NextPage = () => {
     {
       name: "Strategy Stewardship",
       description:
-        "We believe strategy is not just a phase, but a way of making deliberate decisions throught the life of a business. We apply this long-term perspective to help execute your vision.",
+        "We believe strategy is not just a phase in the development of a product, but a way of making deliberate decisions throughout the life of a business. We apply this longevity-centric perspective to help execute and maintain your vision, drafting plans that address both short and long-term timeframes.",
       offerings: ["Product management", "Brand or product oversight"],
     },
   ];
@@ -91,7 +91,7 @@ const Services: NextPage = () => {
     {
       name: "Design Audit",
       description:
-        "A design audit is the perfect way to measure the usability of your product and identify potential adoption challenges for your audience and determines potential solutions to reduce friction for your users.",
+        "A design audit is the perfect way to measure the usability of your product and identify adoption challenges for your audience. We will determine potential sources of friction for your users and work to reduce them.",
       offerings: [
         "Evaluate against best practices",
         "Highlight themes",
@@ -101,28 +101,32 @@ const Services: NextPage = () => {
     {
       name: "Design Systems",
       description:
-        "Building a design system allows our clients to have and share a more consistent design language that promotes effective in-house interaction. Our goal is to support in creating and shaping that system as early as possible.",
+        "A design system is a consistent design language for a family of products and experiences. For a system to be successful, it must clearly define principles and themes while remaining flexible enough to solve unexpected problems. Our goal is to support in shaping this visual language as early as possible.",
       offerings: [
-        "Vision & mission",
-        "Competitive landscape analysis",
-        "Values & positioning",
+        "Establish design principles",
+        "Create design guidelines",
+        "Create UI library in Figma",
       ],
     },
     {
       name: "UX Design",
       description:
-        "UX is baked into everything we do. We design the user experience from top to bottom to further support the best resulting experience for the end user.",
+        "We implement UX strategies to build frictionless and polished digital products. We design from end-to-end with the goal of creating experiences that the users will not only intuitively understand, but enjoy using.",
       offerings: [
-        "Wireframes and user flows",
-        "Site optimization",
-        "Persona development",
+        "Defined user flows",
+        "Implementation of UI elements",
+        "High fidelity mockups",
       ],
     },
     {
       name: "Branding",
       description:
-        "Branding fuels the growth of brands. Whether you are a startup or a well-established company, our collaborative process helps articulate the identity of your business. Our team will help you manifest this identity in the digital world.",
-      offerings: ["Identity development", "Brand guidelines", "Naming"],
+        "Branding fuels the growth of your business, whether you are a startup or a well-established company. Our collaborative process will aid in articulating the identity of your business and manifesting it across a variety of digital platforms.",
+      offerings: [
+        "Identity development",
+        "Create brand guidelines",
+        "Name ideation"
+      ],
     },
   ];
 
@@ -144,17 +148,16 @@ const Services: NextPage = () => {
     {
       name: "Technical Audit",
       description:
-        "Technology audits are a great way to have perspective on your company's product, and gain insight into ways to both improve current infrastructure and future approaches.",
+        "Our technical audits offer an outsider’s perspective onto your company's digital infrastructure and stack-up. We will highlight problem areas and provide recommendations for both improving current infrastructure and future build-outs.",
       offerings: [
-        "Vision and mission",
-        "Infrustructure",
+        "Infrastructure analysis",
         "Recommend next steps",
       ],
     },
     {
       name: "Idea to MVP",
       description:
-        "We believe that ideas are only worth the degree to which they can be realized. Our goal is to help business’ take the first step by transforming their ideas into  functioning prototypes.",
+        "We believe that ideas are only as good as the degree to which they can be realized. Our goal is to help businesses discover this sooner rather than later, by working with them to rapidly transform their ideas into functioning prototypes.",
       offerings: [
         "Problem definition",
         "Product development",
@@ -164,8 +167,11 @@ const Services: NextPage = () => {
     {
       name: "SaaS Development",
       description:
-        "We develop software that has simple and intuitive experiences without sacrificing the efficiency of traditional Saas products. Our team will help you develop the right tool that end users will be excited to use.",
-      offerings: ["Software development", "Analytics integrations"],
+        "Current Saas products tend to be outdated and needlessly complex. Our starting point is usability, creating software with simple and intuitive flows that ultimately maximize efficiency. Our team will help you develop the right tool for the problems your product hopes to solve.",
+      offerings: [
+        "Software development",
+        "Analytics integrations"
+      ],
     },
   ];
 

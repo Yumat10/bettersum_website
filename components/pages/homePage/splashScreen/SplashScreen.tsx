@@ -60,8 +60,7 @@ export const SplashScreen = (): JSX.Element => {
           animate="visible"
           className={`${fontStyles["flair-copy"]} ${styles["subheader"]}`}
         >
-          A holistic integrative digital studio.
-        </motion.div>
+          An integrative digital studio offering user-centered design, development, and business strategy.        </motion.div>
         <ReadMoreArrow />
       </div>
     </div>
