@@ -8,7 +8,7 @@
   margin: 0px auto;
   padding: 15vh 0px 0px 0px;
   height: calc(100vh - 100px);
-  min-height: 600px;
+  min-height: 650px;
 }
 
 .brand-logo {
@@ -44,6 +44,10 @@
     margin: 25px 0px 20px 0px;
   }
 
+  .subheader {
+    width: 550px;
+  }
+
   .loading-bar-container,
   .loading-bar-inner-container {
     height: 10px;
@@ -57,12 +61,17 @@
 @media only screen and (max-width: 650px) {
   .inner-container {
     padding-top: 5vh;
+    min-height: 600px;
   }
 
   .brand-logo {
     width: 330px;
     height: calc(330px / 5);
     /* margin: 25px 0px 20px 0px; */
+  }
+
+  .subheader {
+    width: 350px;
   }
 
   .loading-bar-container,
