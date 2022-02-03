@@ -37,11 +37,11 @@ const Home: NextPage = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="og:description"
-          content="A holisitc integrative digital studio."
+          content="An integrative digital studio."
         />
         <meta
           property="og:image"
-          content="https://bettersum.com/RangrPreview.png"
+          content="https://bettersum.com/BetterSumPreview.png"
         />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="4096" />
