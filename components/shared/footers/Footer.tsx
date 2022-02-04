@@ -112,7 +112,7 @@ export const Footer = (): JSX.Element => {
                 layout="fill"
               />
             </div>
-            {SocialMediaIcons}
+            {/* {SocialMediaIcons} */}
           </div>
           <hr className={styles["divider"]} />
           <div className={styles["footer-links-containers"]}>
