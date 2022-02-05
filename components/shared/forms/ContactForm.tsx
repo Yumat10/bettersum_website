@@ -81,7 +81,7 @@ export const ContactForm = (): JSX.Element => {
         }
         setLoading(false);
       }}
-      // validationSchema={ContactInfoSchema}
+      validationSchema={ContactInfoSchema}
     >
       {(props) => (
         <div className={styles["form-container"]}>
