@@ -68,11 +68,11 @@ export const ContactForm = (): JSX.Element => {
       onSubmit={async (values, actions) => {
         setLoading(true);
         try {
-          // await sendContactTeamEmail({
-          //   ...values,
-          //   emailAddress: values.email,
-          //   message: values.message.replaceAll("\n", "<br>"),
-          // });
+          await sendContactTeamEmail({
+            ...values,
+            emailAddress: values.email,
+            message: values.message.replaceAll("\n", "<br>"),
+          });
           setEmailSuccessful(true);
           setInterval(() => setEmailSuccessful(false), 5000);
           actions.resetForm();
