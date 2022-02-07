@@ -1,4 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import axios from "axios";
 import { ghostAdmin } from "lib/ghost";
 import type { NextApiRequest, NextApiResponse } from "next";
 
@@ -9,11 +10,19 @@ const subscribeToGhost = async (
   const { email }: { email: string } = req.body;
 
   try {
+    // Add member to ghost
     await ghostAdmin.members.add(
       {
         email,
       }
       //   { send_email: true, email_type: "subscribe" }
+    );
+    // Send message to Slack
+    await axios.post(
+      "https://hooks.slack.com/services/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",
+      {
+        text: `${email} just signed up! 🙌`,
+      }
     );
     return res.status(200).json();
   } catch (err: object | any) {
