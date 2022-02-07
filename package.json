@@ -10,6 +10,7 @@
   "dependencies": {
     "@prisma/client": "^3.8.1",
     "@sendgrid/mail": "^7.6.0",
+    "@tryghost/admin-api": "^1.5.0",
     "axios": "^0.25.0",
     "formik": "^2.2.9",
     "framer-motion": "^6.2.1",
