@@ -1,3 +1,4 @@
+// @ts-ignore
 import GhostAdminAPI from "@tryghost/admin-api";
 
 export const ghostAdmin = new GhostAdminAPI({
