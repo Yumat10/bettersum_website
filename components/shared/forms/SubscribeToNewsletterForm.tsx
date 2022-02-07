@@ -5,6 +5,7 @@ import styles from "./SubscribeToNewsletterForm.module.css";
 import fontStyles from "styles/fontStyles.module.css";
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { motion, Variants } from "framer-motion";
+import { useState } from "react";
 
 const submitButtonVariants: Variants = {
   hover: {
@@ -23,15 +24,23 @@ const initialValues: SubscribeInfo = {
 };
 
 export const SubscribeToNewsletterForm = (): JSX.Element => {
+  const [loading, setLoading] = useState<boolean>(false);
+  // temporary state of success
+  const [subscriptionSuccessful, setSubscriptionSuccessful] =
+    useState<boolean>(false);
+
   return (
     <div className={styles["container"]}>
       <Formik
         initialValues={initialValues}
         onSubmit={async (values, actions) => {
+          setLoading(true);
           try {
-            await axios.post("/api/email/subscribeToNewsletter", {
+            await axios.post("/api/email/subscribeToGhost", {
               email: values.email,
             });
+            setSubscriptionSuccessful(true);
+            setInterval(() => setSubscriptionSuccessful(false), 5000);
             actions.resetForm();
           } catch (err) {
             console.log(err);
@@ -42,6 +51,7 @@ export const SubscribeToNewsletterForm = (): JSX.Element => {
               });
             }
           }
+          setLoading(false);
         }}
         validationSchema={SubscribeInfoSchema}
       >
@@ -60,14 +70,20 @@ export const SubscribeToNewsletterForm = (): JSX.Element => {
               />
             </div>
             <motion.button
-              disabled={!props.isValid}
+              disabled={!props.isValid || loading}
               type="submit"
               variants={submitButtonVariants}
               whileHover="hover"
               onClick={() => props.handleSubmit()}
               className={styles["button"]}
             >
-              <p className={fontStyles["body-copy"]}>Sign Up</p>
+              <p className={fontStyles["body-copy"]}>
+                {loading
+                  ? "Subscribing..."
+                  : subscriptionSuccessful
+                  ? "Subscribed! 🎉"
+                  : "Sign Up"}
+              </p>
             </motion.button>
           </>
         )}
