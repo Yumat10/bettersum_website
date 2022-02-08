@@ -1,6 +1,14 @@
 import Image from "next/image";
 import styles from "./BrandExperience.module.css";
 import fontStyles from "styles/fontStyles.module.css";
+import { motion, Variants } from "framer-motion";
+import Link from "next/link";
+
+const foundersTextVariants: Variants = {
+  hover: {
+    color: "var(--bettersum-blue)",
+  },
+};
 
 type Icon = {
   name: string;
@@ -46,7 +54,17 @@ export const BrandExperience = (): JSX.Element => {
   return (
     <div className={styles["container"]}>
       <h3 className={fontStyles["category-header"]}>
-        Some of the brands we have collaborated with
+        Some of the brands{" "}
+        <Link passHref href="/team">
+          <motion.a
+            variants={foundersTextVariants}
+            whileHover="hover"
+            className={styles["founders-text"]}
+          >
+            our founders
+          </motion.a>
+        </Link>{" "}
+        have collaborated with
       </h3>
       <div className={styles["icons-container"]}>
         {icons.map(({ name, path, width, height }) => (
