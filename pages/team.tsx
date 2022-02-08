@@ -46,7 +46,7 @@ const Team: NextPage = () => {
     {
       fullName: "Yuma Tanaka",
       title: "Founding Partner /\n Software Engineer",
-      bio: "Yuma is a software engineer with a strong technical background in web development. He has built product in startups from zero to production grade fullstack applications with paying users. He believes in the power of codeveloping solutions with end-users to craft a solution that truly meets their need.",
+      bio: "Yuma is a software engineer with a strong technical background in web development. He has built product in startups from zero to production grade fullstack applications with paying users. He believes in the power of co-developing solutions with end-users to craft a solution that truly meets their need.",
       profileImage: "/teamPhotos/profileImage/yuma.png",
       sketch: {
         src: "/sketches/zapSketch.svg",
