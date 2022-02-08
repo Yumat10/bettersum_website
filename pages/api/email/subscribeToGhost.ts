@@ -18,12 +18,11 @@ const subscribeToGhost = async (
       //   { send_email: true, email_type: "subscribe" }
     );
     // Send message to Slack
-    await axios.post(
-      "https://hooks.slack.com/services/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",
-      {
+    if (process.env.SLACK_NEWSLETTER_MEMBERS_URL) {
+      await axios.post(process.env.SLACK_NEWSLETTER_MEMBERS_URL, {
         text: `${email} just signed up! 🙌`,
-      }
-    );
+      });
+    }
     return res.status(200).json();
   } catch (err: object | any) {
     console.log(err);
