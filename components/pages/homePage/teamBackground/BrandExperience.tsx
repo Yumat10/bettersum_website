@@ -6,7 +6,18 @@ import Link from "next/link";
 
 const foundersTextVariants: Variants = {
   hover: {
-    color: "var(--bettersum-blue)",
+    backgroundColor: "var(--bettersum-blue)",
+  },
+};
+
+const founderPhotosVariants: Variants = {
+  hover: {
+    opacity: 1,
+    scale: [0.95, 1],
+    y: [10, 0],
+    transition: {
+      duration: 0.5,
+    },
   },
 };
 
@@ -51,19 +62,44 @@ export const BrandExperience = (): JSX.Element => {
     },
   ];
 
+  const FounderPhotos = (): JSX.Element => {
+    const photos: string[] = [
+      "/teamPhotos/profileImage/richard.png",
+      "/teamPhotos/profileImage/william.png",
+      "/teamPhotos/profileImage/yuma.png",
+    ];
+
+    return (
+      <motion.div
+        variants={founderPhotosVariants}
+        className={styles["founder-photos-container"]}
+      >
+        {photos.map((profileImageUrl) => (
+          <Link key={profileImageUrl} passHref href="/team">
+            <img
+              src={profileImageUrl}
+              alt=""
+              className={styles["founder-photo"]}
+            />
+          </Link>
+        ))}
+      </motion.div>
+    );
+  };
+
   return (
     <div className={styles["container"]}>
       <h3 className={fontStyles["category-header"]}>
         Some of the brands{" "}
-        <Link passHref href="/team">
-          <motion.a
-            variants={foundersTextVariants}
-            whileHover="hover"
-            className={styles["founders-text"]}
-          >
-            our founders
-          </motion.a>
-        </Link>{" "}
+        <motion.div
+          whileHover="hover"
+          className={styles["founders-text-container"]}
+        >
+          {FounderPhotos()}
+          <Link passHref href="/team">
+            <motion.a variants={foundersTextVariants}>our founders</motion.a>
+          </Link>
+        </motion.div>{" "}
         have collaborated with
       </h3>
       <div className={styles["icons-container"]}>
