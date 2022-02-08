@@ -42,8 +42,8 @@ const Content: NextPage = () => {
               <p
                 className={`${fontStyles["body-copy"]} ${styles["body-text"]}`}
               >
-                Sign up to recieve all the latets news and content. We regularly
-                create podcasts, videos , and articles in order to keep the
+                Sign up to receive all the latest news and content. We regularly
+                create podcasts, videos, and articles in order to keep the
                 conversation growing.
               </p>
               <div className={styles["subscribe-section"]}>
