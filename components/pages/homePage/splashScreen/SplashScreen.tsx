@@ -27,6 +27,9 @@ const loadingBarInnerContainerVariants: Variants = {
 export const SplashScreen = (): JSX.Element => {
   return (
     <div id="home-page-intro-section" className={styles.container}>
+      <h1 className={fontStyles["hidden-h1"]}>
+        BetterSum: an integrative digital studio.
+      </h1>
       <div className={styles["inner-container"]}>
         <PageLinks />
         <div className={styles["brand-logo"]}>
@@ -60,7 +63,9 @@ export const SplashScreen = (): JSX.Element => {
           animate="visible"
           className={`${fontStyles["flair-copy"]} ${styles["subheader"]}`}
         >
-          An integrative digital studio offering user-centered design, development, and business strategy.        </motion.div>
+          An integrative digital studio offering user-centered design,
+          development, and business strategy.{" "}
+        </motion.div>
         <ReadMoreArrow />
       </div>
     </div>

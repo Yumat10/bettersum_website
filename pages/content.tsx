@@ -31,7 +31,7 @@ const Content: NextPage = () => {
         <div className={styles["container"]}>
           <div className={styles["inner-container"]}>
             <h1 className={`${fontStyles["title-header"]}`}>
-              Content in the works.
+              Behind the scenes of BetterSum.
             </h1>
             <h2
               className={`${fontStyles["title-header"]} ${styles["subtitle-text"]}`}

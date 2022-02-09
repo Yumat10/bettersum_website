@@ -36,6 +36,7 @@ const Contact: NextPage = () => {
       </Head>
       <main>
         <div>
+          <h1 className={fontStyles["hidden-h1"]}>Contact the team.</h1>
           <div className={styles["container"]}>
             <div className={styles["inner-container"]}>
               <button onClick={backHandler} className={styles["button"]}>
