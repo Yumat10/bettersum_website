@@ -10,13 +10,23 @@ const subscribeToGhost = async (
   const { email }: { email: string } = req.body;
 
   try {
-    // Add member to ghost
+    // Add member to Ghost
     await ghostAdmin.members.add(
       {
         email,
       }
       //   { send_email: true, email_type: "subscribe" }
     );
+    // Add user to Viral Loops
+    await axios.post("https://app.viral-loops.com/api/v2/events", {
+      apiToken: process.env.VIRAL_LOOPS_API_KEY,
+      params: {
+        event: "registration",
+        user: {
+          email,
+        },
+      },
+    });
     // Send message to Slack
     if (process.env.SLACK_NEWSLETTER_MEMBERS_URL) {
       await axios.post(process.env.SLACK_NEWSLETTER_MEMBERS_URL, {
@@ -25,7 +35,7 @@ const subscribeToGhost = async (
     }
     return res.status(200).json();
   } catch (err: object | any) {
-    console.log(err);
+    console.log(err.response ? err.response : err);
     if (
       err.context ===
       "Member already exists Attempting to add member with existing email address."
