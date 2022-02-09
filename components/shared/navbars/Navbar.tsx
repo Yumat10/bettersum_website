@@ -87,10 +87,6 @@ export const Navbar = (): JSX.Element => {
       name: "lab",
       path: "/?section=lab",
     },
-    {
-      name: "content",
-      path: "/content",
-    },
   ];
 
   const navigateToContactUs: MouseEventHandler<HTMLButtonElement> = () =>
@@ -145,6 +141,20 @@ export const Navbar = (): JSX.Element => {
               </Link>
             </motion.div>
           ))}
+          <motion.div
+            variants={routeVariants}
+            whileHover="hover"
+            className={styles["route"]}
+          >
+            <a
+              href="https://content.bettersum.com"
+              referrerPolicy="strict-origin-when-cross-origin"
+              rel="noopener"
+              className={fontStyles["flair-copy"]}
+            >
+              content
+            </a>
+          </motion.div>
           <GradientOutlineButton
             text="Contact us"
             onClick={navigateToContactUs}
