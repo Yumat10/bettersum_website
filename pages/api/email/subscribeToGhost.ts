@@ -35,7 +35,7 @@ const subscribeToGhost = async (
     }
     return res.status(200).json();
   } catch (err: object | any) {
-    console.log(err.response ? err.response : err);
+    console.log(err.response ? err.response.data : err);
     if (
       err.context ===
       "Member already exists Attempting to add member with existing email address."
