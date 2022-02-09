@@ -11,6 +11,12 @@ const humanCenteredVariants: Variants = {
   },
 };
 
+type SocialMedia = {
+  name: string;
+  link: string;
+  imageUrl: string;
+};
+
 export const Footer = (): JSX.Element => {
   const footerLinks: Route[][] = [
     // Col 1
@@ -62,40 +68,43 @@ export const Footer = (): JSX.Element => {
     ],
   ];
 
+  const socialMedias: SocialMedia[] = [
+    {
+      name: "linkedin",
+      link: "https://www.linkedin.com/company/bettersum",
+      imageUrl: "/socialMediaLogos/linkedin.svg",
+    },
+    {
+      name: "tiktok",
+      link: "https://vm.tiktok.com/TTPdkcRWqb/",
+      imageUrl: "/socialMediaLogos/tiktok.svg",
+    },
+    {
+      name: "instagram",
+      link: "https://www.instagram.com/bettersum_studio/",
+      imageUrl: "/socialMediaLogos/instagram.svg",
+    },
+    {
+      name: "youtube",
+      link: "https://www.youtube.com/channel/UCLCADM8P75Z5Z0zgH1uBymg",
+      imageUrl: "/socialMediaLogos/youtube.svg",
+    },
+  ];
+
   const SocialMediaIcons = (
     <div className={styles["social-media-icons-container"]}>
-      <div className={styles["social-media-logo"]}>
-        <Image
-          src="/socialMediaLogos/snapchat.svg"
-          alt="snapchat"
-          objectFit="contain"
-          layout="fill"
-        />
-      </div>
-      <div className={styles["social-media-logo"]}>
-        <Image
-          src="/socialMediaLogos/instagram.svg"
-          alt="instagram"
-          objectFit="contain"
-          layout="fill"
-        />
-      </div>
-      <div className={styles["social-media-logo"]}>
-        <Image
-          src="/socialMediaLogos/tiktok.svg"
-          alt="tiktok"
-          objectFit="contain"
-          layout="fill"
-        />
-      </div>
-      <div className={styles["social-media-logo"]}>
-        <Image
-          src="/socialMediaLogos/facebook.svg"
-          alt="facebook"
-          objectFit="contain"
-          layout="fill"
-        />
-      </div>
+      {socialMedias.map(({ name, link, imageUrl }) => (
+        <a key={name} href={link} target="_blank" rel="noreferrer">
+          <div className={styles["social-media-logo"]}>
+            <Image
+              src={imageUrl}
+              alt={name}
+              objectFit="contain"
+              layout="fill"
+            />
+          </div>
+        </a>
+      ))}
     </div>
   );
 
@@ -112,7 +121,7 @@ export const Footer = (): JSX.Element => {
                 layout="fill"
               />
             </div>
-            {/* {SocialMediaIcons} */}
+            {SocialMediaIcons}
           </div>
           <hr className={styles["divider"]} />
           <div className={styles["footer-links-containers"]}>
