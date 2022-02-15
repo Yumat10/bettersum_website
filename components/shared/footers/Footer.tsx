@@ -65,6 +65,10 @@ export const Footer = (): JSX.Element => {
         name: "Contact Us",
         path: "/contact",
       },
+      {
+        name: "Terms",
+        path: "/help/terms-and-conditions",
+      },
     ],
   ];
 
