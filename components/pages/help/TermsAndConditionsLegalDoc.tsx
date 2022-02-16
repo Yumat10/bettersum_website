@@ -1,4 +1,4 @@
-import styles from "../help.module.css";
+import styles from "./help.module.css";
 import fontStyles from "styles/fontStyles.module.css";
 
 export const TermsAndConditionsLegalDoc = (): JSX.Element => {

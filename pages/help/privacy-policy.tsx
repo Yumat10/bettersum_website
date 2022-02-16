@@ -1,4 +1,4 @@
-import { TermsAndConditionsLegalDoc } from "components/pages/help/TermsAndConditionsLegalDoc";
+import { PrivacyPolicyLegalDoc } from "components/pages/help/PrivacyPolicyLegalDoc";
 import type { NextPage } from "next";
 import Head from "next/head";
 
@@ -6,7 +6,7 @@ const TermsAndConditions: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>BetterSum | Terms and Conditions</title>
+        <title>BetterSum | Privacy Policy</title>
         <meta property="og:url" content="https://www.bettersum.com" />
         <meta property="og:type" content="website" />
         {/* <meta property="fb:app_id" content="553417342511194" /> */}
@@ -25,7 +25,7 @@ const TermsAndConditions: NextPage = () => {
         <meta property="og:image:height" content="2141" />
       </Head>
       <main>
-        <TermsAndConditionsLegalDoc />
+        <PrivacyPolicyLegalDoc />
       </main>
     </div>
   );
