@@ -62,7 +62,7 @@ export const TeamBackground = (): JSX.Element => {
             </Link>
           </div>
         </div>
-        <BrandExperience />
+        {/* <BrandExperience /> */}
       </div>
     </div>
   );
