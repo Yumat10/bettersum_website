@@ -9,6 +9,7 @@ import {
   homePageLoadDuration,
 } from "animations/homePageAnimations";
 import * as gtag from "lib/gtag";
+import { CaseStudyContextProvider } from "contexts/caseStudyContext";
 
 const isProd = process.env.NODE_ENV === "production";
 
@@ -42,7 +43,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     <div>
       <>
         <Navbar />
-        <Component {...pageProps} />
+        <CaseStudyContextProvider>
+          <Component {...pageProps} />
+        </CaseStudyContextProvider>
         <Footer />
       </>
     </div>
