@@ -1,6 +1,8 @@
 import { useCaseStudyContext } from "contexts/caseStudyContext";
 import Image from "next/image";
 import { CaseStudyPhoto } from "types/CaseStudy";
+import { CSTOQuote } from "./CSTOQuote";
+import fontStyles from "styles/fontStyles.module.css";
 import styles from "./CSTOContent.module.css";
 
 export const CSTOContent = (): JSX.Element | null => {
@@ -18,68 +20,80 @@ export const CSTOContent = (): JSX.Element | null => {
     const { title, url } = photo;
     return (
       <div className={styles["photo-container"]}>
-        <Image
-          src={url}
-          alt={title}
-          objectFit="contain"
-          width={200}
-          height={200}
-        />
+        <Image src={url} alt={title} objectFit="cover" layout="fill" />
       </div>
     );
   };
 
   return (
     <div className={styles["container"]}>
-      {CaseStudyPhotoComponent(photoOne)}
-      <div className={styles["overview-tools-container"]}>
-        <div className={styles["overview-container"]}>
-          <h3>Overview</h3>
-          <p>{overview.json.content[0].content[0].value}</p>
-        </div>
-        <div className={styles["tools-container"]}>
-          <h3>Tool Kits</h3>
-          <div className={styles["tools-grid"]}>
-            {tools.map((tool) => (
-              <p key={tool} className={styles["tool"]}>
-                + {tool}
-              </p>
-            ))}
+      <div className={styles["inner-container"]}>
+        {CaseStudyPhotoComponent(photoOne)}
+        <div className={styles["overview-tools-container"]}>
+          <div className={styles["overview-container"]}>
+            <h3
+              className={`${fontStyles["category-header"]} ${styles["overview-title"]}`}
+            >
+              Overview
+            </h3>
+            <p className={fontStyles["body-copy"]}>
+              {overview.json.content[0].content[0].value}
+            </p>
+          </div>
+          <div className={styles["tools-container"]}>
+            <h3
+              className={`${fontStyles["category-header"]} ${styles["tools-title"]}`}
+            >
+              Tool Kits
+            </h3>
+            <div className={styles["tools-grid"]}>
+              {tools.map((tool) => (
+                <p
+                  key={tool}
+                  className={`${fontStyles["body-copy"]} ${styles["tool"]}`}
+                >
+                  + {tool}
+                </p>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      {CaseStudyPhotoComponent(photoTwo)}
-      {CaseStudyPhotoComponent(photoThree)}
-      <div className={styles["stats-grid"]}>
-        {stats.map((stat, index) => {
-          const statDescription = statDescriptions[index];
-          return (
-            <div key={index} className={styles["stat-container"]}>
-              <p>{stat}</p>
-              <p>{statDescription}</p>
-            </div>
-          );
-        })}
-      </div>
-      <div className={styles["photo-grid"]}>
-        <div>
-          <Image
-            src={photoFour.url}
-            alt={photoFour.title}
-            objectFit="contain"
-            width={200}
-            height={200}
-          />
+        {CaseStudyPhotoComponent(photoTwo)}
+        {CaseStudyPhotoComponent(photoThree)}
+        <div className={styles["stats-grid"]}>
+          {stats.map((stat, index) => {
+            const statDescription = statDescriptions[index];
+            return (
+              <div key={index} className={styles["stat-container"]}>
+                <p className={fontStyles["title-header"]}>{stat}</p>
+                <p
+                  className={`${fontStyles["body-copy"]} ${styles["stat-description"]}`}
+                >
+                  {statDescription}
+                </p>
+              </div>
+            );
+          })}
         </div>
-        <div>
-          <Image
-            src={photoFive.url}
-            alt={photoFive.title}
-            objectFit="contain"
-            width={200}
-            height={200}
-          />
+        <div className={styles["photo-grid"]}>
+          <div>
+            <Image
+              src={photoFour.url}
+              alt={photoFour.title}
+              objectFit="cover"
+              layout="fill"
+            />
+          </div>
+          <div>
+            <Image
+              src={photoFive.url}
+              alt={photoFive.title}
+              objectFit="cover"
+              layout="fill"
+            />
+          </div>
         </div>
+        <CSTOQuote />
       </div>
     </div>
   );
