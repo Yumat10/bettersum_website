@@ -1,0 +1,50 @@
+.container {
+  background-color: var(--bettersum-beige);
+  padding: 75px 0px 50px 0px;
+}
+
+.top-container {
+  width: var(--width-clamp);
+  margin: 0px auto 25px auto;
+}
+
+.title {
+  position: relative;
+}
+
+.description {
+  margin: 50px 0px 50px 0px;
+}
+
+.lab-tag {
+  background-color: var(--bettersum-blue);
+  color: var(--bettersum-beige);
+  padding: 0.5em 1.75em;
+}
+
+.divider {
+  all: unset;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--bettersum-black);
+}
+
+.bottom-container {
+  width: var(--width-clamp);
+  margin: 30px auto 0px auto;
+}
+
+.tag-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0px 0px 40px 0px;
+}
+
+.tag {
+  white-space: pre;
+}
+
+.visit-site {
+  text-decoration: underline;
+}
