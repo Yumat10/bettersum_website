@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { CaseStudyPreview } from "types/CaseStudy";
+import { motion } from "framer-motion";
 import fontStyles from "styles/fontStyles.module.css";
 import styles from "./RelatedCaseStudies.module.css";
 
@@ -16,6 +17,7 @@ export const RelatedCaseStudies = (): JSX.Element | null => {
   const [filteredCaseStudyPreviews, setFilteredCaseStudyPreviews] = useState<
     CaseStudyPreview[]
   >([]);
+  const [isDragging, setIsDragging] = useState<boolean>(false);
 
   useEffect(() => {
     if (caseStudyPreviews) {
@@ -37,13 +39,18 @@ export const RelatedCaseStudies = (): JSX.Element | null => {
 
     return (
       <Link href={`/work/${templateNumber}/${handle}`}>
-        <a className={styles["preview-container"]}>
+        <a
+          draggable="false"
+          className={styles["preview-container"]}
+          style={{ pointerEvents: isDragging ? "none" : "auto" }}
+        >
           <div className={styles["preview-image-container"]}>
             <Image
               src={previewImage.url}
               alt={previewImage.title}
               objectFit="cover"
               layout="fill"
+              draggable="false"
             />
           </div>
           <div className={styles["text-container"]}>
@@ -83,11 +90,32 @@ export const RelatedCaseStudies = (): JSX.Element | null => {
             width={24}
           />
         </div>
-        <div className={styles["related-work-grid"]}>
+        <motion.div
+          drag="x"
+          dragConstraints={{
+            left:
+              -1 *
+              ((filteredCaseStudyPreviews.length - 1) * 460 +
+                caseStudyPreviews.length * 50),
+            right: -1 * (filteredCaseStudyPreviews.length + 1),
+          }}
+          initial={{
+            x: 0,
+          }}
+          animate={{
+            x: -460 - 50,
+          }}
+          whileDrag={{ scale: 1.05 }}
+          onDragStart={() => setIsDragging(true)}
+          onDragEnd={() => setIsDragging(false)}
+          className={styles["related-work-grid"]}
+        >
+          <div className={styles["preview-container"]} />
           {filteredCaseStudyPreviews.map((caseStudyPreview) =>
             CaseStudyPreviewComponent(caseStudyPreview)
           )}
-        </div>
+          <div className={styles["preview-container"]} />
+        </motion.div>
       </div>
     </div>
   );
