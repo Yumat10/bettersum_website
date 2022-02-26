@@ -1,5 +1,3 @@
-import { string } from "yup/lib/locale";
-
 export interface CaseStudyPhoto {
   title: string;
   url: string;
@@ -42,7 +40,7 @@ export interface CaseStudyTemplateOne {
 export interface CaseStudyPreview {
   handle: string;
   title: string;
-  previewImage: CaseStudyPhoto[];
+  previewImage: CaseStudyPhoto;
   tags: string[];
   templateNumber: string;
 }

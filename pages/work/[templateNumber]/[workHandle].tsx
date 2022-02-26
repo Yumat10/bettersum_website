@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useCaseStudyContext } from "contexts/caseStudyContext";
 import { CaseStudyTemplateOne as CaseStudyTemplateOneComponent } from "components/pages/workPage/templates/caseStudyTemplateOne/CaseStudyTemplateOne";
+import { RelatedCaseStudies } from "components/shared/caseStudies/RelatedCaseStudies";
 
 const Work: NextPage = ({
   caseStudyData: propsCaseStudyData,
@@ -55,6 +56,7 @@ const Work: NextPage = ({
       <main>
         <div>
           <CaseStudyTemplateOneComponent />
+          <RelatedCaseStudies />
         </div>
       </main>
     </div>
@@ -138,6 +140,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       caseStudyPreviewsCollection {
         items {
           handle
+          title
           previewImage {
             title
             url
