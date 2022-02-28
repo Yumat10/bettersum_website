@@ -16,8 +16,17 @@ import { CaseStudyTemplateOne as CaseStudyTemplateOneComponent } from "component
 const SelectedWork: NextPage = ({
   caseStudyData: propsCaseStudyData,
   caseStudyPreviews: propsCaseStudyPreviews,
+  shouldRedirectTo404: propsShouldRedirect404,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const router = useRouter();
+
   const { setCaseStudyData, setCaseStudyPreviews } = useCaseStudyContext();
+
+  useEffect(() => {
+    if (propsShouldRedirect404) {
+      router.replace("/404");
+    }
+  }, [propsShouldRedirect404]);
 
   useEffect(() => {
     if (propsCaseStudyData) {
@@ -54,7 +63,16 @@ const SelectedWork: NextPage = ({
       </Head>
       <main>
         <div>
-          <CaseStudyTemplateOneComponent />
+          {propsShouldRedirect404 ? (
+            <div
+              style={{
+                backgroundColor: "var(--bettersum-black)",
+                height: "100vh",
+              }}
+            />
+          ) : (
+            <CaseStudyTemplateOneComponent />
+          )}
         </div>
       </main>
     </div>
@@ -70,9 +88,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
     context.params?.workHandle == "undefined"
   ) {
     return {
-      props: {},
-      redirect: {
-        destination: "/404",
+      props: {
+        shouldRedirectTo404: true,
       },
     };
   }
@@ -153,9 +170,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
   let props: {
     caseStudyData: CaseStudyTemplateOne | null;
     caseStudyPreviews: CaseStudyPreview[];
+    shouldRedirectTo404: boolean;
   } = {
     caseStudyData: null,
     caseStudyPreviews: [],
+    shouldRedirectTo404: false,
   };
 
   try {
@@ -209,12 +228,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       console.log(error);
     }
 
-    return {
-      props,
-      redirect: {
-        destination: "/404",
-      },
-    };
+    props.shouldRedirectTo404 = true;
   }
 
   return {

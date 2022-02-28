@@ -134,13 +134,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     } else {
       console.log(error);
     }
-
-    return {
-      props,
-      redirect: {
-        destination: "/404",
-      },
-    };
   }
 
   return {
