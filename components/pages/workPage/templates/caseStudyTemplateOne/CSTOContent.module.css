@@ -12,7 +12,6 @@
 .photo-container {
   position: relative;
   width: 100%;
-  aspect-ratio: 1050 / 590;
   margin: 0px 0px 25px 0px;
 }
 
@@ -83,4 +82,78 @@
 .photo-grid div:last-child {
   position: relative;
   flex-grow: 1;
+}
+
+@media only screen and (max-width: 1200px) {
+  .photo-container,
+  .photo-grid {
+    min-height: 300px;
+  }
+
+  .overview-container {
+    margin: 0px 75px 0px 0px;
+  }
+
+  .photo-grid div:first-child {
+    position: relative;
+    width: 30%;
+    margin: 0px 25px 0px 0px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .photo-container {
+    min-height: 210px;
+  }
+
+  .overview-tools-container {
+    grid-template-columns: auto;
+  }
+
+  .overview-container {
+    margin: 0px 0px 30px 0px;
+  }
+
+  .overview-title {
+    border: none;
+  }
+
+  .stats-grid {
+    flex-direction: column;
+    margin: 30px 0px 30px 0px;
+  }
+
+  .stat-container {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+
+  .stat-container:not(:first-child) {
+    margin: 20px 0px 0px 0px;
+  }
+
+  .stat-description {
+    flex-grow: 1;
+    max-width: unset;
+    margin: 0px 0px 0px 15px;
+  }
+
+  .photo-grid {
+    flex-direction: column;
+    min-height: unset;
+  }
+
+  .photo-grid div:first-child {
+    min-height: 620px;
+    width: 100%;
+    aspect-ratio: 375 / 620;
+    margin: 0px 0px 7.5px 0px;
+  }
+
+  .photo-grid div:last-child {
+    width: 100%;
+    min-height: 265px;
+    aspect-ratio: 375 / 265;
+  }
 }
