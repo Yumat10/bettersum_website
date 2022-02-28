@@ -162,6 +162,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
           }
           tags
           templateNumber
+          isLabs
         }
       }
     }
@@ -246,11 +247,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
       caseStudyPreviewsCollection {
         items {
           handle
-          # previewImage {
-          #   title
-          #   url
-          # }
-          # tags
           templateNumber
         }
       }

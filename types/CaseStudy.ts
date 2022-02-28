@@ -43,4 +43,5 @@ export interface CaseStudyPreview {
   previewImage: CaseStudyPhoto;
   tags: string[];
   templateNumber: string;
+  isLabs: boolean;
 }

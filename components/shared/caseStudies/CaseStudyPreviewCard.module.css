@@ -24,6 +24,15 @@
   height: calc(100% - 190px);
 }
 
+.lab-tag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: var(--bettersum-blue);
+  color: var(--bettersum-beige);
+  padding: 0.5em 1.25em;
+}
+
 .tags-container {
   display: flex;
   flex-direction: row;

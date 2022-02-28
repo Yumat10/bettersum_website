@@ -15,7 +15,7 @@ export const CaseStudyPreviewCard = ({
   isDraggingCard,
   fullWidth,
 }: CaseStudyPreviewCardProps): JSX.Element => {
-  const { handle, previewImage, title, tags, templateNumber } =
+  const { handle, previewImage, title, tags, templateNumber, isLabs } =
     caseStudyPreview;
 
   return (
@@ -35,7 +35,12 @@ export const CaseStudyPreviewCard = ({
             objectFit="cover"
             layout="fill"
             draggable="false"
-          />
+          />{" "}
+          {isLabs && (
+            <div className={`${fontStyles["body-one"]} ${styles["lab-tag"]}`}>
+              Labs
+            </div>
+          )}
         </div>
         <div className={styles["text-container"]}>
           <h5 className={fontStyles["category-header"]}>
