@@ -84,8 +84,8 @@ export const Navbar = (): JSX.Element => {
       path: "/team",
     },
     {
-      name: "lab",
-      path: "/?section=lab",
+      name: "work",
+      path: "/work",
     },
   ];
 

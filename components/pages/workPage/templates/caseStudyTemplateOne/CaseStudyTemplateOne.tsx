@@ -1,6 +1,6 @@
 import { ContactForm } from "components/shared/forms/ContactForm";
 import { useCaseStudyContext } from "contexts/caseStudyContext";
-import { RelatedCaseStudies } from "../../RelatedCaseStudies";
+import { RelatedCaseStudies } from "../RelatedCaseStudies";
 import styles from "./CaseStudyTemplateOne.module.css";
 import { CSTOContent } from "./CSTOContent";
 import { CSTOHeader } from "./CSTOHeader";

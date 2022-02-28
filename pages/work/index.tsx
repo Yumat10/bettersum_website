@@ -1,5 +1,7 @@
 import axios from "axios";
-import { WorkAndLab } from "components/pages/homePage/workAndLab/WorkAndLab";
+import { AllWorkHeader } from "components/pages/workPage/allWorkPage/AllWorkHeader";
+import { CaseStudiesGrid } from "components/shared/caseStudies/CaseStudiesGrid";
+import { ContactForm } from "components/shared/forms/ContactForm";
 import { useCaseStudyContext } from "contexts/caseStudyContext";
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
@@ -7,21 +9,10 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { CaseStudyPreview } from "types/CaseStudy";
-import { smoothScrollDown } from "util/functions/smoothScrollDown";
-import { ServicesOffered } from "../components/pages/homePage/servicesOffered/ServicesOffered";
-import { SplashScreen } from "../components/pages/homePage/splashScreen/SplashScreen";
-import { SubscribeToNewsletter } from "../components/pages/homePage/subscribeToNewsletter/SubscribeToNewsletter";
-import { TeamBackground } from "../components/pages/homePage/teamBackground/TeamBackground";
-import { TheLab } from "../components/pages/homePage/theLab/TheLab";
-import styles from "../styles/Home.module.css";
 
-const Home: NextPage = ({
+const Work: NextPage = ({
   caseStudyPreviews: propsCaseStudyPreviews,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const router = useRouter();
-
-  const { section: querySection } = router.query;
-
   const { setCaseStudyPreviews } = useCaseStudyContext();
 
   useEffect(() => {
@@ -30,20 +21,10 @@ const Home: NextPage = ({
     }
   }, [propsCaseStudyPreviews]);
 
-  useEffect(() => {
-    if (querySection) {
-      const id = `home-page-${querySection}-section`;
-      smoothScrollDown({
-        elementId: id,
-        offset: -110,
-      });
-    }
-  }, [querySection]);
-
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>BetterSum</title>
+        <title>BetterSum | Work</title>
         <meta property="og:url" content="https://www.bettersum.com" />
         <meta property="og:type" content="website" />
         {/* <meta property="fb:app_id" content="553417342511194" /> */}
@@ -62,12 +43,9 @@ const Home: NextPage = ({
         <meta property="og:image:height" content="2141" />
       </Head>
       <main>
-        <SplashScreen />
-        <ServicesOffered />
-        <TeamBackground />
-        {/* <TheLab /> */}
-        <WorkAndLab />
-        <SubscribeToNewsletter />
+        <AllWorkHeader />
+        <CaseStudiesGrid />
+        <ContactForm />
       </main>
     </div>
   );
@@ -81,7 +59,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const contentfulCaseStudyPreviewsQuery = gql`
     query {
-      caseStudyPreviewsCollection(order: order_ASC, limit: 4) {
+      caseStudyPreviewsCollection(order: order_ASC) {
         items {
           handle
           title
@@ -148,4 +126,4 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 };
 
-export default Home;
+export default Work;

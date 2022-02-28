@@ -7,6 +7,7 @@ import { CaseStudyPreview } from "types/CaseStudy";
 import { motion } from "framer-motion";
 import fontStyles from "styles/fontStyles.module.css";
 import styles from "./RelatedCaseStudies.module.css";
+import { CaseStudyPreviewCard } from "components/shared/caseStudies/CaseStudyPreviewCard";
 
 export const RelatedCaseStudies = (): JSX.Element | null => {
   const router = useRouter();
@@ -30,49 +31,6 @@ export const RelatedCaseStudies = (): JSX.Element | null => {
   }, [queryWorkHandle, caseStudyPreviews]);
 
   if (caseStudyPreviews.length === 0) return null;
-
-  const CaseStudyPreviewComponent = (
-    caseStudyPreview: CaseStudyPreview
-  ): JSX.Element => {
-    const { handle, previewImage, title, tags, templateNumber } =
-      caseStudyPreview;
-
-    return (
-      <Link href={`/work/${templateNumber}/${handle}`}>
-        <a
-          draggable="false"
-          className={styles["preview-container"]}
-          style={{ pointerEvents: isDragging ? "none" : "auto" }}
-        >
-          <div className={styles["preview-image-container"]}>
-            <Image
-              src={previewImage.url}
-              alt={previewImage.title}
-              objectFit="cover"
-              layout="fill"
-              draggable="false"
-            />
-          </div>
-          <div className={styles["text-container"]}>
-            <h5 className={fontStyles["body-copy"]}>
-              <b>{title}</b>
-            </h5>
-            <div className={styles["tags-container"]}>
-              {tags.map((tag) => (
-                <p
-                  key={tag}
-                  className={`${fontStyles["flair-copy"]} ${styles["tag"]}`}
-                >
-                  <span>{" + "}</span>
-                  {tag}
-                </p>
-              ))}
-            </div>
-          </div>
-        </a>
-      </Link>
-    );
-  };
 
   const RelatedCaseStudiesScroll = (): JSX.Element => (
     <div className={styles["container"]}>
@@ -111,9 +69,17 @@ export const RelatedCaseStudies = (): JSX.Element | null => {
           className={styles["related-work-grid"]}
         >
           {/* <div className={styles["preview-container"]} /> */}
-          {filteredCaseStudyPreviews.map((caseStudyPreview) =>
-            CaseStudyPreviewComponent(caseStudyPreview)
-          )}
+          {filteredCaseStudyPreviews.map((caseStudyPreview) => (
+            <div
+              key={caseStudyPreview.handle}
+              className={styles["preview-container"]}
+            >
+              <CaseStudyPreviewCard
+                caseStudyPreview={caseStudyPreview}
+                isDraggingCard={isDragging}
+              />
+            </div>
+          ))}
           <div className={styles["preview-container"]} />
         </motion.div>
       </div>

@@ -13,7 +13,7 @@ import { useEffect } from "react";
 import { useCaseStudyContext } from "contexts/caseStudyContext";
 import { CaseStudyTemplateOne as CaseStudyTemplateOneComponent } from "components/pages/workPage/templates/caseStudyTemplateOne/CaseStudyTemplateOne";
 
-const Work: NextPage = ({
+const SelectedWork: NextPage = ({
   caseStudyData: propsCaseStudyData,
   caseStudyPreviews: propsCaseStudyPreviews,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
@@ -285,4 +285,4 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return staticPathsResult;
 };
 
-export default Work;
+export default SelectedWork;

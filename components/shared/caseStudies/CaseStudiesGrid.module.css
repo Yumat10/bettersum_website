@@ -1,0 +1,41 @@
+.container {
+  background-color: var(--bettersum-black);
+  color: var(--bettersum-black);
+  padding: 80px 0px 100px 0px;
+}
+
+.inner-container {
+  width: var(--width-clamp);
+  margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 80px;
+}
+
+.preview-container {
+  width: 520px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .inner-container {
+    row-gap: 40px;
+  }
+
+  .preview-container {
+    width: 450px;
+    max-width: 50%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .inner-container {
+    flex-direction: column;
+  }
+
+  .preview-container {
+    width: 100%;
+    max-width: unset;
+  }
+}
