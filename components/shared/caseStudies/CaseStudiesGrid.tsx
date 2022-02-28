@@ -1,9 +1,22 @@
 import { useCaseStudyContext } from "contexts/caseStudyContext";
+import { motion, Variants } from "framer-motion";
 import { CaseStudyPreview } from "types/CaseStudy";
 import styles from "./CaseStudiesGrid.module.css";
 import { CaseStudyPreviewCard } from "./CaseStudyPreviewCard";
 
-export const CaseStudiesGrid = (): JSX.Element | null => {
+const cardVariants: Variants = {
+  hover: {
+    scale: 1.1,
+  },
+};
+
+type CaseStudiesGridProps = {
+  shakeLabTag?: boolean;
+};
+
+export const CaseStudiesGrid = ({
+  shakeLabTag,
+}: CaseStudiesGridProps): JSX.Element | null => {
   const { caseStudyPreviews } = useCaseStudyContext();
 
   if (!caseStudyPreviews) return null;
@@ -12,15 +25,18 @@ export const CaseStudiesGrid = (): JSX.Element | null => {
     <div className={styles["container"]}>
       <div className={styles["inner-container"]}>
         {caseStudyPreviews.map((caseStudyPreview) => (
-          <div
+          <motion.div
+            variants={cardVariants}
+            whileHover="hover"
             key={caseStudyPreview.handle}
             className={styles["preview-container"]}
           >
             <CaseStudyPreviewCard
               fullWidth
               caseStudyPreview={caseStudyPreview}
+              shakeLabTag={shakeLabTag}
             />
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

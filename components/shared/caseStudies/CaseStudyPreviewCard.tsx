@@ -3,17 +3,39 @@ import Link from "next/link";
 import { CaseStudyPreview } from "types/CaseStudy";
 import fontStyles from "styles/fontStyles.module.css";
 import styles from "./CaseStudyPreviewCard.module.css";
+import { motion, Variants } from "framer-motion";
+
+const labTagVariants: Variants = {
+  initial: {
+    scale: 1,
+    rotate: 0,
+  },
+  shake: {
+    scale: 1.1,
+    rotate: [-3, 3, -3],
+    transition: {
+      rotate: {
+        repeat: Infinity,
+        // repeatType: "loop",
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+  },
+};
 
 type CaseStudyPreviewCardProps = {
   caseStudyPreview: CaseStudyPreview;
   isDraggingCard?: boolean;
   fullWidth?: boolean;
+  shakeLabTag?: boolean;
 };
 
 export const CaseStudyPreviewCard = ({
   caseStudyPreview,
   isDraggingCard,
   fullWidth,
+  shakeLabTag,
 }: CaseStudyPreviewCardProps): JSX.Element => {
   const { handle, previewImage, title, tags, templateNumber, isLabs } =
     caseStudyPreview;
@@ -35,11 +57,15 @@ export const CaseStudyPreviewCard = ({
             objectFit="cover"
             layout="fill"
             draggable="false"
-          />{" "}
+          />
           {isLabs && (
-            <div className={`${fontStyles["body-one"]} ${styles["lab-tag"]}`}>
+            <motion.div
+              variants={labTagVariants}
+              animate={shakeLabTag ? "shake" : "initial"}
+              className={`${fontStyles["body-one"]} ${styles["lab-tag"]}`}
+            >
               Labs
-            </div>
+            </motion.div>
           )}
         </div>
         <div className={styles["text-container"]}>

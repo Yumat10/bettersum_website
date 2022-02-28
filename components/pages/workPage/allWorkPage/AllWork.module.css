@@ -20,6 +20,8 @@
 }
 
 .lab-tag {
+  cursor: pointer;
+  border: none;
   background-color: var(--bettersum-blue);
   color: var(--bettersum-beige);
   padding: 0.5em 1.75em;

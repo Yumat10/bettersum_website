@@ -1,5 +1,5 @@
 import axios from "axios";
-import { AllWorkHeader } from "components/pages/workPage/allWorkPage/AllWorkHeader";
+import { AllWork } from "components/pages/workPage/allWorkPage/AllWork";
 import { CaseStudiesGrid } from "components/shared/caseStudies/CaseStudiesGrid";
 import { ContactForm } from "components/shared/forms/ContactForm";
 import { useCaseStudyContext } from "contexts/caseStudyContext";
@@ -43,8 +43,7 @@ const Work: NextPage = ({
         <meta property="og:image:height" content="2141" />
       </Head>
       <main>
-        <AllWorkHeader />
-        <CaseStudiesGrid />
+        <AllWork />
         <ContactForm />
       </main>
     </div>

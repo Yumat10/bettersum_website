@@ -21,8 +21,13 @@
   color: var(--bettersum-beige);
   border: none;
   padding: 25px 25px;
+  overflow: hidden;
 }
 
 .button p {
   margin: 0px 20px 0px 0px;
+}
+
+.arrow-container {
+  flex-grow: 1;
 }
