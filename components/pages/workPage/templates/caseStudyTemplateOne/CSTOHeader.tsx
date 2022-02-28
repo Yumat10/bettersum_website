@@ -3,6 +3,27 @@ import styles from "./CSTOHeader.module.css";
 import fontStyles from "styles/fontStyles.module.css";
 import { Subheading } from "components/shared/navbars/Subheading";
 import { BetterSumColors } from "types/BetterSumColors";
+import { motion, Variants } from "framer-motion";
+import {
+  caseStudyHeaderVariants,
+  caseStudySubheaderVariants,
+} from "components/shared/variants/HeaderVariants";
+
+const tagContainerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 1.5,
+      delayChildren: 0.5,
+    },
+  },
+};
+
+const tagVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
 
 export const CSTOHeader = (): JSX.Element | null => {
   const { caseStudyData } = useCaseStudyContext();
@@ -15,38 +36,57 @@ export const CSTOHeader = (): JSX.Element | null => {
   return (
     <div className={styles["container"]}>
       <div className={styles["top-container"]}>
-        <h1 className={`${fontStyles["title-header"]} ${styles["title"]}`}>
+        <motion.h1
+          variants={caseStudyHeaderVariants}
+          initial="hidden"
+          animate="visible"
+          className={`${fontStyles["title-header"]} ${styles["title"]}`}
+        >
           <Subheading
             title="Work"
             color={BetterSumColors.Black}
             topOffset="10px"
           />
           {title}
-        </h1>
-        <h3
+        </motion.h1>
+        <motion.h3
+          variants={caseStudySubheaderVariants}
+          initial="hidden"
+          animate="visible"
           className={`${fontStyles["category-header"]} ${styles["description"]}`}
         >
           {shortDescription}
-        </h3>
+        </motion.h3>
         {isLabs && (
-          <p className={`${fontStyles["body-copy"]} ${styles["lab-tag"]}`}>
+          <motion.p
+            variants={caseStudySubheaderVariants}
+            initial="hidden"
+            animate="visible"
+            className={`${fontStyles["body-copy"]} ${styles["lab-tag"]}`}
+          >
             Labs
-          </p>
+          </motion.p>
         )}
       </div>
       <hr className={styles["divider"]} />
       <div className={styles["bottom-container"]}>
-        <div className={styles["tag-container"]}>
+        <motion.div
+          variants={tagContainerVariants}
+          initial="hidden"
+          animate="visible"
+          className={styles["tag-container"]}
+        >
           {tags.map((tag) => (
-            <p
+            <motion.p
+              variants={tagVariants}
               key={tag}
               className={`${fontStyles["body-copy"]} ${styles["tag"]}`}
             >
               #{tag}
               {"  "}
-            </p>
+            </motion.p>
           ))}
-        </div>
+        </motion.div>
         <a
           href={url}
           target="_blank"
