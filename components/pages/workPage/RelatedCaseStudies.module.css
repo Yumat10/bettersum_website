@@ -36,11 +36,10 @@
   border: 1px solid var(--bettersum-black);
 }
 
-.preview-container {
+.preview-container:not(:first-child) {
   margin: 0px 0px 0px 50px;
 }
 
-.preview-container:first-child,
 .preview-container:last-child {
   border: none;
 }
@@ -65,4 +64,33 @@
 
 .tags-container p:first-child span {
   display: none;
+}
+
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 650px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+    background-color: var(--bettersum-blue);
+    padding: 60px 0px;
+  }
+
+  .mobile-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: var(--width-clamp);
+    margin: 0px auto;
+    color: var(--bettersum-beige);
+  }
+
+  .mobile p {
+    margin: 0px 10px 0px 0px;
+  }
 }

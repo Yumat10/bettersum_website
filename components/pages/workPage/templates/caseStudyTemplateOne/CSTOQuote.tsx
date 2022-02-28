@@ -27,26 +27,27 @@ export const CSTOQuote = (): JSX.Element | null => {
           <p className={fontStyles["flair-copy"]}>
             <b>{quoteUserName} </b>
           </p>
-          <p className={fontStyles["flair-copy"]}>@ </p>
-          <p className={fontStyles["flair-copy"]}>{quoteUserTitle}</p>
-          <div className={styles["arrow"]}>
-            <Image
-              src="/arrows/rightArrowBeige.svg"
-              alt="Go"
-              width={24}
-              height={24}
-            />
+          <p className={fontStyles["flair-copy"]}>@ {quoteUserTitle}</p>
+          <div className={styles["arrow-link-container"]}>
+            <div className={styles["arrow"]}>
+              <Image
+                src="/arrows/rightArrowBeige.svg"
+                alt="Go"
+                objectFit="contain"
+                layout="fill"
+              />
+            </div>
+            <a
+              href={quoteLink}
+              target="_blank"
+              rel="noreferrer"
+              className={fontStyles["flair-copy"]}
+            >
+              <b>
+                <u>{quoteLinkText}</u>
+              </b>
+            </a>
           </div>
-          <a
-            href={quoteLink}
-            target="_blank"
-            rel="noreferrer"
-            className={fontStyles["flair-copy"]}
-          >
-            <b>
-              <u>{quoteLinkText}</u>
-            </b>
-          </a>
         </div>
       </div>
       <video src={video.url} autoPlay muted loop className={styles["video"]} />

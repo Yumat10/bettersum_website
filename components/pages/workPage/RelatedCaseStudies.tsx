@@ -74,7 +74,7 @@ export const RelatedCaseStudies = (): JSX.Element | null => {
     );
   };
 
-  return (
+  const RelatedCaseStudiesScroll = (): JSX.Element => (
     <div className={styles["container"]}>
       <div className={styles["inner-container"]}>
         <div className={styles["header"]}>
@@ -95,22 +95,22 @@ export const RelatedCaseStudies = (): JSX.Element | null => {
           dragConstraints={{
             left:
               -1 *
-              ((filteredCaseStudyPreviews.length - 1) * 460 +
+              ((filteredCaseStudyPreviews.length - 2) * 460 +
                 caseStudyPreviews.length * 50),
-            right: -1 * (filteredCaseStudyPreviews.length + 1),
+            right: 0,
           }}
           initial={{
             x: 0,
           }}
           animate={{
-            x: -460 - 50,
+            x: 0,
           }}
           whileDrag={{ scale: 1.05 }}
           onDragStart={() => setIsDragging(true)}
           onDragEnd={() => setIsDragging(false)}
           className={styles["related-work-grid"]}
         >
-          <div className={styles["preview-container"]} />
+          {/* <div className={styles["preview-container"]} /> */}
           {filteredCaseStudyPreviews.map((caseStudyPreview) =>
             CaseStudyPreviewComponent(caseStudyPreview)
           )}
@@ -118,5 +118,22 @@ export const RelatedCaseStudies = (): JSX.Element | null => {
         </motion.div>
       </div>
     </div>
+  );
+
+  return (
+    <>
+      <div className={styles["desktop"]}>{RelatedCaseStudiesScroll()}</div>
+      <div className={styles["mobile"]}>
+        <div className={styles["mobile-container"]}>
+          <p className={fontStyles["body-copy"]}>View other case studies</p>
+          <Image
+            src="/arrows/rightArrowBeige.svg"
+            alt=""
+            height={24}
+            width={24}
+          />
+        </div>
+      </div>
+    </>
   );
 };
