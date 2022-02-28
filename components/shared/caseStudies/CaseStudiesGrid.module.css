@@ -7,25 +7,24 @@
 .inner-container {
   width: var(--width-clamp);
   margin: 0px auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 80px;
   row-gap: 80px;
 }
 
 .preview-container {
-  width: 520px;
+  width: 100%;
 }
 
 @media only screen and (max-width: 1200px) {
   .inner-container {
-    row-gap: 40px;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
   }
 
   .preview-container {
-    width: 450px;
-    max-width: 50%;
+    width: 520px;
   }
 }
 

@@ -23,7 +23,7 @@ export const AllWorkHeader = (): JSX.Element => {
               Labs
             </p>
             <p className={`${fontStyles["body-copy"]}`}>
-              highlights products that we have made-in-house.
+              highlights products that we have made in-house.
             </p>
           </div>
         </div>

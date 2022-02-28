@@ -3,6 +3,10 @@
   color: var(--bettersum-beige);
 }
 
+.header {
+  text-align: center;
+}
+
 .header,
 .button {
   width: var(--width-clamp);
