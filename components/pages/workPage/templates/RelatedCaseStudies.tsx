@@ -4,10 +4,16 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { CaseStudyPreview } from "types/CaseStudy";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import fontStyles from "styles/fontStyles.module.css";
 import styles from "./RelatedCaseStudies.module.css";
 import { CaseStudyPreviewCard } from "components/shared/caseStudies/CaseStudyPreviewCard";
+
+const previewCardVariants: Variants = {
+  hover: {
+    scale: 1.1,
+  },
+};
 
 export const RelatedCaseStudies = (): JSX.Element | null => {
   const router = useRouter();
@@ -70,7 +76,9 @@ export const RelatedCaseStudies = (): JSX.Element | null => {
         >
           {/* <div className={styles["preview-container"]} /> */}
           {filteredCaseStudyPreviews.map((caseStudyPreview) => (
-            <div
+            <motion.div
+              variants={previewCardVariants}
+              whileHover="hover"
               key={caseStudyPreview.handle}
               className={styles["preview-container"]}
             >
@@ -78,7 +86,7 @@ export const RelatedCaseStudies = (): JSX.Element | null => {
                 caseStudyPreview={caseStudyPreview}
                 isDraggingCard={isDragging}
               />
-            </div>
+            </motion.div>
           ))}
           <div className={styles["preview-container"]} />
         </motion.div>
