@@ -95,7 +95,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
   }
 
   const contentfulApiUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
-  const contentfulAccessToken = process.env.CONTENTFUL_ACCESS_TOKEN;
+  const contentfulAccessToken = process.env.CONTENTFUL_IS_PREVIEW
+    ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
+    : process.env.CONTENTFUL_ACCESS_TOKEN;
 
   // Templates start at 1
   const templates: string[] = ["", "caseStudyTemplateOneCollection"];
@@ -141,7 +143,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     query {
      ${chosenTemplate}(where: {
         handle: "${queryWorkHandle.toLowerCase()}"
-      }, limit: 1
+      }, limit: 1, preview: ${process.env.CONTENTFUL_IS_PREVIEW || false}
      ) {
         items {
           ${chosenTemplateStructure}
@@ -152,7 +154,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const contentfulCaseStudyPreviewsQuery = gql`
     query {
-      caseStudyPreviewsCollection {
+      caseStudyPreviewsCollection(preview: ${process.env.CONTENTFUL_IS_PREVIEW}) {
         items {
           handle
           title

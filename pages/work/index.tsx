@@ -52,13 +52,17 @@ const Work: NextPage = ({
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const contentfulApiUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
-  const contentfulAccessToken = process.env.CONTENTFUL_ACCESS_TOKEN;
+  const contentfulAccessToken = process.env.CONTENTFUL_IS_PREVIEW
+    ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
+    : process.env.CONTENTFUL_ACCESS_TOKEN;
 
   const gql = String.raw;
 
   const contentfulCaseStudyPreviewsQuery = gql`
     query {
-      caseStudyPreviewsCollection(order: order_ASC) {
+      caseStudyPreviewsCollection(order: order_ASC, preview: ${
+        process.env.CONTENTFUL_IS_PREVIEW || false
+      }) {
         items {
           handle
           title
