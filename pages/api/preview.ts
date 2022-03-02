@@ -15,9 +15,7 @@ const setPreview = async (
   try {
     res.setPreviewData({});
 
-    res.redirect(`${route}`);
-
-    return res.status(200).json();
+    return res.redirect(`${route}`);
   } catch (err) {
     const error = JSON.stringify(err);
     console.log(err);
