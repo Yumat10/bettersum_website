@@ -75,7 +75,7 @@ const Home: NextPage = ({
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const contentfulApiUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
-  const contentfulAccessToken = process.env.CONTENTFUL_IS_PREVIEW
+  const contentfulAccessToken = context.preview
     ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
     : process.env.CONTENTFUL_ACCESS_TOKEN;
 
@@ -83,9 +83,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const contentfulCaseStudyPreviewsQuery = gql`
     query {
-      caseStudyPreviewsCollection(order: order_ASC, limit: 4, preview: ${
-        process.env.CONTENTFUL_IS_PREVIEW || false
-      }) {
+      caseStudyPreviewsCollection(order: order_ASC, limit: 4,
+       preview: ${context.preview ? true : false}) {
         items {
           handle
           title
