@@ -15,7 +15,8 @@ const tagContainerVariants: Variants = {
     opacity: 1,
     transition: {
       delay: 1.5,
-      delayChildren: 0.5,
+      delayChildren: 1.5,
+      staggerChildren: 0.5,
     },
   },
 };
@@ -87,14 +88,17 @@ export const CSTOHeader = (): JSX.Element | null => {
             </motion.p>
           ))}
         </motion.div>
-        <a
+        <motion.a
+          variants={tagContainerVariants}
+          initial="hidden"
+          animate="visible"
           href={url}
           target="_blank"
           rel="noreferrer"
           className={`${fontStyles["body-copy"]} ${styles["visit-site"]}`}
         >
           <b>Visit Site</b>
-        </a>
+        </motion.a>
       </div>
     </div>
   );
