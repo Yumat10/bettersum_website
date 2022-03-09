@@ -17,7 +17,7 @@
 
 .photo-container,
 .photo-grid {
-  aspect-ratio: 1050 / 590;
+  /* aspect-ratio: 1050 / 590; */
   min-height: 590px;
 }
 
@@ -147,13 +147,13 @@
   .photo-grid div:first-child {
     min-height: 620px;
     width: 100%;
-    aspect-ratio: 375 / 620;
+    /* aspect-ratio: 375 / 620; */
     margin: 0px 0px 7.5px 0px;
   }
 
   .photo-grid div:last-child {
     width: 100%;
     min-height: 265px;
-    aspect-ratio: 375 / 265;
+    /* aspect-ratio: 375 / 265; */
   }
 }

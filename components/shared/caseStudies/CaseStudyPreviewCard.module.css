@@ -4,6 +4,7 @@
   box-sizing: border-box;
   background-color: var(--bettersum-beige);
   width: 520px;
+  height: 520px;
   aspect-ratio: 520 / 520;
   /* height: 425px; */
   border: 1px solid var(--bettersum-black);
@@ -46,6 +47,10 @@
 }
 
 @media only screen and (max-width: 650px) {
+  .preview-container {
+    height: 350px;
+  }
+
   .text-container {
     height: 120px;
   }
