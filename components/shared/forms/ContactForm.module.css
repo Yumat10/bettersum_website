@@ -2,6 +2,8 @@
   background-color: var(--bettersum-black);
   padding: 150px 0px 200px 0px;
   overflow-x: hidden;
+  border-top: 2px solid var(--bettersum-beige);
+  border-bottom: 2px solid var(--bettersum-beige);
 }
 
 .inner-container {
@@ -29,6 +31,8 @@
   grid-template-columns: repeat(2, 1fr);
   column-gap: 80px;
   row-gap: 65px;
+  /* background: url("/splashScreenBackground.svg") no-repeat;
+  background-size: cover; */
 }
 
 .message-input {

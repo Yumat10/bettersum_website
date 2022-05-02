@@ -45,7 +45,7 @@ export const SplashScreen = (): JSX.Element => {
         </div>
         <div className={styles["image-container"]}>
           <Image
-            src="/splashPagePhoto.svg"
+            src="/splashScreenPhoto.svg"
             alt="welcome"
             layout="fill"
             className={styles["next-image"]}

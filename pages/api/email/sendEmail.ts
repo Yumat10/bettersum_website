@@ -12,22 +12,23 @@ export const sendEmail = ({
   template,
 }: SendEmailData) =>
   new Promise<void>(async (resolve, reject) => {
+    console.log("---sendEmail---");
     try {
       // Get the right template Id
       let templateId = "";
 
       switch (template) {
         case TemplateTypes.ContactTeam:
-          templateId = "d-224e5a8aab5c4ab6bee5c5649d59a1df";
+          templateId = "d-b3ab4d7ed7cb4dcf82d40a29cf60ced7";
           break;
         default:
           return reject("Email template not found");
       }
 
       const msg = {
-        to: "team@rangr.org",
+        to: "team@bettersum.com",
         from: {
-          email: "yuma@rangr.org",
+          email: "yuma@bettersum.com",
         },
         dynamic_template_data: { ...templateData },
         template_id: templateId,

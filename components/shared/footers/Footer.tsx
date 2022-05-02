@@ -123,7 +123,7 @@ export const Footer = (): JSX.Element => {
             </div>
             {SocialMediaIcons}
           </div>
-          <hr className={styles["divider"]} />
+          {/* <hr className={styles["divider"]} /> */}
           <div className={styles["footer-links-containers"]}>
             <FooterLinksColumn header="Home" linksArray={footerLinks[0]} />
             <FooterLinksColumn header="Services" linksArray={footerLinks[1]} />
