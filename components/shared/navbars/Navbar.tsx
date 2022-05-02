@@ -76,16 +76,24 @@ export const Navbar = (): JSX.Element => {
 
   const routes: Route[] = [
     {
-      name: "services",
+      name: "Work",
+      path: "/work",
+    },
+    {
+      name: "Services",
       path: "/services",
     },
     {
-      name: "team",
+      name: "Methods",
+      path: "/",
+    },
+    {
+      name: "About",
       path: "/team",
     },
     {
-      name: "work",
-      path: "/work",
+      name: "Contact",
+      path: "/",
     },
   ];
 
@@ -105,28 +113,17 @@ export const Navbar = (): JSX.Element => {
       >
         <div className={styles["brand"]} onClick={() => router.push("/")}>
           <Image
-            src="/brandLogos/betterSumSmallMarkBeige.svg"
+            src="/brandLogos/betterSumLogoBlack.svg"
             alt="BetterSum"
             layout="fixed"
-            height={30}
-            width={20}
+            height="100%"
+            width={175}
           />
-          <div className={styles["logo-text"]}>
-            <p>Atlanta Based.</p>
-            <br />
-            <motion.div
-              variants={humanCenteredVariants}
-              whileHover="hover"
-              className={styles["bolded-logo-text"]}
-            >
-              Human Centered.
-            </motion.div>
-          </div>
         </div>
         <div className={styles["routes-container"]}>
           {routes.map(({ name, path }) => (
             <motion.div
-              variants={routeVariants}
+              // variants={routeVariants}
               whileHover="hover"
               key={path}
               className={styles["route"]}
@@ -155,17 +152,13 @@ export const Navbar = (): JSX.Element => {
               content
             </a>
           </motion.div>
-          <GradientOutlineButton
-            text="Contact us"
-            onClick={navigateToContactUs}
-          />
         </div>
         {/* Hamburger menu for mobile */}
         <div className={styles["hamburger-menu-container"]}>
           <Image
             src={
               openHamburgerMenu
-                ? "/xIcons/closeBeige.svg"
+                ? "/xIcons/closeBlack.svg"
                 : "/hamburgerMenuIcon.svg"
             }
             alt="Menu"
@@ -198,10 +191,6 @@ export const Navbar = (): JSX.Element => {
                   </Link>
                 </div>
               ))}
-              <GradientOutlineButton
-                text="Contact us"
-                onClick={navigateToContactUs}
-              />
             </div>
           )}
         </div>
