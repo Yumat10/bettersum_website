@@ -63,7 +63,7 @@ const Home: NextPage = ({
       <main>
         <SplashScreen />
         <WorkAndLab />
-        {/* <ServicesOffered /> */}
+        <ServicesOffered />
         {/* <TeamBackground /> */}
         {/* <TheLab /> */}
         {/* <SubscribeToNewsletter /> */}

@@ -1,0 +1,48 @@
+.container {
+  cursor: pointer;
+  padding: 27px 0px 27px 0px;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-inner-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header-inner-container > span {
+  margin: 0px 27px 0px 0px !important;
+}
+
+.header-text {
+  flex-grow: 1;
+  /* margin: 0px 25px 0px 0px; */
+}
+
+.header-icon {
+  position: relative;
+  height: 45px;
+  width: 45px;
+}
+
+.description-text {
+  display: block;
+}
+
+.minus-icon-container {
+  position: relative;
+  height: 25px;
+  width: 25px;
+}
+
+.plus-icon-container {
+  position: relative;
+  height: 25px;
+  width: 25px;
+}

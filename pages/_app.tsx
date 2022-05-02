@@ -16,16 +16,16 @@ const isProd = process.env.NODE_ENV === "production";
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
-  useEffect(() => {
-    if (router.route === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      document.body.style.overflow = "hidden";
-      setTimeout(
-        () => (document.body.style.overflow = "auto"),
-        (homePageLoadDuration + homePageAnimationDuration) * 1000
-      );
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (router.route === "/") {
+  //     window.scrollTo({ top: 0, behavior: "smooth" });
+  //     document.body.style.overflow = "hidden";
+  //     setTimeout(
+  //       () => (document.body.style.overflow = "auto"),
+  //       (homePageLoadDuration + homePageAnimationDuration) * 1000
+  //     );
+  //   }
+  // }, []);
 
   // Google Analytics
   useEffect(() => {
