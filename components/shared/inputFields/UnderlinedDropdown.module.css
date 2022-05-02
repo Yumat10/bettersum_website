@@ -1,0 +1,67 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: var(--bettersum-black);
+}
+
+.input {
+  all: unset;
+  cursor: pointer;
+  height: inherit;
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 0px;
+  box-sizing: border-box;
+}
+
+.underline {
+  position: relative;
+  border-bottom: 2px solid var(--bettersum-black);
+}
+
+.placeholder {
+  color: var(--bettersum-black);
+  opacity: 0.3;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.errors {
+  position: absolute;
+  bottom: -35px;
+  display: block;
+  text-transform: capitalize;
+  color: var(--error-color);
+}
+
+.options-grid {
+  position: absolute;
+  top: 3px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+  color: var(--bettersum-black);
+  background-color: var(--bettersum-beige);
+  padding: 18px 20px;
+  z-index: 10;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.16);
+}
+
+.option {
+  cursor: pointer;
+}
+
+.option:not(:first-child) {
+  margin: 16px 0px 0px 0px;
+}
+
+@media only screen and (max-width: 850px) {
+  .errors {
+    bottom: -22.5px;
+  }
+}

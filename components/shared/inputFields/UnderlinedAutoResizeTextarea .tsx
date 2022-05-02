@@ -7,7 +7,7 @@ import {
   useRef,
   useState,
 } from "react";
-import styles from "./UnderlineAutoResizeTextarea.module.css";
+import styles from "./UnderlinedAutoResizeTextarea.module.css";
 import fontStyles from "styles/fontStyles.module.css";
 
 interface TextareaProps<T extends string | number> {
@@ -15,6 +15,7 @@ interface TextareaProps<T extends string | number> {
   disabled: boolean;
   label: string;
   value: T;
+  placeholder: string;
   setValue: (newValue: string) => void;
   errors?: string;
   // Formik element that triggers validation when blurred
@@ -25,11 +26,12 @@ interface TextareaProps<T extends string | number> {
 
 // TODO: Add CSS to text area as used in the contact form
 
-export const UnderlineAutoResizeTextarea = <T extends string | number>({
+export const UnderlinedAutoResizeTextarea = <T extends string | number>({
   id,
   disabled,
   label,
   value,
+  placeholder,
   setValue,
   errors,
   onBlur,
@@ -55,33 +57,32 @@ export const UnderlineAutoResizeTextarea = <T extends string | number>({
   };
 
   return (
-    <div>
-      <div className={styles["container"]} style={textAreaStyle}>
-        <textarea
-          id={id}
-          ref={textAreaRef}
-          disabled={disabled}
-          value={value}
-          onChange={onChangeHandler}
-          onBlur={onBlur}
-          rows={1}
-          className={styles["input"]}
-          style={{
-            borderBottomColor:
-              touched && errors
-                ? "var(--error-color)"
-                : "var(--bettersum-blue)",
-            borderBottomWidth: touched && errors ? "6px" : "",
-          }}
-        />
+    <div className={styles["container"]} style={textAreaStyle}>
+      <label
+        htmlFor={id}
+        className={`${fontStyles["body-copy"]} ${styles["label"]}`}
+      >
+        {label}
+      </label>
 
-        <label
-          htmlFor={id}
-          className={`${fontStyles["flair-copy"]} ${styles["label"]}`}
-        >
-          {label}
-        </label>
-      </div>
+      <textarea
+        id={id}
+        ref={textAreaRef}
+        disabled={disabled}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChangeHandler}
+        onBlur={onBlur}
+        rows={1}
+        className={`${fontStyles["body-copy"]} ${styles["input"]}`}
+        style={{
+          borderBottomColor: !touched
+            ? "var(--bettersum-black)"
+            : errors
+            ? "var(--error-color)"
+            : "var(--bettersum-blue)",
+        }}
+      />
       {touched && errors && (
         <p className={`${fontStyles["flair-copy"]} ${styles["errors"]}`}>
           {errors}

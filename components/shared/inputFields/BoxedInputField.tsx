@@ -1,5 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
-import styles from "./UnderlineInputField.module.css";
+import styles from "./BoxedInputField.module.css";
 import fontStyles from "styles/fontStyles.module.css";
 
 interface InputFieldProps<T extends string | number> {
@@ -16,7 +15,7 @@ interface InputFieldProps<T extends string | number> {
   touched: boolean | undefined;
 }
 
-export const UnderlineInputField = <T extends string | number>({
+export const BoxedInputField = <T extends string | number>({
   type = "text",
   id,
   disabled,

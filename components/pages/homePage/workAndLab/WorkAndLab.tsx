@@ -26,20 +26,20 @@ export const WorkAndLab = (): JSX.Element => {
     <div className={styles["container"]}>
       <div className={styles["inner-container"]}>
         <h3 className={`${fontStyles["category-header"]} ${styles["header"]}`}>
-          Check out some of the experiences we have created
+          Recent Work
         </h3>
-        <div>
+        <div className={styles["case-studies-grid-container"]}>
           <CaseStudiesGrid />
         </div>
         <Link href="/work" passHref>
           <motion.a
-            variants={buttonVariants}
+            // variants={buttonVariants}
             whileHover="hover"
             className={styles["button"]}
           >
-            <p className={fontStyles["body-copy"]}>See all work</p>
+            <p className={fontStyles["body-copy"]}>See All Case Studies</p>
             <motion.div
-              variants={arrowVariants}
+              // variants={arrowVariants}
               className={styles["arrow-container"]}
             >
               <Image

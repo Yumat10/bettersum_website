@@ -1,14 +1,23 @@
 import { Formik } from "formik";
 import { useState } from "react";
 import * as yup from "yup";
-import { UnderlineInputField } from "../inputFields/UnderlineInputField";
-import styles from "./ContactForm.module.css";
-import fontStyles from "styles/fontStyles.module.css";
 import Image from "next/image";
-import { UnderlineAutoResizeTextarea } from "../inputFields/UnderlineAutoResizeTextarea";
 import axios from "axios";
 import { SendEmailData } from "types/SendEmailData";
 import { motion, Variants } from "framer-motion";
+import { UnderlinedInputField } from "../inputFields/UnderlinedInputField";
+import { UnderlinedDropdown } from "../inputFields/UnderlinedDropdown";
+import { UnderlinedAutoResizeTextarea } from "../inputFields/UnderlinedAutoResizeTextarea ";
+
+import fontStyles from "styles/fontStyles.module.css";
+import styles from "./ContactForm.module.css";
+
+const ServiceTypes: string[] = [
+  "Strategy & Stewardship",
+  "Custom Digital Experience",
+  "Shopify Plus Ecommerce",
+];
+const BudgetOptions: string[] = ["$15k - $30k", "$30k - $100k", "$100k +"];
 
 const arrowVariants: Variants = {
   hover: {
@@ -21,29 +30,30 @@ const arrowVariants: Variants = {
 };
 
 const ContactInfoSchema = yup.object({
-  firstName: yup.string().required(),
-  lastName: yup.string().required(),
-  company: yup.string().required(),
+  name: yup.string().required(),
   email: yup.string().required().email(),
-  message: yup.string().required(),
+  service: yup.string().oneOf(ServiceTypes).required(),
+  budget: yup.string().oneOf(BudgetOptions).required(),
+  problem: yup.string().required(),
 });
 
 type ContactInfo = yup.InferType<typeof ContactInfoSchema>;
 
 const initialValues: ContactInfo = {
-  firstName: "",
-  lastName: "",
-  company: "",
+  name: "",
   email: "",
-  message: "",
+  service: "",
+  budget: "",
+  problem: "",
 };
 
 type ContactEmailFields = {
   emailAddress: string;
-  firstName: string;
-  lastName: string;
-  company: string;
-  message: string;
+  name: string;
+  email: string;
+  service: string;
+  budget: string;
+  problem: string;
 };
 
 export const ContactForm = (): JSX.Element => {
@@ -71,7 +81,7 @@ export const ContactForm = (): JSX.Element => {
           await sendContactTeamEmail({
             ...values,
             emailAddress: values.email,
-            message: values.message.replaceAll("\n", "<br>"),
+            problem: values.problem.replaceAll("\n", "<br>"),
           });
           setEmailSuccessful(true);
           setInterval(() => setEmailSuccessful(false), 5000);
@@ -85,39 +95,21 @@ export const ContactForm = (): JSX.Element => {
     >
       {(props) => (
         <div className={styles["form-container"]}>
-          <UnderlineInputField
-            id="firstName"
-            label="First Name"
-            value={props.values.firstName}
-            setValue={props.handleChange("firstName")}
+          <UnderlinedInputField
+            id="name"
+            label="My name is:"
+            placeholder="Your Full Name"
+            value={props.values.name}
+            setValue={props.handleChange("name")}
             disabled={loading}
-            errors={props.errors.firstName}
-            touched={props.touched.firstName}
+            errors={props.errors.name}
+            touched={props.touched.name}
             onBlur={props.handleBlur}
           />
-          <UnderlineInputField
-            id="lastName"
-            label="Last Name"
-            value={props.values.lastName}
-            setValue={props.handleChange("lastName")}
-            disabled={loading}
-            errors={props.errors.lastName}
-            onBlur={props.handleBlur}
-            touched={props.touched.lastName}
-          />
-          <UnderlineInputField
-            id="company"
-            label="Company"
-            value={props.values.company}
-            setValue={props.handleChange("company")}
-            disabled={loading}
-            errors={props.errors.company}
-            onBlur={props.handleBlur("company")}
-            touched={props.touched.company}
-          />
-          <UnderlineInputField
+          <UnderlinedInputField
             id="email"
-            label="Email"
+            label="Reply to Me at:"
+            placeholder="Your Email Address"
             value={props.values.email}
             setValue={props.handleChange("email")}
             disabled={loading}
@@ -125,16 +117,49 @@ export const ContactForm = (): JSX.Element => {
             onBlur={props.handleBlur("email")}
             touched={props.touched.email}
           />
-          <UnderlineAutoResizeTextarea
-            id="message"
-            label="Message"
-            value={props.values.message}
-            setValue={props.handleChange("message")}
+          <UnderlinedDropdown
+            id="service"
+            label="Service Type:"
+            placeholder="Select a Service"
+            options={ServiceTypes}
+            value={props.values.service}
+            setValue={props.handleChange("service")}
             disabled={loading}
-            errors={props.errors.message}
-            onBlur={props.handleBlur("message")}
-            touched={props.touched.message}
+            errors={props.errors.service}
+            onBlur={props.handleBlur("service")}
+            touched={props.touched.service}
+            setTouched={() =>
+              props.setTouched({ ...props.touched, service: true })
+            }
           />
+          <UnderlinedDropdown
+            id="budget"
+            label="Estimated Budget:"
+            placeholder="Select a Budget"
+            options={BudgetOptions}
+            value={props.values.budget}
+            setValue={props.handleChange("budget")}
+            disabled={loading}
+            errors={props.errors.budget}
+            onBlur={props.handleBlur("budget")}
+            touched={props.touched.budget}
+            setTouched={() =>
+              props.setTouched({ ...props.touched, budget: true })
+            }
+          />
+          <span className={styles["message-input"]}>
+            <UnderlinedAutoResizeTextarea
+              id="problem"
+              label="What Problem Do You Want Solved?"
+              placeholder="Describe the problem you want solved"
+              value={props.values.problem}
+              setValue={props.handleChange("problem")}
+              disabled={loading}
+              errors={props.errors.problem}
+              onBlur={props.handleBlur("problem")}
+              touched={props.touched.problem}
+            />
+          </span>
           <motion.button
             initial="initial"
             whileHover="hover"
@@ -148,7 +173,7 @@ export const ContactForm = (): JSX.Element => {
                 ? "Sending..."
                 : emailSuccessful
                 ? "Submitted! 🎉"
-                : "Get In Touch"}
+                : "Submit"}
             </p>
             <motion.div
               variants={arrowVariants}
@@ -174,9 +199,7 @@ export const ContactForm = (): JSX.Element => {
     <div className={styles["container"]}>
       <div className={styles["inner-container"]}>
         <div className={styles["text-container"]}>
-          <h2 className={fontStyles["title-header"]}>
-            We collaborate with ambitious brands and people. Let&#39;s build.
-          </h2>
+          <h2 className={fontStyles["title-header"]}>Work With Us</h2>
           <a
             href="mailto:team@bettersum.com"
             className={`${fontStyles["flair-copy"]} ${styles["email-link"]}`}

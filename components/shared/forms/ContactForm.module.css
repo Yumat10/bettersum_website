@@ -2,14 +2,15 @@
   background-color: var(--bettersum-black);
   padding: 150px 0px 200px 0px;
   overflow-x: hidden;
+  border-top: 2px solid var(--bettersum-beige);
+  border-bottom: 2px solid var(--bettersum-beige);
 }
 
 .inner-container {
   width: var(--width-clamp);
   margin: 0px auto;
   display: flex;
-  flex-direction: row;
-  column-gap: 80px;
+  flex-direction: column;
 }
 
 .text-container {
@@ -19,19 +20,30 @@
 
 .email-link {
   display: inline-block;
-  margin: 30px 0px 0px 0px;
+  margin: 20px 0px 0px 0px;
 }
 
 .form-container {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  row-gap: 8px;
+  margin: 60px 0px 0px 0px;
+  padding: 47px 60px;
+  background-color: var(--bettersum-beige);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 80px;
+  row-gap: 65px;
+  /* background: url("/splashScreenBackground.svg") no-repeat;
+  background-size: cover; */
+}
+
+.message-input {
+  grid-column: span 2;
 }
 
 .submit-button {
   all: unset;
   cursor: pointer;
+  grid-column: span 2;
+  justify-self: end;
   background-color: var(--bettersum-blue);
   color: var(--bettersum-beige);
   display: flex;
@@ -52,11 +64,31 @@
 }
 
 @media only screen and (max-width: 1200px) {
+  .form-container {
+    column-gap: 40px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
   .inner-container {
     flex-direction: column;
     row-gap: 50px;
   }
+
+  .form-container {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+
   .text-container {
     max-width: unset;
+  }
+
+  .submit-button {
+    width: max-content;
+    align-self: end;
+    height: 40px;
   }
 }

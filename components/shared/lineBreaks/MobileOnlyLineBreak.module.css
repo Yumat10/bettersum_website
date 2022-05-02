@@ -1,0 +1,9 @@
+.mobile-br {
+  display: none;
+}
+
+@media only screen and (max-width: 850px) {
+  .mobile-br {
+    display: block;
+  }
+}
