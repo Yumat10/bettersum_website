@@ -95,6 +95,10 @@ export const Navbar = (): JSX.Element => {
       name: "Contact",
       path: "/",
     },
+    // {
+    //   name: "Content",
+    //   path: "https://content.bettersum.com",
+    // },
   ];
 
   const navigateToContactUs: MouseEventHandler<HTMLButtonElement> = () =>
@@ -102,13 +106,13 @@ export const Navbar = (): JSX.Element => {
 
   return (
     <motion.div
-      variants={containerVariants}
+      // variants={containerVariants}
       initial={router.route === "/" ? "hidden" : undefined}
       animate="visible"
       className={styles["container"]}
     >
       <motion.div
-        variants={innerContainerVariants}
+        // variants={innerContainerVariants}
         className={styles["inner-container"]}
       >
         <div className={styles["brand"]} onClick={() => router.push("/")}>
@@ -138,20 +142,6 @@ export const Navbar = (): JSX.Element => {
               </Link>
             </motion.div>
           ))}
-          <motion.div
-            variants={routeVariants}
-            whileHover="hover"
-            className={styles["route"]}
-          >
-            <a
-              href="https://content.bettersum.com"
-              referrerPolicy="strict-origin-when-cross-origin"
-              rel="noopener"
-              className={fontStyles["flair-copy"]}
-            >
-              content
-            </a>
-          </motion.div>
         </div>
         {/* Hamburger menu for mobile */}
         <div className={styles["hamburger-menu-container"]}>
