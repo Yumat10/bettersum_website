@@ -1,4 +1,5 @@
 import axios from "axios";
+import { BetterMethods } from "components/pages/homePage/betterMethods/BetterMethods";
 import { TotalImpact } from "components/pages/homePage/totalmpact/TotalImpact";
 import { WorkAndLab } from "components/pages/homePage/workAndLab/WorkAndLab";
 import { useCaseStudyContext } from "contexts/caseStudyContext";
@@ -66,6 +67,7 @@ const Home: NextPage = ({
         <WorkAndLab />
         <ServicesOffered />
         <TotalImpact />
+        <BetterMethods />
         {/* <TeamBackground /> */}
         {/* <TheLab /> */}
         {/* <SubscribeToNewsletter /> */}

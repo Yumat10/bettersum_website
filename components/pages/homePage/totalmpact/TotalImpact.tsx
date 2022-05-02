@@ -1,3 +1,4 @@
+import { MobileOnlyLineBreak } from "components/shared/lineBreaks/MobileOnlyLineBreak";
 import { FC } from "react";
 
 import fontStyles from "../../../../styles/fontStyles.module.css";
@@ -19,7 +20,7 @@ export const TotalImpact: FC = () => {
         <div className={styles["header-container"]}>
           <h2 className={fontStyles["category-header"]}>
             Sum of
-            <br className={styles["mobile-br"]} /> Impact
+            <MobileOnlyLineBreak /> Impact
           </h2>
         </div>
         <div className={styles["figure-grid"]}>

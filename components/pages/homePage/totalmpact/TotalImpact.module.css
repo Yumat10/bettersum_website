@@ -14,10 +14,6 @@
   border-bottom: 2px solid var(--bettersum-beige);
 }
 
-.mobile-br {
-  display: none;
-}
-
 .figure-grid {
   margin: 105px 0px 0px 0px;
   display: grid;
@@ -32,10 +28,6 @@
 }
 
 @media only screen and (max-width: 850px) {
-  .mobile-br {
-    display: block;
-  }
-
   .figure-grid {
     margin: 50px 0px 0px 0px;
     display: flex;
