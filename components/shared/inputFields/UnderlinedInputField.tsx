@@ -7,6 +7,7 @@ interface InputFieldProps<T extends string | number> {
   disabled: boolean;
   label: string;
   value: T;
+  placeholder: string;
   setValue: (newValue: string) => void;
   errors?: string;
   // Formik element that triggers validation when blurred
@@ -21,6 +22,7 @@ export const UnderlinedInputField = <T extends string | number>({
   disabled,
   label,
   value,
+  placeholder,
   setValue,
   errors,
   onBlur,
@@ -29,34 +31,35 @@ export const UnderlinedInputField = <T extends string | number>({
   return (
     <div>
       <div className={styles["container"]}>
+        <label
+          htmlFor={id}
+          className={`${fontStyles["body-copy"]} ${styles["label"]}`}
+        >
+          {label}
+        </label>
         <input
           type={type}
           id={id}
           disabled={disabled}
           value={value}
+          placeholder={placeholder}
           onChange={(e) => setValue(e.target.value)}
           onBlur={onBlur}
           className={styles["input"]}
           style={{
-            borderBottomColor:
-              touched && errors
-                ? "var(--error-color)"
-                : "var(--bettersum-blue)",
-            borderWidth: touched && errors ? "6px" : "",
+            borderBottomColor: !touched
+              ? "var(--bettersum-black)"
+              : errors
+              ? "var(--error-color)"
+              : "var(--bettersum-blue)",
           }}
         />
-        <label
-          htmlFor={id}
-          className={`${fontStyles["flair-copy"]} ${styles["label"]}`}
-        >
-          {label}
-        </label>
       </div>
-      {touched && errors && (
+      {/* {touched && errors && (
         <p className={`${fontStyles["flair-copy"]} ${styles["errors"]}`}>
           {errors}
         </p>
-      )}
+      )} */}
     </div>
   );
 };

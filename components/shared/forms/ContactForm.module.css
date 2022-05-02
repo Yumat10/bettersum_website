@@ -23,14 +23,22 @@
 
 .form-container {
   margin: 60px 0px 0px 0px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 8px;
+  padding: 47px 60px;
+  background-color: var(--bettersum-beige);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 80px;
+}
+
+.message-input {
+  grid-column: span 2;
 }
 
 .submit-button {
   all: unset;
   cursor: pointer;
+  grid-column: span 2;
+  justify-self: end;
   background-color: var(--bettersum-blue);
   color: var(--bettersum-beige);
   display: flex;
@@ -51,11 +59,30 @@
 }
 
 @media only screen and (max-width: 1200px) {
+  .form-container {
+    column-gap: 40px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
   .inner-container {
     flex-direction: column;
     row-gap: 50px;
   }
+
+  .form-container {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+
   .text-container {
     max-width: unset;
+  }
+
+  .submit-button {
+    width: max-content;
+    align-self: end;
+    height: 40px;
   }
 }

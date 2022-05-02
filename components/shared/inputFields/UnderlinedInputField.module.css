@@ -1,21 +1,10 @@
 .container {
-  all: unset;
-  position: relative;
-  height: 72px;
-  background-color: var(--bettersum-beige);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
-  box-sizing: border-box;
+  color: var(--bettersum-black);
 }
 
 .label {
-  position: absolute;
-  color: var(--bettersum-black);
-  opacity: 0.5;
-  top: 0.3em;
-  left: 1rem;
 }
 
 .input {
@@ -24,15 +13,20 @@
   width: inherit;
   font-size: 24px;
   font-weight: 600;
-  color: var(--bettersum-black);
-  padding: 25px 1rem 0px 1rem;
+  padding: 0.8rem 0px;
   box-sizing: border-box;
-  border-bottom-style: solid;
-  border-bottom-width: 0px;
+  border-bottom: 2px solid var(--bettersum-black);
 }
 
 .input:focus {
-  border-bottom-width: 6px;
+  border-bottom-width: 4px;
+}
+
+.input::placeholder {
+  color: var(--bettersum-black);
+  opacity: 0.3;
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
 .errors {
@@ -41,9 +35,9 @@
   text-transform: capitalize;
   color: var(--error-color);
 }
-
+/* 
 @media only screen and (max-width: 1200px) {
   .container {
     height: 64px;
   }
-}
+} */

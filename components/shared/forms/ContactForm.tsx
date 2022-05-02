@@ -21,7 +21,7 @@ const arrowVariants: Variants = {
 };
 
 const ContactInfoSchema = yup.object({
-  firstName: yup.string().required(),
+  name: yup.string().required(),
   lastName: yup.string().required(),
   company: yup.string().required(),
   email: yup.string().required().email(),
@@ -31,7 +31,7 @@ const ContactInfoSchema = yup.object({
 type ContactInfo = yup.InferType<typeof ContactInfoSchema>;
 
 const initialValues: ContactInfo = {
-  firstName: "",
+  name: "",
   lastName: "",
   company: "",
   email: "",
@@ -40,7 +40,7 @@ const initialValues: ContactInfo = {
 
 type ContactEmailFields = {
   emailAddress: string;
-  firstName: string;
+  name: string;
   lastName: string;
   company: string;
   message: string;
@@ -86,38 +86,20 @@ export const ContactForm = (): JSX.Element => {
       {(props) => (
         <div className={styles["form-container"]}>
           <UnderlinedInputField
-            id="firstName"
-            label="First Name"
-            value={props.values.firstName}
-            setValue={props.handleChange("firstName")}
+            id="name"
+            label="My name is:"
+            placeholder="Your Full Name"
+            value={props.values.name}
+            setValue={props.handleChange("name")}
             disabled={loading}
-            errors={props.errors.firstName}
-            touched={props.touched.firstName}
+            errors={props.errors.name}
+            touched={props.touched.name}
             onBlur={props.handleBlur}
-          />
-          <UnderlinedInputField
-            id="lastName"
-            label="Last Name"
-            value={props.values.lastName}
-            setValue={props.handleChange("lastName")}
-            disabled={loading}
-            errors={props.errors.lastName}
-            onBlur={props.handleBlur}
-            touched={props.touched.lastName}
-          />
-          <UnderlinedInputField
-            id="company"
-            label="Company"
-            value={props.values.company}
-            setValue={props.handleChange("company")}
-            disabled={loading}
-            errors={props.errors.company}
-            onBlur={props.handleBlur("company")}
-            touched={props.touched.company}
           />
           <UnderlinedInputField
             id="email"
-            label="Email"
+            label="Reply to me at:"
+            placeholder="Your Email Address"
             value={props.values.email}
             setValue={props.handleChange("email")}
             disabled={loading}
@@ -125,16 +107,18 @@ export const ContactForm = (): JSX.Element => {
             onBlur={props.handleBlur("email")}
             touched={props.touched.email}
           />
-          <BoxedAutoResizeTextarea
-            id="message"
-            label="Message"
-            value={props.values.message}
-            setValue={props.handleChange("message")}
-            disabled={loading}
-            errors={props.errors.message}
-            onBlur={props.handleBlur("message")}
-            touched={props.touched.message}
-          />
+          <span className={styles["message-input"]}>
+            <BoxedAutoResizeTextarea
+              id="message"
+              label="Message"
+              value={props.values.message}
+              setValue={props.handleChange("message")}
+              disabled={loading}
+              errors={props.errors.message}
+              onBlur={props.handleBlur("message")}
+              touched={props.touched.message}
+            />
+          </span>
           <motion.button
             initial="initial"
             whileHover="hover"
@@ -148,7 +132,7 @@ export const ContactForm = (): JSX.Element => {
                 ? "Sending..."
                 : emailSuccessful
                 ? "Submitted! 🎉"
-                : "Get In Touch"}
+                : "Submit"}
             </p>
             <motion.div
               variants={arrowVariants}
