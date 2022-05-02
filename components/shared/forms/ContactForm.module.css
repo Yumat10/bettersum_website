@@ -18,7 +18,7 @@
 
 .email-link {
   display: inline-block;
-  margin: 30px 0px 0px 0px;
+  margin: 20px 0px 0px 0px;
 }
 
 .form-container {
@@ -28,6 +28,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 80px;
+  row-gap: 65px;
 }
 
 .message-input {
@@ -74,6 +75,7 @@
     padding: 25px;
     display: flex;
     flex-direction: column;
+    row-gap: 30px;
   }
 
   .text-container {

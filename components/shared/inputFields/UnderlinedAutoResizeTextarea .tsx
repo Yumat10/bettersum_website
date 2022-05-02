@@ -1,8 +1,16 @@
-import styles from "./UnderlinedInputField.module.css";
+import {
+  ChangeEvent,
+  CSSProperties,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import styles from "./UnderlinedAutoResizeTextarea.module.css";
 import fontStyles from "styles/fontStyles.module.css";
 
-interface InputFieldProps<T extends string | number> {
-  type?: "text" | "number";
+interface TextareaProps<T extends string | number> {
   id: string;
   disabled: boolean;
   label: string;
@@ -16,8 +24,9 @@ interface InputFieldProps<T extends string | number> {
   touched: boolean | undefined;
 }
 
-export const UnderlinedInputField = <T extends string | number>({
-  type = "text",
+// TODO: Add CSS to text area as used in the contact form
+
+export const UnderlinedAutoResizeTextarea = <T extends string | number>({
   id,
   disabled,
   label,
@@ -27,23 +36,44 @@ export const UnderlinedInputField = <T extends string | number>({
   errors,
   onBlur,
   touched,
-}: InputFieldProps<T>): JSX.Element => {
+}: TextareaProps<T>): JSX.Element => {
+  const textAreaRef = useRef<HTMLTextAreaElement>(null);
+  const [textAreaHeight, setTextAreaHeight] = useState<string>("auto");
+
+  const textAreaStyle: CSSProperties = {
+    height: textAreaHeight,
+  };
+
+  useEffect(() => {
+    if (textAreaRef.current) {
+      const newScrollHeight = `${textAreaRef.current.scrollHeight}px`;
+      setTextAreaHeight(newScrollHeight);
+    }
+  }, [value]);
+
+  const onChangeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setTextAreaHeight("auto");
+    setValue(event.target.value);
+  };
+
   return (
-    <div className={styles["container"]}>
+    <div className={styles["container"]} style={textAreaStyle}>
       <label
         htmlFor={id}
         className={`${fontStyles["body-copy"]} ${styles["label"]}`}
       >
         {label}
       </label>
-      <input
-        type={type}
+
+      <textarea
         id={id}
+        ref={textAreaRef}
         disabled={disabled}
-        value={value}
         placeholder={placeholder}
-        onChange={(e) => setValue(e.target.value)}
+        value={value}
+        onChange={onChangeHandler}
         onBlur={onBlur}
+        rows={1}
         className={`${fontStyles["body-copy"]} ${styles["input"]}`}
         style={{
           borderBottomColor: !touched

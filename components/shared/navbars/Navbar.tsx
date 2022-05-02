@@ -125,11 +125,11 @@ export const Navbar = (): JSX.Element => {
           />
         </div>
         <div className={styles["routes-container"]}>
-          {routes.map(({ name, path }) => (
+          {routes.map(({ name, path }, index) => (
             <motion.div
               // variants={routeVariants}
               whileHover="hover"
-              key={path}
+              key={index}
               className={styles["route"]}
             >
               <Link href={path}>
