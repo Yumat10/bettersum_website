@@ -8,8 +8,7 @@
   width: var(--width-clamp);
   margin: 0px auto;
   display: flex;
-  flex-direction: row;
-  column-gap: 80px;
+  flex-direction: column;
 }
 
 .text-container {
@@ -23,7 +22,7 @@
 }
 
 .form-container {
-  flex-grow: 1;
+  margin: 60px 0px 0px 0px;
   display: flex;
   flex-direction: column;
   row-gap: 8px;

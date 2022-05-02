@@ -2,6 +2,7 @@ import axios from "axios";
 import { BetterMethods } from "components/pages/homePage/betterMethods/BetterMethods";
 import { TotalImpact } from "components/pages/homePage/totalmpact/TotalImpact";
 import { WorkAndLab } from "components/pages/homePage/workAndLab/WorkAndLab";
+import { ContactForm } from "components/shared/forms/ContactForm";
 import { useCaseStudyContext } from "contexts/caseStudyContext";
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
@@ -12,9 +13,6 @@ import { CaseStudyPreview } from "types/CaseStudy";
 import { smoothScrollDown } from "util/functions/smoothScrollDown";
 import { ServicesOffered } from "../components/pages/homePage/servicesOffered/ServicesOffered";
 import { SplashScreen } from "../components/pages/homePage/splashScreen/SplashScreen";
-import { SubscribeToNewsletter } from "../components/pages/homePage/subscribeToNewsletter/SubscribeToNewsletter";
-import { TeamBackground } from "../components/pages/homePage/teamBackground/TeamBackground";
-import { TheLab } from "../components/pages/homePage/theLab/TheLab";
 
 const Home: NextPage = ({
   caseStudyPreviews: propsCaseStudyPreviews,
@@ -68,6 +66,7 @@ const Home: NextPage = ({
         <ServicesOffered />
         <TotalImpact />
         <BetterMethods />
+        <ContactForm />
         {/* <TeamBackground /> */}
         {/* <TheLab /> */}
         {/* <SubscribeToNewsletter /> */}

@@ -7,7 +7,7 @@ import {
   useRef,
   useState,
 } from "react";
-import styles from "./UnderlineAutoResizeTextarea.module.css";
+import styles from "./BoxedAutoResizeTextarea.module.css";
 import fontStyles from "styles/fontStyles.module.css";
 
 interface TextareaProps<T extends string | number> {
@@ -25,7 +25,7 @@ interface TextareaProps<T extends string | number> {
 
 // TODO: Add CSS to text area as used in the contact form
 
-export const UnderlineAutoResizeTextarea = <T extends string | number>({
+export const BoxedAutoResizeTextarea = <T extends string | number>({
   id,
   disabled,
   label,

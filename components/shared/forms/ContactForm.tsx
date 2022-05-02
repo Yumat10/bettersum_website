@@ -1,14 +1,14 @@
 import { Formik } from "formik";
 import { useState } from "react";
 import * as yup from "yup";
-import { UnderlineInputField } from "../inputFields/UnderlineInputField";
 import styles from "./ContactForm.module.css";
 import fontStyles from "styles/fontStyles.module.css";
 import Image from "next/image";
-import { UnderlineAutoResizeTextarea } from "../inputFields/UnderlineAutoResizeTextarea";
+import { BoxedAutoResizeTextarea } from "../inputFields/BoxedAutoResizeTextarea";
 import axios from "axios";
 import { SendEmailData } from "types/SendEmailData";
 import { motion, Variants } from "framer-motion";
+import { UnderlinedInputField } from "../inputFields/UnderlinedInputField";
 
 const arrowVariants: Variants = {
   hover: {
@@ -85,7 +85,7 @@ export const ContactForm = (): JSX.Element => {
     >
       {(props) => (
         <div className={styles["form-container"]}>
-          <UnderlineInputField
+          <UnderlinedInputField
             id="firstName"
             label="First Name"
             value={props.values.firstName}
@@ -95,7 +95,7 @@ export const ContactForm = (): JSX.Element => {
             touched={props.touched.firstName}
             onBlur={props.handleBlur}
           />
-          <UnderlineInputField
+          <UnderlinedInputField
             id="lastName"
             label="Last Name"
             value={props.values.lastName}
@@ -105,7 +105,7 @@ export const ContactForm = (): JSX.Element => {
             onBlur={props.handleBlur}
             touched={props.touched.lastName}
           />
-          <UnderlineInputField
+          <UnderlinedInputField
             id="company"
             label="Company"
             value={props.values.company}
@@ -115,7 +115,7 @@ export const ContactForm = (): JSX.Element => {
             onBlur={props.handleBlur("company")}
             touched={props.touched.company}
           />
-          <UnderlineInputField
+          <UnderlinedInputField
             id="email"
             label="Email"
             value={props.values.email}
@@ -125,7 +125,7 @@ export const ContactForm = (): JSX.Element => {
             onBlur={props.handleBlur("email")}
             touched={props.touched.email}
           />
-          <UnderlineAutoResizeTextarea
+          <BoxedAutoResizeTextarea
             id="message"
             label="Message"
             value={props.values.message}
@@ -174,9 +174,7 @@ export const ContactForm = (): JSX.Element => {
     <div className={styles["container"]}>
       <div className={styles["inner-container"]}>
         <div className={styles["text-container"]}>
-          <h2 className={fontStyles["title-header"]}>
-            We collaborate with ambitious brands and people. Let&#39;s build.
-          </h2>
+          <h2 className={fontStyles["title-header"]}>Work With Us</h2>
           <a
             href="mailto:team@bettersum.com"
             className={`${fontStyles["flair-copy"]} ${styles["email-link"]}`}
