@@ -1,81 +1,73 @@
 .container {
-  background-color: var(--bettersum-black);
+  background-color: var(--bettersum-beige);
+  margin: 0px;
+  background: url("/splashPageBackground.svg") no-repeat;
+  background-size: 100vw auto;
+  background-position: bottom right;
 }
 
 .inner-container {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 50px;
   width: var(--width-clamp);
   margin: 0px auto;
-  padding: 15vh 0px 0px 0px;
-  height: calc(100vh - 100px);
-  min-height: 650px;
+  padding: 68px 0px 62px 0px;
 }
 
-.brand-logo {
+.inner-container div:first-child {
+  width: 500px;
+}
+
+.image-container {
   position: relative;
-  width: 1000px;
-  height: calc(1000px / 5);
-  margin: 55px 0px 20px 0px;
+  height: 655px;
+  width: 490px;
 }
 
-.subheader {
-  color: var(--bettersum-beige);
+.image-container > span {
+  position: relative !important;
 }
 
-.loading-bar-container {
-  display: inline-block;
-  width: 100%;
-  height: 15px;
-  background-color: #323131;
-  margin: 0px 0px 10px 0px;
+.image-container > span > img {
+  position: relative !important;
+  height: auto !important;
+  min-height: unset !important;
 }
 
-.loading-bar-inner-container {
-  width: 100%;
-  height: 15px;
-  background-color: var(--bettersum-beige);
-  opacity: 1;
-}
-
-@media only screen and (max-width: 1200px) {
-  .brand-logo {
-    width: 550px;
-    height: calc(550px / 5);
-    margin: 25px 0px 20px 0px;
+@media only screen and (max-width: 850px) {
+  .container {
+    background: none;
   }
 
-  .subheader {
-    width: 550px;
-  }
-
-  .loading-bar-container,
-  .loading-bar-inner-container {
-    height: 10px;
-  }
-
-  .loading-bar-container {
-    margin: 0px 0px 200px 0px;
-  }
-}
-
-@media only screen and (max-width: 650px) {
   .inner-container {
-    padding-top: 5vh;
-    min-height: 600px;
+    flex-direction: column;
+    width: 100%;
+    padding: 0px;
   }
 
-  .brand-logo {
-    width: 330px;
-    height: calc(330px / 5);
-    /* margin: 25px 0px 20px 0px; */
+  .inner-container > div:first-child {
+    width: 100%;
+    padding: 27px calc((100% - var(--width-clamp)) / 2) 55px
+      calc((100% - var(--width-clamp)) / 2);
+    background: url("/splashPageBackground.svg") no-repeat;
+    background-size: 100vw auto;
+    background-position: bottom right;
   }
 
-  .subheader {
-    width: 350px;
+  .image-container {
+    width: 100%;
+    height: 100%;
   }
 
-  .loading-bar-container,
-  .loading-bar-inner-container {
-    height: 5px;
+  .image-container > span {
+    height: auto !important;
+    width: 100% !important;
+  }
+
+  .image-container > span > img {
+    max-height: unset !important;
   }
 }

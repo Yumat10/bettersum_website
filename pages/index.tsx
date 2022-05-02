@@ -13,7 +13,6 @@ import { SplashScreen } from "../components/pages/homePage/splashScreen/SplashSc
 import { SubscribeToNewsletter } from "../components/pages/homePage/subscribeToNewsletter/SubscribeToNewsletter";
 import { TeamBackground } from "../components/pages/homePage/teamBackground/TeamBackground";
 import { TheLab } from "../components/pages/homePage/theLab/TheLab";
-import styles from "../styles/Home.module.css";
 
 const Home: NextPage = ({
   caseStudyPreviews: propsCaseStudyPreviews,
@@ -41,7 +40,7 @@ const Home: NextPage = ({
   }, [querySection]);
 
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>BetterSum</title>
         <meta property="og:url" content="https://www.bettersum.com" />
