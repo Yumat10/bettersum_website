@@ -1,4 +1,5 @@
 import axios from "axios";
+import { TotalImpact } from "components/pages/homePage/totalmpact/TotalImpact";
 import { WorkAndLab } from "components/pages/homePage/workAndLab/WorkAndLab";
 import { useCaseStudyContext } from "contexts/caseStudyContext";
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
@@ -64,6 +65,7 @@ const Home: NextPage = ({
         <SplashScreen />
         <WorkAndLab />
         <ServicesOffered />
+        <TotalImpact />
         {/* <TeamBackground /> */}
         {/* <TheLab /> */}
         {/* <SubscribeToNewsletter /> */}

@@ -7,7 +7,8 @@ import styles from "./BasicAccordion.module.css";
 
 const faqContainerVariants: Variants = {
   hover: {
-    color: "var(--bettersum-blue)",
+    backgroundColor: "var(--bettersum-blue)",
+    color: "var(--bettersum-beige)",
   },
 };
 
