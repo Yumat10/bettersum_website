@@ -1,9 +1,5 @@
 import { BasicAccordion } from "components/shared/accordions/BasicAccordion";
-import { motion, Variants } from "framer-motion";
-import { useState } from "react";
-import { BetterSumColors } from "../../../../types/BetterSumColors";
-import { Subheading } from "../../../shared/navbars/Subheading";
-import { ServiceColumn } from "./ServiceColumn";
+import { Variants } from "framer-motion";
 
 import fontStyles from "../../../../styles/fontStyles.module.css";
 import styles from "./ServicesOffered.module.css";
