@@ -62,11 +62,11 @@ const Home: NextPage = ({
       </Head>
       <main>
         <SplashScreen />
-        <ServicesOffered />
-        <TeamBackground />
-        {/* <TheLab /> */}
         <WorkAndLab />
-        <SubscribeToNewsletter />
+        {/* <ServicesOffered /> */}
+        {/* <TeamBackground /> */}
+        {/* <TheLab /> */}
+        {/* <SubscribeToNewsletter /> */}
       </main>
     </div>
   );
