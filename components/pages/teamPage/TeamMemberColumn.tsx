@@ -21,16 +21,18 @@ export const TeamMemberColumn = ({
     />
   );
 
-  const nameComponent = <h2 className={fontStyles["body-copy"]}>{fullName}</h2>;
+  const nameComponent = (
+    <h2 className={fontStyles["category-copy"]}>{fullName}</h2>
+  );
 
   const titleComponent = (
-    <h3 className={`${fontStyles["category-copy"]} ${styles["title-text"]}`}>
+    <h3 className={`${fontStyles["flair-copy"]} ${styles["title-text"]}`}>
       {title}
     </h3>
   );
 
   const bioComponent = (
-    <p className={`${fontStyles["flair-copy"]} ${styles["bio-text"]}`}>{bio}</p>
+    <p className={`${fontStyles["body-copy"]} ${styles["bio-text"]}`}>{bio}</p>
   );
 
   return (

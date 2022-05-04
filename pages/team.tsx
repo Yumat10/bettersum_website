@@ -6,6 +6,7 @@ import { Subheading } from "../components/shared/navbars/Subheading";
 import { BetterSumColors } from "../types/BetterSumColors";
 import styles from "styles/Team.module.css";
 import fontStyles from "styles/fontStyles.module.css";
+import { ContactForm } from "components/shared/forms/ContactForm";
 
 export interface TeamMemberIntro {
   fullName: string;
@@ -97,6 +98,7 @@ const Team: NextPage = () => {
             </div>
           </div>
         </div>
+        <ContactForm />
       </main>
     </div>
   );
