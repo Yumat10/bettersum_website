@@ -12,6 +12,6 @@ export const CSTMedia: FC<CSTOMediaProps> = ({ media }) => {
   if (media.contentType.startsWith("image/")) {
     return <Image src={media.url} alt="" layout="fill" objectFit="cover" />;
   } else {
-    return <video src={media.url} autoPlay muted />;
+    return <video src={media.url} autoPlay muted className={styles["video"]} />;
   }
 };
