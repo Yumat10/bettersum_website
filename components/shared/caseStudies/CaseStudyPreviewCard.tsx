@@ -49,19 +49,21 @@ export const CaseStudyPreviewCard = ({
         }}
       >
         <div className={styles["preview-image-container"]}>
-          <Image
-            src={splashImage.url}
-            alt={splashImage.title}
-            objectFit="cover"
-            layout="fill"
-          />
+          {splashImage && (
+            <Image
+              src={splashImage.url}
+              alt={splashImage.title}
+              objectFit="cover"
+              layout="fill"
+            />
+          )}
         </div>
         <div className={styles["text-container"]}>
           <h5 className={fontStyles["body-copy"]}>
             <b>{title}</b>
           </h5>
           <div className={styles["tags-container"]}>
-            {tags.map((tag) => (
+            {tags?.map((tag) => (
               <p
                 key={tag}
                 className={`${fontStyles["flair-copy"]} ${styles["tag"]}`}
