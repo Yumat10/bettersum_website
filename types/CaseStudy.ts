@@ -22,7 +22,7 @@ export interface CaseStudyTemplateOne {
   };
   stats?: string[];
   statLabels?: string[];
-  mediaContent?: {
+  mediaContentCollection?: {
     items: CaseStudyMedia[];
   };
 }
