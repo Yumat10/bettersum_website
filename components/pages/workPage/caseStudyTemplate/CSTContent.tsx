@@ -16,13 +16,13 @@ export const CSTContent: FC = () => {
     <div>
       <div>
         <div>
-          {caseStudyData.mediaContentCollection?.items.map(
+          {/* {caseStudyData.mediaContentCollection?.items.map(
             (mediaContent, index) => {
               return (
                 <CSTMedia key={index} media={mediaContent} height="500px" />
               );
             }
-          )}
+          )} */}
         </div>
         <Link href="/work">
           <a>See All Case Studies</a>

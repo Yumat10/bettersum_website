@@ -6,12 +6,11 @@ import styles from "./CSTMedia.module.css";
 
 type CSTOMediaProps = {
   media: CaseStudyMedia;
-  height: string;
 };
 
-export const CSTMedia: FC<CSTOMediaProps> = ({ media, height }) => {
+export const CSTMedia: FC<CSTOMediaProps> = ({ media }) => {
   if (media.contentType.startsWith("image/")) {
-    return <Image src={media.url} alt="" height={height} width={500} />;
+    return <Image src={media.url} alt="" layout="fill" objectFit="cover" />;
   } else {
     return <video src={media.url} autoPlay muted />;
   }
