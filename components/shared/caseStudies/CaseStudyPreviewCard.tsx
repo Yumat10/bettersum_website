@@ -35,13 +35,11 @@ export const CaseStudyPreviewCard = ({
   caseStudyPreview,
   isDraggingCard,
   fullWidth,
-  shakeLabTag,
 }: CaseStudyPreviewCardProps): JSX.Element => {
-  const { handle, previewImage, title, tags, templateNumber, isLabs } =
-    caseStudyPreview;
+  const { handle, splashImage, title, tags } = caseStudyPreview;
 
   return (
-    <Link href={`/work/${templateNumber}/${handle}`}>
+    <Link href={`/work/${handle}`}>
       <a
         draggable="false"
         className={styles["preview-container"]}
@@ -52,21 +50,11 @@ export const CaseStudyPreviewCard = ({
       >
         <div className={styles["preview-image-container"]}>
           <Image
-            src={previewImage.url}
-            alt={previewImage.title}
+            src={splashImage.url}
+            alt={splashImage.title}
             objectFit="cover"
             layout="fill"
-            draggable="false"
           />
-          {isLabs && (
-            <motion.div
-              variants={labTagVariants}
-              animate={shakeLabTag ? "shake" : "initial"}
-              className={`${fontStyles["body-one"]} ${styles["lab-tag"]}`}
-            >
-              Labs
-            </motion.div>
-          )}
         </div>
         <div className={styles["text-container"]}>
           <h5 className={fontStyles["body-copy"]}>

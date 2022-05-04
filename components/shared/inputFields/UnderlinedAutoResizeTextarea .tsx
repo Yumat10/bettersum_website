@@ -42,7 +42,6 @@ export const UnderlinedAutoResizeTextarea = <T extends string | number>({
 
   useEffect(() => {
     if (textAreaRef.current) {
-      console.log(textAreaRef.current.scrollHeight);
       const newScrollHeight = `${textAreaRef.current.scrollHeight}px`;
       setTextAreaHeight(newScrollHeight);
     }

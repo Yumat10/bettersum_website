@@ -81,22 +81,21 @@ export const getStaticProps: GetStaticProps = async (context) => {
     ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
     : process.env.CONTENTFUL_ACCESS_TOKEN;
 
-  const gql = String.raw;
+  const chosenTemplate = "caseStudyTemplateTwoCollection";
 
+  const gql = String.raw;
   const contentfulCaseStudyPreviewsQuery = gql`
     query {
-      caseStudyPreviewsCollection(order: order_ASC, limit: 4,
-       preview: ${context.preview ? true : false}) {
+      ${chosenTemplate}(preview: ${context.preview ? true : false}) {
         items {
           handle
           title
-          previewImage {
+          splashImage {
             title
             url
+            contentType
           }
           tags
-          templateNumber
-          isLabs
         }
       }
     }
@@ -104,8 +103,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   let props: {
     caseStudyPreviews: CaseStudyPreview[];
+    shouldRedirectTo404: boolean;
   } = {
     caseStudyPreviews: [],
+    shouldRedirectTo404: false,
   };
 
   try {
@@ -122,7 +123,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     );
 
     props.caseStudyPreviews =
-      axiosCaseStudyPreviewsResponseData.data.caseStudyPreviewsCollection.items;
+      axiosCaseStudyPreviewsResponseData.data[chosenTemplate].items;
   } catch (error: any) {
     const errorResponse = error["response"];
     if (
@@ -139,6 +140,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
     } else {
       console.log(error);
     }
+
+    props.shouldRedirectTo404 = true;
   }
 
   return {
