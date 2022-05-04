@@ -38,17 +38,10 @@ body {
   /* overflow-x: hidden; */
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 850px) {
   html,
   body {
-    font-size: 15px;
-  }
-}
-
-@media only screen and (max-width: 650px) {
-  html,
-  body {
-    font-size: 11.5px;
+    font-size: 10.5px;
   }
 }
 
