@@ -54,6 +54,7 @@ export const SplashScreen = (): JSX.Element => {
                 objectFit="contain"
                 height={30}
                 width={35}
+                priority
               />
             </span>
           </h2>

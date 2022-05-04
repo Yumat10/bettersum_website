@@ -10,8 +10,19 @@ type CSTOMediaProps = {
 
 export const CSTMedia: FC<CSTOMediaProps> = ({ media }) => {
   if (media.contentType.startsWith("image/")) {
-    return <Image src={media.url} alt="" layout="fill" objectFit="cover" />;
-  } else {
-    return <video src={media.url} autoPlay muted className={styles["video"]} />;
+    return (
+      <Image src={media.url} alt="" layout="fill" objectFit="cover" priority />
+    );
+  } else if (media.contentType.startsWith("video/")) {
+    return (
+      <video
+        src="https://www.w3schools.com/html/mov_bbb.mp4"
+        autoPlay
+        muted
+        className={styles["video"]}
+      />
+    );
   }
+
+  return null;
 };
