@@ -10,9 +10,7 @@ type CSTOMediaProps = {
 
 export const CSTMedia: FC<CSTOMediaProps> = ({ media }) => {
   if (media.contentType.startsWith("image/")) {
-    return (
-      <Image src={media.url} alt="" layout="fill" objectFit="cover" priority />
-    );
+    return <img src={media.url} alt="" className={styles["image"]} />;
   } else if (media.contentType.startsWith("video/")) {
     return (
       <video

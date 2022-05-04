@@ -13,7 +13,7 @@ export const CSTHeader: FC = () => {
   return (
     <div className={styles["container"]}>
       <div className={styles["header-container"]}>
-        <h1 className={`${fontStyles["intro-header"]}`}>
+        <h1 className={`${fontStyles["title-header"]}`}>
           {caseStudyData?.title}
         </h1>
         <h2 className={`${fontStyles["body-copy"]} ${styles["subtitle-text"]}`}>
