@@ -27,6 +27,10 @@
   align-items: center;
 }
 
+.subtitle-text {
+  margin: 17px 0px 0px 0px;
+}
+
 @media only screen and (max-width: 850px) {
   .figure-grid {
     margin: 50px 0px 0px 0px;
@@ -36,5 +40,9 @@
 
   .figure-container {
     margin: 0px 0px 50px 0px;
+  }
+
+  .subtitle-text {
+    margin: 10px 0px 0px 0px;
   }
 }

@@ -19,7 +19,7 @@
   line-height: 3.75rem;
 }
 
-.category-header {
+.body-copy {
   margin: 0px;
   font-size: 1.875rem;
   font-weight: 500;
@@ -33,7 +33,7 @@
   line-height: 1.25rem;
 }
 
-.body-copy {
+.category-copy {
   margin: 0px;
   font-size: 1.875rem;
   font-weight: 700;

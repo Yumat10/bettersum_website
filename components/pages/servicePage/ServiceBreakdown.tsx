@@ -28,14 +28,16 @@ export const ServiceBreakdown = ({
       exit="hidden"
       className={styles["container"]}
     >
-      <h2 className={fontStyles["category-header"]}>{name}</h2>
+      <h2 className={fontStyles["body-copy"]}>{name}</h2>
       <div className={styles["details-container"]}>
-        <p className={`${fontStyles["body-copy"]} ${styles["description"]}`}>
+        <p
+          className={`${fontStyles["category-copy"]} ${styles["description"]}`}
+        >
           {description}
         </p>
         <ul className={styles["list"]}>
           {offerings.map((offering, index) => (
-            <li key={index} className={fontStyles["body-copy"]}>
+            <li key={index} className={fontStyles["category-copy"]}>
               {offering}
             </li>
           ))}

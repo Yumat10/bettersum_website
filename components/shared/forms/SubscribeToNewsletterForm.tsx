@@ -77,7 +77,7 @@ export const SubscribeToNewsletterForm = (): JSX.Element => {
               onClick={() => props.handleSubmit()}
               className={styles["button"]}
             >
-              <p className={fontStyles["body-copy"]}>
+              <p className={fontStyles["category-copy"]}>
                 {loading
                   ? "Subscribing..."
                   : subscriptionSuccessful

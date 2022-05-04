@@ -11,6 +11,7 @@ import { UnderlinedAutoResizeTextarea } from "../inputFields/UnderlinedAutoResiz
 
 import fontStyles from "styles/fontStyles.module.css";
 import styles from "./ContactForm.module.css";
+import { MobileOnlyLineBreak } from "../lineBreaks/MobileOnlyLineBreak";
 
 const ServiceTypes: string[] = [
   "Strategy & Stewardship",
@@ -168,7 +169,7 @@ export const ContactForm = (): JSX.Element => {
             onClick={() => props.handleSubmit()}
             className={styles["submit-button"]}
           >
-            <p className={fontStyles["body-copy"]}>
+            <p className={fontStyles["category-copy"]}>
               {loading
                 ? "Sending..."
                 : emailSuccessful
@@ -176,7 +177,7 @@ export const ContactForm = (): JSX.Element => {
                 : "Submit"}
             </p>
             <motion.div
-              variants={arrowVariants}
+              // variants={arrowVariants}
               className={styles["arrow-container"]}
               style={{
                 display: emailSuccessful ? "none" : "block",
@@ -199,10 +200,13 @@ export const ContactForm = (): JSX.Element => {
     <div className={styles["container"]}>
       <div className={styles["inner-container"]}>
         <div className={styles["text-container"]}>
-          <h2 className={fontStyles["title-header"]}>Work With Us</h2>
+          <h2 className={fontStyles["title-header"]}>
+            Work <MobileOnlyLineBreak />
+            With Us
+          </h2>
           <a
             href="mailto:team@bettersum.com"
-            className={`${fontStyles["flair-copy"]} ${styles["email-link"]}`}
+            className={`${fontStyles["body-copy"]} ${styles["email-link"]}`}
           >
             <u>team@bettersum.com</u>
           </a>

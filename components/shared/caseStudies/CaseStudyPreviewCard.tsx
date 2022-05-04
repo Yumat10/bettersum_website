@@ -69,7 +69,7 @@ export const CaseStudyPreviewCard = ({
           )}
         </div>
         <div className={styles["text-container"]}>
-          <h5 className={fontStyles["category-header"]}>
+          <h5 className={fontStyles["body-copy"]}>
             <b>{title}</b>
           </h5>
           <div className={styles["tags-container"]}>

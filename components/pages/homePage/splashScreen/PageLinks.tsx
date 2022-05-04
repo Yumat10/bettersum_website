@@ -49,15 +49,12 @@ export const PageLinks = (): JSX.Element => {
               referrerPolicy="strict-origin-when-cross-origin"
               variants={pageLinkVariants}
               whileHover="hover"
-              className={`${fontStyles["category-header"]} ${styles["link"]}`}
+              className={`${fontStyles["body-copy"]} ${styles["link"]}`}
             >
               {name}
             </motion.a>
           </Link>
-          <p className={`${styles["plus"]} ${fontStyles["category-header"]}`}>
-            {" "}
-            +
-          </p>
+          <p className={`${styles["plus"]} ${fontStyles["body-copy"]}`}> +</p>
           <div className={styles["break"]} />
         </Fragment>
       ))}

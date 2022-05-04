@@ -32,17 +32,17 @@ export const CSTOContent = (): JSX.Element | null => {
         <div className={styles["overview-tools-container"]}>
           <div className={styles["overview-container"]}>
             <h3
-              className={`${fontStyles["category-header"]} ${styles["overview-title"]}`}
+              className={`${fontStyles["body-copy"]} ${styles["overview-title"]}`}
             >
               Overview
             </h3>
-            <p className={fontStyles["body-copy"]}>
+            <p className={fontStyles["category-copy"]}>
               {overview.json.content[0].content[0].value}
             </p>
           </div>
           <div className={styles["tools-container"]}>
             <h3
-              className={`${fontStyles["category-header"]} ${styles["tools-title"]}`}
+              className={`${fontStyles["body-copy"]} ${styles["tools-title"]}`}
             >
               Tool Kits
             </h3>
@@ -50,7 +50,7 @@ export const CSTOContent = (): JSX.Element | null => {
               {tools.map((tool) => (
                 <p
                   key={tool}
-                  className={`${fontStyles["body-copy"]} ${styles["tool"]}`}
+                  className={`${fontStyles["category-copy"]} ${styles["tool"]}`}
                 >
                   + {tool}
                 </p>
@@ -67,7 +67,7 @@ export const CSTOContent = (): JSX.Element | null => {
               <div key={index} className={styles["stat-container"]}>
                 <p className={fontStyles["title-header"]}>{stat}</p>
                 <p
-                  className={`${fontStyles["body-copy"]} ${styles["stat-description"]}`}
+                  className={`${fontStyles["category-copy"]} ${styles["stat-description"]}`}
                 >
                   {statDescription}
                 </p>

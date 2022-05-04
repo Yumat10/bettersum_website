@@ -40,12 +40,9 @@ export const UnderlinedAutoResizeTextarea = <T extends string | number>({
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
   const [textAreaHeight, setTextAreaHeight] = useState<string>("auto");
 
-  const textAreaStyle: CSSProperties = {
-    height: textAreaHeight,
-  };
-
   useEffect(() => {
     if (textAreaRef.current) {
+      console.log(textAreaRef.current.scrollHeight);
       const newScrollHeight = `${textAreaRef.current.scrollHeight}px`;
       setTextAreaHeight(newScrollHeight);
     }
@@ -57,10 +54,10 @@ export const UnderlinedAutoResizeTextarea = <T extends string | number>({
   };
 
   return (
-    <div className={styles["container"]} style={textAreaStyle}>
+    <div className={styles["container"]}>
       <label
         htmlFor={id}
-        className={`${fontStyles["body-copy"]} ${styles["label"]}`}
+        className={`${fontStyles["category-copy"]} ${styles["label"]}`}
       >
         {label}
       </label>
@@ -73,7 +70,6 @@ export const UnderlinedAutoResizeTextarea = <T extends string | number>({
         value={value}
         onChange={onChangeHandler}
         onBlur={onBlur}
-        rows={1}
         className={`${fontStyles["body-copy"]} ${styles["input"]}`}
         style={{
           borderBottomColor: !touched
@@ -81,6 +77,7 @@ export const UnderlinedAutoResizeTextarea = <T extends string | number>({
             : errors
             ? "var(--error-color)"
             : "var(--bettersum-blue)",
+          height: textAreaHeight,
         }}
       />
       {touched && errors && (

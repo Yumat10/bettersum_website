@@ -53,11 +53,11 @@ export const AllWork = (): JSX.Element => {
                 setShakeLabTag(false);
               }, 1000);
             }}
-            className={`${fontStyles["body-copy"]} ${styles["lab-tag"]}`}
+            className={`${fontStyles["category-copy"]} ${styles["lab-tag"]}`}
           >
             Labs
           </motion.button>
-          <p className={`${fontStyles["body-copy"]}`}>
+          <p className={`${fontStyles["category-copy"]}`}>
             highlights products that we have made in-house.
           </p>
         </motion.div>

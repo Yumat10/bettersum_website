@@ -1,4 +1,5 @@
 import { CaseStudiesGrid } from "components/shared/caseStudies/CaseStudiesGrid";
+import { MobileOnlyLineBreak } from "components/shared/lineBreaks/MobileOnlyLineBreak";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -25,8 +26,9 @@ export const WorkAndLab = (): JSX.Element => {
   return (
     <div className={styles["container"]}>
       <div className={styles["inner-container"]}>
-        <h3 className={`${fontStyles["category-header"]} ${styles["header"]}`}>
-          Recent Work
+        <h3 className={`${fontStyles["title-header"]} ${styles["header"]}`}>
+          Recent <MobileOnlyLineBreak />
+          Work
         </h3>
         <div className={styles["case-studies-grid-container"]}>
           <CaseStudiesGrid />
@@ -37,7 +39,7 @@ export const WorkAndLab = (): JSX.Element => {
             whileHover="hover"
             className={styles["button"]}
           >
-            <p className={fontStyles["body-copy"]}>See All Case Studies</p>
+            <p className={fontStyles["category-copy"]}>See All Case Studies</p>
             <motion.div
               // variants={arrowVariants}
               className={styles["arrow-container"]}

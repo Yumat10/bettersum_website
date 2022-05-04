@@ -43,7 +43,7 @@ export const RelatedCaseStudies = (): JSX.Element | null => {
       <div className={styles["inner-container"]}>
         <div className={styles["header"]}>
           <h3
-            className={`${fontStyles["category-header"]} ${styles["header-title"]}`}
+            className={`${fontStyles["body-copy"]} ${styles["header-title"]}`}
           >
             Take a look at our other work
           </h3>
@@ -99,7 +99,7 @@ export const RelatedCaseStudies = (): JSX.Element | null => {
       <div className={styles["desktop"]}>{RelatedCaseStudiesScroll()}</div>
       <div className={styles["mobile"]}>
         <div className={styles["mobile-container"]}>
-          <p className={fontStyles["body-copy"]}>View other case studies</p>
+          <p className={fontStyles["category-copy"]}>View other case studies</p>
           <Image
             src="/arrows/rightArrowBeige.svg"
             alt=""

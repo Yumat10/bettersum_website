@@ -125,7 +125,7 @@ const Services: NextPage = () => {
       offerings: [
         "Identity development",
         "Create brand guidelines",
-        "Name ideation"
+        "Name ideation",
       ],
     },
   ];
@@ -149,10 +149,7 @@ const Services: NextPage = () => {
       name: "Technical Audit",
       description:
         "Our technical audits offer an outsider’s perspective onto your company's digital infrastructure and stack-up. We will highlight problem areas and provide recommendations for both improving current infrastructure and future build-outs.",
-      offerings: [
-        "Infrastructure analysis",
-        "Recommend next steps",
-      ],
+      offerings: ["Infrastructure analysis", "Recommend next steps"],
     },
     {
       name: "Idea to MVP",
@@ -168,10 +165,7 @@ const Services: NextPage = () => {
       name: "SaaS Development",
       description:
         "Current Saas products tend to be outdated and needlessly complex. Our starting point is usability, creating software with simple and intuitive flows that ultimately maximize efficiency. Our team will help you develop the right tool for the problems your product hopes to solve.",
-      offerings: [
-        "Software development",
-        "Analytics integrations"
-      ],
+      offerings: ["Software development", "Analytics integrations"],
     },
   ];
 
@@ -209,7 +203,7 @@ const Services: NextPage = () => {
                 topOffset="30px"
               />
               <h1
-                className={`${fontStyles["category-header"]} ${styles["title-text"]}`}
+                className={`${fontStyles["body-copy"]} ${styles["title-text"]}`}
               >
                 Integrated capabilities across strategy, design and development.
               </h1>

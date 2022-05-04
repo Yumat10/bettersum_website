@@ -109,7 +109,7 @@ export const BasicAccordion = ({
               variants={headerVariants}
               initial="closed"
               animate={isOpen ? "open" : "closed"}
-              className={`${fontStyles["body-bold"]} ${styles["header-text"]}`}
+              className={`${fontStyles["category-copy"]} ${styles["header-text"]}`}
             >
               {headerText}
             </motion.h3>

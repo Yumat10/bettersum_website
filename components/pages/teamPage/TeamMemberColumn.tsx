@@ -21,12 +21,10 @@ export const TeamMemberColumn = ({
     />
   );
 
-  const nameComponent = (
-    <h2 className={fontStyles["category-header"]}>{fullName}</h2>
-  );
+  const nameComponent = <h2 className={fontStyles["body-copy"]}>{fullName}</h2>;
 
   const titleComponent = (
-    <h3 className={`${fontStyles["body-copy"]} ${styles["title-text"]}`}>
+    <h3 className={`${fontStyles["category-copy"]} ${styles["title-text"]}`}>
       {title}
     </h3>
   );

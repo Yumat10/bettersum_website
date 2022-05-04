@@ -54,7 +54,7 @@ export const CSTOHeader = (): JSX.Element | null => {
           variants={caseStudySubheaderVariants}
           initial="hidden"
           animate="visible"
-          className={`${fontStyles["category-header"]} ${styles["description"]}`}
+          className={`${fontStyles["body-copy"]} ${styles["description"]}`}
         >
           {shortDescription}
         </motion.h3>
@@ -63,7 +63,7 @@ export const CSTOHeader = (): JSX.Element | null => {
             variants={caseStudySubheaderVariants}
             initial="hidden"
             animate="visible"
-            className={`${fontStyles["body-copy"]} ${styles["lab-tag"]}`}
+            className={`${fontStyles["category-copy"]} ${styles["lab-tag"]}`}
           >
             Labs
           </motion.p>
@@ -81,7 +81,7 @@ export const CSTOHeader = (): JSX.Element | null => {
             <motion.p
               variants={tagVariants}
               key={tag}
-              className={`${fontStyles["body-copy"]} ${styles["tag"]}`}
+              className={`${fontStyles["category-copy"]} ${styles["tag"]}`}
             >
               #{tag}
               {"  "}
@@ -95,7 +95,7 @@ export const CSTOHeader = (): JSX.Element | null => {
           href={url}
           target="_blank"
           rel="noreferrer"
-          className={`${fontStyles["body-copy"]} ${styles["visit-site"]}`}
+          className={`${fontStyles["category-copy"]} ${styles["visit-site"]}`}
         >
           <b>Visit Site</b>
         </motion.a>

@@ -32,7 +32,7 @@ export const UnderlinedInputField = <T extends string | number>({
     <div className={styles["container"]}>
       <label
         htmlFor={id}
-        className={`${fontStyles["body-copy"]} ${styles["label"]}`}
+        className={`${fontStyles["category-copy"]} ${styles["label"]}`}
       >
         {label}
       </label>
@@ -44,7 +44,7 @@ export const UnderlinedInputField = <T extends string | number>({
         placeholder={placeholder}
         onChange={(e) => setValue(e.target.value)}
         onBlur={onBlur}
-        className={`${fontStyles["body-copy"]} ${styles["input"]}`}
+        className={`${fontStyles["category-copy"]} ${styles["input"]}`}
         style={{
           borderBottomColor: !touched
             ? "var(--bettersum-black)"

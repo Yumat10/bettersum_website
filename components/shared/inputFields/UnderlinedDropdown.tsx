@@ -43,7 +43,7 @@ export const UnderlinedDropdown = <T extends string | number>({
     <div className={styles["container"]}>
       <label
         htmlFor={id}
-        className={`${fontStyles["body-copy"]} ${styles["label"]}`}
+        className={`${fontStyles["category-copy"]} ${styles["label"]}`}
       >
         {label}
       </label>
@@ -57,7 +57,7 @@ export const UnderlinedDropdown = <T extends string | number>({
             setShowOptions(!showOptions);
           }
         }}
-        className={`${fontStyles["body-copy"]} ${styles["input"]}`}
+        className={`${fontStyles["category-copy"]} ${styles["input"]}`}
       >
         {value ? (
           <p className={styles["input-value"]}>{value}</p>
@@ -93,7 +93,7 @@ export const UnderlinedDropdown = <T extends string | number>({
                     setValue(option);
                     setShowOptions(false);
                   }}
-                  className={`${fontStyles["flair-copy"]} ${styles["option"]}`}
+                  className={`${fontStyles["category-copy"]} ${styles["option"]}`}
                 >
                   {option}
                 </p>
