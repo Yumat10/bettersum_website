@@ -1,24 +1,17 @@
-export interface CaseStudyPhoto {
+export interface CaseStudyMedia {
   title: string;
   url: string;
+  contentType: string;
 }
 
 export interface CaseStudyTemplateOne {
-  handle: string;
-  title: string;
-  shortDescription: string;
-  tags: string[];
-  url: string;
-  isLabs: boolean;
-  clientName: string | null;
-  photosCollection: {
-    items: CaseStudyPhoto[];
-  };
-  video: {
-    title: string;
-    url: string;
-  };
-  overview: {
+  handle?: string;
+  title?: string;
+  subtitle?: string;
+  siteUrl?: string;
+  tags?: string[];
+  splashImage?: CaseStudyMedia;
+  description?: {
     json: {
       content: {
         content: {
@@ -27,21 +20,16 @@ export interface CaseStudyTemplateOne {
       }[];
     };
   };
-  tools: string[];
-  stats: string[];
-  statDescriptions: string[];
-  quote: string;
-  quoteUserName: string;
-  quoteUserTitle: string;
-  quoteLinkText: string;
-  quoteLink: string;
+  stats?: string[];
+  statLabels?: string[];
+  mediaContent?: {
+    items: CaseStudyMedia[];
+  };
 }
 
 export interface CaseStudyPreview {
   handle: string;
   title: string;
-  previewImage: CaseStudyPhoto;
+  splashImage: CaseStudyMedia;
   tags: string[];
-  templateNumber: string;
-  isLabs: boolean;
 }
