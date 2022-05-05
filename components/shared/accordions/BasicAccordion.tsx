@@ -6,9 +6,11 @@ import fontStyles from "../../../styles/fontStyles.module.css";
 import styles from "./BasicAccordion.module.css";
 
 const faqContainerVariants: Variants = {
+  initial: {
+    backgroundColor: "var(--bettersum-beige)",
+  },
   hover: {
-    backgroundColor: "var(--bettersum-blue)",
-    color: "var(--bettersum-beige)",
+    backgroundColor: "#EAECED",
   },
 };
 
@@ -84,6 +86,8 @@ export const BasicAccordion = ({
   return (
     <motion.div
       variants={faqContainerVariants}
+      initial="initial"
+      animate="initial"
       whileHover={isOpen ? "" : "hover"}
       onClick={() => setIsOpen(!isOpen)}
       className={styles["container"]}

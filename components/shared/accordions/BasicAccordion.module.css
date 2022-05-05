@@ -1,6 +1,7 @@
 .container {
   cursor: pointer;
   padding: 27px 0px 27px 0px;
+  background-color: var(--bettersum-beige);
 }
 
 .header-container {
