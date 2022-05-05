@@ -8,28 +8,11 @@
 }
 
 .header,
-.button {
+.link-container {
   width: var(--width-clamp);
   margin: 0px auto;
 }
 
 .case-studies-grid-container {
   margin: 30px 0px 70px 0px;
-}
-
-.button {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  color: var(--bettersum-beige);
-  /* padding: 25px 25px; */
-  text-decoration: underline;
-}
-
-.button p {
-  margin: 0px 20px 0px 0px;
-}
-
-.arrow-container {
-  flex-grow: 1;
 }

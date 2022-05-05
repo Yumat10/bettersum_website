@@ -6,6 +6,8 @@ import { CSTMedia } from "./CSTMedia";
 import fontStyles from "../../../../styles/fontStyles.module.css";
 import styles from "./CSTContent.module.css";
 import Image from "next/image";
+import { UnderlineArrowLink } from "components/shared/links/UnderlineArrowLink";
+import { BetterSumColors } from "types/BetterSumColors";
 
 export const CSTContent: FC = () => {
   const { caseStudyData } = useCaseStudyContext();
@@ -27,22 +29,13 @@ export const CSTContent: FC = () => {
           }
         )}
       </div>
-      <Link href="/work">
-        <a
-          className={`${fontStyles["category-copy"]} ${styles["all-work-link"]}`}
-        >
-          See All Case Studies
-          <span className={styles["arrow-container"]}>
-            <Image
-              src="/arrows/rightArrowBlack.svg"
-              alt=""
-              objectFit="contain"
-              height={30}
-              width={35}
-            />
-          </span>
-        </a>
-      </Link>
+      <div className={`${styles["all-work-link"]}`}>
+        <UnderlineArrowLink
+          color={BetterSumColors.Black}
+          text="See All Case Studies"
+          link="/work"
+        />
+      </div>
     </div>
   );
 };

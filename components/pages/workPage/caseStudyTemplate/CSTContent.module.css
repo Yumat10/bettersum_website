@@ -19,7 +19,6 @@
   width: var(--width-clamp);
   margin: 0px auto;
   color: var(--bettersum-black);
-  text-decoration: underline;
 }
 
 .arrow-container {

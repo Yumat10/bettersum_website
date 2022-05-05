@@ -1,9 +1,11 @@
 import { CaseStudiesGrid } from "components/shared/caseStudies/CaseStudiesGrid";
 import { MobileOnlyLineBreak } from "components/shared/lineBreaks/MobileOnlyLineBreak";
+import { UnderlineArrowLink } from "components/shared/links/UnderlineArrowLink";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import fontStyles from "styles/fontStyles.module.css";
+import { BetterSumColors } from "types/BetterSumColors";
 import styles from "./WorkAndLab.module.css";
 
 const buttonVariants: Variants = {
@@ -33,26 +35,13 @@ export const WorkAndLab = (): JSX.Element => {
         <div className={styles["case-studies-grid-container"]}>
           <CaseStudiesGrid />
         </div>
-        <Link href="/work" passHref>
-          <motion.a
-            // variants={buttonVariants}
-            whileHover="hover"
-            className={styles["button"]}
-          >
-            <p className={fontStyles["category-copy"]}>See All Case Studies</p>
-            <motion.div
-              // variants={arrowVariants}
-              className={styles["arrow-container"]}
-            >
-              <Image
-                src="/arrows/rightArrowBeige.svg"
-                alt=""
-                height={24}
-                width={24}
-              />
-            </motion.div>
-          </motion.a>
-        </Link>
+        <div className={styles["link-container"]}>
+          <UnderlineArrowLink
+            color={BetterSumColors.Beige}
+            text="See All Case Studies"
+            link="/work"
+          />
+        </div>
       </div>
     </div>
   );

@@ -29,11 +29,6 @@
   cursor: pointer;
 }
 
-.arrow-container {
-  display: inline-flex;
-  vertical-align: middle;
-}
-
 .image-container {
   position: relative;
   height: 655px;
