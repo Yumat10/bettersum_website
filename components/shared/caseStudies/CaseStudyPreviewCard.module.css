@@ -1,65 +1,30 @@
 .preview-container {
-  flex-shrink: 0;
   display: block;
-  box-sizing: border-box;
-  background-color: var(--bettersum-beige);
-  width: 520px;
-  height: 520px;
-  aspect-ratio: 520 / 520;
-  /* height: 425px; */
-  border: 1px solid var(--bettersum-black);
-}
-
-.text-container {
-  border-top: 1px solid var(--bettersum-black);
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 0px 25px;
-  height: 190px;
 }
 
 .preview-image-container {
-  position: relative;
+  display: block;
+  object-fit: contain;
   width: 100%;
-  height: calc(100% - 190px);
+  height: 100%;
 }
 
-.lab-tag {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: var(--bettersum-blue);
-  color: var(--bettersum-beige);
-  padding: 0.5em 1.25em;
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--bettersum-beige);
+  padding: 0px 25px;
+  flex-grow: 1;
 }
 
 .tags-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  white-space: pre;
-  margin: 25px 0px 0px 0px;
+  margin: 5px 0px 0px 0px;
 }
 
-.tags-container p:first-child span {
-  display: none;
-}
-
-@media only screen and (max-width: 650px) {
-  .preview-container {
-    height: 350px;
-  }
-
+@media only screen and (max-width: 850px) {
   .text-container {
-    height: 120px;
-  }
-
-  .preview-image-container {
-    height: calc(100% - 120px);
-  }
-
-  .tags-container {
-    margin: 10px 0px 0px 0px;
+    padding: 12px 16px;
   }
 }

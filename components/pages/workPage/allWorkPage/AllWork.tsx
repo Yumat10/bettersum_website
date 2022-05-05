@@ -16,14 +16,16 @@ export const AllWork = (): JSX.Element => {
   const [shakeLabTag, setShakeLabTag] = useState<boolean>(false);
 
   return (
-    <div>
+    <div className={styles["container"]}>
       <motion.h1
         // variants={caseStudyHeaderVariants}
         initial="hidden"
         animate="visible"
         className={`${fontStyles["title-header"]} ${styles["title"]}`}
       >
-        Our work has led to 5,678% Increase in Customer Acquisition
+        Our work has led to
+        <br />
+        <u>5,678% Increase in Customer Acquisition</u>
       </motion.h1>
       <CaseStudiesGrid shakeLabTag={shakeLabTag} />
     </div>
