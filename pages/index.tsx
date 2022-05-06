@@ -2,6 +2,7 @@ import axios from "axios";
 import { BetterMethods } from "components/pages/homePage/betterMethods/BetterMethods";
 import { TotalImpact } from "components/pages/homePage/totalmpact/TotalImpact";
 import { WorkAndLab } from "components/pages/homePage/workAndLab/WorkAndLab";
+import { WorkWithUsIcon } from "components/pages/homePage/WorkWithUsIcon";
 import { ContactForm } from "components/shared/forms/ContactForm";
 import { useCaseStudyContext } from "contexts/caseStudyContext";
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
@@ -61,6 +62,7 @@ const Home: NextPage = ({
         <meta property="og:image:height" content="2141" />
       </Head>
       <main>
+        <WorkWithUsIcon />
         <SplashScreen />
         <WorkAndLab />
         <ServicesOffered />
@@ -81,22 +83,21 @@ export const getStaticProps: GetStaticProps = async (context) => {
     ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
     : process.env.CONTENTFUL_ACCESS_TOKEN;
 
-  const gql = String.raw;
+  const chosenTemplate = "caseStudyTemplateTwoCollection";
 
+  const gql = String.raw;
   const contentfulCaseStudyPreviewsQuery = gql`
     query {
-      caseStudyPreviewsCollection(order: order_ASC, limit: 4,
-       preview: ${context.preview ? true : false}) {
+      ${chosenTemplate}(preview: ${context.preview ? true : false}) {
         items {
           handle
           title
-          previewImage {
+          splashImage {
             title
             url
+            contentType
           }
           tags
-          templateNumber
-          isLabs
         }
       }
     }
@@ -104,8 +105,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   let props: {
     caseStudyPreviews: CaseStudyPreview[];
+    shouldRedirectTo404: boolean;
   } = {
     caseStudyPreviews: [],
+    shouldRedirectTo404: false,
   };
 
   try {
@@ -122,7 +125,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     );
 
     props.caseStudyPreviews =
-      axiosCaseStudyPreviewsResponseData.data.caseStudyPreviewsCollection.items;
+      axiosCaseStudyPreviewsResponseData.data[chosenTemplate].items;
   } catch (error: any) {
     const errorResponse = error["response"];
     if (
@@ -139,6 +142,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
     } else {
       console.log(error);
     }
+
+    props.shouldRedirectTo404 = true;
   }
 
   return {

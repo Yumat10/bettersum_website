@@ -166,7 +166,7 @@ export const Navbar = (): JSX.Element => {
               {/* Additional "Intro" option for hamburger menu */}
               <div className={styles["route"]}>
                 <Link href={"/?section=intro"}>
-                  <a className={fontStyles["category-header"]}>intro</a>
+                  <a className={fontStyles["body-copy"]}>intro</a>
                 </Link>
               </div>
               {routes.map(({ name, path }) => (
@@ -174,7 +174,7 @@ export const Navbar = (): JSX.Element => {
                   <Link href={path}>
                     <a
                       referrerPolicy="strict-origin-when-cross-origin"
-                      className={fontStyles["category-header"]}
+                      className={fontStyles["body-copy"]}
                     >
                       {name}
                     </a>

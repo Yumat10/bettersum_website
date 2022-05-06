@@ -1,15 +1,12 @@
 .container {
-  background-color: var(--bettersum-beige);
-  padding: 75px 0px 50px 0px;
-}
-
-.top-container {
-  width: var(--width-clamp);
-  margin: 0px auto 25px auto;
+  background-color: var(--bettersum-black);
+  color: var(--bettersum-beige);
+  padding: 60px 0px 115px 0px;
 }
 
 .title {
-  position: relative;
+  width: var(--width-clamp);
+  margin: 0px auto 68px auto;
 }
 
 .lab-container {

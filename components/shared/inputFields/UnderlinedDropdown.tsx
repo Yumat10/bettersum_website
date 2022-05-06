@@ -1,8 +1,48 @@
+import { AnimatePresence, motion, Variants } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import fontStyles from "styles/fontStyles.module.css";
 import styles from "./UnderlinedDropdown.module.css";
+
+const optionsContainerVariants: Variants = {
+  hidden: {
+    height: "0px",
+    padding: "0px",
+  },
+  visible: {
+    height: "auto",
+    padding: "18px 20px",
+    transition: {
+      duration: 0.25,
+    },
+  },
+  exit: {
+    height: "0px",
+    padding: "0px",
+    transition: {
+      delay: 0.26,
+    },
+  },
+};
+
+const optionVariants: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 0.25,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.25,
+    },
+  },
+};
 
 interface InputFieldProps<T extends string | number> {
   type?: "text" | "number";
@@ -43,7 +83,7 @@ export const UnderlinedDropdown = <T extends string | number>({
     <div className={styles["container"]}>
       <label
         htmlFor={id}
-        className={`${fontStyles["body-copy"]} ${styles["label"]}`}
+        className={`${fontStyles["category-copy"]} ${styles["label"]}`}
       >
         {label}
       </label>
@@ -57,7 +97,7 @@ export const UnderlinedDropdown = <T extends string | number>({
             setShowOptions(!showOptions);
           }
         }}
-        className={`${fontStyles["body-copy"]} ${styles["input"]}`}
+        className={`${fontStyles["category-copy"]} ${styles["input"]}`}
       >
         {value ? (
           <p className={styles["input-value"]}>{value}</p>
@@ -83,24 +123,34 @@ export const UnderlinedDropdown = <T extends string | number>({
           borderWidth: showOptions ? "4px" : "2px",
         }}
       >
-        {showOptions && (
-          <div className={styles["options-grid"]}>
-            {options.map((option, index) => {
-              return (
-                <p
-                  key={index}
-                  onClick={() => {
-                    setValue(option);
-                    setShowOptions(false);
-                  }}
-                  className={`${fontStyles["flair-copy"]} ${styles["option"]}`}
-                >
-                  {option}
-                </p>
-              );
-            })}
-          </div>
-        )}
+        <AnimatePresence>
+          {showOptions && (
+            <motion.div
+              variants={optionsContainerVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              key={id}
+              className={styles["options-grid"]}
+            >
+              {options.map((option, index) => {
+                return (
+                  <motion.p
+                    key={index}
+                    variants={optionVariants}
+                    onClick={() => {
+                      setValue(option);
+                      setShowOptions(false);
+                    }}
+                    className={`${fontStyles["category-copy"]} ${styles["option"]}`}
+                  >
+                    {option}
+                  </motion.p>
+                );
+              })}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
       {touched && errors && (
         <p className={`${fontStyles["flair-copy"]} ${styles["errors"]}`}>

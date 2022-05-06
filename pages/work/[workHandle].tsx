@@ -11,7 +11,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useCaseStudyContext } from "contexts/caseStudyContext";
-import { CaseStudyTemplateOne as CaseStudyTemplateOneComponent } from "components/pages/workPage/templates/caseStudyTemplateOne/CaseStudyTemplateOne";
+import { CaseStudyTemplate } from "components/pages/workPage/caseStudyTemplate/CaseStudyTemplate";
 
 const SelectedWork: NextPage = ({
   caseStudyData: propsCaseStudyData,
@@ -71,7 +71,7 @@ const SelectedWork: NextPage = ({
               }}
             />
           ) : (
-            <CaseStudyTemplateOneComponent />
+            <CaseStudyTemplate />
           )}
         </div>
       </main>
@@ -81,7 +81,6 @@ const SelectedWork: NextPage = ({
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const queryWorkHandle: string = String(context.params?.workHandle);
-  const queryTemplateNumber: number = Number(context.params?.templateNumber);
 
   if (
     typeof context.params?.workHandle == "undefined" ||
@@ -99,45 +98,33 @@ export const getStaticProps: GetStaticProps = async (context) => {
     ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
     : process.env.CONTENTFUL_ACCESS_TOKEN;
 
-  // Templates start at 1
-  const templates: string[] = ["", "caseStudyTemplateOneCollection"];
-  const chosenTemplate = templates[Number(queryTemplateNumber)];
+  const chosenTemplate = "caseStudyTemplateTwoCollection";
 
   const gql = String.raw;
-  const templateStructure: string[] = [
-    "",
-    gql`
-      handle
+  const chosenTemplateStructure = gql`
+    handle
+    title
+    subtitle
+    siteUrl
+    tags
+    splashImage {
       title
-      shortDescription
-      tags
       url
-      isLabs
-      clientName
-      photosCollection {
-        items {
-          title
-          url
-        }
-      }
-      video {
-        title
+      contentType
+    }
+    description {
+      json
+    }
+    stats
+    statLabels
+    mediaContentCollection {
+      items {
         url
+        title
+        contentType
       }
-      overview {
-        json
-      }
-      tools
-      stats
-      statDescriptions
-      quote
-      quoteUserName
-      quoteUserTitle
-      quoteLinkText
-      quoteLink
-    `,
-  ];
-  const chosenTemplateStructure = templateStructure[queryTemplateNumber];
+    }
+  `;
 
   const contentfulCaseStudyQuery = gql`
     query {
@@ -154,17 +141,16 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const contentfulCaseStudyPreviewsQuery = gql`
     query {
-      caseStudyPreviewsCollection(preview: ${context.preview ? true : false}) {
+      ${chosenTemplate}(preview: ${context.preview ? true : false}) {
         items {
           handle
           title
-          previewImage {
+          splashImage {
             title
             url
+            contentType
           }
           tags
-          templateNumber
-          isLabs
         }
       }
     }
@@ -193,6 +179,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
       }
     );
 
+    if (axiosCaseStudyResponseData.data[chosenTemplate].items.length === 0) {
+      throw "Case study not found";
+    }
+    props.caseStudyData =
+      axiosCaseStudyResponseData.data[chosenTemplate].items[0];
+
     const { data: axiosCaseStudyPreviewsResponseData } = await axios.post(
       contentfulApiUrl,
       { query: contentfulCaseStudyPreviewsQuery },
@@ -205,15 +197,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
       }
     );
 
-    console.log(axiosCaseStudyResponseData);
-
-    if (axiosCaseStudyResponseData.data[chosenTemplate].items.length === 0) {
-      throw "Case study not found";
-    }
-    props.caseStudyData =
-      axiosCaseStudyResponseData.data[chosenTemplate].items[0];
     props.caseStudyPreviews =
-      axiosCaseStudyPreviewsResponseData.data.caseStudyPreviewsCollection.items;
+      axiosCaseStudyPreviewsResponseData.data[chosenTemplate].items;
   } catch (error: any) {
     const errorResponse = error["response"];
     if (
@@ -243,13 +228,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const contentfulApiUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
   const contentfulAccessToken = process.env.CONTENTFUL_ACCESS_TOKEN;
 
+  const chosenTemplate = "caseStudyTemplateTwoCollection";
+
   const gql = String.raw;
   const contentfulCaseStudyQuery = gql`
     query {
-      caseStudyPreviewsCollection {
+      ${chosenTemplate} {
         items {
           handle
-          templateNumber
         }
       }
     }
@@ -272,14 +258,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
         },
       }
     );
-    // console.log(axiosResponseData.data.caseStudyPreviewsCollection);
+
     const caseStudyPreviews: CaseStudyPreview[] =
-      axiosResponseData.data.caseStudyPreviewsCollection.items;
+      axiosResponseData.data[chosenTemplate].items;
     const paths = caseStudyPreviews.map((preview) => {
-      const { handle, templateNumber } = preview;
+      const { handle } = preview;
       return {
         params: {
-          templateNumber,
           workHandle: handle.toLowerCase(),
         },
       };

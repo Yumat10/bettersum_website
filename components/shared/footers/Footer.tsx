@@ -135,7 +135,7 @@ export const Footer = (): JSX.Element => {
           <motion.span
             variants={humanCenteredVariants}
             whileHover="hover"
-            className={fontStyles["body-copy"]}
+            className={fontStyles["category-copy"]}
           >
             Human Centered.
           </motion.span>

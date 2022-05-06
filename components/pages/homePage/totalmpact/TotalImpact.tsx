@@ -18,7 +18,7 @@ export const TotalImpact: FC = () => {
     <div className={styles["container"]}>
       <div className={styles["inner-container"]}>
         <div className={styles["header-container"]}>
-          <h2 className={fontStyles["category-header"]}>
+          <h2 className={fontStyles["title-header"]}>
             Sum of
             <MobileOnlyLineBreak /> Impact
           </h2>
@@ -27,8 +27,12 @@ export const TotalImpact: FC = () => {
           {impactFigures.map(({ data, subtitle }, index) => {
             return (
               <div key={index} className={styles["figure-container"]}>
-                <p className={fontStyles["category-header"]}>{data}</p>
-                <p className={fontStyles["body-copy"]}>{subtitle}</p>
+                <p className={fontStyles["title-header"]}>{data}</p>
+                <p
+                  className={`${fontStyles["body-copy"]} ${styles["subtitle-text"]}`}
+                >
+                  {subtitle}
+                </p>
               </div>
             );
           })}

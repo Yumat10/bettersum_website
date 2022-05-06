@@ -9,10 +9,12 @@
 }
 
 .input {
-  all: unset;
+  background: none;
+  outline: none;
+  border: none;
   height: inherit;
   width: inherit;
-  padding: 0.8rem 0px;
+  padding: 1rem 0px;
   box-sizing: border-box;
   border-bottom: 2px solid var(--bettersum-black);
 }
@@ -24,8 +26,10 @@
 .input::placeholder {
   color: var(--bettersum-black);
   opacity: 0.3;
-  font-size: 1.25rem;
-  font-weight: 500;
+  margin: 0px;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 2.1875rem;
 }
 
 .errors {

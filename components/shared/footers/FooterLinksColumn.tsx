@@ -18,7 +18,7 @@ export const FooterLinksColumn = ({
 }): JSX.Element => {
   return (
     <div className={styles["container"]}>
-      <h3 className={fontStyles["body-copy"]}>{header}</h3>
+      <h3 className={fontStyles["category-copy"]}>{header}</h3>
       {linksArray.map(({ name, path }) => (
         <motion.a
           key={path}

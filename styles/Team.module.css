@@ -17,6 +17,7 @@
 .team-members-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
 }
 
 @media only screen and (max-width: 1200px) {

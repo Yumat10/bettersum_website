@@ -27,7 +27,7 @@ export const BetterMethods: FC = (): JSX.Element => {
     <div className={styles["container"]}>
       <div className={styles["inner-container"]}>
         <div className={styles["header-container"]}>
-          <h2 className={fontStyles["category-header"]}>
+          <h2 className={fontStyles["title-header"]}>
             Better
             <MobileOnlyLineBreak /> Methods
           </h2>
@@ -36,8 +36,8 @@ export const BetterMethods: FC = (): JSX.Element => {
           {methods.map(({ title, description }, index) => {
             return (
               <div key={index} className={styles["methods-container"]}>
-                <h3 className={fontStyles["body-copy"]}>{title}</h3>
-                <p className={fontStyles["flair-copy"]}>{description}</p>
+                <h3 className={fontStyles["category-copy"]}>{title}</h3>
+                <p className={fontStyles["body-copy"]}>{description}</p>
               </div>
             );
           })}

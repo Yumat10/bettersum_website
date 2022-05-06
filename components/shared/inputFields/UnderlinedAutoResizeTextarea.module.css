@@ -8,17 +8,13 @@
 }
 
 .label {
-  /* position: absolute;
-  color: var(--bettersum-black);
-  opacity: 0.5;
-  top: 0.3rem;
-  left: 1rem; */
 }
 
 .input {
-  all: unset;
-  height: inherit;
-  width: inherit;
+  outline: none;
+  border: none;
+  background: none;
+  font-family: Campton;
   padding: 0.8rem 0px;
   box-sizing: border-box;
   border-bottom: 2px solid var(--bettersum-black);
@@ -28,8 +24,10 @@
 .input::placeholder {
   color: var(--bettersum-black);
   opacity: 0.3;
-  font-size: 1.25rem;
-  font-weight: 500;
+  margin: 0px;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 2.1875rem;
 }
 
 .input:focus {
@@ -38,7 +36,7 @@
 
 .errors {
   position: absolute;
-  bottom: -70px;
+  bottom: -35px;
   display: block;
   text-transform: capitalize;
   color: var(--error-color);

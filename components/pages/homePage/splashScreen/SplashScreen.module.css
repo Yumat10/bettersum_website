@@ -21,6 +21,14 @@
   width: 500px;
 }
 
+.subtitle-text {
+  margin: 30px 0px 16px 0px;
+}
+
+.cta-text {
+  cursor: pointer;
+}
+
 .image-container {
   position: relative;
   height: 655px;
@@ -55,6 +63,14 @@
     background: url("/splashScreenBackground.svg") no-repeat;
     background-size: 100vw auto;
     background-position: bottom right;
+  }
+
+  .subtitle-text {
+    margin: 16px 0px 0px 0px;
+  }
+
+  .cta-text {
+    display: none;
   }
 
   .image-container {

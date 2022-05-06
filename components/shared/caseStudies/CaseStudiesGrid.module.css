@@ -8,28 +8,20 @@
   margin: 0px auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 80px;
-  row-gap: 80px;
+  column-gap: 50px;
+  row-gap: 50px;
 }
 
 .preview-container {
   width: 100%;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 850px) {
   .inner-container {
     grid-template-columns: repeat(1, 1fr);
-    justify-items: center;
-  }
-
-  .preview-container {
-    width: 520px;
-  }
-}
-
-@media only screen and (max-width: 650px) {
-  .inner-container {
     flex-direction: column;
+    justify-items: center;
+    row-gap: 30px;
   }
 
   .preview-container {

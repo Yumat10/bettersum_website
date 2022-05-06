@@ -59,8 +59,10 @@ export const ServicesOffered = (): JSX.Element => {
     <div id="home-page-services-section" className={styles["container"]}>
       <div className={styles["inner-container"]}>
         <div className={styles["header-container"]}>
-          <h3 className={`${fontStyles["body-copy"]}`}>What we offer</h3>
-          <h2 className={`${fontStyles["category-header"]}`}>
+          <h3 className={`${fontStyles["flair-copy"]}`}>What we offer</h3>
+          <h2
+            className={`${fontStyles["title-header"]} ${styles["header-text"]}`}
+          >
             Better Services
           </h2>
         </div>
