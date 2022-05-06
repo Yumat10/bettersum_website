@@ -1,8 +1,10 @@
 .container {
   position: sticky;
+  position: -webkit-sticky;
   top: 50px;
   left: 0px;
   right: 0px;
+  bottom: 0px;
   width: var(--width-clamp);
   margin: 0px auto;
   display: flex;
@@ -42,8 +44,10 @@
 
 @media only screen and (max-width: 850px) {
   .container {
+    position: fixed;
     top: auto;
     bottom: 15px;
+    margin: 0px auto;
   }
 
   .inner-container,

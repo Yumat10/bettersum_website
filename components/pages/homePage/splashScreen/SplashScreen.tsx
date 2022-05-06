@@ -44,20 +44,16 @@ export const SplashScreen = (): JSX.Element => {
             We are an integrative digital studio with expertise in strategy,
             design, and development.
           </h3>
-          <h2
-            className={`${fontStyles["category-copy"]} ${styles["cta-text"]}`}
-          >
-            <UnderlineArrowLink
-              color={BetterSumColors.Black}
-              text={
-                <span>
-                  Partner with us to scale your
-                  <br /> DTC ecommerce business
-                </span>
-              }
-              link="/"
-            />
-          </h2>
+          <UnderlineArrowLink
+            color={BetterSumColors.Black}
+            text={
+              <span>
+                Partner with us to scale your
+                <br /> DTC ecommerce business
+              </span>
+            }
+            link="/"
+          />
         </div>
         <div className={styles["image-container"]}>
           <Image

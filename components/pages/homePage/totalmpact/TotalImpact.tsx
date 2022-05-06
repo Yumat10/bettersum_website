@@ -1,18 +1,12 @@
 import { MobileOnlyLineBreak } from "components/shared/lineBreaks/MobileOnlyLineBreak";
+import { useDynamiDataContext } from "contexts/dynamicDataContext";
 import { FC } from "react";
 
 import fontStyles from "../../../../styles/fontStyles.module.css";
 import styles from "./TotalImpact.module.css";
 
 export const TotalImpact: FC = () => {
-  const impactFigures: { data: string; subtitle: string }[] = [
-    { data: "5,678%", subtitle: "Businesses Scaled" },
-    {
-      data: "878",
-      subtitle: "Tasks Automated",
-    },
-    { data: "3,230", subtitle: "Customers Impacted" },
-  ];
+  const { impactData } = useDynamiDataContext();
 
   return (
     <div className={styles["container"]}>
@@ -24,7 +18,7 @@ export const TotalImpact: FC = () => {
           </h2>
         </div>
         <div className={styles["figure-grid"]}>
-          {impactFigures.map(({ data, subtitle }, index) => {
+          {impactData.map(({ data, subtitle }, index) => {
             return (
               <div key={index} className={styles["figure-container"]}>
                 <p className={fontStyles["title-header"]}>{data}</p>

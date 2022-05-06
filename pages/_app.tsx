@@ -10,6 +10,7 @@ import {
 } from "animations/homePageAnimations";
 import * as gtag from "lib/gtag";
 import { CaseStudyContextProvider } from "contexts/caseStudyContext";
+import { DynamiDataContextProvider } from "contexts/dynamicDataContext";
 
 const isProd = process.env.NODE_ENV === "production";
 
@@ -44,7 +45,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <>
         <Navbar />
         <CaseStudyContextProvider>
-          <Component {...pageProps} />
+          <DynamiDataContextProvider>
+            <Component {...pageProps} />
+          </DynamiDataContextProvider>
         </CaseStudyContextProvider>
         <Footer />
       </>
