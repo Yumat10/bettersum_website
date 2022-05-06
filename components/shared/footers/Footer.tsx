@@ -134,7 +134,7 @@ export const Footer = (): JSX.Element => {
             <FooterLinksColumn header="Company" linksArray={footerLinks[2]} />
           </div>
         </div>
-        <div className={`${fontStyles["flair-copy"]} ${styles["footer-text"]}`}>
+        <div className={`${fontStyles["body-copy"]} ${styles["footer-text"]}`}>
           Atlanta Based.{" "}
           <motion.span
             variants={humanCenteredVariants}
