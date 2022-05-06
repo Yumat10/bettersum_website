@@ -2,6 +2,7 @@ import axios from "axios";
 import { BetterMethods } from "components/pages/homePage/betterMethods/BetterMethods";
 import { TotalImpact } from "components/pages/homePage/totalmpact/TotalImpact";
 import { WorkAndLab } from "components/pages/homePage/workAndLab/WorkAndLab";
+import { WorkWithUsIcon } from "components/pages/homePage/WorkWithUsIcon";
 import { ContactForm } from "components/shared/forms/ContactForm";
 import { useCaseStudyContext } from "contexts/caseStudyContext";
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
@@ -61,6 +62,7 @@ const Home: NextPage = ({
         <meta property="og:image:height" content="2141" />
       </Head>
       <main>
+        <WorkWithUsIcon />
         <SplashScreen />
         <WorkAndLab />
         <ServicesOffered />
