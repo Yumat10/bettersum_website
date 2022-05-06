@@ -4,6 +4,10 @@
 }
 
 .preview-image-container {
+  overflow: hidden;
+}
+
+.preview-image {
   display: block;
   object-fit: contain;
   width: 100%;

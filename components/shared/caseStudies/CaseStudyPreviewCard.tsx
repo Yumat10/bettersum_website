@@ -6,22 +6,15 @@ import styles from "./CaseStudyPreviewCard.module.css";
 import { motion, Variants } from "framer-motion";
 import { useEffect } from "react";
 
-const labTagVariants: Variants = {
-  initial: {
-    scale: 1,
-    rotate: 0,
+const previewCardVariants: Variants = {
+  hover: {
+    scale: 1.05,
   },
-  shake: {
+};
+
+const previewPhoto: Variants = {
+  hover: {
     scale: 1.1,
-    rotate: [-3, 3, -3],
-    transition: {
-      rotate: {
-        repeat: Infinity,
-        // repeatType: "loop",
-        duration: 0.5,
-        ease: "easeInOut",
-      },
-    },
   },
 };
 
@@ -65,8 +58,10 @@ export const CaseStudyPreviewCard = ({
 
   return (
     <Link href={`/work/${handle}`}>
-      <a
+      <motion.a
         id={`cs-preview-card-${handle}`}
+        variants={previewCardVariants}
+        whileHover="hover"
         draggable="false"
         className={styles["preview-container"]}
         style={
@@ -76,11 +71,14 @@ export const CaseStudyPreviewCard = ({
         }
       >
         {splashImage && (
-          <img
-            src={splashImage.url}
-            alt={splashImage.title}
-            className={styles["preview-image-container"]}
-          />
+          <div className={styles["preview-image-container"]}>
+            <motion.img
+              src={splashImage.url}
+              variants={previewPhoto}
+              alt={splashImage.title}
+              className={styles["preview-image"]}
+            />
+          </div>
         )}
         <div
           id={`cs-preview-card-text-container-${handle}`}
@@ -101,7 +99,7 @@ export const CaseStudyPreviewCard = ({
             ))}
           </div>
         </div>
-      </a>
+      </motion.a>
     </Link>
   );
 };
