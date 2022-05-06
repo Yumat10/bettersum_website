@@ -26,8 +26,8 @@
   opacity: 0.3;
   margin: 0px;
   font-size: 1.875rem;
-  font-weight: 700;
-  line-height: 2.1875rem;
+  font-weight: 500;
+  line-height: 2.5rem;
 }
 
 .input:focus {

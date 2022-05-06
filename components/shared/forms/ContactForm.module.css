@@ -1,7 +1,7 @@
 .container {
   background-color: var(--bettersum-black);
   padding: 150px 0px 200px 0px;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   border-top: 2px solid var(--bettersum-beige);
   border-bottom: 2px solid var(--bettersum-beige);
 }
@@ -31,8 +31,16 @@
   grid-template-columns: repeat(2, 1fr);
   column-gap: 80px;
   row-gap: 65px;
-  /* background: url("/splashScreenBackground.svg") no-repeat;
-  background-size: cover; */
+  background-color: hsla(40, 33%, 96%, 1);
+  background-image: radial-gradient(
+      at 21% 70%,
+      hsla(40, 100%, 96%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 0% 20%, hsla(40, 100%, 96%, 1) 0px, transparent 50%),
+    radial-gradient(at 10% 94%, hsla(40, 100%, 96%, 1) 0px, transparent 50%),
+    radial-gradient(at 52% 0%, hsla(40, 100%, 96%, 1) 0px, transparent 50%),
+    radial-gradient(at 99% 99%, hsla(216, 100%, 63%, 1) 0px, transparent 50%);
 }
 
 .message-input {
@@ -50,7 +58,7 @@
   flex-direction: row;
   align-items: center;
   column-gap: 15px;
-  padding: 0px 1.25em;
+  padding: 0px 2em;
   height: 60px;
   margin: 32px 0px 0px 0px;
 }
@@ -72,12 +80,9 @@
 }
 
 @media only screen and (max-width: 850px) {
-  .container {
-    padding: 67.5px 0px 80px 0px;
-  }
-
   .inner-container {
     flex-direction: column;
+    row-gap: 50px;
   }
 
   .form-container {

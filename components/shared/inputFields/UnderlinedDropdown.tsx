@@ -97,7 +97,7 @@ export const UnderlinedDropdown = <T extends string | number>({
             setShowOptions(!showOptions);
           }
         }}
-        className={`${fontStyles["category-copy"]} ${styles["input"]}`}
+        className={`${fontStyles["body-copy"]} ${styles["input"]}`}
       >
         {value ? (
           <p className={styles["input-value"]}>{value}</p>
@@ -142,7 +142,7 @@ export const UnderlinedDropdown = <T extends string | number>({
                       setValue(option);
                       setShowOptions(false);
                     }}
-                    className={`${fontStyles["category-copy"]} ${styles["option"]}`}
+                    className={`${fontStyles["body-copy"]} ${styles["option"]}`}
                   >
                     {option}
                   </motion.p>

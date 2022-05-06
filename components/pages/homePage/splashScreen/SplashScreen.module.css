@@ -1,9 +1,16 @@
 .container {
   background-color: var(--bettersum-beige);
   margin: 0px;
-  background: url("/splashScreenBackground.svg") no-repeat;
-  background-size: 100vw auto;
-  background-position: bottom right;
+  background-color: hsla(40, 33%, 96%, 1);
+  background-image: radial-gradient(
+      at 21% 70%,
+      hsla(40, 100%, 96%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 0% 20%, hsla(40, 100%, 96%, 1) 0px, transparent 50%),
+    radial-gradient(at 10% 94%, hsla(40, 100%, 96%, 1) 0px, transparent 50%),
+    radial-gradient(at 52% 0%, hsla(40, 100%, 96%, 1) 0px, transparent 50%),
+    radial-gradient(at 99% 99%, hsla(216, 100%, 63%, 1) 0px, transparent 50%);
 }
 
 .inner-container {
@@ -22,7 +29,7 @@
 }
 
 .subtitle-text {
-  margin: 30px 0px 16px 0px;
+  margin: 30px 0px 30px 0px;
 }
 
 .cta-text {
@@ -57,12 +64,21 @@
   }
 
   .inner-container > div:first-child {
+    background-color: var(--bettersum-beige);
+
     width: 100%;
     padding: 27px calc((100% - var(--width-clamp)) / 2) 55px
       calc((100% - var(--width-clamp)) / 2);
-    background: url("/splashScreenBackground.svg") no-repeat;
-    background-size: 100vw auto;
-    background-position: bottom right;
+    background-color: hsla(40, 33%, 96%, 1);
+    background-image: radial-gradient(
+        at 21% 70%,
+        hsla(40, 100%, 96%, 1) 0px,
+        transparent 50%
+      ),
+      radial-gradient(at 0% 20%, hsla(40, 100%, 96%, 1) 0px, transparent 50%),
+      radial-gradient(at 10% 94%, hsla(40, 100%, 96%, 1) 0px, transparent 50%),
+      radial-gradient(at 52% 0%, hsla(40, 100%, 96%, 1) 0px, transparent 50%),
+      radial-gradient(at 99% 99%, hsla(216, 100%, 63%, 1) 0px, transparent 50%);
   }
 
   .subtitle-text {

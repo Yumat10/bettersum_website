@@ -32,7 +32,7 @@ export const TeamMemberColumn = ({
   );
 
   const bioComponent = (
-    <p className={`${fontStyles["body-copy"]} ${styles["bio-text"]}`}>{bio}</p>
+    <p className={`${fontStyles["flair-copy"]} ${styles["bio-text"]}`}>{bio}</p>
   );
 
   return (

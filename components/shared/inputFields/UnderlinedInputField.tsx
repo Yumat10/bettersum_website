@@ -44,7 +44,7 @@ export const UnderlinedInputField = <T extends string | number>({
         placeholder={placeholder}
         onChange={(e) => setValue(e.target.value)}
         onBlur={onBlur}
-        className={`${fontStyles["category-copy"]} ${styles["input"]}`}
+        className={`${fontStyles["body-copy"]} ${styles["input"]}`}
         style={{
           borderBottomColor: !touched
             ? "var(--bettersum-black)"

@@ -49,7 +49,12 @@ export const SplashScreen = (): JSX.Element => {
           >
             <UnderlineArrowLink
               color={BetterSumColors.Black}
-              text="Partner with us to scale your DTC ecommerce business"
+              text={
+                <span>
+                  Partner with us to scale your
+                  <br /> DTC ecommerce business
+                </span>
+              }
               link="/"
             />
           </h2>

@@ -120,7 +120,7 @@ export const ContactForm = (): JSX.Element => {
           />
           <UnderlinedDropdown
             id="service"
-            label="Service Type:"
+            label="Service type:"
             placeholder="Select a Service"
             options={ServiceTypes}
             value={props.values.service}
@@ -135,7 +135,7 @@ export const ContactForm = (): JSX.Element => {
           />
           <UnderlinedDropdown
             id="budget"
-            label="Estimated Budget:"
+            label="Estimated budget:"
             placeholder="Select a Budget"
             options={BudgetOptions}
             value={props.values.budget}
@@ -151,7 +151,7 @@ export const ContactForm = (): JSX.Element => {
           <span className={styles["message-input"]}>
             <UnderlinedAutoResizeTextarea
               id="problem"
-              label="What Problem Do You Want Solved?"
+              label="What problem do you want solved?"
               placeholder="Describe the problem you want solved"
               value={props.values.problem}
               setValue={props.handleChange("problem")}
