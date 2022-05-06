@@ -1,16 +1,16 @@
 .container {
   background-color: var(--bettersum-beige);
   margin: 0px;
-  background-color: hsla(40, 33%, 96%, 1);
+  background-color: var(--bettersum-beige);
   background-image: radial-gradient(
       at 21% 70%,
-      hsla(40, 100%, 96%, 1) 0px,
+      var(--bettersum-beige) 0px,
       transparent 50%
     ),
-    radial-gradient(at 0% 20%, hsla(40, 100%, 96%, 1) 0px, transparent 50%),
-    radial-gradient(at 10% 94%, hsla(40, 100%, 96%, 1) 0px, transparent 50%),
-    radial-gradient(at 52% 0%, hsla(40, 100%, 96%, 1) 0px, transparent 50%),
-    radial-gradient(at 99% 99%, hsla(216, 100%, 63%, 1) 0px, transparent 50%);
+    radial-gradient(at 0% 20%, var(--bettersum-beige) 0px, transparent 50%),
+    radial-gradient(at 10% 94%, var(--bettersum-beige) 0px, transparent 50%),
+    radial-gradient(at 52% 0%, var(--bettersum-beige) 0px, transparent 50%),
+    radial-gradient(at 99% 99%, var(--bettersum-blue) 0px, transparent 50%);
 }
 
 .inner-container {
@@ -21,7 +21,7 @@
   column-gap: 50px;
   width: var(--width-clamp);
   margin: 0px auto;
-  padding: 68px 0px 62px 0px;
+  padding: 0px 0px 62px 0px;
 }
 
 .inner-container div:first-child {
@@ -69,16 +69,16 @@
     width: 100%;
     padding: 27px calc((100% - var(--width-clamp)) / 2) 55px
       calc((100% - var(--width-clamp)) / 2);
-    background-color: hsla(40, 33%, 96%, 1);
+    background-color: var(--bettersum-beige);
     background-image: radial-gradient(
         at 21% 70%,
-        hsla(40, 100%, 96%, 1) 0px,
+        var(--bettersum-beige) 0px,
         transparent 50%
       ),
-      radial-gradient(at 0% 20%, hsla(40, 100%, 96%, 1) 0px, transparent 50%),
-      radial-gradient(at 10% 94%, hsla(40, 100%, 96%, 1) 0px, transparent 50%),
-      radial-gradient(at 52% 0%, hsla(40, 100%, 96%, 1) 0px, transparent 50%),
-      radial-gradient(at 99% 99%, hsla(216, 100%, 63%, 1) 0px, transparent 50%);
+      radial-gradient(at 0% 20%, var(--bettersum-beige) 0px, transparent 50%),
+      radial-gradient(at 10% 94%, var(--bettersum-beige) 0px, transparent 50%),
+      radial-gradient(at 52% 0%, var(--bettersum-beige) 0px, transparent 50%),
+      radial-gradient(at 99% 99%, var(--bettersum-blue) 0px, transparent 50%);
   }
 
   .subtitle-text {

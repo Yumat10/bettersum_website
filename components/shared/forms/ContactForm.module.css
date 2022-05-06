@@ -1,9 +1,11 @@
 .container {
+  position: relative;
   background-color: var(--bettersum-black);
   padding: 150px 0px 200px 0px;
   /* overflow-x: hidden; */
   border-top: 2px solid var(--bettersum-beige);
   border-bottom: 2px solid var(--bettersum-beige);
+  z-index: 10;
 }
 
 .inner-container {
