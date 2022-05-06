@@ -1,5 +1,5 @@
 .container {
-  /* position: sticky; */
+  position: relative;
   /* top: 0px; */
   background-color: var(--bettersum-beige);
   display: flex;

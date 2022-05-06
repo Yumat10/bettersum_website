@@ -81,11 +81,11 @@ export const Navbar = (): JSX.Element => {
     },
     {
       name: "Services",
-      path: "/services",
+      path: "/?section=services",
     },
     {
       name: "Methods",
-      path: "/",
+      path: "/?section=methods",
     },
     {
       name: "About",
@@ -93,16 +93,13 @@ export const Navbar = (): JSX.Element => {
     },
     {
       name: "Contact",
-      path: "/",
+      path: "/?section=contact",
     },
     // {
     //   name: "Content",
     //   path: "https://content.bettersum.com",
     // },
   ];
-
-  const navigateToContactUs: MouseEventHandler<HTMLButtonElement> = () =>
-    router.push("/contact");
 
   return (
     <motion.div
@@ -164,11 +161,11 @@ export const Navbar = (): JSX.Element => {
               onClick={() => setOpenHamburgerMenu(false)}
             >
               {/* Additional "Intro" option for hamburger menu */}
-              <div className={styles["route"]}>
+              {/* <div className={styles["route"]}>
                 <Link href={"/?section=intro"}>
                   <a className={fontStyles["body-copy"]}>intro</a>
                 </Link>
-              </div>
+              </div> */}
               {routes.map(({ name, path }) => (
                 <div key={path} className={styles["route"]}>
                   <Link href={path}>

@@ -32,10 +32,11 @@ const Home: NextPage = ({
 
   useEffect(() => {
     if (querySection) {
+      console.log(querySection);
       const id = `home-page-${querySection}-section`;
       smoothScrollDown({
         elementId: id,
-        offset: -110,
+        offset: 0,
       });
     }
   }, [querySection]);
@@ -63,15 +64,20 @@ const Home: NextPage = ({
       </Head>
       <main>
         <WorkWithUsIcon />
-        <SplashScreen />
+        <div id="home-page-intro-section">
+          <SplashScreen />
+        </div>
         <WorkAndLab />
-        <ServicesOffered />
+        <div id="home-page-services-section">
+          <ServicesOffered />
+        </div>
         <TotalImpact />
-        <BetterMethods />
-        <ContactForm />
-        {/* <TeamBackground /> */}
-        {/* <TheLab /> */}
-        {/* <SubscribeToNewsletter /> */}
+        <div id="home-page-methods-section">
+          <BetterMethods />
+        </div>
+        <div id="home-page-contact-section">
+          <ContactForm />
+        </div>
       </main>
     </div>
   );

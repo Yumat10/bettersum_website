@@ -1,6 +1,7 @@
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import { FC, useEffect, useState } from "react";
+import { smoothScrollDown } from "util/functions/smoothScrollDown";
 
 import styles from "./WorkWithUsIcon.module.css";
 
@@ -26,7 +27,6 @@ export const WorkWithUsIcon: FC = () => {
         rotate: "0deg",
       },
       scroll: {
-        scale: 1.05,
         rotate: `${scrollPosition / 5}deg`,
         transition: {
           ease: "linear",
@@ -37,7 +37,15 @@ export const WorkWithUsIcon: FC = () => {
   };
 
   return (
-    <div className={styles["container"]}>
+    <div
+      className={styles["container"]}
+      onClick={() =>
+        smoothScrollDown({
+          elementId: "home-page-contact-section",
+          offset: 0,
+        })
+      }
+    >
       <motion.div whileHover="hover" className={styles["inner-container"]}>
         <motion.img
           variants={IconTextVariants()}

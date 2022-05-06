@@ -26,12 +26,16 @@ export const Footer = (): JSX.Element => {
         path: "/?section=intro",
       },
       {
+        name: "Work",
+        path: "/work",
+      },
+      {
         name: "Services",
         path: "/?section=services",
       },
       {
-        name: "Content",
-        path: "/content",
+        name: "Methods",
+        path: "/?section=methods",
       },
       {
         name: "About the Team",
@@ -46,16 +50,16 @@ export const Footer = (): JSX.Element => {
         path: "/services",
       },
       {
-        name: "Strategy",
-        path: "/services?type=strategy",
+        name: "Strategy & Stewardship",
+        path: "/?section=services&open=0",
       },
       {
-        name: "Holistic Design",
-        path: "/services?type=design",
+        name: "Custom Digital Experiences",
+        path: "/?section=services&open=1",
       },
       {
-        name: "Development",
-        path: "/services?type=development",
+        name: "Shopify Plus Commerce",
+        path: "/?section=services&open=2",
       },
     ],
 
@@ -63,7 +67,7 @@ export const Footer = (): JSX.Element => {
     [
       {
         name: "Contact Us",
-        path: "/contact",
+        path: "/?section=contact",
       },
     ],
   ];
