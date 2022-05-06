@@ -11,8 +11,11 @@ import {
   caseStudyHeaderVariants,
   caseStudySubheaderVariants,
 } from "components/shared/variants/HeaderVariants";
+import { useDynamiDataContext } from "contexts/dynamicDataContext";
 
 export const AllWork = (): JSX.Element => {
+  const { allWorkOutcomeData } = useDynamiDataContext();
+
   const [shakeLabTag, setShakeLabTag] = useState<boolean>(false);
 
   return (
@@ -25,7 +28,7 @@ export const AllWork = (): JSX.Element => {
       >
         Our work has led to
         <br />
-        <u>5,678% Increase in Customer Acquisition</u>
+        <u>{allWorkOutcomeData}</u>
       </motion.h1>
       <CaseStudiesGrid shakeLabTag={shakeLabTag} />
     </div>
