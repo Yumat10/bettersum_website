@@ -32,10 +32,6 @@
   margin: 30px 0px 30px 0px;
 }
 
-.cta-text {
-  cursor: pointer;
-}
-
 .image-container {
   position: relative;
   height: 655px;
@@ -82,7 +78,7 @@
   }
 
   .subtitle-text {
-    margin: 16px 0px 0px 0px;
+    margin: 16px 0px 16px 0px;
   }
 
   .cta-text {
