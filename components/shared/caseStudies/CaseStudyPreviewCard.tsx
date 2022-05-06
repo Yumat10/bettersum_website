@@ -8,7 +8,7 @@ import { useEffect } from "react";
 
 const previewCardVariants: Variants = {
   hover: {
-    scale: 1.05,
+    scale: 1.03,
   },
 };
 

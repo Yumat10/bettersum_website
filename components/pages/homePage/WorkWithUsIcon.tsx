@@ -37,16 +37,17 @@ export const WorkWithUsIcon: FC = () => {
   };
 
   return (
-    <div
-      className={styles["container"]}
-      onClick={() =>
-        smoothScrollDown({
-          elementId: "home-page-contact-section",
-          offset: 0,
-        })
-      }
-    >
-      <motion.div whileHover="hover" className={styles["inner-container"]}>
+    <div className={styles["container"]}>
+      <motion.div
+        whileHover="hover"
+        className={styles["inner-container"]}
+        onClick={() =>
+          smoothScrollDown({
+            elementId: "home-page-contact-section",
+            offset: 0,
+          })
+        }
+      >
         <motion.img
           variants={IconTextVariants()}
           initial="initial"

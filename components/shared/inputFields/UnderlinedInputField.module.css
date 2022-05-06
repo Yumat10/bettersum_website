@@ -9,6 +9,7 @@
 }
 
 .input {
+  font-family: "Campton";
   background: none;
   outline: none;
   border: none;
@@ -27,9 +28,10 @@
   color: var(--bettersum-black);
   opacity: 0.3;
   margin: 0px;
+  font-family: "Campton" !important;
   font-size: 1.875rem;
-  font-weight: 700;
-  line-height: 2.1875rem;
+  font-weight: 500;
+  line-height: 2.5rem;
 }
 
 .errors {

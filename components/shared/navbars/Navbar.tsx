@@ -44,9 +44,11 @@ const innerContainerVariants: Variants = {
 };
 
 const routeVariants: Variants = {
+  initial: {
+    textDecoration: "none",
+  },
   hover: {
-    borderTopWidth: "3px",
-    y: "-3px",
+    textDecoration: "underline",
   },
 };
 
@@ -123,21 +125,19 @@ export const Navbar = (): JSX.Element => {
         </div>
         <div className={styles["routes-container"]}>
           {routes.map(({ name, path }, index) => (
-            <motion.div
-              // variants={routeVariants}
-              whileHover="hover"
-              key={index}
-              className={styles["route"]}
-            >
-              <Link href={path}>
-                <a
+            <div key={index} className={styles["route"]}>
+              <Link href={path} passHref>
+                <motion.a
+                  variants={routeVariants}
+                  initial="initial"
+                  whileHover="hover"
                   referrerPolicy="strict-origin-when-cross-origin"
                   className={fontStyles["flair-copy"]}
                 >
                   {name}
-                </a>
+                </motion.a>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
         {/* Hamburger menu for mobile */}

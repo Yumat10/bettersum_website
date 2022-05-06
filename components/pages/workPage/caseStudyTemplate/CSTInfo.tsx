@@ -19,7 +19,7 @@ export const CSTInfo: FC = () => {
           return (
             <div key={index} className={styles["stats-container"]}>
               <p
-                className={`${fontStyles["intro-header"]} ${styles["stat-text"]}`}
+                className={`${fontStyles["title-header"]} ${styles["stat-text"]}`}
               >
                 {stat}
               </p>
@@ -40,14 +40,14 @@ export const CSTInfo: FC = () => {
     <div className={styles["container"]}>
       <div className={styles["inner-container"]}>
         <h2
-          className={`${fontStyles["intro-header"]} ${styles["header-text"]}`}
+          className={`${fontStyles["title-header"]} ${styles["header-text"]}`}
         >
           Overview
         </h2>
         <div className={`${fontStyles["body-copy"]}`}>
           {caseStudyData.description?.json.content[0].content[0].value}
         </div>
-        {StatsGrid()}
+        {caseStudyData.stats && StatsGrid()}
       </div>
     </div>
   );

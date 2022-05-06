@@ -15,6 +15,8 @@ import { smoothScrollDown } from "util/functions/smoothScrollDown";
 import { ServicesOffered } from "../components/pages/homePage/servicesOffered/ServicesOffered";
 import { SplashScreen } from "../components/pages/homePage/splashScreen/SplashScreen";
 
+import styles from "../styles/Home.module.css";
+
 const Home: NextPage = ({
   caseStudyPreviews: propsCaseStudyPreviews,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
@@ -62,7 +64,7 @@ const Home: NextPage = ({
         <meta property="og:image:width" content="4096" />
         <meta property="og:image:height" content="2141" />
       </Head>
-      <main>
+      <main className={styles["container"]}>
         <WorkWithUsIcon />
         <div id="home-page-intro-section">
           <SplashScreen />

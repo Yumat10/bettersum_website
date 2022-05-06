@@ -21,7 +21,7 @@ const arrowVariants: Variants = {
 
 type UnderlineArrowLinkProps = {
   color: BetterSumColors;
-  text: string;
+  text: string | JSX.Element;
   link: string;
 };
 
@@ -43,7 +43,7 @@ export const UnderlineArrowLink: FC<UnderlineArrowLinkProps> = ({
             borderColor: color,
           }}
         >
-          Partner with us to scale your DTC ecommerce business
+          {text}
         </p>
         <motion.span
           variants={arrowVariants}
