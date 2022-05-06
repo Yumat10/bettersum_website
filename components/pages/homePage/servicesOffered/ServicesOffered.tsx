@@ -1,5 +1,6 @@
 import { BasicAccordion } from "components/shared/accordions/BasicAccordion";
 import { Variants } from "framer-motion";
+import { useRouter } from "next/router";
 
 import fontStyles from "../../../../styles/fontStyles.module.css";
 import styles from "./ServicesOffered.module.css";
@@ -23,6 +24,10 @@ const highlightTextVariants: Variants = {
 };
 
 export const ServicesOffered = (): JSX.Element => {
+  const router = useRouter();
+
+  const { open: queryOpen } = router.query;
+
   const services: ServiceDetails[] = [
     {
       icon: {
@@ -55,8 +60,9 @@ export const ServicesOffered = (): JSX.Element => {
         "We help transform great visions into concrete results. We expand your ideas into fully functioning products and work to obtain prompt user feedback that provides invaluable material for developing your business.",
     },
   ];
+
   return (
-    <div id="home-page-services-section" className={styles["container"]}>
+    <div className={styles["container"]}>
       <div className={styles["inner-container"]}>
         <div className={styles["header-container"]}>
           <h3 className={`${fontStyles["flair-copy"]}`}>What we offer</h3>
@@ -77,7 +83,9 @@ export const ServicesOffered = (): JSX.Element => {
               headerText={serviceItem.title}
               headerIcon={serviceItem.icon}
               descriptionText={serviceItem.description}
-              defaultIsOpen={index === 0}
+              defaultIsOpen={
+                queryOpen ? index === Number(queryOpen) : index === 0
+              }
             />
           ))}
         </div>

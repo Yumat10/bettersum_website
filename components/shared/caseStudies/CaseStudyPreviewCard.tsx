@@ -42,7 +42,6 @@ export const CaseStudyPreviewCard = ({
         // Mobile View
         const previewCardWidth = previewCard.clientWidth;
         previewCardTextArea.style.padding = `${previewCardWidth / 20}px 25px`;
-        console.log(previewCardTextArea.style.padding);
       } else {
         // Desktop View
         previewCardTextArea.style.padding = "12px 16px";

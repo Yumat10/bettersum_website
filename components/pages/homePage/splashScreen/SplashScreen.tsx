@@ -27,7 +27,7 @@ const loadingBarInnerContainerVariants: Variants = {
 
 export const SplashScreen = (): JSX.Element => {
   return (
-    <div id="home-page-intro-section" className={styles["container"]}>
+    <div className={styles["container"]}>
       <div className={styles["inner-container"]}>
         <div>
           <h1 className={fontStyles["intro-header"]}>
