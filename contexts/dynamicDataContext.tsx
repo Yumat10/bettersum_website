@@ -26,7 +26,7 @@ export const DynamiDataContextProvider = ({
 }) => {
   const [impactData, setImpactData] = useState<ImpactData[]>([]);
   const [allWorkOutcomeData, setAllWorkOutcomeData] = useState<string>("");
-  console.log(impactData, allWorkOutcomeData);
+
   return (
     <DynamiDataContext.Provider
       value={{

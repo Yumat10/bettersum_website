@@ -1,6 +1,6 @@
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import fontStyles from "../../../styles/fontStyles.module.css";
 import styles from "./BasicAccordion.module.css";
@@ -81,7 +81,11 @@ export const BasicAccordion = ({
   defaultIsOpen,
   includeBorderBottom,
 }: BasicAccordionProps): JSX.Element => {
-  const [isOpen, setIsOpen] = useState<boolean>(defaultIsOpen ? true : false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsOpen(defaultIsOpen ? true : false);
+  }, [defaultIsOpen]);
 
   return (
     <motion.div

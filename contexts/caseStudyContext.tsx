@@ -38,8 +38,6 @@ export const CaseStudyContextProvider = ({
     CaseStudyPreview[]
   >([]);
 
-  // console.log(caseStudyData, caseStudyPreviews);
-
   return (
     <CaseStudyContext.Provider
       value={{

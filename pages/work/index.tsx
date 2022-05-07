@@ -151,8 +151,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     );
 
     props.dynamicData = axiosDynamicDataResponseData.data.websiteV2Data;
-
-    console.log(props);
   } catch (error: any) {
     const errorResponse = error["response"];
     if (

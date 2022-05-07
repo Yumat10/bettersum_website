@@ -14,8 +14,6 @@ export const CSTContent: FC = () => {
 
   if (!caseStudyData) return null;
 
-  console.log(caseStudyData);
-
   return (
     <div className={styles["container"]}>
       <div className={styles["media-grid"]}>
