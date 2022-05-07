@@ -52,7 +52,6 @@ const Home: NextPage = ({
 
   useEffect(() => {
     if (querySection) {
-      console.log(querySection);
       const id = `home-page-${querySection}-section`;
       smoothScrollDown({
         elementId: id,
@@ -186,8 +185,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     );
 
     props.dynamicData = axiosDynamicDataResponseData.data.websiteV2Data;
-
-    console.log(props);
   } catch (error: any) {
     const errorResponse = error["response"];
     if (

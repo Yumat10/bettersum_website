@@ -1,6 +1,7 @@
 import { BasicAccordion } from "components/shared/accordions/BasicAccordion";
 import { Variants } from "framer-motion";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 import fontStyles from "../../../../styles/fontStyles.module.css";
 import styles from "./ServicesOffered.module.css";
@@ -27,6 +28,14 @@ export const ServicesOffered = (): JSX.Element => {
   const router = useRouter();
 
   const { open: queryOpen } = router.query;
+
+  const [defaultOpenIndex, setDefaultOpenIndex] = useState<number>(0);
+
+  useEffect(() => {
+    if (queryOpen) {
+      setDefaultOpenIndex(Number(queryOpen));
+    }
+  }, [queryOpen]);
 
   const services: ServiceDetails[] = [
     {
@@ -84,7 +93,9 @@ export const ServicesOffered = (): JSX.Element => {
               headerIcon={serviceItem.icon}
               descriptionText={serviceItem.description}
               defaultIsOpen={
-                queryOpen ? index === Number(queryOpen) : index === 0
+                defaultOpenIndex < 0 || defaultOpenIndex >= services.length
+                  ? index === 0
+                  : index === defaultOpenIndex
               }
             />
           ))}
