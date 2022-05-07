@@ -37,6 +37,7 @@ export const CaseStudyContextProvider = ({
   const [caseStudyPreviews, setCaseStudyPreviews] = useState<
     CaseStudyPreview[]
   >([]);
+
   return (
     <CaseStudyContext.Provider
       value={{

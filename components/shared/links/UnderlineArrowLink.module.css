@@ -1,0 +1,13 @@
+.container {
+  display: inline-block;
+}
+
+.arrow-container {
+  display: inline-flex;
+  vertical-align: middle;
+  margin: -10px 0px 0px 0px;
+}
+
+.text {
+  text-decoration: underline;
+}

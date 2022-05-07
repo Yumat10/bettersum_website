@@ -1,0 +1,63 @@
+.container {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 50px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: var(--width-clamp);
+  margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  z-index: 10;
+  margin: 0px auto -110px auto;
+}
+
+.inner-container {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-text {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  object-fit: contain;
+}
+
+.inner-container,
+.icon-text {
+  height: 150px;
+  width: 150px;
+}
+
+.icon {
+  object-fit: contain;
+  height: 95px;
+  width: 95px;
+}
+
+@media only screen and (max-width: 850px) {
+  .container {
+    position: fixed;
+    top: auto;
+    bottom: 15px;
+    margin: 0px auto;
+  }
+
+  .inner-container,
+  .icon-text {
+    height: 120px;
+    width: 120px;
+  }
+
+  .icon {
+    height: 75px;
+    width: 75px;
+  }
+}

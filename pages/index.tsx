@@ -1,28 +1,34 @@
 import axios from "axios";
+import { BetterMethods } from "components/pages/homePage/betterMethods/BetterMethods";
+import { TotalImpact } from "components/pages/homePage/totalmpact/TotalImpact";
 import { WorkAndLab } from "components/pages/homePage/workAndLab/WorkAndLab";
+import { WorkWithUsIcon } from "components/pages/homePage/WorkWithUsIcon";
+import { ContactForm } from "components/shared/forms/ContactForm";
 import { useCaseStudyContext } from "contexts/caseStudyContext";
+import { useDynamiDataContext } from "contexts/dynamicDataContext";
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { CaseStudyPreview } from "types/CaseStudy";
+import { ImpactData } from "types/DynamicData";
 import { smoothScrollDown } from "util/functions/smoothScrollDown";
 import { ServicesOffered } from "../components/pages/homePage/servicesOffered/ServicesOffered";
 import { SplashScreen } from "../components/pages/homePage/splashScreen/SplashScreen";
-import { SubscribeToNewsletter } from "../components/pages/homePage/subscribeToNewsletter/SubscribeToNewsletter";
-import { TeamBackground } from "../components/pages/homePage/teamBackground/TeamBackground";
-import { TheLab } from "../components/pages/homePage/theLab/TheLab";
+
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = ({
   caseStudyPreviews: propsCaseStudyPreviews,
+  dynamicData: propsDynamicData,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
 
   const { section: querySection } = router.query;
 
   const { setCaseStudyPreviews } = useCaseStudyContext();
+  const { setAllWorkOutcomeData, setImpactData } = useDynamiDataContext();
 
   useEffect(() => {
     if (propsCaseStudyPreviews) {
@@ -31,17 +37,31 @@ const Home: NextPage = ({
   }, [propsCaseStudyPreviews]);
 
   useEffect(() => {
+    if (propsDynamicData) {
+      let newImpactData: ImpactData[] = [];
+      for (let i = 0; i < propsDynamicData.impactData.length; i++) {
+        newImpactData.push({
+          data: propsDynamicData.impactData[i],
+          subtitle: propsDynamicData.impactDataSubtitles[i],
+        });
+      }
+      setImpactData(newImpactData);
+      setAllWorkOutcomeData(propsDynamicData.allWorkOutcomeData);
+    }
+  }, [propsDynamicData]);
+
+  useEffect(() => {
     if (querySection) {
       const id = `home-page-${querySection}-section`;
       smoothScrollDown({
         elementId: id,
-        offset: -110,
+        offset: 0,
       });
     }
   }, [querySection]);
 
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>BetterSum</title>
         <meta property="og:url" content="https://www.bettersum.com" />
@@ -61,13 +81,22 @@ const Home: NextPage = ({
         <meta property="og:image:width" content="4096" />
         <meta property="og:image:height" content="2141" />
       </Head>
-      <main>
-        <SplashScreen />
-        <ServicesOffered />
-        <TeamBackground />
-        {/* <TheLab /> */}
+      <main className={styles["container"]}>
+        <WorkWithUsIcon />
+        <div id="home-page-intro-section">
+          <SplashScreen />
+        </div>
         <WorkAndLab />
-        <SubscribeToNewsletter />
+        <div id="home-page-services-section">
+          <ServicesOffered />
+        </div>
+        <TotalImpact />
+        <div id="home-page-methods-section">
+          <BetterMethods />
+        </div>
+        <div id="home-page-contact-section">
+          <ContactForm />
+        </div>
       </main>
     </div>
   );
@@ -79,31 +108,52 @@ export const getStaticProps: GetStaticProps = async (context) => {
     ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
     : process.env.CONTENTFUL_ACCESS_TOKEN;
 
-  const gql = String.raw;
+  const chosenTemplate = "caseStudyTemplateTwoCollection";
 
+  const gql = String.raw;
   const contentfulCaseStudyPreviewsQuery = gql`
     query {
-      caseStudyPreviewsCollection(order: order_ASC, limit: 4,
-       preview: ${context.preview ? true : false}) {
+      ${chosenTemplate}(preview: ${context.preview ? true : false}) {
         items {
           handle
           title
-          previewImage {
+          splashImage {
             title
             url
+            contentType
           }
           tags
-          templateNumber
-          isLabs
         }
+      }
+    }
+  `;
+
+  const contentfulDynamicDataQuery = gql`
+    query {
+      websiteV2Data(id: "7nIArgVLQGPDmDhXkIz9gZ") {
+        impactData
+        impactDataSubtitles
+        allWorkOutcomeData
       }
     }
   `;
 
   let props: {
     caseStudyPreviews: CaseStudyPreview[];
+    shouldRedirectTo404: boolean;
+    dynamicData: {
+      impactData: string[];
+      impactDataSubtitles: string[];
+      allWorkOutcomeData: string;
+    };
   } = {
     caseStudyPreviews: [],
+    shouldRedirectTo404: false,
+    dynamicData: {
+      impactData: [],
+      impactDataSubtitles: [],
+      allWorkOutcomeData: "",
+    },
   };
 
   try {
@@ -120,7 +170,21 @@ export const getStaticProps: GetStaticProps = async (context) => {
     );
 
     props.caseStudyPreviews =
-      axiosCaseStudyPreviewsResponseData.data.caseStudyPreviewsCollection.items;
+      axiosCaseStudyPreviewsResponseData.data[chosenTemplate].items;
+
+    const { data: axiosDynamicDataResponseData } = await axios.post(
+      contentfulApiUrl,
+      { query: contentfulDynamicDataQuery },
+      {
+        headers: {
+          Authorization: `Bearer ${contentfulAccessToken}`,
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
+
+    props.dynamicData = axiosDynamicDataResponseData.data.websiteV2Data;
   } catch (error: any) {
     const errorResponse = error["response"];
     if (
@@ -137,6 +201,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
     } else {
       console.log(error);
     }
+
+    props.shouldRedirectTo404 = true;
   }
 
   return {

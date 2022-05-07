@@ -4,23 +4,17 @@ import { CaseStudyPreview } from "types/CaseStudy";
 import fontStyles from "styles/fontStyles.module.css";
 import styles from "./CaseStudyPreviewCard.module.css";
 import { motion, Variants } from "framer-motion";
+import { useEffect } from "react";
 
-const labTagVariants: Variants = {
-  initial: {
-    scale: 1,
-    rotate: 0,
+const previewCardVariants: Variants = {
+  hover: {
+    scale: 1.03,
   },
-  shake: {
+};
+
+const previewPhoto: Variants = {
+  hover: {
     scale: 1.1,
-    rotate: [-3, 3, -3],
-    transition: {
-      rotate: {
-        repeat: Infinity,
-        // repeatType: "loop",
-        duration: 0.5,
-        ease: "easeInOut",
-      },
-    },
   },
 };
 
@@ -35,56 +29,76 @@ export const CaseStudyPreviewCard = ({
   caseStudyPreview,
   isDraggingCard,
   fullWidth,
-  shakeLabTag,
 }: CaseStudyPreviewCardProps): JSX.Element => {
-  const { handle, previewImage, title, tags, templateNumber, isLabs } =
-    caseStudyPreview;
+  const { handle, splashImage, title, tags } = caseStudyPreview;
+
+  const monitorCardSize = (): void => {
+    const previewCard = document.getElementById(`cs-preview-card-${handle}`);
+    const previewCardTextArea = document.getElementById(
+      `cs-preview-card-text-container-${handle}`
+    );
+    if (previewCard && previewCardTextArea) {
+      if (window.innerWidth > 850) {
+        // Mobile View
+        const previewCardWidth = previewCard.clientWidth;
+        previewCardTextArea.style.padding = `${previewCardWidth / 20}px 25px`;
+      } else {
+        // Desktop View
+        previewCardTextArea.style.padding = "12px 16px";
+      }
+    }
+  };
+
+  useEffect(() => {
+    monitorCardSize();
+    window.addEventListener("resize", monitorCardSize);
+    () => window.removeEventListener("resize", monitorCardSize);
+  }, []);
 
   return (
-    <Link href={`/work/${templateNumber}/${handle}`}>
-      <a
+    <Link href={`/work/${handle}`}>
+      <motion.a
+        id={`cs-preview-card-${handle}`}
+        variants={previewCardVariants}
+        whileHover="hover"
         draggable="false"
         className={styles["preview-container"]}
-        style={{
-          width: fullWidth ? "100%" : "",
-          pointerEvents: isDraggingCard ? "none" : "auto",
-        }}
+        style={
+          {
+            // width: fullWidth ? "100%" : "",
+          }
+        }
       >
-        <div className={styles["preview-image-container"]}>
-          <Image
-            src={previewImage.url}
-            alt={previewImage.title}
-            objectFit="cover"
-            layout="fill"
-            draggable="false"
-          />
-          {isLabs && (
-            <motion.div
-              variants={labTagVariants}
-              animate={shakeLabTag ? "shake" : "initial"}
-              className={`${fontStyles["body-one"]} ${styles["lab-tag"]}`}
-            >
-              Labs
-            </motion.div>
-          )}
-        </div>
-        <div className={styles["text-container"]}>
-          <h5 className={fontStyles["category-header"]}>
+        {splashImage && (
+          <div className={styles["preview-image-container"]}>
+            <motion.img
+              src={splashImage.url}
+              variants={previewPhoto}
+              alt={splashImage.title}
+              className={styles["preview-image"]}
+            />
+          </div>
+        )}
+        <div
+          id={`cs-preview-card-text-container-${handle}`}
+          className={styles["text-container"]}
+        >
+          <h5 className={fontStyles["body-copy"]}>
             <b>{title}</b>
           </h5>
           <div className={styles["tags-container"]}>
-            {tags.map((tag) => (
+            {tags?.map((tag, index) => (
               <p
                 key={tag}
                 className={`${fontStyles["flair-copy"]} ${styles["tag"]}`}
               >
-                <span>{" + "}</span>
+                {index !== 0 && <span>{" + "}</span>}
                 {tag}
               </p>
             ))}
           </div>
         </div>
-      </a>
+      </motion.a>
     </Link>
   );
 };

@@ -4,7 +4,7 @@ const setPreview = async (
   req: NextApiRequest,
   res: NextApiResponse<void | { error: string }>
 ) => {
-  console.log("---sendEmail---");
+  console.log("---setPreview---");
 
   const { route, secret } = req.query;
 

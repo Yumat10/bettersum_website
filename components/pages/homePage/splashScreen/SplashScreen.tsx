@@ -11,6 +11,7 @@ import {
   enterFromBottomVariants,
   homePageLoadDuration,
 } from "animations/homePageAnimations";
+import { UnderlineArrowLink } from "components/shared/links/UnderlineArrowLink";
 
 const loadingBarInnerContainerVariants: Variants = {
   hidden: {
@@ -26,47 +27,42 @@ const loadingBarInnerContainerVariants: Variants = {
 
 export const SplashScreen = (): JSX.Element => {
   return (
-    <div id="home-page-intro-section" className={styles.container}>
-      <h1 className={fontStyles["hidden-h1"]}>
-        BetterSum: an integrative digital studio.
-      </h1>
+    <div className={styles["container"]}>
       <div className={styles["inner-container"]}>
-        <PageLinks />
-        <div className={styles["brand-logo"]}>
-          <Subheading
-            title="intro"
-            sectionNumber={1}
-            color={BetterSumColors.Beige}
-            topOffset="3rem"
+        <div>
+          <h1 className={fontStyles["intro-header"]}>
+            Delivering
+            <br />
+            Ecommerce <br />
+            Solutions <br />
+            That Scale <br />
+            Businesses.
+          </h1>
+          <h3
+            className={`${fontStyles["subtitle-header"]} ${styles["subtitle-text"]}`}
+          >
+            We are an integrative digital studio with expertise in strategy,
+            design, and development.
+          </h3>
+          <UnderlineArrowLink
+            color={BetterSumColors.Black}
+            text={
+              <span>
+                Partner with us to scale your
+                <br /> DTC ecommerce business
+              </span>
+            }
+            link="/"
           />
-          <div className={styles["loading-bar-container"]}>
-            <motion.div
-              variants={loadingBarInnerContainerVariants}
-              initial="hidden"
-              animate="visible"
-              className={styles["loading-bar-inner-container"]}
-            />
-          </div>
-          <div className={styles["brand-logo-container"]}>
-            <Image
-              src={betterSumLogo}
-              alt="BetterSum"
-              objectFit="contain"
-              layout="fill"
-              className={styles["brand-logo"]}
-            />
-          </div>
         </div>
-        <motion.div
-          variants={enterFromBottomVariants}
-          initial="hidden"
-          animate="visible"
-          className={`${fontStyles["flair-copy"]} ${styles["subheader"]}`}
-        >
-          An integrative digital studio offering user-centered design,
-          development, and business strategy.{" "}
-        </motion.div>
-        <ReadMoreArrow />
+        <div className={styles["image-container"]}>
+          <Image
+            src="/splashScreenPhoto.svg"
+            alt="welcome"
+            layout="fill"
+            className={styles["next-image"]}
+          />
+        </div>
       </div>
     </div>
   );

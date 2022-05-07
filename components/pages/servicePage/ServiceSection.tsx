@@ -87,7 +87,7 @@ export const ServiceSection = ({
         onClick={scrollDownHandler}
         className={styles["contact-button"]}
       >
-        <p className={styles["body-copy"]}>Get in Touch</p>
+        <p className={styles["category-copy"]}>Get in Touch</p>
         <motion.div variants={arrowVariants}>
           <Image
             src="/arrows/downArrowBeige.svg"
@@ -123,7 +123,7 @@ export const ServiceSection = ({
     <div className={styles["title-container"]}>
       <motion.h2
         variants={textVariants}
-        className={`${fontStyles["category-header"]} ${styles["title-text"]}`}
+        className={`${fontStyles["body-copy"]} ${styles["title-text"]}`}
         style={{
           borderTop: openTabs.get(type)
             ? "4px solid var(--bettersum-black)"
@@ -152,7 +152,7 @@ export const ServiceSection = ({
   const overviewText = (
     <motion.div
       variants={textVariants}
-      className={`${fontStyles["body-copy"]} ${styles["overview"]}`}
+      className={`${fontStyles["category-copy"]} ${styles["overview"]}`}
       style={{
         visibility: openTabs.get(type) ? "hidden" : "visible",
         height: openTabs.get(type) ? 0 : "",

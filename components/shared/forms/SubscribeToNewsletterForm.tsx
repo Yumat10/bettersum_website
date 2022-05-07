@@ -1,5 +1,5 @@
 import { Formik } from "formik";
-import { UnderlineInputField } from "../inputFields/UnderlineInputField";
+import { BoxedInputField } from "../inputFields/BoxedInputField";
 import * as yup from "yup";
 import styles from "./SubscribeToNewsletterForm.module.css";
 import fontStyles from "styles/fontStyles.module.css";
@@ -58,7 +58,7 @@ export const SubscribeToNewsletterForm = (): JSX.Element => {
         {(props) => (
           <>
             <div className={styles["input-container"]}>
-              <UnderlineInputField
+              <BoxedInputField
                 id="email"
                 disabled={false}
                 label="Email"
@@ -77,7 +77,7 @@ export const SubscribeToNewsletterForm = (): JSX.Element => {
               onClick={() => props.handleSubmit()}
               className={styles["button"]}
             >
-              <p className={fontStyles["body-copy"]}>
+              <p className={fontStyles["category-copy"]}>
                 {loading
                   ? "Subscribing..."
                   : subscriptionSuccessful

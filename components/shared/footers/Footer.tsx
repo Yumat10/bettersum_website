@@ -26,12 +26,16 @@ export const Footer = (): JSX.Element => {
         path: "/?section=intro",
       },
       {
+        name: "Work",
+        path: "/work",
+      },
+      {
         name: "Services",
         path: "/?section=services",
       },
       {
-        name: "Content",
-        path: "/content",
+        name: "Methods",
+        path: "/?section=methods",
       },
       {
         name: "About the Team",
@@ -46,16 +50,16 @@ export const Footer = (): JSX.Element => {
         path: "/services",
       },
       {
-        name: "Strategy",
-        path: "/services?type=strategy",
+        name: "Strategy & Stewardship",
+        path: "/?section=services&open=0",
       },
       {
-        name: "Holistic Design",
-        path: "/services?type=design",
+        name: "Custom Digital Experiences",
+        path: "/?section=services&open=1",
       },
       {
-        name: "Development",
-        path: "/services?type=development",
+        name: "Shopify Plus Commerce",
+        path: "/?section=services&open=2",
       },
     ],
 
@@ -63,7 +67,15 @@ export const Footer = (): JSX.Element => {
     [
       {
         name: "Contact Us",
-        path: "/contact",
+        path: "/?section=contact",
+      },
+      {
+        name: "Terms",
+        path: "/help/terms-and-conditions",
+      },
+      {
+        name: "Privacy",
+        path: "/help/privacy-policy",
       },
       {
         name: "Terms",
@@ -131,19 +143,19 @@ export const Footer = (): JSX.Element => {
             </div>
             {SocialMediaIcons}
           </div>
-          <hr className={styles["divider"]} />
+          {/* <hr className={styles["divider"]} /> */}
           <div className={styles["footer-links-containers"]}>
             <FooterLinksColumn header="Home" linksArray={footerLinks[0]} />
             <FooterLinksColumn header="Services" linksArray={footerLinks[1]} />
             <FooterLinksColumn header="Company" linksArray={footerLinks[2]} />
           </div>
         </div>
-        <div className={`${fontStyles["flair-copy"]} ${styles["footer-text"]}`}>
+        <div className={`${fontStyles["body-copy"]} ${styles["footer-text"]}`}>
           Atlanta Based.{" "}
           <motion.span
             variants={humanCenteredVariants}
             whileHover="hover"
-            className={fontStyles["body-copy"]}
+            className={fontStyles["category-copy"]}
           >
             Human Centered.
           </motion.span>

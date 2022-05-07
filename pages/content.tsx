@@ -40,7 +40,7 @@ const Content: NextPage = () => {
             </h2>
             <div className={styles["details-container"]}>
               <p
-                className={`${fontStyles["body-copy"]} ${styles["body-text"]}`}
+                className={`${fontStyles["category-copy"]} ${styles["body-text"]}`}
               >
                 Sign up to receive all the latest news and content. We regularly
                 create podcasts, videos, and articles in order to keep the

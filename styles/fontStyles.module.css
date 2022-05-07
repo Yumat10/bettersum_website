@@ -1,36 +1,43 @@
 .intro-header {
   margin: 0px;
-  font-size: 12.5rem;
+  font-size: 5rem;
   font-weight: 600;
   line-height: 5rem;
 }
 
-.title-header {
+.subtitle-header {
   margin: 0px;
-  font-size: 3rem;
-  font-weight: 600;
-  line-height: 3.5rem;
+  font-size: 1.875rem;
+  font-weight: 400;
+  line-height: 2.1875rem;
 }
 
-.category-header {
+.title-header {
   margin: 0px;
-  font-size: 2.25rem;
+  font-size: 3.75rem;
   font-weight: 600;
-  line-height: 2.5rem;
+  line-height: 3.75rem;
 }
 
 .body-copy {
   margin: 0px;
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 2.125rem;
+  font-size: 1.875rem;
+  font-weight: 500;
+  line-height: 2.5rem;
 }
 
 .flair-copy {
   margin: 0px;
   font-size: 1.25rem;
   font-weight: 300;
-  line-height: 1.5625rem;
+  line-height: 1.875rem;
+}
+
+.category-copy {
+  margin: 0px;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 2.1875rem;
 }
 
 .hidden-h1 {

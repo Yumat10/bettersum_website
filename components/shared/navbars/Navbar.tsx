@@ -44,9 +44,11 @@ const innerContainerVariants: Variants = {
 };
 
 const routeVariants: Variants = {
+  initial: {
+    textDecoration: "none",
+  },
   hover: {
-    borderTopWidth: "3px",
-    y: "-3px",
+    textDecoration: "underline",
   },
 };
 
@@ -76,96 +78,74 @@ export const Navbar = (): JSX.Element => {
 
   const routes: Route[] = [
     {
-      name: "services",
-      path: "/services",
+      name: "Work",
+      path: "/work",
     },
     {
-      name: "team",
+      name: "Services",
+      path: "/?section=services",
+    },
+    {
+      name: "Methods",
+      path: "/?section=methods",
+    },
+    {
+      name: "About",
       path: "/team",
     },
     {
-      name: "work",
-      path: "/work",
+      name: "Contact",
+      path: "/?section=contact",
     },
+    // {
+    //   name: "Content",
+    //   path: "https://content.bettersum.com",
+    // },
   ];
-
-  const navigateToContactUs: MouseEventHandler<HTMLButtonElement> = () =>
-    router.push("/contact");
 
   return (
     <motion.div
-      variants={containerVariants}
+      // variants={containerVariants}
       initial={router.route === "/" ? "hidden" : undefined}
       animate="visible"
       className={styles["container"]}
     >
       <motion.div
-        variants={innerContainerVariants}
+        // variants={innerContainerVariants}
         className={styles["inner-container"]}
       >
         <div className={styles["brand"]} onClick={() => router.push("/")}>
           <Image
-            src="/brandLogos/betterSumSmallMarkBeige.svg"
+            src="/brandLogos/betterSumLogoBlack.svg"
             alt="BetterSum"
             layout="fixed"
-            height={30}
-            width={20}
+            height="100%"
+            width={175}
           />
-          <div className={styles["logo-text"]}>
-            <p>Atlanta Based.</p>
-            <br />
-            <motion.div
-              variants={humanCenteredVariants}
-              whileHover="hover"
-              className={styles["bolded-logo-text"]}
-            >
-              Human Centered.
-            </motion.div>
-          </div>
         </div>
         <div className={styles["routes-container"]}>
-          {routes.map(({ name, path }) => (
-            <motion.div
-              variants={routeVariants}
-              whileHover="hover"
-              key={path}
-              className={styles["route"]}
-            >
-              <Link href={path}>
-                <a
+          {routes.map(({ name, path }, index) => (
+            <div key={index} className={styles["route"]}>
+              <Link href={path} passHref>
+                <motion.a
+                  variants={routeVariants}
+                  initial="initial"
+                  whileHover="hover"
                   referrerPolicy="strict-origin-when-cross-origin"
                   className={fontStyles["flair-copy"]}
                 >
                   {name}
-                </a>
+                </motion.a>
               </Link>
-            </motion.div>
+            </div>
           ))}
-          <motion.div
-            variants={routeVariants}
-            whileHover="hover"
-            className={styles["route"]}
-          >
-            <a
-              href="https://content.bettersum.com"
-              referrerPolicy="strict-origin-when-cross-origin"
-              rel="noopener"
-              className={fontStyles["flair-copy"]}
-            >
-              content
-            </a>
-          </motion.div>
-          <GradientOutlineButton
-            text="Contact us"
-            onClick={navigateToContactUs}
-          />
         </div>
         {/* Hamburger menu for mobile */}
         <div className={styles["hamburger-menu-container"]}>
           <Image
             src={
               openHamburgerMenu
-                ? "/xIcons/closeBeige.svg"
+                ? "/xIcons/closeBlack.svg"
                 : "/hamburgerMenuIcon.svg"
             }
             alt="Menu"
@@ -181,27 +161,23 @@ export const Navbar = (): JSX.Element => {
               onClick={() => setOpenHamburgerMenu(false)}
             >
               {/* Additional "Intro" option for hamburger menu */}
-              <div className={styles["route"]}>
+              {/* <div className={styles["route"]}>
                 <Link href={"/?section=intro"}>
-                  <a className={fontStyles["category-header"]}>intro</a>
+                  <a className={fontStyles["body-copy"]}>intro</a>
                 </Link>
-              </div>
+              </div> */}
               {routes.map(({ name, path }) => (
                 <div key={path} className={styles["route"]}>
                   <Link href={path}>
                     <a
                       referrerPolicy="strict-origin-when-cross-origin"
-                      className={fontStyles["category-header"]}
+                      className={fontStyles["body-copy"]}
                     >
                       {name}
                     </a>
                   </Link>
                 </div>
               ))}
-              <GradientOutlineButton
-                text="Contact us"
-                onClick={navigateToContactUs}
-              />
             </div>
           )}
         </div>

@@ -5,22 +5,30 @@
   font-style: normal;
 }
 
-@font-face {
+/* @font-face {
   font-family: "Campton";
   src: url("../public/assets/CamptonBook.otf");
   font-weight: 400;
+  font-style: normal;
+} */
+
+@font-face {
+  font-family: "Campton";
+  src: url("../public/assets/CamptonMedium.otf");
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Campton";
-  src: url("../public/assets/CamptonSemiBold.otf");
-  font-weight: 600;
+  src: url("../public/assets/CamptonBold.otf");
+  font-weight: 700;
   font-style: normal;
 }
 
 :root {
   --bettersum-beige: #f9f7f3;
+  --bettersum-white: #fff;
   --bettersum-blue: #4690ff;
   --bettersum-black: #000000;
   --bettersum-off-black: #14142b;
@@ -33,23 +41,16 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Campton, sans-serif;
+  font-family: Campton, sans-serif !important;
   white-space: pre-line;
   /* overflow-x: hidden; */
   word-break: break-word;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 850px) {
   html,
   body {
-    font-size: 15px;
-  }
-}
-
-@media only screen and (max-width: 650px) {
-  html,
-  body {
-    font-size: 11.5px;
+    font-size: 10.5px;
   }
 }
 

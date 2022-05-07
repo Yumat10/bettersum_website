@@ -1,0 +1,53 @@
+.container {
+  all: unset;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.label {
+}
+
+.input {
+  outline: none;
+  border: none;
+  background: none;
+  font-family: Campton;
+  padding: 0.8rem 0px;
+  box-sizing: border-box;
+  border-bottom: 2px solid var(--bettersum-black);
+  min-height: 145px;
+}
+
+.input::placeholder {
+  color: var(--bettersum-black);
+  opacity: 0.3;
+  margin: 0px;
+  font-size: 1.875rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+}
+
+.input:focus {
+  border-bottom-width: 4px;
+}
+
+.errors {
+  position: absolute;
+  bottom: -35px;
+  display: block;
+  text-transform: capitalize;
+  color: var(--error-color);
+}
+
+@media only screen and (max-width: 850px) {
+  .input {
+    min-height: 100px;
+  }
+
+  .errors {
+    bottom: -22.5px;
+  }
+}

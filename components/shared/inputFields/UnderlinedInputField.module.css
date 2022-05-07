@@ -1,0 +1,49 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: var(--bettersum-black);
+}
+
+.label {
+}
+
+.input {
+  font-family: "Campton";
+  background: none;
+  outline: none;
+  border: none;
+  height: inherit;
+  width: inherit;
+  padding: 1rem 0px;
+  box-sizing: border-box;
+  border-bottom: 2px solid var(--bettersum-black);
+}
+
+.input:focus {
+  border-bottom-width: 4px;
+}
+
+.input::placeholder {
+  color: var(--bettersum-black);
+  opacity: 0.3;
+  margin: 0px;
+  font-family: "Campton" !important;
+  font-size: 1.875rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+}
+
+.errors {
+  position: absolute;
+  bottom: -35px;
+  display: block;
+  text-transform: capitalize;
+  color: var(--error-color);
+}
+
+@media only screen and (max-width: 850px) {
+  .errors {
+    bottom: -22.5px;
+  }
+}
