@@ -25,7 +25,7 @@ const Home: NextPage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
 
-  const { section: querySection } = router.query;
+  const { section: querySection, t: queryTime } = router.query;
 
   const { setCaseStudyPreviews } = useCaseStudyContext();
   const { setAllWorkOutcomeData, setImpactData } = useDynamiDataContext();
@@ -58,7 +58,7 @@ const Home: NextPage = ({
         offset: 0,
       });
     }
-  }, [querySection]);
+  }, [querySection, queryTime]);
 
   return (
     <div>
