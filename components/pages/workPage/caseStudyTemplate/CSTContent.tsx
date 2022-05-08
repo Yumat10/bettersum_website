@@ -1,7 +1,7 @@
 import { useCaseStudyContext } from "contexts/caseStudyContext";
 import Link from "next/link";
 import { FC } from "react";
-import { CSTMedia } from "./CSTMedia";
+import { CaseStudyMediaContent } from "components/shared/caseStudies/CaseStudyMediaContent";
 
 import fontStyles from "../../../../styles/fontStyles.module.css";
 import styles from "./CSTContent.module.css";
@@ -21,7 +21,7 @@ export const CSTContent: FC = () => {
           (mediaContent, index) => {
             return (
               <div key={index} className={styles["media-container"]}>
-                <CSTMedia media={mediaContent} />
+                <CaseStudyMediaContent media={mediaContent} />
               </div>
             );
           }

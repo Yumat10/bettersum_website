@@ -15,12 +15,11 @@ import { CaseStudyTemplate } from "components/pages/workPage/caseStudyTemplate/C
 
 const SelectedWork: NextPage = ({
   caseStudyData: propsCaseStudyData,
-  caseStudyPreviews: propsCaseStudyPreviews,
   shouldRedirectTo404: propsShouldRedirect404,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
 
-  const { setCaseStudyData, setCaseStudyPreviews } = useCaseStudyContext();
+  const { setCaseStudyData } = useCaseStudyContext();
 
   useEffect(() => {
     if (propsShouldRedirect404) {
@@ -33,12 +32,6 @@ const SelectedWork: NextPage = ({
       setCaseStudyData(propsCaseStudyData);
     }
   }, [propsCaseStudyData]);
-
-  useEffect(() => {
-    if (propsCaseStudyPreviews) {
-      setCaseStudyPreviews(propsCaseStudyPreviews);
-    }
-  }, [propsCaseStudyPreviews]);
 
   return (
     <div>
@@ -139,30 +132,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
     }
   `;
 
-  const contentfulCaseStudyPreviewsQuery = gql`
-    query {
-      ${chosenTemplate}(preview: ${context.preview ? true : false}) {
-        items {
-          handle
-          title
-          splashImage {
-            title
-            url
-            contentType
-          }
-          tags
-        }
-      }
-    }
-  `;
-
   let props: {
     caseStudyData: CaseStudyTemplateOne | null;
-    caseStudyPreviews: CaseStudyPreview[];
     shouldRedirectTo404: boolean;
   } = {
     caseStudyData: null,
-    caseStudyPreviews: [],
     shouldRedirectTo404: false,
   };
 
@@ -184,21 +158,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     }
     props.caseStudyData =
       axiosCaseStudyResponseData.data[chosenTemplate].items[0];
-
-    const { data: axiosCaseStudyPreviewsResponseData } = await axios.post(
-      contentfulApiUrl,
-      { query: contentfulCaseStudyPreviewsQuery },
-      {
-        headers: {
-          Authorization: `Bearer ${contentfulAccessToken}`,
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      }
-    );
-
-    props.caseStudyPreviews =
-      axiosCaseStudyPreviewsResponseData.data[chosenTemplate].items;
   } catch (error: any) {
     const errorResponse = error["response"];
     if (
