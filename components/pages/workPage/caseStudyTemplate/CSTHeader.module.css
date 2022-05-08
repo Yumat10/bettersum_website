@@ -21,6 +21,7 @@
 }
 
 .splash-image-container {
+  display: flex;
   width: var(--width-clamp);
   margin: 88px auto 0px auto;
 }

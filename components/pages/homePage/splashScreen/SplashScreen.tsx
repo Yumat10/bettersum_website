@@ -4,14 +4,16 @@ import { PageLinks } from "./PageLinks";
 import { ReadMoreArrow } from "./ReadMoreArrow";
 import Image from "next/image";
 import betterSumLogo from "public/brandLogos/betterSumLogoNoLineBeige.svg";
-import styles from "./SplashScreen.module.css";
-import fontStyles from "../../../../styles/fontStyles.module.css";
 import { motion, Variants } from "framer-motion";
 import {
   enterFromBottomVariants,
   homePageLoadDuration,
 } from "animations/homePageAnimations";
 import { UnderlineArrowLink } from "components/shared/links/UnderlineArrowLink";
+import moment from "moment";
+
+import styles from "./SplashScreen.module.css";
+import fontStyles from "../../../../styles/fontStyles.module.css";
 
 const loadingBarInnerContainerVariants: Variants = {
   hidden: {
@@ -52,7 +54,7 @@ export const SplashScreen = (): JSX.Element => {
                 <br /> DTC ecommerce business
               </span>
             }
-            link="/"
+            link={`/?section=contact&t=${moment().unix()}`}
           />
         </div>
         <div className={styles["image-container"]}>
