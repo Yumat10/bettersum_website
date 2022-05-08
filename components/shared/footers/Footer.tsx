@@ -4,6 +4,7 @@ import { FooterLinksColumn } from "./FooterLinksColumn";
 import styles from "./Footer.module.css";
 import fontStyles from "styles/fontStyles.module.css";
 import { motion, Variants } from "framer-motion";
+import moment from "moment";
 
 const humanCenteredVariants: Variants = {
   hover: {
@@ -23,7 +24,7 @@ export const Footer = (): JSX.Element => {
     [
       {
         name: "Intro",
-        path: "/?section=intro",
+        path: `/?section=intro&t=${moment().unix()}`,
       },
       {
         name: "Work",
@@ -31,11 +32,11 @@ export const Footer = (): JSX.Element => {
       },
       {
         name: "Services",
-        path: "/?section=services",
+        path: `/?section=services&t=${moment().unix()}`,
       },
       {
         name: "Methods",
-        path: "/?section=methods",
+        path: `/?section=methods&t=${moment().unix()}`,
       },
       {
         name: "About the Team",
@@ -51,15 +52,15 @@ export const Footer = (): JSX.Element => {
       },
       {
         name: "Strategy & Stewardship",
-        path: "/?section=services&open=0",
+        path: `/?section=services&open=0&t=${moment().unix()}`,
       },
       {
         name: "Custom Digital Experiences",
-        path: "/?section=services&open=1",
+        path: `/?section=services&open=1&t=${moment().unix()}`,
       },
       {
         name: "Shopify Plus Commerce",
-        path: "/?section=services&open=2",
+        path: `/?section=services&open=2&t=${moment().unix()}`,
       },
     ],
 
@@ -67,7 +68,7 @@ export const Footer = (): JSX.Element => {
     [
       {
         name: "Contact Us",
-        path: "/?section=contact",
+        path: `/?section=contact&t=${moment().unix()}`,
       },
     ],
   ];

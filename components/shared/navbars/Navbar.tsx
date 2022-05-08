@@ -16,6 +16,7 @@ import {
   homePageAnimationDuration,
   homePageLoadDuration,
 } from "animations/homePageAnimations";
+import moment from "moment";
 
 const containerVariants: Variants = {
   hidden: {
@@ -83,11 +84,11 @@ export const Navbar = (): JSX.Element => {
     },
     {
       name: "Services",
-      path: "/?section=services",
+      path: `/?section=services&t=${moment().unix()}`,
     },
     {
       name: "Methods",
-      path: "/?section=methods",
+      path: `/?section=methods&t=${moment().unix()}`,
     },
     {
       name: "About",
@@ -95,7 +96,7 @@ export const Navbar = (): JSX.Element => {
     },
     {
       name: "Contact",
-      path: "/?section=contact",
+      path: `/?section=contact&t=${moment().unix()}`,
     },
     // {
     //   name: "Content",
