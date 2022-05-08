@@ -25,6 +25,7 @@ export interface CaseStudyTemplateOne {
   mediaContentCollection?: {
     items: CaseStudyMedia[];
   };
+  order?: number;
 }
 
 export interface CaseStudyPreview {

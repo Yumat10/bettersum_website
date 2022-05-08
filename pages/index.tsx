@@ -113,7 +113,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const gql = String.raw;
   const contentfulCaseStudyPreviewsQuery = gql`
     query {
-      ${chosenTemplate}(preview: ${context.preview ? true : false}) {
+      ${chosenTemplate}(preview: ${
+    context.preview ? true : false
+  }, order: order_ASC,limit: 4) {
         items {
           handle
           title

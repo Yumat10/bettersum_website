@@ -5,6 +5,7 @@ import fontStyles from "styles/fontStyles.module.css";
 import styles from "./CaseStudyPreviewCard.module.css";
 import { motion, Variants } from "framer-motion";
 import { useEffect } from "react";
+import { CaseStudyMediaContent } from "./CaseStudyMediaContent";
 
 const previewCardVariants: Variants = {
   hover: {
@@ -71,12 +72,7 @@ export const CaseStudyPreviewCard = ({
       >
         {splashImage && (
           <div className={styles["preview-image-container"]}>
-            <motion.img
-              src={splashImage.url}
-              variants={previewPhoto}
-              alt={splashImage.title}
-              className={styles["preview-image"]}
-            />
+            <CaseStudyMediaContent media={splashImage} />
           </div>
         )}
         <div

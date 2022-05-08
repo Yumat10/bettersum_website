@@ -1,6 +1,6 @@
 import { useCaseStudyContext } from "contexts/caseStudyContext";
 import { FC } from "react";
-import { CSTMedia } from "./CSTMedia";
+import { CaseStudyMediaContent } from "components/shared/caseStudies/CaseStudyMediaContent";
 
 import fontStyles from "../../../../styles/fontStyles.module.css";
 import styles from "./CSTHeader.module.css";
@@ -32,7 +32,7 @@ export const CSTHeader: FC = () => {
       </div>
       <div className={styles["splash-image-container"]}>
         {caseStudyData.splashImage && (
-          <CSTMedia media={caseStudyData.splashImage} />
+          <CaseStudyMediaContent media={caseStudyData.splashImage} />
         )}
       </div>
     </div>
