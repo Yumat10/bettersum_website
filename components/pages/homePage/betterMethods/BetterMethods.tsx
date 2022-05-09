@@ -7,19 +7,19 @@ import styles from "./BetterMethods.module.css";
 export const BetterMethods: FC = (): JSX.Element => {
   const methods: { title: string; description: string }[] = [
     {
-      title: "Longevity Focused Strategies",
+      title: "Longevity-Focused Strategies",
       description:
-        "We believe in the future of sustainable practices, long-term thinking, and holistic solutions.",
+        "We believe in the future of sustainable practices, long-term thinking, and holistic solutions. BetterSum places emphasis on viability over time, working with its clients to plan for the future of their product or experience.",
     },
     {
       title: "User-Centered Design",
       description:
-        "Both the client and every user that gets to touch the experience will be taken accounted for.",
+        "Empathy is the foundation of all of our design practices. By reflecting on the needs and feelings of current and future users, we create guidelines for our client’s growth over time that take into account both the product’s viability and responsibility to the end-user.",
     },
     {
       title: "Compounding Technologies",
       description:
-        "We believe in providing the optimal solution for the challenges we take on.",
+        "At BetterSum we don’t believe in one-size-fits-all solutions. The optimal strategy for each client are technical architectures that will grow to meet their future goals. We implement cutting-edge technology and automation to fill the gaps needed for proper scaling.",
     },
   ];
 

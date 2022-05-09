@@ -46,7 +46,7 @@ export const ServicesOffered = (): JSX.Element => {
       },
       title: "Strategy & Stewardship",
       description:
-        "We believe strategy is not just a phase in the development of a product, but a way of making deliberate decisions throughout the life of a business. We apply this longevity-centric perspective to help execute and maintain your vision, drafting plans that address both short and long-term timeframes.",
+        "We solve problems, challenge values, and develop strategies to help articulate a point of view that will guide your business. We believe strategy is not just a phase, but a way of making deliberate decisions throughout the life of a business. We apply this long-term perspective to help execute your vision through brand & product management and oversight.",
     },
     {
       icon: {
@@ -54,9 +54,9 @@ export const ServicesOffered = (): JSX.Element => {
         height: 45,
         width: 45,
       },
-      title: "Holistic Design",
+      title: "Shopify Plus Ecommerce",
       description:
-        "We design digital products, brands, and services by building with empathy. We believe that thoughtfully considering user experience is what makes a difference when designing for real people.",
+        "We create holistic ecommerce experiences that help grow and scale brands on Shopify Plus. We design end-to-end, build rapidly, handle integrations, and optimize your ecommerce experience with automations.",
     },
     {
       icon: {
@@ -64,9 +64,9 @@ export const ServicesOffered = (): JSX.Element => {
         height: 45,
         width: 45,
       },
-      title: "Development",
+      title: "Custom Digital Experiences",
       description:
-        "We help transform great visions into concrete results. We expand your ideas into fully functioning products and work to obtain prompt user feedback that provides invaluable material for developing your business.",
+        "We help transform your visions into concrete digital products, brands, and services. We both realize and expand your ideas by thoughtfully considering user experience and by practicing sustainable development strategies.",
     },
   ];
 
