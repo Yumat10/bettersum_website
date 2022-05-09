@@ -14,7 +14,14 @@ export const CaseStudyMediaContent: FC<CSTOMediaProps> = ({ media }) => {
     return <img src={media.url} alt="" className={styles["image"]} />;
   } else if (media.contentType.startsWith("video/")) {
     return (
-      <video src={media.url} autoPlay muted loop className={styles["video"]} />
+      <video
+        src={media.url}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className={styles["video"]}
+      />
     );
   }
 
