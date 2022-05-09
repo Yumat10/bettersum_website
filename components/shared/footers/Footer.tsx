@@ -55,11 +55,11 @@ export const Footer = (): JSX.Element => {
         path: `/?section=services&open=0&t=${moment().unix()}`,
       },
       {
-        name: "Custom Digital Experiences",
+        name: "Shopify Plus Commerce",
         path: `/?section=services&open=1&t=${moment().unix()}`,
       },
       {
-        name: "Shopify Plus Commerce",
+        name: "Custom Digital Experiences",
         path: `/?section=services&open=2&t=${moment().unix()}`,
       },
     ],
