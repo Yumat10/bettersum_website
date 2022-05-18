@@ -1,0 +1,41 @@
+.container {
+  background-color: var(--bettersum-black);
+  color: var(--bettersum-beige);
+}
+
+.container-inner {
+  width: var(--width-clamp);
+  margin: 0px auto;
+  padding: 100px 0px;
+}
+
+.container h1,
+.container h2,
+.container p {
+  display: block;
+}
+
+.header-container {
+  margin: 0px 0px 70px 0px;
+}
+
+.header-container h1 {
+  margin: 0px 0px 10px 0px;
+}
+
+.container-inner h2 {
+  margin: 0px 0px 40px 0px;
+  text-decoration: underline;
+}
+
+.container-inner div {
+  margin: 0px 0px 100px 0px;
+}
+
+.container-inner p {
+  margin: 20px 0px;
+}
+
+.container-inner div li {
+  margin: 0px 0px 20px 0px;
+}

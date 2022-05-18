@@ -70,6 +70,22 @@ export const Footer = (): JSX.Element => {
         name: "Contact Us",
         path: `/?section=contact&t=${moment().unix()}`,
       },
+      {
+        name: "Terms",
+        path: "/help/terms-and-conditions",
+      },
+      {
+        name: "Privacy",
+        path: "/help/privacy-policy",
+      },
+      {
+        name: "Terms",
+        path: "/help/terms-and-conditions",
+      },
+      {
+        name: "Privacy",
+        path: "/help/privacy-policy",
+      },
     ],
   ];
 

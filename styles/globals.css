@@ -43,6 +43,7 @@ body {
   margin: 0;
   font-family: Campton, sans-serif !important;
   white-space: pre-line;
+  word-break: break-word;
 }
 
 @media only screen and (max-width: 850px) {
