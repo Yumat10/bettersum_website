@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Campton";
-  src: url("../public/assets/CamptonLight.otf");
+  font-family: 'Campton';
+  src: url('../public/assets/CamptonLight.otf');
   font-weight: 300;
   font-style: normal;
 }
@@ -13,15 +13,15 @@
 } */
 
 @font-face {
-  font-family: "Campton";
-  src: url("../public/assets/CamptonMedium.otf");
+  font-family: 'Campton';
+  src: url('../public/assets/CamptonMedium.otf');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Campton";
-  src: url("../public/assets/CamptonBold.otf");
+  font-family: 'Campton';
+  src: url('../public/assets/CamptonBold.otf');
   font-weight: 700;
   font-style: normal;
 }
@@ -43,7 +43,6 @@ body {
   margin: 0;
   font-family: Campton, sans-serif !important;
   white-space: pre-line;
-  /* overflow-x: hidden; */
   word-break: break-word;
 }
 
